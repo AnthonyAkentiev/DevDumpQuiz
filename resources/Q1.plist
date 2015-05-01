@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>questions</key>
+	<array>
+		<dict>
+			<key>Comment</key>
+			<string>-1 &lt;&lt; 2 undefined behaviour</string>
+			<key>Id</key>
+			<string>10</string>
+			<key>Tags</key>
+			<string>C/C++</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answer</key>
+			<integer>2</integer>
+			<key>answers</key>
+			<array>
+				<string>The result is fffffffc</string>
+				<string>Undefined behaviour</string>
+				<string>The result is -1</string>
+				<string>The result is 0</string>
+			</array>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;The result is &lt;strong&gt;Undefined Behaviour&lt;/strong&gt;&lt;/h2&gt;
+
+    &lt;p&gt;As stated in C++ standard:&lt;/p&gt;
+    &lt;p&gt;The result of E1 &lt;&lt; E2 is E1 left-shifted E2 bit positions; vacated bits are ﬁlled with zeros. If E1 has an unsigned type, the value of the result is E1× 2E2, reduced modulo one more than the maximum value representable in the result type. If E1 has a signed type and nonnegative value, and E1× 2E2 is representable in the result type, then that is the resulting value; otherwise, the behavior is undeﬁned.&lt;/p&gt;
+&lt;a href=“http://c0x.coding-guidelines.com/6.5.7.html”&gt;C99 standard&lt;/a&gt;
+&lt;/div&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What will be the output of this code?&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;stdio.h&gt;
+
+int main(void){
+	::printf (&quot;%x&quot; ,-1&lt;&lt;2);
+	return 0; 
+}&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>static function - linking error</string>
+			<key>Id</key>
+			<string>9</string>
+			<key>Tags</key>
+			<string>C/C++</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answer</key>
+			<integer>4</integer>
+			<key>answers</key>
+			<array>
+				<string>The program reports an error as pointer to member function cannot be defined outside the definition of class</string>
+				<string>The program reports an error as pointer to static member function cannot be defined</string>
+				<string>The program reports an error as pointer to member function cannot be defined without object</string>
+				<string>The program reports linker error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;p&gt;MyFunction should have body defined in order to link normally&lt;/p&gt;
+    &lt;a href=&quot;http://www.indiabix.com/cpp-programming/objects-and-classes/&quot;&gt;Source&lt;/a&gt;
+&lt;/div&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;Which of the following statements is correct about the program given below?&lt;/h2&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+class Bix
+{
+public:
+    static void MyFunction();
+};
+
+int main()
+{
+    void(*ptr)() = &amp;Bix::MyFunction;
+    return 0; 
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>struct/class public/private</string>
+			<key>Id</key>
+			<string>8</string>
+			<key>Tags</key>
+			<string>C/C++</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answer</key>
+			<integer>3</integer>
+			<key>answers</key>
+			<array>
+				<string>Member function and data are by default protected in structures but private in classes</string>
+				<string>Member function and data are by default private in structures but public in classes</string>
+				<string>Member function and data are by default public in structures but private in classes</string>
+				<string>Member function and data are by default public in structures but protected in classes</string>
+			</array>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;p&gt;Structs have public fields, classes have private fields by default&lt;/p&gt;
+    &lt;a href=&quot;http://www.indiabix.com/cpp-programming/objects-and-classes/&quot;&gt;Source&lt;/a&gt;
+&lt;/div&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;Which of the following is the only technical difference between structures and classes in C++?&lt;/h2&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>Bird</string>
+			<key>Id</key>
+			<string>7</string>
+			<key>Tags</key>
+			<string>C/C++</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answer</key>
+			<integer>4</integer>
+			<key>answers</key>
+			<array>
+				<string>It will not compile because class body of Birds is not defined</string>
+				<string>It will not compile because class body of Peacock is not defined</string>
+				<string>It will not compile because a class cannot be protectedly inherited from other class</string>
+				<string>It will compile succesfully</string>
+			</array>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;p&gt;The code is OK and will be compiled successfully&lt;/p&gt;
+    &lt;a href=&quot;http://www.indiabix.com/cpp-programming/objects-and-classes/&quot;&gt;Source&lt;/a&gt;
+&lt;/div&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What happens when we try to compile the class definition in following code snippet?&lt;/h2&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+class Birds {};
+
+class Peacock : protected Birds {};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>25u - 50</string>
+			<key>Id</key>
+			<string>1</string>
+			<key>Tags</key>
+			<string>C/C++</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answer</key>
+			<integer>4</integer>
+			<key>answers</key>
+			<array>
+				<string>The result is 25</string>
+				<string>The result is &apos;Undefined behaviour&apos;</string>
+				<string>The result is -25</string>
+				<string>The result is 4294967271</string>
+			</array>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;p&gt;The answer is not &lt;strong&gt;-25&lt;/strong&gt;. Rather, the answer (which will surprise many) is &lt;strong&gt;4294967271&lt;/strong&gt;, assuming 32 bit integers. Why?&lt;/p&gt;
+    
+    &lt;p&gt;In C++, if the types of two operands differ from one another, then the operand with the “lower type” will be promoted to the type of the “higher type” operand, using the following type hierarchy (listed here from highest type to lowest type): long double, double, float, unsigned long int, long int, unsigned int, int (lowest).&lt;/p&gt;
+    
+    &lt;p&gt;So when the two operands are, as in our example, &lt;strong&gt;25u&lt;/strong&gt; (unsigned int) and &lt;strong&gt;50&lt;/strong&gt; (int), the &lt;strong&gt;50&lt;/strong&gt; is promoted to also being an unsigned integer (i.e., &lt;strong&gt;50u&lt;/strong&gt;).&lt;/p&gt;
+    
+    &lt;p&gt;Moreover, the result of the operation will be of the type of the operands. Therefore, the result of &lt;stronf&gt;25u - 50u&lt;/strong&gt; will itself be an unsigned integer as well. So the result of &lt;strong&gt;-25&lt;/strong&gt; converts to &lt;strong&gt;4294967271&lt;/strong&gt; when promoted to being an unsigned integer.&lt;/p&gt;
+&lt;/div&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What will the line of code below print out and why?&lt;/h2&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;cout &lt;&lt; 25u - 50;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>++</string>
+			<key>Id</key>
+			<string>2</string>
+			<key>Tags</key>
+			<string>C/C++</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answer</key>
+			<integer>4</integer>
+			<key>answers</key>
+			<array>
+				<string>i==6, j==5</string>
+				<string>i==6, j==6</string>
+				<string>i==5, j==6</string>
+				<string>i==6, j==5</string>
+			</array>
+			<key>a</key>
+			<string>&lt;div&gt;
+&lt;p&gt;After the above code executes, &lt;strong&gt;i&lt;/strong&gt; will equal 6, but &lt;strong&gt;j&lt;/strong&gt; will equal 5.&lt;/p&gt;
+
+&lt;p&gt;Understanding the reason for this is fundamental to understanding how the &lt;strong&gt;unary increment&lt;/strong&gt; (++) and &lt;strong&gt;decrement&lt;/strong&gt; (--) operators work in C++.&lt;/p&gt;
+
+&lt;p&gt;When these operators precede a variable, the value of the variable is modified first and then the modified value is used. For example, if we modified the above code snippet to instead say &lt;strong&gt;int j = ++i;&lt;/strong&gt;, i would be incremented to 6 and then j would be set to that modified value, so both would end up being equal to 6.&lt;/p&gt;
+
+&lt;p&gt;However, when these operators follow a variable, the unmodified value of the variable is used and then it is incremented or decremented. That’s why, in the statement &lt;strong&gt;int j = i++;&lt;/strong&gt; in the above code snippet, &lt;strong&gt;j&lt;/strong&gt; is first set to the unmodified value of &lt;strong&gt;i&lt;/strong&gt; (i.e., 5) and then i is incremented to 6.&lt;/p&gt;
+&lt;/div&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What will &lt;strong&gt;i&lt;/strong&gt; and &lt;strong&gt;j&lt;/strong&gt; equal after the code below is executed?&lt;/h2&gt;
+    
+    &lt;pre&gt;&lt;code class=&quot;language-c&quot;&gt;
+int i = 5;
+int j = i++;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>Linkage</string>
+			<key>Id</key>
+			<string>3</string>
+			<key>Tags</key>
+			<string>C/C++</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answer</key>
+			<integer>2</integer>
+			<key>answers</key>
+			<array>
+				<string>2 types of linkage</string>
+				<string>3 types of linkage</string>
+				<string>1 type of linkage</string>
+				<string>I don&apos;t understand what are you talking about. I don&apos;t need that</string>
+			</array>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;p&gt;There are 3 types of linkage in &lt;strong&gt;c++&lt;/strong&gt;. They are:&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Internal linkage&lt;/li&gt;
+        &lt;li&gt;External linkage&lt;/li&gt;
+        &lt;li&gt;No linkage&lt;/li&gt;
+    &lt;/ul&gt;
+        
+    &lt;h3&gt;Internal linkage&lt;/h3&gt;
+    &lt;p&gt;Internal linkage, in which case they refer only to program elements inside their own translation units; they are not shared with other translation units.&lt;/p&gt;
+    
+    &lt;p&gt;The same name in another translation unit may refer to a different object or a different class. Names with internal linkage are sometimes referred to as being local to their translation units.&lt;/p&gt;
+    
+    &lt;p&gt;An example declaration of a name with internal linkage is:&lt;/p&gt;
+    
+    &lt;pre&gt;&lt;code class=&quot;language-c&quot;&gt;static int i;   // The static keyword ensures internal linkage&lt;/code&gt;&lt;/pre&gt;
+    
+    &lt;h3&gt;External linkage&lt;/h3&gt;
+    &lt;p&gt;External linkage, in which case they can refer to program elements in any translation unit in the program — the program element is shared among the translation units.&lt;/p&gt;
+    
+    &lt;p&gt;The same name in another translation unit is guaranteed to refer to the same object or class. Names with external linkage are sometimes referred to as being global.&lt;/p&gt;
+    &lt;p&gt;An example declaration of a name with external linkage is:&lt;/p&gt;
+    
+    &lt;pre&gt;&lt;code class=&quot;language-c&quot;&gt;extern int i;&lt;/code&gt;&lt;/pre&gt;
+    
+    &lt;h3&gt;No linkage&lt;/h3&gt;
+    &lt;p&gt;No linkage, in which case they refer to unique entities. The same name in another scope may not refer to the same object. An example is an enumeration. (Note, however, that you can pass a pointer to an object with no linkage. This makes the object accessible in other translation units.)&lt;/p&gt;
+    
+    &lt;p&gt;
+        &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/0yw6at8e.aspx&quot;&gt;See MSDN for more details&lt;/a&gt;
+    &lt;/p&gt;
+&lt;/div&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;How many types of linkage are there in c++?&lt;/h2&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>842</string>
+			<key>Id</key>
+			<string>4</string>
+			<key>Tags</key>
+			<string>C/C++, General</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answer</key>
+			<integer>1</integer>
+			<key>answers</key>
+			<array>
+				<string>842</string>
+				<string>Undefined behaviour</string>
+				<string>None of the above</string>
+				<string>Compile time error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;div&gt;
+&lt;p&gt;In this program, we have created a header file and linked that into the source program and we are post incrementing.&lt;/p&gt;
+
+&lt;p&gt;Because of that result is &lt;strong&gt;842&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;div&gt;
+&lt;p&gt;1:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+// in excercise.h
+
+#ifndef Exercise_H
+#define Exercise_H
+int num = 842;
+#endif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;p&gt;2:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+// in main.cpp
+
+#include &amp;#60;iostream&amp;#62;
+#include &quot;excercise.h&quot;
+
+using namespace std;
+int main(int argc, char * argv[] )
+{
+    cout &lt;&lt; number++;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>Auth</string>
+			<key>Id</key>
+			<string>5</string>
+			<key>Tags</key>
+			<string>General</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answer</key>
+			<integer>3</integer>
+			<key>answers</key>
+			<array>
+				<string>Authentication: verifying that &apos;you are permitted to do that&apos;; Authorization: determining if someone is who he is declared to be</string>
+				<string>Authentication == authorization</string>
+				<string>Authentication: determining if someone is who he is declared to be; Authorization: verifying that &apos;you are permitted to do that&apos;</string>
+			</array>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;Authentication&lt;/h2&gt;
+    &lt;p&gt;Authentication is the process of determining whether someone or something is, in fact, who or what it is declared to be.&lt;/p&gt;
+    
+    &lt;p&gt;In private and public computer networks (including the Internet), authentication is commonly done through the use of login passwords or passphrases; knowledge of such is assumed to guarantee that the user is authentic. Thus, when you are asked to &quot;authenticate&quot; to a system, it usually means that you enter your username and/or password for that system.&lt;/p&gt;
+    
+    &lt;a href=&quot;https://protect.iu.edu/cybersecurity/authn-authz&quot;&gt;link&lt;/a&gt;
+    &lt;h3&gt;Authentication on Wiki&lt;/h3&gt;
+    
+    &lt;a href=&quot;https://en.wikipedia.org/wiki/Authentication&quot;&gt;Wiki&lt;/a&gt;
+
+    &lt;h2&gt;Authorization&lt;/h2&gt;
+    &lt;p&gt;In computing systems, authorization is the process of determining which permissions a person or system is supposed to have. In multi-user computing systems, a system administrator defines which users are allowed access to the system, as well as the privileges of use for which they are eligible (e.g., access to file directories, hours of access, amount of allocated storage space). Authorization can be seen as both the preliminary setting of permissions by a system administrator, and the actual checking of the permission values when a user obtains access. Authorization is usually preceded by authentication.&lt;/p&gt;
+    
+    &lt;a href=&quot;https://protect.iu.edu/cybersecurity/authn-authz&quot;&gt;link&lt;/a&gt;
+
+    &lt;h3&gt;Authorization on Wiki&lt;/h3&gt;
+    &lt;p&gt;The process of authorization is distinct from that of authentication. Whereas authentication is the process of verifying that &quot;you are who you say you are&quot;, authorization is the process of verifying that &quot;you are permitted to do what you are trying to do&quot;. Authorization thus presupposes authentication.&lt;/p&gt;
+    
+    &lt;p&gt;For example, a client showing proper identification credentials to a bank teller is asking to be authenticated that he really is the one whose identification he is showing. A client whose authentication request is approved becomes authorized to access the accounts of that account holder, but no others.&lt;/p&gt;
+    
+    &lt;p&gt;However note that if a stranger tries to access someone else&apos;s account with his own identification credentials, the stranger&apos;s identification credentials will still be successfully authenticated because they are genuine and not counterfeit, however the stranger will not be successfully authorized to access the account, as the stranger&apos;s identification credentials had not been previously set to be eligible to access the account, even if valid (i.e. authentic).&lt;/p&gt;
+    
+    &lt;p&gt;Similarly when someone tries to log on a computer, they are usually first requested to identify themselves with a login name and support that with a password. Afterwards, this combination is checked against an existing login-password validity record to check if the combination is authentic. If so, the user becomes authenticated (i.e. the identification he supplied in step 1 is valid, or authentic). Finally, a set of pre-defined permissions and restrictions for that particular login name is assigned to this user, which completes the final step, authorization.&lt;/p&gt;
+    
+    &lt;p&gt;Even though authorization cannot occur without authentication, the former term is sometimes used to mean the combination of both.&lt;/p&gt;
+    
+    &lt;a href=&quot;http://en.wikipedia.org/wiki/Authorization_(computer_access_control)&quot;&gt;Wiki&lt;/a&gt;
+&lt;/div&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What is the difference between authentication and authorization?&lt;/h2&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>friend</string>
+			<key>Id</key>
+			<string>6</string>
+			<key>Tags</key>
+			<string>C/C++</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answer</key>
+			<integer>4</integer>
+			<key>answers</key>
+			<array>
+				<string>Friend keyword can be used in the class to allow access to another class</string>
+				<string>Friend keyword can be used for a function in the public section of a class</string>
+				<string>Friend keyword can be used for a function in the private section of a class</string>
+				<string>Friend keyword can be used on main()</string>
+			</array>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;p&gt;You can not use “friend” keyword on a main() function&lt;/p&gt;
+    &lt;a href=&quot;http://www.indiabix.com/cpp-programming/objects-and-classes/&quot;&gt;Source&lt;/a&gt;
+&lt;/div&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;Which of the following statements is incorrect?&lt;/h2&gt;
+&lt;/div&gt;</string>
+		</dict>
+	</array>
+</dict>
+</plist>
