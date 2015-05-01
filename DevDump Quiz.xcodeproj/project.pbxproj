@@ -13,6 +13,7 @@
 		9969AED71AF382EC00DFB8EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9969AED61AF382EC00DFB8EE /* Images.xcassets */; };
 		9969AEDA1AF382EC00DFB8EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9969AED81AF382EC00DFB8EE /* LaunchScreen.xib */; };
 		9969AEE61AF382EC00DFB8EE /* DevDump_QuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969AEE51AF382EC00DFB8EE /* DevDump_QuizTests.swift */; };
+		9975C4061AF38E7600478404 /* StoryboardiPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9975C4041AF38E7600478404 /* StoryboardiPad.storyboard */; };
 		99D5B32E1AF387A8005CE456 /* AnswerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D5B3261AF387A8005CE456 /* AnswerController.swift */; };
 		99D5B32F1AF387A8005CE456 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D5B3271AF387A8005CE456 /* MainMenu.swift */; };
 		99D5B3301AF387A8005CE456 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D5B3281AF387A8005CE456 /* Model.swift */; };
@@ -48,6 +49,7 @@
 		9969AEDF1AF382EC00DFB8EE /* DevDump QuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DevDump QuizTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9969AEE41AF382EC00DFB8EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9969AEE51AF382EC00DFB8EE /* DevDump_QuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevDump_QuizTests.swift; sourceTree = "<group>"; };
+		9975C4051AF38E7600478404 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "DevDump Quiz/Base.lproj/StoryboardiPad.storyboard"; sourceTree = "<group>"; };
 		99D5B3261AF387A8005CE456 /* AnswerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnswerController.swift; path = "../../BrainHack/Heap Spray Game/Heap Spray Game/AnswerController.swift"; sourceTree = "<group>"; };
 		99D5B3271AF387A8005CE456 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainMenu.swift; path = "../../BrainHack/Heap Spray Game/Heap Spray Game/MainMenu.swift"; sourceTree = "<group>"; };
 		99D5B3281AF387A8005CE456 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = "../../BrainHack/Heap Spray Game/Heap Spray Game/Model.swift"; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				99D5B32D1AF387A8005CE456 /* ViewController.swift */,
 				9944E6B31AF38843008E544E /* ViewControllerIPad.swift */,
 				9969AED31AF382EC00DFB8EE /* Main.storyboard */,
+				9975C4041AF38E7600478404 /* StoryboardiPad.storyboard */,
 				9969AED61AF382EC00DFB8EE /* Images.xcassets */,
 				9969AED81AF382EC00DFB8EE /* LaunchScreen.xib */,
 				9969AECD1AF382EC00DFB8EE /* Supporting Files */,
@@ -251,6 +254,7 @@
 				99D5B33B1AF387BD005CE456 /* AQ2.plist in Resources */,
 				99D5B33C1AF387BD005CE456 /* Q1.plist in Resources */,
 				9969AED71AF382EC00DFB8EE /* Images.xcassets in Resources */,
+				9975C4061AF38E7600478404 /* StoryboardiPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +318,15 @@
 				9969AED91AF382EC00DFB8EE /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		9975C4041AF38E7600478404 /* StoryboardiPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9975C4051AF38E7600478404 /* Base */,
+			);
+			name = StoryboardiPad.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
