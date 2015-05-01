@@ -378,6 +378,13 @@ sudo shutdown -h now
 &lt;/div&gt;</string>
 		</dict>
 		<dict>
+			<key>answers</key>
+			<array>
+				<string>pip</string>
+				<string>aptitude</string>
+				<string>yum</string>
+				<string>dpkg</string>
+			</array>
 			<key>Comment</key>
 			<string>YellowDog package manager</string>
 			<key>Correct Answer</key>

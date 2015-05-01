@@ -6,6 +6,253 @@
 	<array>
 		<dict>
 			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>35</string>
+			<key>Tags</key>
+			<string>General</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answer</key>
+			<integer>4</integer>
+			<key>answers</key>
+			<array>
+				<string></string>
+				<string></string>
+				<string></string>
+				<string></string>
+			</array>
+			<key>a</key>
+			<string></string>
+			<key>q</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>visual c++ 1.0</string>
+			<key>Id</key>
+			<string>34</string>
+			<key>Tags</key>
+			<string>C/C++, Microsoft, IT History, Screen</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answer</key>
+			<integer>1</integer>
+			<key>answers</key>
+			<array>
+				<string>1993</string>
+				<string>1991</string>
+				<string>1987</string>
+				<string>1995</string>
+			</array>
+			<key>a</key>
+			<string>&lt;div&gt;
+&lt;h2&gt;Visual C++ 1.0 was released in 1993&lt;/h2&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Microsoft Visual C++ (often abbreviated as &lt;b&gt;MSVC&lt;/b&gt; or &lt;b&gt;VC++&lt;/b&gt;) is a commercial (free version available), integrated development environment (IDE) product from Microsoft for the C, C++, and C++/CLI programming languages. It features tools for developing and debugging C++ code, especially code written for the Microsoft Windows API, the DirectX API, and the Microsoft .NET Framework.&lt;/p&gt;
+
+&lt;p&gt;The predecessor to Visual C++ was called &lt;i&gt;Microsoft C/C++&lt;/i&gt;. There was also a &lt;i&gt;Microsoft QuickC&lt;/i&gt; 2.5 and a &lt;i&gt;Microsoft QuickC for Windows&lt;/i&gt; 1.0. The Visual C++ compiler is still known as &lt;i&gt;Microsoft C/C++&lt;/i&gt; and as of the release of Visual C++ 2013, is on version 18.0.21005.1.&lt;/p&gt;
+
+&lt;h3&gt;16-bit versions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Microsoft C 1.0&lt;/b&gt;, based on Lattice C, was Microsoft&apos;s first C product in 1983. It was not K&amp;R C.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;C 2.0&lt;/b&gt; added large model support.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;C 3.0&lt;/b&gt; was the first version developed inside Microsoft. It was extremely compatible with K&amp;R and the later ANSI standard. It was being used inside Microsoft (for Windows and Xenix development) in early 1984. It shipped as a product in 1985.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;C 4.0&lt;/b&gt; added optimizations and CodeView, a source level debugger.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;C 5.0&lt;/b&gt; added loop optimizations and &lt;i&gt;Huge Model&lt;/i&gt; (arrays bigger than 64k) support. Microsoft Fortran and the first 32 bit compiler for 80386 were also part of this project.
+&lt;li&gt;&lt;b&gt;C 5.1&lt;/b&gt; released in 1988 allowed compiling programs for OS/2 1.x.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;C 6.0&lt;/b&gt; released in 1989. It added global flow analysis, a source browser, and a new debugger, and included an optional C++ front end.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;C/C++ 7.0&lt;/b&gt; was released in 1992. Added built-in support for C++ and MFC 1.0.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Visual C++ 1.0&lt;/b&gt;, which included MFC 2.0, was the first version of Visual C++, released in February 1993. It was Cfront 2.1 compliant and available in two editions: Standard – replaced QuickC for Windows. Professional – replaced C/C++ 7.0. Included the ability to build both DOS and Windows applications, an optimizing compiler, a source profiler, and the Windows 3.1 SDK. The Phar Lap 286 DOS Extender Lite was also included.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Visual C++ 1.5&lt;/b&gt; was released in December 1993, included MFC 2.5, and added OLE 2.0 and ODBC support to MFC. It was the first version of Visual C++ that came only on CD-ROM.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Visual C++ 1.51&lt;/b&gt; and &lt;b&gt;1.52&lt;/b&gt; were available as part of a subscription service.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Visual C++ 1.52b&lt;/b&gt; is similar to 1.52, but does not include the Control Development Kit.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Visual C++ 1.52c&lt;/b&gt; was a patched version of 1.5. It is the last, and arguably most popular, development platform for Microsoft Windows 3.x. It is available through Microsoft Developer Network.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;32-bit versions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Visual C++ 1.0&lt;/b&gt; (original name: &lt;b&gt;Visual C++ 32-bit Edition&lt;/b&gt;) was the first version for 32-bit development. Although released when 16-bit 1.5 was available, it did not include support for OLE2 and ODBC. It was also available in a bundle called &lt;b&gt;Visual C++ 16/32-bit Suite&lt;/b&gt;, which included Visual C++ 1.5.&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;Visual C++ 2.0&lt;/b&gt;, which included MFC 3.0, was the first version to be 32-bit only. In many ways, this version was ahead of its time, since Windows 95, then codenamed &quot;Chicago&quot;, was not yet released, and Windows NT had only a small market share. As a result, this release was almost a &quot;lost generation&quot;. Microsoft included and updated Visual C++ 1.5 as part of the 2.x releases up to 2.1, which included Visual C++ 1.52, and both 16-bit and 32-bit version of the Control Development Kit (CDK) were included. Visual C++ 2.x also supported Win32s development. It is available through Microsoft Developer Network. There was a Visual C++ 2.0 RISC Edition for MIPS and Alpha processors, as well as a cross-platform edition for the Macintosh (68000 instruction set).&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Visual C++ 2.1 and 2.2&lt;/b&gt; were updates for 2.0 available through subscription.&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;Visual C++ 4.0&lt;/b&gt;, released on 1995-12-11 introduced the Developer Studio IDE. Its then-novel tiled layout of non-overlapping panels — navigation panel, combination editor/source level debugger panel, and console output panel — continues through the Visual Studio product line (as of 2013). Visual C++ 4.0 included MFC 4.0, was designed for Windows 95 and Windows NT. To allow support of legacy (Windows 3.x/DOS) projects, 4.0 came bundled with the Visual C++ 1.52 installation CD. Updates available through subscription included Visual C++ 4.1, which came with the Microsoft Game SDK (later released separately as the DirectX SDK), and Visual C++ 4.2. Version number 3.0 was skipped to achieve version number parity between Visual C++ 4.0 and MFC 4.0.&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;Visual C++ 4.2&lt;/b&gt; did not support Windows 3.x (Win32s) development. This was the final version with a cross-platform edition for the Macintosh available and it differed from the 2.x version in that it also allowed compilation for the PowerPC instruction set.&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;Visual C++ 5.0&lt;/b&gt;, which included MFC 4.21 and was released 1997-04-28, was a major upgrade from 4.2. Available in four editions: Learning, Professional, Enterprise, RISC&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;Visual C++ 6.0&lt;/b&gt; (commonly known as VC6), which included MFC 6.0, was released in 1998. The release was somewhat controversial since it did not include an expected update to MFC. Visual C++ 6.0 is still quite popular and often used to maintain legacy projects. There are, however, issues with this version under Windows XP, especially under the debugging mode (for example, the values of static variables do not display). The debugging issues can be solved with a patch called the &quot;Visual C++ 6.0 Processor Pack&quot;. Version number: 12.00.8804&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;Visual C++ .NET 2002&lt;/b&gt; (known also as Visual C++ 7.0), which included MFC 7.0, was released in 2002 with support for link time code generation and debugging runtime checks, .NET 1.0, and Visual C# and Managed C++. The new user interface used many of the hot keys and conventions of Visual Basic, which accounted for some of its unpopularity among C++ developers. Version number: 13.00.9466&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;Visual C++ .NET 2003&lt;/b&gt; (known also as Visual C++ 7.1), which included MFC 7.1, was released in 2003 along with .NET 1.1 and was a major upgrade to Visual C++ .NET 2002. It was considered a patch to Visual C++ .NET 2002. Accordingly, the English language upgrade version of Visual Studio .NET 2003 shipped for minimal cost to owners of the English-language version of Visual Studio .NET 2002. This was the last version to support Windows 95 and NT 4.0 as a target. Version number: 13.10.3077&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;eMbedded Visual C++&lt;/b&gt; in various versions was used to develop for some versions of the Windows CE operating system. Initially it replaced a development environment consisting of tools added onto Visual C++ 6.0. eMbedded Visual C++ was replaced as a separate development environment by Microsoft Visual Studio 2005.&lt;/li&gt;
+&lt;/ul&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+&lt;h2&gt;When was Visual C++ 1.0 version released?&lt;/h2&gt;
+&lt;p&gt;(Microsoft Visual C++ specific)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;b&gt;Visual C++ 1.0&lt;/b&gt; included MFC 2.0&lt;/p&gt;
+&lt;p&gt;MFC 1.0 was first introduced in Microsoft C/C++ 7.0&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>stdafx.h</string>
+			<key>Id</key>
+			<string>33</string>
+			<key>Tags</key>
+			<string>C/C++, Microsoft, Screen</string>
+			<key>Level</key>
+			<string>4</string>
+			<key>Correct Answer</key>
+			<integer>3</integer>
+			<key>answers</key>
+			<array>
+				<string>Standard</string>
+				<string>Application FrameworXs</string>
+				<string>Application Framework eXtensions</string>
+				<string>Application Frame eXtension</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;AFX stands for Application Framework eXtensions&lt;/h2&gt;
+
+&lt;p&gt;MFC was introduced in 1992 with Microsoft&apos;s &lt;i&gt;C/C++ 7.0&lt;/i&gt; compiler for use with 16-bit versions of Windows as an extremely thin object-oriented C++ wrapper for the Windows API. C++ was just beginning to replace C for development of commercial application software at the time. In an MFC program, direct Windows API calls are rarely needed. Instead, programs create objects from Microsoft Foundation Class classes and call member functions belonging to those objects. Many of those functions share their names with corresponding API functions.&lt;p&gt;
+
+&lt;p&gt;One interesting quirk of MFC is the use of &quot;Afx&quot; as the prefix for many functions, macros and the standard &lt;b&gt;precompiled header&lt;/b&gt; name &quot;stdafx.h&quot;. During early development what became MFC was called &lt;b&gt;“Application Framework Extensions”&lt;/b&gt; and abbreviated &quot;Afx&quot;. The name Microsoft Foundation Classes (MFC) was adopted too late in the release cycle to change these references.&lt;/p&gt;
+
+&lt;a href=“http://en.wikipedia.org/wiki/Microsoft_Foundation_Class_Library”&gt;&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+&lt;h2&gt;What AFX postfix stands for in STDAFX.H?&lt;/h2&gt;
+&lt;p&gt;(Microsoft Visual C++ specific)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;stdafx.h&gt;
+
+int main(int argc, char** argv){
+	return 0;
+}
+}&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>first web browser</string>
+			<key>Id</key>
+			<string>32</string>
+			<key>Tags</key>
+			<string>IT History, Screen</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answer</key>
+			<integer>2</integer>
+			<key>answers</key>
+			<array>
+				<string>Mosaic</string>
+				<string>WorldWideWeb</string>
+				<string>Lynx</string>
+				<string>w3m</string>
+			</array>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;The first web browser was WorldWideWeb (without spaces)&lt;/h2&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;WorldWideWeb by Tim Berners-Lee&lt;/h3&gt;
+&lt;p&gt;WorldWideWeb (later renamed to Nexus to avoid confusion between the software and the World Wide Web) is the first web browser[1] and editor.[2] When it was written, WorldWideWeb was the only way to view the Web.&lt;/p&gt;
+
+&lt;p&gt;The source code was released into the public domain on &lt;b&gt;December 25th, 1991&lt;/b&gt;. Some of the code still resides on Tim Berners-Lee&apos;s NeXT Computer in the CERN museum and has not been recovered due to the computer&apos;s status as a historical artifact. To coincide with the 20th anniversary of the research centre giving the web to the world, a project has begun in 2013 at CERN to preserve this original hardware and software associated with the birth of the web.&lt;/p&gt;
+
+&lt;p&gt;Berners-Lee wrote what would become known as WorldWideWeb on a NeXT Computer during the second half of 1990, while working for CERN. The first successful build was completed on December 25, 1990, after only two months of development. Successive builds circulated among Berners-Lee&apos;s colleagues at CERN before being released to the public, by way of Internet newsgroups, in August 1991. By this time, several others, including Bernd Pollermann, Robert Cailliau, Jean-François Groff, and graduate student Nicola Pellow – who wrote the Line Mode Browser – were involved in the project.&lt;/p&gt;
+
+&lt;p&gt;Berners-Lee proposed different names for his new application: &lt;i&gt;The Mine of Information&lt;/i&gt; and &lt;i&gt;The Information Mesh&lt;/i&gt; were proposals. At the end &lt;i&gt;WorldWideWeb&lt;/i&gt; was chosen, but later renamed to &lt;i&gt;Nexus&lt;/i&gt; to avoid confusion between the World Wide Web and the web browser.&lt;/p&gt;
+
+&lt;p&gt;The team created so called &quot;passive browsers&quot; which do not have the editing prospects because it was hard to port the ability to edit pages like on the NeXT system to other operating systems. The port to the X Window System (X) was not possible as nobody on the team had experience with X.&lt;/p&gt;
+
+&lt;p&gt;Berners-Lee and Groff later adapted many of WorldWideWeb&apos;s components into a C programming language version, creating the libwww API.&lt;/p&gt;
+
+&lt;p&gt;A number of early browsers appeared, notably ViolaWWW. They were all eclipsed by Mosaic in terms of popularity, which by 1993 had replaced the WorldWideWeb program. Those involved in its creation had moved on to other tasks, such as defining standards and guidelines for the further development of the World Wide Web (e.g. HTML, various communication protocols).&lt;/p&gt;
+
+&lt;/p&gt;On April 30, 1993, the CERN directorate released the source code of WorldWideWeb into the public domain. Several versions of the software are still available to download from evolt.org&apos;s browser archive. Berners-Lee initially considered releasing it under the GNU General Public License, but eventually opted for public domain to maximize corporate support.&lt;/p&gt;
+
+&lt;a href=“http://en.wikipedia.org/wiki/WorldWideWeb”&gt;Wiki&lt;/a&gt;
+
+&lt;h3&gt;Mosaic&lt;/h3&gt;
+&lt;p&gt;Mosaic was the first web browser for &lt;b&gt;Microsoft Windows&lt;/b&gt;. &lt;b&gt;Internet Explorer&lt;/b&gt; was based on Mosaic.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;NCSA Mosaic&lt;/b&gt;, or simply &lt;b&gt;Mosaic&lt;/b&gt;, is the web browser credited with popularizing the World Wide Web. It was also a client for earlier protocols such as FTP, NNTP, and gopher. The browser was named for its support of multiple internet protocols. Its intuitive interface, reliability, Windows port and simple installation all contributed to its popularity within the web, as well as on Microsoft operating systems. Mosaic was also the first browser to display images inline with text instead of displaying images in a separate window. While often described as the first graphical web browser, Mosaic was preceded by WorldWideWeb, the lesser-known Erwise and ViolaWWW.&lt;/p&gt;
+
+&lt;p&gt;David Thompson tested ViolaWWW and showed the application to Marc Andreessen. Andreessen and Eric Bina originally designed and programmed NCSA Mosaic for Unix&apos;s X Window System called &lt;i&gt;xmosaic&lt;/i&gt;. Funding for the development of Mosaic came from the &lt;i&gt;High-Performance Computing and Communications Initiative&lt;/i&gt;, a program created by the High Performance Computing and Communication Act of 1991.&lt;/p&gt;
+
+&lt;p&gt;Development of Mosaic began in December 1992. Marc Andreessen announced the project on Jan 23, 1993. The first alpha release (numbered 0.1a) was published in June 1993, and the first beta release (numbered 0.6b) followed quickly thereafter in September 1993. Version 1.0 for Windows was released on November 11, 1993. NCSA Mosaic for Unix (X-Windows) version 2.0 was released on November 10, 1993. A port of Mosaic to the Commodore Amiga was available by October 1993. Ports to Windows and Macintosh had already been released in September.[11] An Acorn Archimedes port was underway in May 1994.&lt;/p&gt;
+
+&lt;p&gt;Marc Andreessen, the leader of the team that developed Mosaic, left NCSA and, with James H. Clark, one of the founders of Silicon Graphics, Inc. (SGI), and four other former students and staff of the University of Illinois, started Mosaic Communications Corporation. Mosaic Communications eventually became Netscape Communications Corporation, producing Netscape Navigator.
+Spyglass, Inc. licensed the technology and trademarks from NCSA for producing their own web browser but never used any of the NCSA Mosaic source code. Microsoft licensed Spyglass Mosaic in 1995 for US$2 million, modified it, and renamed it Internet Explorer. After a later auditing dispute, Microsoft paid Spyglass $8 million. The 1995 user guide &lt;i&gt;The HTML Sourcebook: The Complete Guide to HTML&lt;/i&gt;, specifically states in a section called &lt;i&gt;Coming Attractions&lt;/i&gt;, that Internet Explorer &quot;will be based on the Mosaic program&quot;. Versions of Internet Explorer before version 7 stated &quot;Based on NCSA Mosaic&quot; in the About box. &lt;b&gt;Internet Explorer 7&lt;/b&gt; was audited by Microsoft to ensure that it contained no Mosaic code, and thus no longer credits Spyglass or Mosaic.&lt;/p&gt;
+
+&lt;a href=“https://en.wikipedia.org/wiki/Mosaic_(web_browser)”&gt;Wiki&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What was the first web browser?&lt;/h2&gt;
+&lt;/div&gt;
+&lt;p&gt;A &lt;b&gt;web browser&lt;/b&gt; (commonly referred to as a &lt;b&gt;browser&lt;/b&gt;) is a software application for retrieving, presenting and traversing information resources on the World Wide Web. An &lt;i&gt;information resource&lt;/i&gt; is identified by a Uniform Resource Identifier (URI/URL) and may be a web page, image, video or other piece of content. Hyperlinks present in resources enable users easily to navigate their browsers to related resources.&lt;/p&gt;
+&lt;p&gt;Although browsers are primarily intended to use the World Wide Web, they can also be used to access information provided by web servers in private networks or files in file systems.&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>jpeg/png lossy/loseless</string>
+			<key>Id</key>
+			<string>31</string>
+			<key>Tags</key>
+			<string>General, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answer</key>
+			<integer>3</integer>
+			<key>answers</key>
+			<array>
+				<string>PNG is loseless, JPEG is lossy</string>
+				<string>PNG is lossy, JPEG is lossy too</string>
+				<string>PNG can be loseless or lossy, JPEG is lossy</string>
+				<string>PNG is loseless, JPEG is loseless too</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;PNG can be either lossless or lossy, but JPEG is always lossy&lt;/h2&gt;
+&lt;h3&gt;JPEG&lt;/h3&gt;
+&lt;p&gt;In computing, &lt;b&gt;JPEG&lt;/b&gt; (/ˈdʒeɪpɛɡ/ jay-peg) (seen most often with the &lt;b&gt;.jpg&lt;/b&gt; or &lt;b&gt;.jpeg&lt;/b&gt; filename extension) is a commonly used method of lossy compression for digital images, particularly for those images produced by digital photography. The degree of compression can be adjusted, allowing a selectable tradeoff between storage size and image quality. JPEG typically achieves 10:1 compression with little perceptible loss in image quality.&lt;/p&gt;
+
+&lt;p&gt;JPEG compression is used in a number of image file formats. JPEG/Exif is the most common image format used by digital cameras and other photographic image capture devices; along with JPEG/JFIF, it is the most common format for storing and transmitting photographic images on the World Wide Web. These format variations are often not distinguished, and are simply called JPEG.&lt;/p&gt;
+
+&lt;p&gt;The term &quot;JPEG&quot; is an acronym for the Joint Photographic Experts Group, which created the standard. The MIME media type for JPEG is &lt;i&gt;image/jpeg&lt;/i&gt; (defined in RFC 1341), except in older Internet Explorer versions, which provides a MIME type of &lt;i&gt;image/pjpeg&lt;/i&gt; when uploading JPEG images.&lt;/p&gt;
+&lt;p&gt;JPEG/JFIF supports a maximum image size of 65535×65535 pixels, hence up to 4 gigapixels (for an aspect ratio of 1:1).&lt;/p&gt;
+
+&lt;a href=“http://en.wikipedia.org/wiki/JPEG”&gt;Wiki&lt;/a&gt;
+
+&lt;h3&gt;PNG&lt;/h3&gt;
+&lt;p&gt;&lt;b&gt;Portable Network Graphics&lt;/b&gt; (&lt;b&gt;PNG&lt;/b&gt;) is a raster graphics file format that supports lossless data compression. PNG was created as an improved, non-patented replacement for Graphics Interchange Format (GIF), and is the most used lossless image compression format on the Internet.&lt;/p&gt;
+
+&lt;p&gt;PNG supports palette-based images (with palettes of 24-bit RGB or 32-bit RGBA colors), grayscale images (with or without alpha channel), and full-color non-palette-based RGB[A] images (with or without alpha channel). PNG was designed for transferring images on the Internet, not for professional-quality print graphics, and therefore does not support non-RGB color spaces such as CMYK.&lt;/p&gt;
+
+&lt;p&gt;PNG files nearly always use file extension &lt;b&gt;PNG&lt;/b&gt; or &lt;b&gt;png&lt;/b&gt; and are assigned MIME media type &lt;i&gt;image/png&lt;/i&gt;. PNG was approved for this use by the Internet Engineering Steering Group on 14 October 1996, and was published as an ISO/IEC standard in 2004.&lt;/p&gt;
+
+&lt;h3&gt;Lossy PNG compression&lt;/h3&gt;
+&lt;p&gt;Even though PNG has been designed as a &lt;b&gt;lossless&lt;/b&gt; format, PNG encoders can pre-process image data in a &lt;b&gt;lossy&lt;/b&gt; fashion (so as to reduce colors used) to improve PNG compression.&lt;/p&gt;
+
+&lt;a href=“http://en.wikipedia.org/wiki/Portable_Network_Graphics”&gt;Wiki&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;Are JPEG and PNG formats lossy?&lt;/h2&gt;
+    &lt;p&gt;In computing, &lt;b&gt;JPEG&lt;/b&gt; (seen most often with the &lt;b&gt;.jpg&lt;/b&gt; or &lt;b&gt;.jpeg&lt;/b&gt; filename extension) is a commonly used method of compression for digital images, particularly for those images produced by digital photography. The degree of compression can be adjusted, allowing a selectable tradeoff between storage size and image quality. JPEG typically achieves 10:1 compression…&lt;/p&gt;
+    &lt;p&gt;&lt;b&gt;Portable Network Graphics&lt;/b&gt; (&lt;b&gt;PNG&lt;/b&gt;) is a raster graphics file format. PNG was created as an improved, non-patented replacement for Graphics Interchange Format (GIF)…&lt;/p&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
 			<string>-1 &lt;&lt; 2 undefined behaviour</string>
 			<key>Id</key>
 			<string>10</string>
@@ -414,7 +661,7 @@ int main(int argc, char * argv[] )
 &lt;/div&gt;</string>
 			<key>q</key>
 			<string>&lt;div&gt;
-    &lt;h2&gt;Which of the following statements is incorrect?&lt;/h2&gt;
+    &lt;h2&gt;Which of the following statements is incorrect?&lt;/h2&gt;&lt;p&gt;(see answers)&lt;/p&gt;
 &lt;/div&gt;</string>
 		</dict>
 	</array>

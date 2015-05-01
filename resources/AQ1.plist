@@ -14,7 +14,7 @@
 			<key>Level</key>
 			<string>3</string>
 			<key>Tags</key>
-			<string>Screen</string>
+			<string>Linux</string>
 			<key>a</key>
 			<string>&lt;p&gt;&lt;strong&gt;xxd&lt;/strong&gt; creates a hex dump of a given file or standard input. It can also convert a hex dump back to its original binary form. Like &lt;b&gt;uuencode&lt;/b&gt; and &lt;b&gt;uudecode&lt;/b&gt; it allows the transmission of binary data in a &apos;mail-safe&apos; ASCII representation, but has the advantage of decoding to standard output. Moreover, it can be used to perform binary file patching.&lt;/p&gt;
 

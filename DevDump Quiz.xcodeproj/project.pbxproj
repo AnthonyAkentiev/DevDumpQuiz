@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99076CC41AF3AE060084FD54 /* CorrectAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99076CC31AF3AE060084FD54 /* CorrectAnswerView.swift */; };
 		9944E6B41AF38843008E544E /* ViewControllerIPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9944E6B31AF38843008E544E /* ViewControllerIPad.swift */; };
 		9969AED01AF382EC00DFB8EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969AECF1AF382EC00DFB8EE /* AppDelegate.swift */; };
 		9969AED51AF382EC00DFB8EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9969AED31AF382EC00DFB8EE /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		99076CC31AF3AE060084FD54 /* CorrectAnswerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorrectAnswerView.swift; sourceTree = "<group>"; };
 		9944E6B31AF38843008E544E /* ViewControllerIPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerIPad.swift; sourceTree = "<group>"; };
 		9969AECA1AF382EC00DFB8EE /* DevDump Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DevDump Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9969AECE1AF382EC00DFB8EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				99D5B32A1AF387A8005CE456 /* ScoreController.swift */,
 				99D5B32D1AF387A8005CE456 /* ViewController.swift */,
 				9944E6B31AF38843008E544E /* ViewControllerIPad.swift */,
+				99076CC31AF3AE060084FD54 /* CorrectAnswerView.swift */,
 				9969AED31AF382EC00DFB8EE /* Main.storyboard */,
 				9975C4041AF38E7600478404 /* StoryboardiPad.storyboard */,
 				9969AED61AF382EC00DFB8EE /* Images.xcassets */,
@@ -278,6 +281,7 @@
 				99D5B3301AF387A8005CE456 /* Model.swift in Sources */,
 				99D5B3331AF387A8005CE456 /* StartController.swift in Sources */,
 				99D5B32E1AF387A8005CE456 /* AnswerController.swift in Sources */,
+				99076CC41AF3AE060084FD54 /* CorrectAnswerView.swift in Sources */,
 				99D5B3321AF387A8005CE456 /* ScoreController.swift in Sources */,
 				99D5B3341AF387A8005CE456 /* Tags.swift in Sources */,
 				9969AED01AF382EC00DFB8EE /* AppDelegate.swift in Sources */,
