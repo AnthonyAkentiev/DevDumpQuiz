@@ -20,6 +20,23 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>GameParams</key>
+	<dict>
+		<key>IpadShowTableForAnswers</key>
+		<true/>
+		<key>DEBUG_CopyAQs</key>
+		<true/>
+		<key>IsRandomizeQuestions</key>
+		<true/>
+		<key>IsSkipAsked</key>
+		<true/>
+		<key>WaitBeforeAnswer</key>
+		<real>2</real>
+		<key>WaitBeforeGoToQuestion</key>
+		<integer>3</integer>
+		<key>WaitBeforeHideSwipeLabel</key>
+		<integer>5</integer>
+	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
