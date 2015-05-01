@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>questions</key>
+	<array>
+		<dict>
+			<key>Comment</key>
+			<string>xxd</string>
+			<key>Correct Answer</key>
+			<integer>4</integer>
+			<key>Id</key>
+			<string>30</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Tags</key>
+			<string>Screen</string>
+			<key>a</key>
+			<string>&lt;p&gt;&lt;strong&gt;xxd&lt;/strong&gt; creates a hex dump of a given file or standard input. It can also convert a hex dump back to its original binary form. Like &lt;b&gt;uuencode&lt;/b&gt; and &lt;b&gt;uudecode&lt;/b&gt; it allows the transmission of binary data in a &apos;mail-safe&apos; ASCII representation, but has the advantage of decoding to standard output. Moreover, it can be used to perform binary file patching.&lt;/p&gt;
+
+&lt;h3&gt;Examples&lt;/h3&gt;
+&lt;p&gt;Print everything but the first three lines (hex 0x30 bytes) of file.&lt;/p&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+% xxd -s 0x30 file
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Print 3 lines (hex 0x30 bytes) from the end of file.&lt;/p&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+% xxd -s -0x30 file
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Print 120 bytes as continuous hexdump with 20 octets per line.&lt;/p&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+% xxd -l 120 -ps -c 20 xxd.1
+
+2e54482058584420312022417567757374203139
+39362220224d616e75616c207061676520666f72
+20787864220a2e5c220a2e5c222032317374204d
+617920313939360a2e5c22204d616e2070616765
+20617574686f723a0a2e5c2220202020546f6e79
+204e7567656e74203c746f6e79407363746e7567
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Hexdump the first 120 bytes of this man page with 12 octets per line.&lt;/p&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+% xxd -l 120 -c 12 xxd.1
+
+0000000: 2e54 4820 5858 4420 3120 2241 .TH XXD 1 &quot;A
+000000c: 7567 7573 7420 3139 3936 2220 ugust 1996&quot;
+0000018: 224d 616e 7561 6c20 7061 6765 &quot;Manual page
+0000024: 2066 6f72 2078 7864 220a 2e5c for xxd&quot;..\
+0000030: 220a 2e5c 2220 3231 7374 204d &quot;..\&quot; 21st M
+000003c: 6179 2031 3939 360a 2e5c 2220 ay 1996..\&quot;
+0000048: 4d61 6e20 7061 6765 2061 7574 Man page aut
+0000054: 686f 723a 0a2e 5c22 2020 2020 hor:..\&quot;
+0000060: 546f 6e79 204e 7567 656e 7420 Tony Nugent
+000006c: 3c74 6f6e 7940 7363 746e 7567 &lt;tony@sctnug
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;a href=“http://linux.die.net/man/1/xxd”&gt;Man page&lt;/a&gt;</string>
+			<key>answers</key>
+			<array>
+				<string>This command converts and copies files</string>
+				<string>This command checks if file is ASCII</string>
+				<string>This command displays kernel processes </string>
+				<string>This command makes hexdump from binary file or converts hexdump to binary file</string>
+			</array>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What does xxd command do?&lt;/h2&gt;
+&lt;div&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+ubuntu@ip-172-31-15-189:~$ xxd
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>Core-dump</string>
+			<key>Correct Answer</key>
+			<integer>2</integer>
+			<key>Id</key>
+			<string>29</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Tags</key>
+			<string>General</string>
+			<key>a</key>
+			<string>&lt;h2&gt;Core dump&lt;/h2&gt;
+
+&lt;p&gt;Core dump consists of the recorded state of the working memory of a computer program at a specific time, generally when the program has terminated abnormally (crashed). In practice, other key pieces of program state are usually dumped at the same time, including the processor registers, which may include the program counter and stack pointer, memory management information, and other processor and operating system flags and information. Core dumps are often used to assist in diagnosing and debugging errors in computer programs.&lt;/p&gt;
+
+&lt;p&gt;The name comes from magnetic core memory, the principal form of random access memory from the 1950s to the 1970s. The name has remained long after magnetic core technology became obsolete.&lt;/p&gt;
+
+&lt;p&gt;On many operating systems, a &lt;b&gt;fatal error&lt;/b&gt; in a program automatically triggers a core dump; by extension the phrase &quot;to dump core&quot; has come to mean, in many cases, any fatal error, regardless of whether a record of the program memory results.&lt;/p&gt;
+
+&lt;p&gt;The term &quot;core dump&quot;, &quot;memory dump&quot;, or just &quot;dump&quot; has become jargon to indicate any storing of a large amount of raw data for further examination. However, in informal conversation between persons who know what a core dump is, saying &quot;I did a core dump of ...&quot; indicates that they expressed all of the information that they know about a particular issue. For instance, &quot;Management had me do a core dump of our software configuration process to the new interns.”&lt;/p&gt;
+
+&lt;h3&gt;Background&lt;/h3&gt;
+&lt;p&gt;Before the advent of disk operating systems and the ability to record large data file, core dumps were paper printouts of the contents of memory, typically arranged in columns of octal or hexadecimal numbers (a &quot;hex dump&quot;), sometimes accompanied by their interpretations as machine language instructions, text strings, or decimal or floating-point numbers (cf. disassembler).&lt;/p&gt;
+
+&lt;p&gt;In more recent operating systems, a &quot;core dump&quot; is a file containing the memory image of a particular &lt;b&gt;process&lt;/b&gt;, or the memory images of parts of the &lt;b&gt;address space&lt;/b&gt; of that process, along with other information such as the values of processor registers. These files can be printed or viewed as text, or analysed with specialised tools such as objdump.&lt;/p&gt;
+
+&lt;p&gt;Modern core dump files and error messages typically use hexadecimal encoding, as decimal and octal representations are less convenient to the programmer.&lt;/p&gt;
+
+&lt;h3&gt;Use of core dumps&lt;/h3&gt;
+&lt;p&gt;Core dumps can serve as useful debugging aids in several situations. On early standalone or batch-processing systems, core dumps allowed a user to debug a program without monopolizing the (very expensive) computing facility for debugging; a printout could also be more convenient than debugging using switches and lights.&lt;/p&gt;
+&lt;p&gt;On shared computers, whether time-sharing, batch processing, or server systems, core dumps allow off-line debugging of the operating system, so that the system can go back into operation immediately.&lt;/p&gt;
+
+&lt;p&gt;Core dumps allow a user to save a crash for later or off-site analysis, or comparison with other crashes. For embedded computers, it may be impractical to support debugging on the computer itself, so analysis of a dump may take place on a different computer. Some operating systems such as early versions of Unix did not support attaching debuggers to running processes, so core dumps were necessary to run a debugger on a process&apos;s memory contents.&lt;/p&gt;
+
+&lt;p&gt;Core dumps can be used to capture data freed during &lt;b&gt;dynamic memory allocation&lt;/b&gt; and may thus be used to retrieve information from a program that is no longer running. In the absence of an interactive debugger, the core dump may be used by an assiduous programmer to determine the error from direct examination.&lt;/p&gt;
+
+&lt;h3&gt;Analysis&lt;/h3&gt;
+
+&lt;p&gt;A core dump represents the complete contents of the dumped regions of the address space of the dumped process. Depending on the operating system, the dump may contain few or no data structures to aid interpretation of the memory regions. In these systems, successful interpretation requires that the program or user trying to interpret the dump understands the structure of the program&apos;s memory use.&lt;/p&gt;
+
+&lt;p&gt;A debugger can use a &lt;b&gt;symbol table&lt;/b&gt;, if one exists, to help the programmer interpret dumps, identifying variables symbolically and displaying source code; if the symbol table is not available, less interpretation of the dump is possible, but there might still be enough possible to determine the cause of the problem. There are also special-purpose tools called &lt;b&gt;dump analyzers&lt;/b&gt; to analyze dumps. 
+One popular tool, available on many operating systems, is the GNU binutils&apos; &lt;b&gt;objdump&lt;/b&gt;.&lt;/p&gt;
+
+&lt;p&gt;On modern Unix-like operating systems, administrators and programmers can read core dump files using the GNU Binutils Binary File Descriptor library (BFD), and the GNU Debugger (gdb) and objdump that use this library. This library will supply the raw data for a given address in a memory region from a core dump; it does not know anything about variables or data structures in that memory region, so the application using the library to read the core dump will have to determine the addresses of variables and determine the layout of data structures itself, for example by using the symbol table for the program undergoing debugging.&lt;/p&gt;
+
+&lt;p&gt;Analysts of crash dumps from Linux systems can use &lt;b&gt;kdump&lt;/b&gt; or the &lt;b&gt;Linux Kernel Crash Dump&lt;/b&gt; (&lt;b&gt;LKCD&lt;/b&gt;).&lt;/p&gt;
+
+&lt;p&gt;Core dumps can save the context (state) of a process at a given state for returning to it later. Systems can be made highly available by transferring core between processors, sometimes via core dump files themselves.&lt;/p&gt;
+
+&lt;p&gt;Core can also be dumped onto a remote host over a network (which is a security risk).&lt;/p&gt;
+
+&lt;a hred=“http://en.wikipedia.org/wiki/Core_dump”&gt;Wikipedia&lt;/a&gt;</string>
+			<key>answers</key>
+			<array>
+				<string>hexfile</string>
+				<string>core dump</string>
+				<string>binary file</string>
+				<string>kernel image</string>
+			</array>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What word(s) is missing?&lt;/h2&gt;
+    &lt;p&gt;— consists of the recorded state of the working memory of a computer program at a specific time, generally when the program has terminated abnormally (crashed). In practice, other key pieces of program state are usually dumped at the same time, including the processor registers, which may include the program counter and stack pointer, memory management information, and other processor and operating system flags and information. — are often used to assist in diagnosing and debugging errors in computer programs.&lt;/p&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>/dev/tty2</string>
+			<key>Correct Answer</key>
+			<integer>2</integer>
+			<key>Id</key>
+			<string>28</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Tags</key>
+			<string>Linux</string>
+			<key>a</key>
+			<string>&lt;p&gt;A &lt;strong&gt;virtual console&lt;/strong&gt; (&lt;strong&gt;VC&lt;/strong&gt;) – also known as a &lt;strong&gt;virtual terminal&lt;/strong&gt; (&lt;strong&gt;VT&lt;/strong&gt;) – is a conceptual combination of the keyboard and display for a computer user interface. It is a feature of some operating systems such as BSD, Linux, and UnixWare in which the system console of the computer can be used to switch between multiple virtual consoles to access unrelated user interfaces. Virtual consoles date back at least to Xenix in the 1980s.&lt;/p&gt;
+
+&lt;p&gt;Usually in Linux, the first six virtual consoles provide a text terminal with a login prompt to a Unix shell. The graphical X Window System starts in the seventh virtual console. In Linux, the user switches between them with the key combination Alt plus a function key – for example &lt;i&gt;Alt+F1&lt;/i&gt; to access the virtual console number 1. &lt;i&gt;Alt+Left&lt;/i&gt; arrow changes to the previous virtual console and &lt;i&gt;Alt+Right arrow&lt;/i&gt; to the next virtual console. To switch from the X Window System, &lt;i&gt;Ctrl+Alt+function key&lt;/i&gt; works. (Note that users can redefine these default key combinations.)&lt;/p&gt;
+
+&lt;p&gt;The need for virtual consoles has lessened now that most applications work in the graphical framework of the X Window System, where each program has a window and the text mode programs can be run in terminal-emulator windows. If several sessions of the X Window System are required to run in parallel, such as in the case of fast user switching or when debugging X programs on a separate X server, each X session usually runs in a separate virtual console. GNU Screen is a program that can change between several text-mode programs in one textual login.&lt;/p&gt;
+
+&lt;p&gt;The virtual consoles are represented by device special files /dev/tty1, /dev/tty2, etc. There are also special files /dev/console, /dev/tty and /dev/tty0. (Compare the devices using the patterns vcs (&quot;virtual console screen&quot;) and vcsa (&quot;virtual console screen with attributes&quot;) such as /dev/vcs1 and /dev/vcsa1.) The virtual consoles can be configured in the file &lt;strong&gt;/etc/inittab&lt;/strong&gt; read by init -- typically it starts the text mode login process getty for several virtual consoles. X Window System can be configured in /etc/inittab or by an X display manager. A number of Linux distributions use systemd instead of init, which also allows virtual console configuration. Programs used to access the virtual consoles typically include:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;chvt to switch the current virtual console&lt;/li&gt;
+&lt;li&gt;openvt to run a program on a new virtual console&lt;/li&gt;
+&lt;li&gt;deallocvt to close a currently unused virtual console&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The program &lt;i&gt;startx&lt;/i&gt; starts the X Window System on a new virtual console. There are also other graphical programs that can start from the console, such as LinuxTV and MPlayer.&lt;/p&gt;
+
+&lt;p&gt;Programs can access the virtual consoles by the device special files. In text mode, writing to the file displays text on the virtual console and reading from the file returns text the user writes to the virtual console. As with other text terminals, there are also special escape sequences, control characters and termios functions that a program can use, most easily via a library such as ncurses.&lt;/p&gt;
+
+&lt;p&gt;For more complex operations, the programs can use console and terminal special &lt;i&gt;ioctl&lt;/i&gt; system calls. Graphical programs can use libraries such as DirectFB, DRI, SDL or the earlier SVGALib.&lt;/p&gt;
+
+&lt;a href=“http://en.wikipedia.org/wiki/Virtual_console”&gt;Wikipedia&lt;/a&gt;</string>
+			<key>answers</key>
+			<array>
+				<string>/dev/tty2 is a fake device that can be used like /dev/null</string>
+				<string>/dev/tty2 is the virtual terminal (device special file)</string>
+				<string>/dev/tty2 is the serial port terminal (device special file)</string>
+				<string>/dev/tty2 is the virtual serial port emulator device</string>
+			</array>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What /dev/tty2 device represents?&lt;/h2&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+ubuntu@ip-172-31-15-189:~$ sudo ls -al /dev/tty2
+
+crw-rw---- 1 root tty 4, 2 Apr 18 13:58 /dev/tty2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+ubuntu@ip-172-31-15-189:~$ sudo stty -a -F /dev/tty2
+
+speed 38400 baud; rows 25; columns 80; line = 0;
+intr = ^C; quit = ^\; erase = ^?; kill = ^U; eof = ^D; eol = &lt;undef&gt;; eol2 = &lt;undef&gt;; swtch = &lt;undef&gt;; start = ^Q; stop = ^S; susp = ^Z; rprnt = ^R;
+werase = ^W; lnext = ^V; flush = ^O; min = 1; time = 0;
+-parenb -parodd cs8 hupcl -cstopb cread -clocal -crtscts
+-ignbrk brkint -ignpar -parmrk -inpck -istrip -inlcr -igncr icrnl ixon -ixoff -iuclc -ixany imaxbel iutf8
+opost -olcuc -ocrnl onlcr -onocr -onlret -ofill -ofdel nl0 cr0 tab0 bs0 vt0 ff0
+isig icanon iexten echo echoe echok -echonl -noflsh -xcase -tostop -echoprt -echoctl echoke
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>screen</string>
+			<key>Correct Answer</key>
+			<integer>4</integer>
+			<key>Id</key>
+			<string>27</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Tags</key>
+			<string>Linux</string>
+			<key>a</key>
+			<string>&lt;p&gt;Suppose you want to run a program persistently (even if a terminal window closes, for example). For that, you might use the &lt;b&gt;nohup command&lt;/b&gt;. But what if you want to start a command-line session on one computer and then go home and resume that session? For something like that, you’ll want to use &lt;b&gt;screen&lt;/b&gt;. Screen is also really handy because you can have multiple shells running in one terminal window.&lt;/p&gt;
+
+&lt;p&gt;Here’s the basics of how to use screen on a Linux/Ubuntu machine. First, create a session:&lt;/p&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+screen -S sessionname
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It’s good to choose a descriptive session name. For example, before I switched to using Gmail I used &lt;b&gt;mutt&lt;/b&gt;. So I would often start a session with the command “screen -S mutt” in one terminal window. If I went home, I could attach to that session from home, so I never needed to start-up or shutdown mutt.&lt;/p&gt;
+
+&lt;p&gt;You can easily have 10 interactive shells (numbered from 0 to 9) open in one terminal window. When you start a new session, you’ll be in shell 0. To create a new shell, hold down the “Control” key, press and release the ‘a’ key, and then type the letter ‘c’. I’ll write this as:&lt;/p&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+To create a new interactive shell, press Control-a c
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Switching between shells is easy too:&lt;/p&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+To switch between shells, press Control-a # where # is the number of the shell. For example, to switch to shell number 1, press Control-a 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Voilà! Now you can easily run 10 different shells in one terminal window! But what about if you want to go home and attach to a session from home? Use something like ssh to get on your work machine. Then here’s the command:&lt;/p&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+screen -d -R sessionname will resume a session that you started in a different location.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Technically this command is doing some special things. If you started the session somewhere else, the “-d” option will “detach” it at the other location, and “-R” will reattach your current terminal window to the session. If sessionname hasn’t been created, it will create the session for you. So the command above will migrate a session to your current window and disable the session at other locations. That’s usually what you want.&lt;/p&gt;
+
+&lt;a href=“https://www.mattcutts.com/blog/a-quick-tutorial-on-screen/”&gt;Matt Cutts Blog&lt;/a&gt;</string>
+			<key>answers</key>
+			<array>
+				<string>I can use -r flag for ssh client to restore connection </string>
+				<string>I must create initial ssh connection with --preserve flag and then can reconnect using -r flag if my connection is broken</string>
+				<string>I can create new virtual terminal /dev/ttyN with -forever option </string>
+				<string>I can use screen command</string>
+			</array>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;How to keep remote SSH shell active even through network disruptions?&lt;/h2&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+# I want to connect to remote computer with Secure Shell:
+ssh root@12.134.439.1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Then i enter password and finally my shell appears:&lt;/p&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.13.0-29-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Apr 22 21:18:33 UTC 2015
+
+  System load:  0.0               Processes:           115
+  Usage of /:   72.9% of 9.71GB   Users logged in:     0
+  Memory usage: 52%               IP address for eth0: 172.31.15.189
+  Swap usage:   0%
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+112 packages can be updated.
+64 updates are security updates.
+
+
+*** /dev/xvda1 should be checked for errors ***
+
+Last login: Wed Apr 22 21:18:34 2014 from ppp37-190-50-58.pppoe.aol.com
+ubuntu@ip-172-31-15-189:~$ 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I need to run some long-executing command and get the result.&lt;p&gt;
+&lt;p&gt;What if my internet connection will be broken?&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>Top half</string>
+			<key>Correct Answer</key>
+			<integer>1</integer>
+			<key>Id</key>
+			<string>26</string>
+			<key>Level</key>
+			<string>4</string>
+			<key>Tags</key>
+			<string>Linux, Low-level, Drivers</string>
+			<key>a</key>
+			<string>&lt;h3&gt;Top and Bottom Halves&lt;/h3&gt;
+
+&lt;p&gt;One of the main problems with interrupt handling is how to perform lengthy tasks within a handler. Often a substantial amount of work must be done in response to a device interrupt, but interrupt handlers need to finish up quickly and not keep interrupts blocked for long. These two needs (work and speed) conflict with each other, leaving the driver writer in a bit of a bind.&lt;/p&gt;
+
+&lt;p&gt;Linux (along with many other systems) resolves this problem by splitting the interrupt handler into two halves. The so-called &lt;i&gt;top half&lt;/i&gt; is the routine that actually responds to the interrupt—the one you register with &lt;i&gt;request_irq&lt;/i&gt;. The &lt;i&gt;bottom half&lt;/i&gt; is a routine that is scheduled by the top half to be executed later, at a safer time. The big difference between the top-half handler and the bottom half is that all interrupts are enabled during execution of the bottom half—that&apos;s why it runs at a safer time. In the typical scenario, the top half saves device data to a device-specific buffer, schedules its bottom half, and exits: this operation is very fast. The bottom half then performs whatever other work is required, such as awakening processes, starting up another I/O operation, and so on. This setup permits the top half to service a new interrupt while the bottom half is still working.&lt;/p&gt;
+
+&lt;p&gt;Almost every serious interrupt handler is split this way. For instance, when a network interface reports the arrival of a new packet, the handler just retrieves the data and pushes it up to the protocol layer; actual processing of the packet is performed in a bottom half.&lt;/p&gt;
+
+&lt;p&gt;The Linux kernel has two different mechanisms that may be used to implement bottom-half processing. &lt;b&gt;Tasklets&lt;/b&gt; are often the preferred mechanism for bottom-half processing; they are very fast, but all tasklet code must be atomic. The alternative to tasklets is &lt;b&gt;workqueues&lt;/b&gt;, which may have a higher latency but that are allowed to sleep.&lt;/p&gt;
+
+&lt;h3&gt;Tasklets&lt;/h3&gt;
+
+&lt;p&gt;Remember that tasklets are a special function that may be scheduled to run, in software interrupt context, at a system-determined safe time. They may be scheduled to run multiple times, but tasklet scheduling is not cumulative; the tasklet runs only once, even if it is requested repeatedly before it is launched. No tasklet ever runs in parallel with itself, since they run only once, but tasklets can run in parallel with other tasklets on SMP systems. Thus, if your driver has multiple tasklets, they must employ some sort of locking to avoid conflicting with each other.&lt;/p&gt;
+
+&lt;p&gt;Tasklets are also guaranteed to run on the same CPU as the function that first schedules them. Therefore, an interrupt handler can be secure that a tasklet does not begin executing before the handler has completed. However, another interrupt can certainly be delivered while the tasklet is running, so locking between the tasklet and the interrupt handler may still be required.&lt;/p&gt;
+
+&lt;p&gt;Tasklets must be declared with the DECLARE_TASKLET macro:&lt;/p&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-clike&quot;&gt;
+DECLARE_TASKLET(name, function, data);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;name&lt;/strong&gt; is the name to be given to the tasklet, &lt;strong&gt;function&lt;/strong&gt; is the function that is called to execute the tasklet (it takes one unsigned long argument and returns void), and &lt;strong&gt;data&lt;/strong&gt; is an unsigned long value to be passed to the &lt;i&gt;tasklet&lt;/i&gt; function.
+The short (sample driver introduced in this book) driver declares its tasklet as follows:&lt;/p&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-clike&quot;&gt;
+void short_do_tasklet(unsigned long);
+DECLARE_TASKLET(short_tasklet, short_do_tasklet, 0);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The function &lt;i&gt;tasklet_schedule&lt;/i&gt; is used to schedule a tasklet for running. If  &lt;i&gt;short&lt;/i&gt; is loaded with tasklet=1, it installs a different interrupt handler that saves data and schedules the tasklet as follows:&lt;/p&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-clike&quot;&gt;
+irqreturn_t short_tl_interrupt(int irq, void *dev_id, struct pt_regs *regs)
+{
+    do_gettimeofday((struct timeval *) tv_head); /* cast to stop &apos;volatile&apos; warning */
+    short_incr_tv(&amp;tv_head);
+    tasklet_schedule(&amp;short_tasklet);
+    short_wq_count++; /* record that an interrupt arrived */
+    return IRQ_HANDLED;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The actual tasklet routine, &lt;i&gt;short_do_tasklet&lt;/i&gt;, will be executed shortly (so to speak) at the system&apos;s convenience. As mentioned earlier, this routine performs the bulk of the work of handling the interrupt; it looks like this:&lt;/p&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-clike&quot;&gt;
+void short_do_tasklet (unsigned long unused)
+{
+    int savecount = short_wq_count, written;
+    short_wq_count = 0; /* we have already been removed from the queue */
+    /*
+     * The bottom half reads the tv array, filled by the top half,
+     * and prints it to the circular text buffer, which is then consumed
+     * by reading processes
+     */
+
+    /* First write the number of interrupts that occurred before this bh */
+    written = sprintf((char *)short_head,&quot;bh after %6i\n&quot;,savecount);
+    short_incr_bp(&amp;short_head, written);
+
+    /*
+     * Then, write the time values. Write exactly 16 bytes at a time,
+     * so it aligns with PAGE_SIZE
+     */
+
+    do {
+        written = sprintf((char *)short_head,&quot;%08u.%06u\n&quot;,
+                (int)(tv_tail-&gt;tv_sec % 100000000),
+                (int)(tv_tail-&gt;tv_usec));
+        short_incr_bp(&amp;short_head, written);
+        short_incr_tv(&amp;tv_tail);
+    } while (tv_tail != tv_head);
+
+    wake_up_interruptible(&amp;short_queue); /* awake any reading process */
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Among other things, this tasklet makes a note of how many interrupts have arrived since it was last called. A device such as &lt;i&gt;short&lt;/i&gt; can generate a great many interrupts in a brief period, so it is not uncommon for several to arrive before the bottom half is executed. Drivers must always be prepared for this possibility and must be able to determine how much work there is to perform from the information left by the top half.&lt;/p&gt;
+
+&lt;h3&gt;Workqueues&lt;/h3&gt;
+&lt;p&gt;Recall that workqueues invoke a function at some future time in the context of a special worker process. Since the &lt;i&gt;workqueue&lt;/i&gt; function runs in process context, it can sleep if need be. You cannot, however, copy data into user space from a workqueue, unless you use the advanced techniques we demonstrate in Chapter 15; the worker process does not have access to any other process&apos;s address space.&lt;/p&gt;
+
+&lt;p&gt;The &lt;i&gt;short&lt;/i&gt; driver, if loaded with the  &lt;i&gt;wq&lt;/i&gt; option set to a nonzero value, uses a workqueue for its bottom-half processing. It uses the system default workqueue, so there is no special setup code required; if your driver has special latency requirements (or might sleep for a long time in the &lt;i&gt;workqueue&lt;/i&gt; function), you may want to create your own, dedicated workqueue. We do need a &lt;i&gt;work_struct&lt;/i&gt; structure, which is declared and initialized with the following:&lt;/p&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-clike&quot;&gt;
+static struct work_struct short_wq;
+
+/* this line is in short_init(  ) */
+INIT_WORK(&amp;short_wq, (void (*)(void *)) short_do_tasklet, NULL);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Our worker function is &lt;i&gt;short_do_tasklet&lt;/i&gt;, which we have already seen in the previous section.&lt;/p&gt;
+&lt;p&gt;When working with a workqueue, &lt;i&gt;short&lt;/i&gt; establishes yet another interrupt handler that looks like this:&lt;/p&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-clike&quot;&gt;
+irqreturn_t short_wq_interrupt(int irq, void *dev_id, struct pt_regs *regs)
+{
+    /* Grab the current time information. */
+    do_gettimeofday((struct timeval *) tv_head);
+    short_incr_tv(&amp;tv_head);
+
+    /* Queue the bh. Don&apos;t worry about multiple enqueueing */
+    schedule_work(&amp;short_wq);
+
+    short_wq_count++; /* record that an interrupt arrived */
+    return IRQ_HANDLED;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As you can see, the interrupt handler looks very much like the tasklet version, with the exception that it calls schedule_work to arrange the bottom-half processing.&lt;/p&gt;
+
+&lt;a href=“http://www.makelinux.net/ldd3/chp-10-sect-4”&gt;Source&lt;/a&gt;</string>
+			<key>answers</key>
+			<array>
+				<string>It must be finished up quickly and usually schedules bottom half to be executed later</string>
+				<string>It was scheduled by bottom half and usually execute long tasks</string>
+				<string>It must be finished up quickly and usually schedules DPC (deferred procedure call) to be executed later</string>
+			</array>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What top half usually does on device interrupt?&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-clike&quot;&gt;
+/* Drivers can register an interrupt handler and enable a given interrupt line for handling via the function*/
+/* request_irq: allocate a given interrupt line */
+int request_irq(unsigned int irq,
+                irqreturn_t (*handler)(int, void *, struct pt_regs *),
+                unsigned long irqflags,
+                const char *devname,
+                void *dev_id)
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>bzimage</string>
+			<key>Correct Answer</key>
+			<integer>3</integer>
+			<key>Id</key>
+			<string>25</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Tags</key>
+			<string>Linux, Low-level</string>
+			<key>a</key>
+			<string>&lt;h3&gt;bzimage&lt;/h3&gt;
+
+&lt;p&gt;As the Linux kernel matured, the size of the kernels generated by users grew beyond the limits imposed by some architectures, where the space available to store the compressed kernel code is limited.&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;bzImage&lt;/strong&gt; (big zImage) format was developed to overcome this limitation by splitting the kernel over discontiguous memory regions.&lt;/p&gt;
+
+&lt;p&gt;The bzImage was compressed using gzip until Linux 2.6.30 which introduced more algorithms. Although there is the popular misconception that the bz prefix means that bzip2 compression is used (the bzip2 package is often distributed with tools prefixed with bz, such as bzless, bzcat, etc.), this is not the case.&lt;/p&gt;
+
+&lt;p&gt;The bzImage file is in a specific format: It contains concatenated bootsect.o + setup.o + misc.o + piggy.o.&lt;/p&gt;
+
+&lt;p&gt;piggy.o contains the gzipped &lt;strong&gt;vmlinux&lt;/strong&gt; file in its data section (ELF) (see compressed/Makefile piggy.o). All source files mentioned are in arch/i386/boot/.&lt;/p&gt;
+
+&lt;p&gt;The script extract-vmlinux found under scripts/ in the kernel sources decompresses a kernel image. Some distributions (e.g. Red Hat and clones) may come with a kernel-debuginfo RPM that contains the vmlinux file for the matching kernel RPM, it typically gets installed under /usr/lib/debug/lib/modules/`uname -r`/vmlinux&lt;/p&gt;
+&lt;a href=“http://en.wikipedia.org/wiki/Vmlinux”&gt;Wikipedia&lt;/a&gt;</string>
+			<key>answers</key>
+			<array>
+				<string>Bzip2 compressed kernel image</string>
+				<string>Bzip2 compressed zimage</string>
+				<string>Big zimage</string>
+			</array>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What bzimage stands for?&lt;/h2&gt;
+&lt;div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>vmlinuz</string>
+			<key>Correct Answer</key>
+			<integer>3</integer>
+			<key>Id</key>
+			<string>24</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Tags</key>
+			<string>Linux, Low-level</string>
+			<key>a</key>
+			<string>&lt;p&gt;On Linux systems, &lt;strong&gt;vmlinux&lt;/strong&gt; is a statically linked executable file that contains the Linux kernel in one of the object file formats supported by Linux, which includes ELF, COFF and a.out. The vmlinux file might be required for kernel debugging, symbol table generation or other operations, but must be made bootable before being used as an operating system kernel by adding a multiboot header, bootsector and setup routines.&lt;/p&gt;
+
+&lt;p&gt;Traditionally, UNIX platforms called the kernel image /unix. With the development of virtual memory, kernels that supported this feature were given the &lt;strong&gt;vm-&lt;/strong&gt; prefix to differentiate them. The name &lt;i&gt;vmlinux&lt;/i&gt; is a mutation of vmunix, while in &lt;i&gt;vmlinuz&lt;/i&gt; the letter z at the end denotes that it is compressed (gzipped).&lt;/p&gt;
+
+&lt;h3&gt;Location&lt;/h3&gt;
+&lt;p&gt;Traditionally, the kernel was located in the root directory of the filesystem hierarchy; however, as the bootloader must use BIOS drivers to access the hard disk, limitations on some i386 systems meant only the first 1024 cylinders of the hard disk were addressable.&lt;/p&gt;
+
+&lt;p&gt;To overcome this, Linux distributors encouraged users to create a partition at the beginning of their drives specifically for storing bootloader and kernel related files. GRUB, LILO and SYSLINUX are common bootloaders.&lt;/p&gt;
+
+&lt;p&gt;By convention, this partition is mounted on the filesystem hierarchy as /boot. This was later standardised by the Filesystem Hierarchy Standard, or &lt;i&gt;FHS&lt;/i&gt;, which now requires the Linux kernel image to be located in either / or /boot, although there is no technical restriction enforcing this.&lt;/p&gt;
+
+&lt;h3&gt;Compression&lt;/h3&gt;
+
+&lt;p&gt;Traditionally, when creating a bootable kernel image, the kernel is also compressed using gzip, or since Linux 2.6.30, using LZMA or bzip2, which requires a very small decompression stub to be included in the resulting image. The stub decompresses the kernel code, on some systems printing dots to the console to indicate progress, and then continues the boot process.&lt;/p&gt;
+
+&lt;p&gt;The decompression routine is a negligible factor in boot time, and prior to the development of the &lt;i&gt;bzImage&lt;/i&gt;, the size constraints of some architectures, notably i386, were extremely limiting, making compression a necessity.&lt;/p&gt;
+
+&lt;p&gt;On the SPARC architecture, the vmlinux file is compressed using simple gzip, because the SILO boot loader transparently decompresses gzipped images.
+The filename of the bootable image is not important.&lt;/p&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+$ readelf -h vmlinux
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00
+  Class:                             ELF64
+  Data:                              2&apos;s complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x1000000
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          13951312 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         5
+  Size of section headers:           64 (bytes)
+  Number of section headers:         45
+  Section header string table index: 42
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;a href=“http://en.wikipedia.org/wiki/Vmlinux”&gt;Wikipedia&lt;/a&gt;</string>
+			<key>answers</key>
+			<array>
+				<string>This file is statically linked file that contains kernel image</string>
+				<string>This file contains virtual memory region that can be accessed as regular file by superuser process</string>
+				<string>This file is a compressed statically linked object file that contains linux kernel image</string>
+				<string>This file contains mapped virtual memory that can be accessed as regular file by superuser process</string>
+			</array>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What &lt;strong&gt;vmlinuz&lt;/strong&gt; file contains?&lt;/h2&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash”&gt;
+ubuntu@ip-172-31-15-189:~$ ls -al /vmlinuz 
+lrwxrwxrwx 1 root root 30 Jun  7  2014 /vmlinuz -&gt; boot/vmlinuz-3.13.0-29-generic
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>find metallica</string>
+			<key>Correct Answer</key>
+			<integer>1</integer>
+			<key>Id</key>
+			<string>23</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Tags</key>
+			<string>Linux</string>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;p&gt;This command will find files that begin with &apos;Metallica&apos; in their names &lt;strong&gt;OR&lt;/strong&gt; all the files that are greater than &lt;strong&gt;10 MB&lt;/strong&gt; in size.&lt;/p&gt;
+&lt;/div&gt;	
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+find /mp3-collection -name &apos;Metallica*&apos; -or -size +10000k
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;GNU &lt;strong&gt;find&lt;/strong&gt; searches the directory tree rooted at each given file name by evaluating the given expression from left to right, according to the rules of precedence (see section OPERATORS), until the outcome is known (the left hand side is false for &lt;i&gt;and&lt;/i&gt; operations, true for &lt;i&gt;or&lt;/i&gt;), at which point &lt;strong&gt;find&lt;/strong&gt; moves on to the next file name.&lt;/p&gt;
+
+&lt;h2&gt;Options&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;-H&lt;/strong&gt;, &lt;strong&gt;-L&lt;/strong&gt; and &lt;strong&gt;-P&lt;/strong&gt; options control the treatment of symbolic links. Command-line arguments following these are taken to be names of files or directories to be examined, up to the first argument that begins with &apos;-&apos;, or the argument &apos;(&apos; or &apos;!&apos;. That argument and any following arguments are taken to be the expression describing what is to be searched for. If no paths are given, the current directory is used. If no expression is given, the expression &lt;strong&gt;-print&lt;/strong&gt; is used (but you should probably consider using &lt;strong&gt;-print0&lt;/strong&gt; instead, anyway).&lt;/p&gt;
+
+&lt;p&gt;This manual page talks about &apos;options&apos; within the expression list. These options control the behaviour of &lt;strong&gt;find&lt;/strong&gt; but are specified immediately after the last path name. The five &apos;real&apos; options &lt;strong&gt;-H&lt;/strong&gt;, &lt;strong&gt;-L&lt;/strong&gt;, &lt;strong&gt;-P&lt;/strong&gt;, &lt;strong&gt;-D&lt;/strong&gt; and &lt;strong&gt;-O&lt;/strong&gt; must appear before the first path name, if at all. A double dash &lt;strong&gt;—&lt;/strong&gt; can also be used to signal that any remaining arguments are not options (though ensuring that all start points begin with either &apos;./&apos; or &apos;/&apos; is generally safer if you use wildcards in the list of start points).&lt;/p&gt;
+
+&lt;h3&gt;-P&lt;/h3&gt;
+&lt;p&gt;Never follow symbolic links. This is the default behaviour. When &lt;strong&gt;find&lt;/strong&gt; examines or prints information a file, and the file is a symbolic link, the information used shall be taken from the properties of the symbolic link itself.&lt;/p&gt;
+
+&lt;h3&gt;-L&lt;/h3&gt;
+&lt;p&gt;Follow symbolic links. When &lt;strong&gt;find&lt;/strong&gt; examines or prints information about files, the information used shall be taken from the properties of the file to which the link points, not from the link itself (unless it is a broken symbolic link or &lt;strong&gt;find&lt;/strong&gt; is unable to examine the file to which the link points). Use of this option implies &lt;strong&gt;-noleaf&lt;/strong&gt;. If you later use the &lt;strong&gt;-P&lt;/strong&gt; option, &lt;strong&gt;-noleaf&lt;/strong&gt; will still be in effect. If &lt;strong&gt;-L&lt;/strong&gt; is in effect and &lt;strong&gt;find&lt;/strong&gt; discovers a symbolic link to a subdirectory during its search, the subdirectory pointed to by the symbolic link will be searched.&lt;/p&gt;
+
+&lt;p&gt;When the &lt;strong&gt;-L&lt;/strong&gt; option is in effect, the &lt;strong&gt;-type&lt;/strong&gt; predicate will always match against the type of the file that a symbolic link points to rather than the link itself (unless the symbolic link is broken). Using &lt;strong&gt;-L&lt;/strong&gt; causes the &lt;strong&gt;-lname&lt;/strong&gt; and &lt;strong&gt;-ilname&lt;/strong&gt; predicates always to return false.&lt;/p&gt;
+
+&lt;h3&gt;-H&lt;/h3&gt;
+&lt;p&gt;Do not follow symbolic links, except while processing the command line arguments. When &lt;strong&gt;find&lt;/strong&gt; examines or prints information about files, the information used shall be taken from the properties of the symbolic link itself. The only exception to this behaviour is when a file specified on the command line is a symbolic link, and the link can be resolved. For that situation, the information used is taken from whatever the link points to (that is, the link is followed). The information about the link itself is used as a fallback if the file pointed to by the symbolic link cannot be examined. If &lt;strong&gt;-H&lt;/strong&gt; is in effect and one of the paths specified on the command line is a symbolic link to a directory, the contents of that directory will be examined (though of course &lt;strong&gt;-maxdepth 0&lt;/strong&gt; would prevent this).&lt;/p&gt;
+
+&lt;p&gt;If more than one of &lt;strong&gt;-H&lt;/strong&gt;, &lt;strong&gt;-L&lt;/strong&gt;, &lt;strong&gt;-P&lt;/strong&gt; is specified, each overrides the others; the last one appearing on the command line takes effect. Since it is the default, the &lt;strong&gt;-P&lt;/strong&gt; option should be considered to be in effect unless either &lt;strong&gt;-H&lt;/strong&gt; or &lt;strong&gt;-L&lt;/strong&gt; is specified.&lt;/p&gt;
+
+&lt;p&gt;GNU &lt;strong&gt;find&lt;/strong&gt; frequently stats files during the processing of the command line itself, before any searching has begun. These options also affect how those arguments are processed. Specifically, there are a number of tests that compare files listed on the command line against a file we are currently considering. In each case, the file specified on the command line will have been examined and some of its properties will have been saved. If the named file is in fact a symbolic link, and the &lt;strong&gt;-P&lt;/strong&gt; option is in effect (or if neither &lt;strong&gt;-H&lt;/strong&gt; nor &lt;strong&gt;-L&lt;/strong&gt; were specified), the information used for the comparison will be taken from the properties of the symbolic link. Otherwise, it will be taken from the properties of the file the link points to. If &lt;strong&gt;find&lt;/strong&gt; cannot follow the link (for example because it has insufficient privileges or the link points to a nonexistent file) the properties of the link itself will be used.&lt;/p&gt;
+
+&lt;p&gt;When the &lt;strong&gt;-H&lt;/strong&gt; or &lt;strong&gt;-L&lt;/strong&gt; options are in effect, any symbolic links listed as the argument of &lt;strong&gt;-newer&lt;/strong&gt; will be dereferenced, and the timestamp will be taken from the file to which the symbolic link points. The same consideration applies to &lt;strong&gt;-newerXY&lt;/strong&gt;, &lt;strong&gt;-anewer&lt;/strong&gt; and &lt;strong&gt;-cnewer&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;-follow&lt;/strong&gt; option has a similar effect to &lt;strong&gt;-L&lt;/strong&gt;, though it takes effect at the point where it appears (that is, if &lt;strong&gt;-L&lt;/strong&gt; is not used but &lt;strong&gt;-follow&lt;/strong&gt; is, any symbolic links appearing after &lt;strong&gt;-follow&lt;/strong&gt; on the command line will be dereferenced, and those before it will not).&lt;/p&gt;
+
+&lt;a href=“http://linux.die.net/man/1/find”&gt;Man page&lt;/a&gt;</string>
+			<key>answers</key>
+			<array>
+				<string>This command will find Metallica* files AND all files that are bigger than 10 MB</string>
+				<string>This command will find Metallica* files OR all files that are bigger than 10 MB</string>
+				<string>This command will find Metallica* files that are bigger than 10 MB</string>
+			</array>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What will this command find?&lt;/h2&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+find /mp3-collection -name &apos;Metallica*&apos; -or -size +10000k
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>JFS filesystem</string>
+			<key>Correct Answer</key>
+			<integer>4</integer>
+			<key>Id</key>
+			<string>22</string>
+			<key>Level</key>
+			<string>4</string>
+			<key>Tags</key>
+			<string>Linux, Unix, IT History</string>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;JFS file system was developed by:&lt;/h2&gt;
+    &lt;p&gt;IBM&lt;/p&gt;
+&lt;div&gt;
+
+&lt;p&gt;&lt;strong&gt;Journaled File System&lt;/strong&gt; or &lt;strong&gt;JFS&lt;/strong&gt; is a 64-bit journaling file system created by IBM. There are versions for AIX, eComStation, OS/2, and Linux operating systems. The latter is available as free software under the terms of the GNU General Public License (GPL). HP-UX has another, different filesystem named JFS that is actually an OEM version of Veritas Software&apos;s VxFS.&lt;/p&gt;
+
+&lt;p&gt;In the AIX operating system, there exist two generations of JFS filesystem that are called &lt;i&gt;JFS&lt;/i&gt; (&lt;i&gt;JFS1&lt;/i&gt;) and &lt;i&gt;JFS2&lt;/i&gt; respectively. In the other operating systems, such as OS/2 and Linux, only the second generation exists and is called simply &lt;i&gt;JFS&lt;/i&gt;. This should not be confused with JFS in AIX that actually refers to JFS1.&lt;/p&gt;
+
+&lt;p&gt;IBM introduced JFS with the initial release of AIX version 3.1 in February, 1990. This file system, now called &lt;i&gt;JFS1 on AIX&lt;/i&gt;, had been the premier file system for AIX over the following decade and had been installed in thousands or millions of customers&apos; AIX systems. Historically, the JFS1 file system is very closely tied to the memory manager of AIX, which is a typical design for a file system supporting only one operating system.&lt;/p&gt;
+
+&lt;p&gt;In 1995, work began to enhance the file system to be more scalable and to support machines that had more than one processor. Another goal was to have a more portable file system, capable of running on multiple operating systems. After several years of designing, coding, and testing, the new JFS was first shipped in OS/2 Warp Server for eBusiness in April, 1999, and then in OS/2 Warp Client in October, 2000. In December, 1999, a snapshot of the original OS/2 JFS source was granted to the open source community and work was begun to port JFS to the Linux operating system.&lt;/p&gt; 
+
+&lt;p&gt;The first stable release of &lt;i&gt;JFS for Linux&lt;/i&gt; appeared in June, 2001. The &lt;i&gt;JFS for Linux&lt;/i&gt; project is maintained by a small group of contributors known as the &lt;i&gt;JFS Core Team&lt;/i&gt;. This release of sources also worked to form the basis of a re-port back to OS/2 of the open-source JFS.&lt;/p&gt;
+
+&lt;p&gt;In parallel with this effort, some of the JFS development team returned to the AIX Operating System Development Group in 1997 and started to move this new JFS source base to the AIX operating system. In May, 2001, a second journaled file system, &lt;i&gt;Enhanced Journaled File System&lt;/i&gt; (&lt;i&gt;JFS2&lt;/i&gt;), was made available for AIX 5L.&lt;/p&gt;
+
+&lt;p&gt;Early in 2008 there was speculation that IBM is no longer interested in maintaining JFS and thus it should not be used in production environments. However, Dave Kleikamp, a member of the IBM Linux Technology Center and JFS Core Team, explained that they still follow changes in the Linux kernel and try to fix potential software bugs. He went on to add that certain distributions expect a larger resource commitment from them and opt not to support the filesystem.&lt;/p&gt;
+
+&lt;h3&gt;In 2012, TRIM Support was added to JFS&lt;/h3&gt;
+&lt;p&gt;A &lt;strong&gt;Trim command&lt;/strong&gt; (commonly typeset as &lt;strong&gt;TRIM&lt;/strong&gt;) allows an operating system to inform a solid-state drive (SSD) which blocks of data are no longer considered in use and can be wiped internally.&lt;/p&gt;
+
+&lt;p&gt;Trim was introduced soon after SSDs started to become an affordable alternative to traditional hard disks. Because low-level operation of SSDs differs significantly from hard drives, the typical way in which operating systems handle operations like deletes and formats resulted in unanticipated progressive performance degradation of write operations on SSDs. Trimming enables the SSD to handle garbage collection overhead, which would otherwise significantly slow down future write operations to the involved blocks, in advance.&lt;/p&gt;
+
+&lt;p&gt;Although tools to &quot;reset&quot; some drives to a fresh state were already available before the introduction of trimming, they also delete all data on the drive, which makes them impractical to use for ongoing optimization. By 2014 many SSDs had internal idle/background garbage collection mechanisms that work independently of trimming; although this successfully maintains their performance even under operating systems that do not support Trim, it has the associated drawbacks of increased write amplification and wear of the flash cells.&lt;/p&gt;
+
+&lt;a href=“http://en.wikipedia.org/wiki/JFS_(file_system)”quot;&gt;Wiki&lt;/a&gt;</string>
+			<key>answers</key>
+			<array>
+				<string>SUN</string>
+				<string>ORACLE</string>
+				<string>Apple</string>
+				<string>IBM</string>
+			</array>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;Who initially developed JFS file system?&lt;/h2&gt;
+&lt;div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>mount</string>
+			<key>Correct Answer</key>
+			<integer>2</integer>
+			<key>Id</key>
+			<string>21</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Tags</key>
+			<string>Linux</string>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;Missing command is:&lt;/h2&gt;
+    &lt;p&gt;&lt;strong&gt;mount&lt;/strong&gt;&lt;/p&gt;
+&lt;div&gt;	
+
+&lt;p&gt;All files accessible in a Unix system are arranged in one big tree, the
+       file hierarchy, rooted at /.  These files can be spread out  over  sev-
+       eral  devices. The &lt;strong&gt;mount&lt;/strong&gt; command serves to attach the file system found
+       on some device to the big file tree. Conversely, the &lt;strong&gt;umount(8)&lt;/strong&gt; command
+       will detach it again.&lt;/p&gt;
+
+&lt;p&gt;The standard form of the &lt;strong&gt;mount&lt;/strong&gt; command, is&lt;/p&gt;
+             
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+mount -t type device dir
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This tells the kernel to attach the file system found on &lt;i&gt;device&lt;/i&gt; (which
+       is of type &lt;i&gt;type&lt;/i&gt;) at the directory &lt;i&gt;dir&lt;/i&gt;.  The previous contents (if  any)
+       and  owner  and  mode of &lt;i&gt;dir&lt;/i&gt; become invisible, and as long as this file
+       system remains mounted, the pathname &lt;i&gt;dir&lt;/i&gt; refers to the root of the file
+       system on &lt;i&gt;device&lt;/i&gt;.&lt;/p&gt;
+
+&lt;a href=“http://linuxcommand.org/man_pages/mount8.html”quot;&gt;Man page&lt;/a&gt;</string>
+			<key>answers</key>
+			<array>
+				<string>fstab</string>
+				<string>mount</string>
+				<string>udev</string>
+				<string>fsconnect</string>
+			</array>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What command is that?&lt;/h2&gt;
+    &lt;p&gt;”Before a user can access a file on a Unix-like machine, the file system that contains it needs to be mounted with the — command”&lt;/p&gt;
+&lt;div&gt;</string>
+		</dict>
+	</array>
+</dict>
+</plist>

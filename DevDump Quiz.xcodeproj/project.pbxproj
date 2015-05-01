@@ -13,6 +13,18 @@
 		9969AED71AF382EC00DFB8EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9969AED61AF382EC00DFB8EE /* Images.xcassets */; };
 		9969AEDA1AF382EC00DFB8EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9969AED81AF382EC00DFB8EE /* LaunchScreen.xib */; };
 		9969AEE61AF382EC00DFB8EE /* DevDump_QuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969AEE51AF382EC00DFB8EE /* DevDump_QuizTests.swift */; };
+		99D5B32E1AF387A8005CE456 /* AnswerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D5B3261AF387A8005CE456 /* AnswerController.swift */; };
+		99D5B32F1AF387A8005CE456 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D5B3271AF387A8005CE456 /* MainMenu.swift */; };
+		99D5B3301AF387A8005CE456 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D5B3281AF387A8005CE456 /* Model.swift */; };
+		99D5B3311AF387A8005CE456 /* QuestionsBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D5B3291AF387A8005CE456 /* QuestionsBase.swift */; };
+		99D5B3321AF387A8005CE456 /* ScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D5B32A1AF387A8005CE456 /* ScoreController.swift */; };
+		99D5B3331AF387A8005CE456 /* StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D5B32B1AF387A8005CE456 /* StartController.swift */; };
+		99D5B3341AF387A8005CE456 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D5B32C1AF387A8005CE456 /* Tags.swift */; };
+		99D5B3351AF387A8005CE456 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D5B32D1AF387A8005CE456 /* ViewController.swift */; };
+		99D5B33A1AF387BD005CE456 /* AQ1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99D5B3361AF387BD005CE456 /* AQ1.plist */; };
+		99D5B33B1AF387BD005CE456 /* AQ2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99D5B3371AF387BD005CE456 /* AQ2.plist */; };
+		99D5B33C1AF387BD005CE456 /* Q1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99D5B3381AF387BD005CE456 /* Q1.plist */; };
+		99D5B33D1AF387BD005CE456 /* stub_basic_langs.html in Resources */ = {isa = PBXBuildFile; fileRef = 99D5B3391AF387BD005CE456 /* stub_basic_langs.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +48,18 @@
 		9969AEDF1AF382EC00DFB8EE /* DevDump QuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DevDump QuizTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9969AEE41AF382EC00DFB8EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9969AEE51AF382EC00DFB8EE /* DevDump_QuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevDump_QuizTests.swift; sourceTree = "<group>"; };
+		99D5B3261AF387A8005CE456 /* AnswerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnswerController.swift; path = "../../BrainHack/Heap Spray Game/Heap Spray Game/AnswerController.swift"; sourceTree = "<group>"; };
+		99D5B3271AF387A8005CE456 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainMenu.swift; path = "../../BrainHack/Heap Spray Game/Heap Spray Game/MainMenu.swift"; sourceTree = "<group>"; };
+		99D5B3281AF387A8005CE456 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = "../../BrainHack/Heap Spray Game/Heap Spray Game/Model.swift"; sourceTree = "<group>"; };
+		99D5B3291AF387A8005CE456 /* QuestionsBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionsBase.swift; path = "../../BrainHack/Heap Spray Game/Heap Spray Game/QuestionsBase.swift"; sourceTree = "<group>"; };
+		99D5B32A1AF387A8005CE456 /* ScoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScoreController.swift; path = "../../BrainHack/Heap Spray Game/Heap Spray Game/ScoreController.swift"; sourceTree = "<group>"; };
+		99D5B32B1AF387A8005CE456 /* StartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartController.swift; path = "../../BrainHack/Heap Spray Game/Heap Spray Game/StartController.swift"; sourceTree = "<group>"; };
+		99D5B32C1AF387A8005CE456 /* Tags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tags.swift; path = "../../BrainHack/Heap Spray Game/Heap Spray Game/Tags.swift"; sourceTree = "<group>"; };
+		99D5B32D1AF387A8005CE456 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "../../BrainHack/Heap Spray Game/Heap Spray Game/ViewController.swift"; sourceTree = "<group>"; };
+		99D5B3361AF387BD005CE456 /* AQ1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ1.plist; path = resources/AQ1.plist; sourceTree = SOURCE_ROOT; };
+		99D5B3371AF387BD005CE456 /* AQ2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ2.plist; path = resources/AQ2.plist; sourceTree = SOURCE_ROOT; };
+		99D5B3381AF387BD005CE456 /* Q1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Q1.plist; path = resources/Q1.plist; sourceTree = SOURCE_ROOT; };
+		99D5B3391AF387BD005CE456 /* stub_basic_langs.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = stub_basic_langs.html; path = resources/stub_basic_langs.html; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +101,14 @@
 		9969AECC1AF382EC00DFB8EE /* DevDump Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				99D5B3261AF387A8005CE456 /* AnswerController.swift */,
+				99D5B3271AF387A8005CE456 /* MainMenu.swift */,
+				99D5B3281AF387A8005CE456 /* Model.swift */,
+				99D5B3291AF387A8005CE456 /* QuestionsBase.swift */,
+				99D5B32A1AF387A8005CE456 /* ScoreController.swift */,
+				99D5B32B1AF387A8005CE456 /* StartController.swift */,
+				99D5B32C1AF387A8005CE456 /* Tags.swift */,
+				99D5B32D1AF387A8005CE456 /* ViewController.swift */,
 				9969AECF1AF382EC00DFB8EE /* AppDelegate.swift */,
 				9969AED11AF382EC00DFB8EE /* ViewController.swift */,
 				9969AED31AF382EC00DFB8EE /* Main.storyboard */,
@@ -90,6 +122,10 @@
 		9969AECD1AF382EC00DFB8EE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				99D5B3361AF387BD005CE456 /* AQ1.plist */,
+				99D5B3371AF387BD005CE456 /* AQ2.plist */,
+				99D5B3381AF387BD005CE456 /* Q1.plist */,
+				99D5B3391AF387BD005CE456 /* stub_basic_langs.html */,
 				9969AECE1AF382EC00DFB8EE /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -193,7 +229,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9969AED51AF382EC00DFB8EE /* Main.storyboard in Resources */,
+				99D5B33D1AF387BD005CE456 /* stub_basic_langs.html in Resources */,
 				9969AEDA1AF382EC00DFB8EE /* LaunchScreen.xib in Resources */,
+				99D5B33A1AF387BD005CE456 /* AQ1.plist in Resources */,
+				99D5B33B1AF387BD005CE456 /* AQ2.plist in Resources */,
+				99D5B33C1AF387BD005CE456 /* Q1.plist in Resources */,
 				9969AED71AF382EC00DFB8EE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,8 +252,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99D5B3351AF387A8005CE456 /* ViewController.swift in Sources */,
+				99D5B3311AF387A8005CE456 /* QuestionsBase.swift in Sources */,
+				99D5B3301AF387A8005CE456 /* Model.swift in Sources */,
+				99D5B3331AF387A8005CE456 /* StartController.swift in Sources */,
+				99D5B32E1AF387A8005CE456 /* AnswerController.swift in Sources */,
+				99D5B3321AF387A8005CE456 /* ScoreController.swift in Sources */,
+				99D5B3341AF387A8005CE456 /* Tags.swift in Sources */,
 				9969AED21AF382EC00DFB8EE /* ViewController.swift in Sources */,
 				9969AED01AF382EC00DFB8EE /* AppDelegate.swift in Sources */,
+				99D5B32F1AF387A8005CE456 /* MainMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +463,7 @@
 				9969AEEB1AF382EC00DFB8EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9969AEEC1AF382EC00DFB8EE /* Build configuration list for PBXNativeTarget "DevDump QuizTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +472,7 @@
 				9969AEEE1AF382EC00DFB8EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

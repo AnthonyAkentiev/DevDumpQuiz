@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>questions</key>
+	<array>
+		<dict>
+			<key>Comment</key>
+			<string>jq - json parser</string>
+			<key>Correct Answer</key>
+			<integer>1</integer>
+			<key>Id</key>
+			<string>20</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Tags</key>
+			<string>Linux, Java, Web</string>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;jq is a command-line JSON processor&lt;/h2&gt;
+&lt;div&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+jq
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;jq&lt;/strong&gt;  can  transform  JSON  in  various  ways,  by  selecting, iterating, reducing and otherwise mangling JSON documents. For  instance,  running the  command  &lt;strong&gt;jq ´map(.price) | add´&lt;/strong&gt; will take an array of JSON objects as input and return the sum of their &quot;price&quot; fields.&lt;/p&gt;
+&lt;p&gt;By default, &lt;strong&gt;jq&lt;/strong&gt; reads a stream of JSON  objects  (whitespace  separated) from  stdin.  One or more files may be specified, in which case &lt;strong&gt;jq&lt;/strong&gt; will read input from those instead.&lt;/p&gt;
+
+&lt;h3&gt;FILTERS&lt;/h3&gt;
+&lt;p&gt;A &lt;strong&gt;jq&lt;/strong&gt; program is a &quot;filter&quot;: it takes an input, and produces an  output.
+       There are a lot of builtin filters for extracting a particular field of
+       an object, or converting  a  number  to  a  string,  or  various  other
+       standard tasks.&lt;/p&gt;
+&lt;p&gt;Filters  can  be  combined in various ways - you can pipe the output of
+       one filter into another filter, or collect the output of a filter  into
+       an array.&lt;/p&gt;
+&lt;p&gt;Some  filters  produce  multiple results, for instance there´s one that
+       produces all the elements of its input array. Piping that filter into a
+       second runs the second filter for each element of the array. Generally,
+       things that would be done with loops and iteration in  other  languages
+       are just done by gluing filters together in &lt;strong&gt;jq&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;It´s  important  to  remember  that  every  filter  has an input and an
+       output. Even literals like &quot;hello&quot; or 42 are filters  -  they  take  an
+       input  but  always  produce the same literal as output. Operations that
+       combine two filters, like addition, generally feed the  same  input  to
+       both and combine the results. So, you can implement an averaging filter
+       as &lt;strong&gt;add / length&lt;/strong&gt; - feeding the input array both to the &lt;strong&gt;add&lt;/strong&gt; filter  and
+       the &lt;strong&gt;length&lt;/strong&gt; filter and dividing the results.&lt;/p&gt;
+
+&lt;a href=“http://manpages.ubuntu.com/manpages/saucy/man1/jq.1.html”&gt;Ubuntu man page&lt;/a&gt;</string>
+			<key>answers</key>
+			<array>
+				<string> jq - command-line JSON processor</string>
+				<string>jq - command-line jquery editor</string>
+				<string>There is no jq command in Ubuntu Linux</string>
+				<string>jq - command-line tool for getting java metadata</string>
+			</array>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What does jq command do?&lt;/h2&gt;
+    &lt;p&gt;The machine is Ubuntu Linux with Bash shell&lt;/p&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+jq
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>killall itself</string>
+			<key>Correct Answer</key>
+			<integer>3</integer>
+			<key>Id</key>
+			<string>19</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Tags</key>
+			<string>Linux</string>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;Killall&lt;/h2&gt;
+    &lt;p&gt;1) Can not kill itself&lt;/p&gt;
+    &lt;p&gt;2) Can kill other killall process&lt;/p&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+sudo killall “some-process-name”
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;killall&lt;/strong&gt; sends a signal to all processes running any of the specified commands. If no signal name is specified, SIGTERM is sent.&lt;/p&gt;
+&lt;p&gt;Signals can be specified either by name (e.g. -HUP or -SIGHUP) or by number (e.g. -1) or by option &lt;strong&gt;-s&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;If the command name is not regular expression (option -r) and contains a slash (/), processes executing that particular file will be selected for killing, independent of their name.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;killall&lt;/strong&gt; returns a zero return code if at least one process has been killed for each listed command, or no commands were listed and at least one process matched the -u and -Z search criteria. &lt;srong&gt;killall&lt;/strong&gt; returns non-zero otherwise.
+A &lt;strong&gt;killall&lt;/strong&gt; process never kills itself (but may kill other &lt;strong&gt;killall&lt;/strong&gt; processes).
+
+&lt;a href=“http://linux.die.net/man/1/killall”&gt;Man page&lt;/a&gt;</string>
+			<key>answers</key>
+			<array>
+				<string>Yes; Yes</string>
+				<string>Yes; No</string>
+				<string>No; Yes</string>
+				<string>No; No</string>
+			</array>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;Killall&lt;/h2&gt;
+    &lt;p&gt;1) Can killall process kill itself?&lt;/p&gt;
+    &lt;p&gt;2) Can killall process kill other killall process?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+sudo killall “some-process-name”
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>find + tar </string>
+			<key>Correct Answer</key>
+			<integer>3</integer>
+			<key>Id</key>
+			<string>18</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Tags</key>
+			<string>Linux</string>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;This command will find all *.jpg images in the system and archive it&lt;/h2&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+sudo find / -name *.jpg -type f -print | xargs tar -cvzf images.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;find&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;-type f&lt;/strong&gt; means we search only for regular files. There are many types of files in Unix/Linux:&lt;/p&gt;
+	&lt;ul&gt; 
+	&lt;li&gt;b - block special&lt;/li&gt;
+    &lt;li&gt;c - character special&lt;/li&gt;
+    &lt;li&gt;d - directory&lt;/li&gt;
+    &lt;li&gt;f - regular file&lt;/li&gt;
+    &lt;li&gt;l - symbolic link&lt;/li&gt;
+    &lt;li&gt;p - named pipe/FIFO&lt;/li&gt;
+    &lt;li&gt;s - socket&lt;/li&gt;
+	&lt;li&gt;D - door (Solaris)&lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;a href=“http://linuxcommand.org/man_pages/find1.html”&gt;Man page&lt;/a&gt;
+
+&lt;br&gt;
+&lt;h3&gt;xargs&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;xargs&lt;/strong&gt; is a command on Unix and most Unix-like operating systems used to build and execute command lines from standard input. Commands such as &lt;strong&gt;grep&lt;/strong&gt; and &lt;strong&gt;awk&lt;/strong&gt; can accept the standard input as a parameter, or argument by using a pipe. However, others such as &lt;strong&gt;cp&lt;/strong&gt; and &lt;strong&gt;echo&lt;/strong&gt; disregard the standard input stream and rely solely on the &lt;strong&gt;arguments&lt;/strong&gt; found after the command. Additionally, under the Linux kernel before version 2.6.23, and under many other Unix-like systems, arbitrarily long lists of parameters cannot be passed to a command, so &lt;strong&gt;xargs&lt;/strong&gt; breaks the list of arguments into sublists small enough to be acceptable.&lt;/p&gt;
+
+&lt;a href=“http://en.wikipedia.org/wiki/Xargs”&gt;Wiki&lt;/a&gt;
+
+&lt;br&gt;
+&lt;h3&gt;tar&lt;/h3&gt;
+&lt;p&gt;-c parameter stands for Create.&lt;/p&gt;
+&lt;p&gt;-v parameter stands for Verbose.&lt;/p&gt;
+&lt;p&gt;-z parameter means archive is GZ and must be compressed using gzip.&lt;/p&gt;
+&lt;p&gt;-f parameter means we pass Filename.&lt;/p&gt;
+
+&lt;a href=“http://linuxcommand.org/man_pages/tar1.html”&gt;Man page&lt;/a&gt;</string>
+			<key>answers</key>
+			<array>
+				<string>This command will (1) unpack images.tar.gz then (2) find all *.jpeg images </string>
+				<string>This command will (1) find all *.jpeg images then(2) unpack images.tar.gz</string>
+				<string>This command will (1) find all *jpeg images then (2) create new images.tar.gz archive with these images added</string>
+			</array>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What will this command do?&lt;/h2&gt;
+    &lt;p&gt;The machine is Ubuntu Linux with Bash shell&lt;/p&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+sudo find / -name *.jpg -type f -print | xargs tar -cvzf images.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>Tar -xzvf</string>
+			<key>Correct Answer</key>
+			<integer>4</integer>
+			<key>Id</key>
+			<string>17</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Tags</key>
+			<string>Linux</string>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;This command extracts file “something” assuming it is TAR GZ archive&lt;/h2&gt;
+&lt;div&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+tar -xzvf something.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;-x parameter stands for eXtract.&lt;/p&gt;
+&lt;p&gt;-z parameter means archive is GZ and must be decompressed first using gunzip.&lt;/p&gt;
+&lt;p&gt;-v parameter stands for Verbose.&lt;/p&gt;
+&lt;p&gt;-f parameter means we pass Filename.&lt;/p&gt;</string>
+			<key>answers</key>
+			<array>
+				<string>This will unpack something TAR archive</string>
+				<string>This will add something file to archive</string>
+				<string>This will create something file archive from STDIN</string>
+				<string>This will unpack something TAR GZ archive</string>
+			</array>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What does this command do?&lt;/h2&gt;
+    &lt;p&gt;The machine is Ubuntu Linux with Bash shell&lt;/p&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+tar -xzvf something
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>mkdir -p</string>
+			<key>Correct Answer</key>
+			<integer>2</integer>
+			<key>Id</key>
+			<string>16</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Tags</key>
+			<string>Linux</string>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;Required parameter is -p&lt;/h2&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+mkdir -p dir1/dir2/dir3/dir4/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;</string>
+			<key>answers</key>
+			<array>
+				<string>-i</string>
+				<string>-p</string>
+				<string>-n</string>
+				<string>-cr</string>
+			</array>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What parameter is required to create intermediate directories using mkdir?&lt;/h2&gt;
+    &lt;p&gt;The machine is Ubuntu Linux with Bash shell&lt;/p&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+mkdir -what_param dir1/dir2/dir3/dir4/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>Chmod</string>
+			<key>Correct Answer</key>
+			<integer>1</integer>
+			<key>Id</key>
+			<string>15</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Tags</key>
+			<string>Linux</string>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;This command is good&lt;/h2&gt;
+    &lt;p&gt;It will give (add) full access (read, write and execute) to user and group on a specific file.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;u&lt;/strong&gt; option stands for &lt;strong&gt;user&lt;/strong&gt;.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;g&lt;/strong&gt; option stands for &lt;strong&gt;group&lt;/strong&gt;.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;+&lt;/strong&gt; means &lt;strong&gt;add&lt;/strong&gt;.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;r&lt;/strong&gt; option stands for &lt;strong&gt;read&lt;/strong&gt;.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;w&lt;/strong&gt; option stands for &lt;strong&gt;write&lt;/strong&gt;.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;x&lt;/strong&gt; option stands for &lt;strong&gt;execute&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;</string>
+			<key>answers</key>
+			<array>
+				<string>Yes</string>
+				<string>No</string>
+			</array>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;Is it correct command?&lt;/h2&gt;
+    &lt;p&gt;The machine is Ubuntu Linux with Bash shell&lt;/p&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+chmod ug+rwx file.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>Wall command</string>
+			<key>Correct Answer</key>
+			<integer>3</integer>
+			<key>Id</key>
+			<string>14</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Tags</key>
+			<string>Linux</string>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;This command will send message to all logged in users&lt;/h2&gt;
+    &lt;p&gt;&lt;strong&gt;wall&lt;/strong&gt; is an abbreviation of write to all.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;wall&lt;/strong&gt; reads the message from standard input by default when the filename is omitted, that can be done by piping it with the &lt;strong&gt;echo&lt;/strong&gt; command&lt;/p&gt;    
+
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+echo “I am going to shut down the machine. Beware” | wall
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div&gt;</string>
+			<key>answers</key>
+			<array>
+				<string>This command will display system memory usage</string>
+				<string>It will show all logged in users</string>
+				<string>It will read text from input and send it to all users </string>
+				<string>This is not a valid Linux command</string>
+			</array>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What this command does in Linux (Bash shell)?&lt;/h2&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+wall
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>Shutdown command</string>
+			<key>Correct Answer</key>
+			<integer>2</integer>
+			<key>Id</key>
+			<string>13</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Tags</key>
+			<string>Linux</string>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;This command line shuts down the machine&lt;/h2&gt;
+    &lt;p&gt;&lt;strong&gt;-h&lt;/strong&gt; parameter means HALT.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;-r&lt;/strong&gt; parameter will reboot the machine.&lt;/p&gt;
+&lt;div&gt;</string>
+			<key>answers</key>
+			<array>
+				<string>Reboots machine</string>
+				<string>It shuts machine down</string>
+				<string>This command does nothing</string>
+				<string>There is an error in this command line</string>
+			</array>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What does this command do on Linux machine?&lt;/h2&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
+sudo shutdown -h now
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>YellowDog package manager</string>
+			<key>Correct Answer</key>
+			<integer>3</integer>
+			<key>Id</key>
+			<string>12</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Tags</key>
+			<string>Linux, IT History</string>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;p&gt;YUM is short for Yellowdog Updater, Modified.&lt;/p&gt;
+    &lt;p&gt;YUM is a full rewrite of its predecessor tool - Yellowdog Updater (YUP) and is base on RPM.&lt;/p&gt;
+
+    &lt;p&gt;The Yellowdog Updater, Modified (yum) is an open-source command-line package-management utility for Linux operating systems using the RPM Package Manager.&lt;/p&gt;
+    &lt;p&gt;Yum allows automatic updates, package and dependency management, on RPM-based distributions. Like the Advanced Packaging Tool (APT) from Debian, yum works with software repositories (collections of packages), which can be accessed locally or over a network connection.&lt;/p&gt;
+
+    &lt;p&gt;Under the hood, yum depends on RPM, which is a packaging standard for digital distribution of software, which automatically uses hashes and digisigs to verify the authorship and integrity of said software; unlike some app stores, which serve a similar function, neither yum nor RPM provide built-in support for proprietary restrictions on copying of packages by endusers. Yum is implemented as libraries in the Python programming language, with a small set of programs that provide a command-line interface.&lt;/p&gt;
+    &lt;a href=“https://en.wikipedia.org/wiki/Yellowdog_Updater,_Modified”&gt;Wiki&lt;/a&gt;
+&lt;/div&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What default package manager is used in Yellow Dog Linux?&lt;/h2&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>GCC compile a.out</string>
+			<key>Correct Answer</key>
+			<integer>4</integer>
+			<key>Id</key>
+			<string>11</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Tags</key>
+			<string>C/C++, Linux</string>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;p&gt;Line #4 compiles &lt;strong&gt;a.cpp&lt;/strong&gt; source file and then runs &lt;strong&gt;a.out&lt;/strong&gt; executable file&lt;/p&gt;
+&lt;/div&gt;
+               </string>
+			<key>answers</key>
+			<array>
+				<string>g++ a.cpp</string>
+				<string>g++ a.cpp; chmod +x a; ./a</string>
+				<string>g++ -e a.cpp</string>
+				<string>g++ a.cpp -o a.out; chmod +x a.out; ./a.out</string>
+			</array>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;How to compile and run file a.cpp using GCC in Ubuntu Linux (Bash shell)?&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+// a.cpp file contents:
+#include &lt;iostream&gt;
+ 
+int main()
+{
+  std::cout &lt;&lt; &quot;Hello World!&quot; &lt;&lt; std::endl;
+  
+  return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</string>
+		</dict>
+	</array>
+</dict>
+</plist>
