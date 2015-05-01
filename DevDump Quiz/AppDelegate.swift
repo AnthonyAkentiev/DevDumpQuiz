@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  DevDump Quiz
+//  Heap Spray Game
 //
-//  Created by Anthony Akentiev on 01/05/15.
+//  Created by Anthony Akentiev on 09/04/15.
 //  Copyright (c) 2015 Anthony Akentiev. All rights reserved.
 //
 
@@ -10,12 +10,37 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
+    var model: Model = Model()
 
-
+    // TODO: rewrite this using template
+    func getParamBool(key:String) -> Bool{
+        var path = NSBundle.mainBundle().pathForResource("Info", ofType: "plist")
+        var dict = NSDictionary(contentsOfFile: path!)
+        
+        var paramsLevel = dict!.valueForKey("GameParams") as! NSDictionary
+        return paramsLevel.valueForKey(key as String) as! Bool
+    }
+    
+    func getParamStr(key:String) -> String{
+        var path = NSBundle.mainBundle().pathForResource("Info", ofType: "plist")
+        var dict = NSDictionary(contentsOfFile: path!)
+        
+        var paramsLevel = dict!.valueForKey("GameParams") as! NSDictionary
+        return paramsLevel.valueForKey(key as String) as! String
+    }
+    
+    func getParamInteger(key:String) -> Int{
+        var path = NSBundle.mainBundle().pathForResource("Info", ofType: "plist")
+        var dict = NSDictionary(contentsOfFile: path!)
+        
+        var paramsLevel = dict!.valueForKey("GameParams") as! NSDictionary
+        return paramsLevel.valueForKey(key as String) as! Int
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
         return true
     }
 
@@ -27,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        model.save()
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -38,7 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:
+        model.save()
     }
 
 

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9944E6B41AF38843008E544E /* ViewControllerIPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9944E6B31AF38843008E544E /* ViewControllerIPad.swift */; };
 		9969AED01AF382EC00DFB8EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969AECF1AF382EC00DFB8EE /* AppDelegate.swift */; };
-		9969AED21AF382EC00DFB8EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969AED11AF382EC00DFB8EE /* ViewController.swift */; };
 		9969AED51AF382EC00DFB8EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9969AED31AF382EC00DFB8EE /* Main.storyboard */; };
 		9969AED71AF382EC00DFB8EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9969AED61AF382EC00DFB8EE /* Images.xcassets */; };
 		9969AEDA1AF382EC00DFB8EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9969AED81AF382EC00DFB8EE /* LaunchScreen.xib */; };
@@ -38,10 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9944E6B31AF38843008E544E /* ViewControllerIPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerIPad.swift; sourceTree = "<group>"; };
 		9969AECA1AF382EC00DFB8EE /* DevDump Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DevDump Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9969AECE1AF382EC00DFB8EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9969AECF1AF382EC00DFB8EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9969AED11AF382EC00DFB8EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9969AED41AF382EC00DFB8EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9969AED61AF382EC00DFB8EE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9969AED91AF382EC00DFB8EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -80,6 +80,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9944E6B51AF3885C008E544E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9969AECF1AF382EC00DFB8EE /* AppDelegate.swift */,
+				99D5B3291AF387A8005CE456 /* QuestionsBase.swift */,
+				99D5B32C1AF387A8005CE456 /* Tags.swift */,
+				99D5B3281AF387A8005CE456 /* Model.swift */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
 		9969AEC11AF382EC00DFB8EE = {
 			isa = PBXGroup;
 			children = (
@@ -101,16 +112,13 @@
 		9969AECC1AF382EC00DFB8EE /* DevDump Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				99D5B3261AF387A8005CE456 /* AnswerController.swift */,
+				9944E6B51AF3885C008E544E /* Base */,
 				99D5B3271AF387A8005CE456 /* MainMenu.swift */,
-				99D5B3281AF387A8005CE456 /* Model.swift */,
-				99D5B3291AF387A8005CE456 /* QuestionsBase.swift */,
-				99D5B32A1AF387A8005CE456 /* ScoreController.swift */,
 				99D5B32B1AF387A8005CE456 /* StartController.swift */,
-				99D5B32C1AF387A8005CE456 /* Tags.swift */,
+				99D5B3261AF387A8005CE456 /* AnswerController.swift */,
+				99D5B32A1AF387A8005CE456 /* ScoreController.swift */,
 				99D5B32D1AF387A8005CE456 /* ViewController.swift */,
-				9969AECF1AF382EC00DFB8EE /* AppDelegate.swift */,
-				9969AED11AF382EC00DFB8EE /* ViewController.swift */,
+				9944E6B31AF38843008E544E /* ViewControllerIPad.swift */,
 				9969AED31AF382EC00DFB8EE /* Main.storyboard */,
 				9969AED61AF382EC00DFB8EE /* Images.xcassets */,
 				9969AED81AF382EC00DFB8EE /* LaunchScreen.xib */,
@@ -254,12 +262,12 @@
 			files = (
 				99D5B3351AF387A8005CE456 /* ViewController.swift in Sources */,
 				99D5B3311AF387A8005CE456 /* QuestionsBase.swift in Sources */,
+				9944E6B41AF38843008E544E /* ViewControllerIPad.swift in Sources */,
 				99D5B3301AF387A8005CE456 /* Model.swift in Sources */,
 				99D5B3331AF387A8005CE456 /* StartController.swift in Sources */,
 				99D5B32E1AF387A8005CE456 /* AnswerController.swift in Sources */,
 				99D5B3321AF387A8005CE456 /* ScoreController.swift in Sources */,
 				99D5B3341AF387A8005CE456 /* Tags.swift in Sources */,
-				9969AED21AF382EC00DFB8EE /* ViewController.swift in Sources */,
 				9969AED01AF382EC00DFB8EE /* AppDelegate.swift in Sources */,
 				99D5B32F1AF387A8005CE456 /* MainMenu.swift in Sources */,
 			);
