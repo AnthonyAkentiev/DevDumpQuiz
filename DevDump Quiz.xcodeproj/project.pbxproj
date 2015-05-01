@@ -130,8 +130,7 @@
 		9969AECD1AF382EC00DFB8EE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				99D5B3361AF387BD005CE456 /* AQ1.plist */,
-				99D5B3371AF387BD005CE456 /* AQ2.plist */,
+				99C3CF071AF38A82004B475C /* In-App-Purchases */,
 				99D5B3381AF387BD005CE456 /* Q1.plist */,
 				99D5B3391AF387BD005CE456 /* stub_basic_langs.html */,
 				9969AECE1AF382EC00DFB8EE /* Info.plist */,
@@ -154,6 +153,15 @@
 				9969AEE41AF382EC00DFB8EE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		99C3CF071AF38A82004B475C /* In-App-Purchases */ = {
+			isa = PBXGroup;
+			children = (
+				99D5B3361AF387BD005CE456 /* AQ1.plist */,
+				99D5B3371AF387BD005CE456 /* AQ2.plist */,
+			);
+			name = "In-App-Purchases";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
