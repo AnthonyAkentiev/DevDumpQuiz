@@ -6,26 +6,32 @@
 	<array>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>meta tag in body</string>
 			<key>Id</key>
-			<string>35</string>
+			<string>36</string>
 			<key>Tags</key>
-			<string>General</string>
+			<string>Web, Screen</string>
 			<key>Level</key>
-			<string>1</string>
+			<string>2</string>
 			<key>Correct Answer</key>
-			<integer>4</integer>
+			<integer>2</integer>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>This is valid HTML and meta tags will be processed normally</string>
+				<string>This is not a valid HTML code</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;h2&gt;Placing meta tags in body is not a good idea&lt;/h2&gt;
+
+&lt;p&gt;This is of course invalid as per HTML4.01. META tags are only allowed within HEAD (just like, say, TITLE) so by putting it into a BODY, you&apos;re essentially creating an invalid markup.&lt;/p&gt;
+&lt;p&gt;From the cursory tests, it seems that some browsers (e.g. Firefox 3.5 and Safari 4) actually put these elements into HEAD when creating a document tree. This is not very surprising: browsers are known to tolerate and try to interpret all kinds of broken markup.&lt;/p&gt;
+&lt;p&gt;Having invalid markup is rarely a good idea. Non-standard handling by browsers might lead to various hard-to-pin rendering (and behavioral) inconsistencies. Instead of relying on browser guessing, it&apos;s best to follow a standard.&lt;/p&gt;
+
+&lt;a href=“http://stackoverflow.com/questions/1447842/what-happens-if-the-meta-tags-are-present-in-the-document-body”&gt;Stackoverflow&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt;What happens if the meta tags are present in the HTML body?&lt;/h2&gt;
+&lt;/div&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
@@ -165,7 +171,7 @@ int main(int argc, char** argv){
 &lt;/div&gt;
 
 &lt;h3&gt;WorldWideWeb by Tim Berners-Lee&lt;/h3&gt;
-&lt;p&gt;WorldWideWeb (later renamed to Nexus to avoid confusion between the software and the World Wide Web) is the first web browser[1] and editor.[2] When it was written, WorldWideWeb was the only way to view the Web.&lt;/p&gt;
+&lt;p&gt;WorldWideWeb (later renamed to Nexus to avoid confusion between the software and the World Wide Web) is the first web browser and editor. When it was written, WorldWideWeb was the only way to view the Web.&lt;/p&gt;
 
 &lt;p&gt;The source code was released into the public domain on &lt;b&gt;December 25th, 1991&lt;/b&gt;. Some of the code still resides on Tim Berners-Lee&apos;s NeXT Computer in the CERN museum and has not been recovered due to the computer&apos;s status as a historical artifact. To coincide with the 20th anniversary of the research centre giving the web to the world, a project has begun in 2013 at CERN to preserve this original hardware and software associated with the birth of the web.&lt;/p&gt;
 

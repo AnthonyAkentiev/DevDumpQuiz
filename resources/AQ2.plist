@@ -6,6 +6,36 @@
 	<array>
 		<dict>
 			<key>Comment</key>
+			<string>devdump</string>
+			<key>Id</key>
+			<string>35</string>
+			<key>Tags</key>
+			<string>Linux, Unix, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answer</key>
+			<integer>2</integer>
+			<key>answers</key>
+			<array>
+				<string>hexdump</string>
+				<string>devdump</string>
+				<string>dd</string>
+				<string>binread</string>
+			</array>
+			<key>a</key>
+			<string>&lt;div&gt;
+&lt;h2&gt;Yes, it is devdump command!&lt;/h2&gt;
+&lt;p&gt;&lt;b&gt;devdump&lt;/b&gt; is a crude utility to interactively display the contents of device or filesystem images. The initial screen is a display of the first 256 bytes of the first 2048 byte sector. The commands are the same as with &lt;b&gt;isodump&lt;/b&gt;.&lt;/p&gt;
+&lt;/div&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+&lt;h2&gt;Guess the command&lt;/h2&gt;
+&lt;p&gt;(Linux/Unix)&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;— command is a crude utility to interactively display the contents of device or filesystem images. The initial screen is a display of the first 256 bytes of the first 2048 byte sector.&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
 			<string>jq - json parser</string>
 			<key>Correct Answer</key>
 			<integer>1</integer>
