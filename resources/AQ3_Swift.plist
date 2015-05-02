@@ -6,6 +6,145 @@
 	<array>
 		<dict>
 			<key>Comment</key>
+			<string>string len</string>
+			<key>Id</key>
+			<string>44</string>
+			<key>Tags</key>
+			<string>Swift</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answer</key>
+			<integer>3</integer>
+			<key>answers</key>
+			<array>
+				<string>Use line 1</string>
+				<string>Use line 2</string>
+				<string>Use line 3</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Use global function - count&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+var test1 = “SuperString”
+
+// 3 - Good:
+let len: Int = count(test) 
+
+// or without explicit type:
+let len2 = count(test)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Counting characters in Swift&lt;/h3&gt;
+&lt;p&gt;The most precise, but and also most costly in terms of performance is the &lt;b&gt;count&lt;/b&gt; global function.&lt;/p&gt;
+&lt;p&gt;It will return the actual number of Unicode characters in a String, so it&apos;s the most correct alternative in the sense that, if you&apos;d print the string and count characters by hand, you&apos;d get the same result.&lt;/p&gt;
+
+&lt;p&gt;However, because of the way Strings are implemented in Swift, characters don&apos;t always take up the same amount of memory, so be aware that this behaves quite differently than the usual character count methods in other languages.&lt;/p&gt;
+&lt;p&gt;For example, you can also explicitly bridge to Objective-C and use the NSString &lt;b&gt;length&lt;/b&gt; method.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+test1.bridgeToObjectiveC().length
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is effectively the same as &lt;b&gt;test1.utf16Count&lt;/b&gt;.&lt;/p&gt;
+&lt;p&gt;But, as noted below, the returned value is not guaranteed to be the same as that of calling count().&lt;/p&gt;
+&lt;p&gt;From the language reference:&lt;/p&gt;
+
+&lt;q&gt;Different Unicode characters and different representations of the same Unicode character can require different amounts of memory to store. Because of this, characters in Swift do not each take up the same amount of memory within a string’s representation. As a result, the length of a string cannot be calculated without iterating through the string to consider each of its characters in turn. If you are working with particularly long string values, be aware that the countElements function must iterate over the characters within a string in order to calculate an accurate character count for that string.
+Note also that the character count returned by countElements is not always the same as the length property of an NSString that contains the same characters. The length of an NSString is based on the number of 16-bit code units within the string’s UTF-16 representation and not the number of Unicode characters within the string. To reflect this fact, the length property from NSString is called utf16Count when it is accessed on a Swift String value.&lt;/q&gt;
+
+&lt;a href=“http://stackoverflow.com/questions/24037711/get-the-length-of-a-string”&gt;Stackoverflow&lt;/a&gt;
+&lt;br&gt;
+&lt;a href=“https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html”&gt;Apple Documentation&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;How to get string length in Swift?&lt;/h2&gt;
+    &lt;p&gt;(Swift 1.2)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+var test1: String = “SuperString”
+
+// 1
+let len: Int = test1.length
+
+// 2
+let len: Int = test.count
+
+// 3
+let len: Int = count(test) 
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>implicit unwrapping</string>
+			<key>Id</key>
+			<string>43</string>
+			<key>Tags</key>
+			<string>Swift</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answer</key>
+			<integer>1</integer>
+			<key>answers</key>
+			<array>
+				<string>If we will use lblFirst like a normal variable (lblFirst.text = &quot;Hello&quot;) -&gt; optional unwrapping will be done automatically</string>
+				<string>Line 1 has error. Use line 2</string>
+				<string>lblFirst can only contain non-nil variable</string>
+				<string>lblFirst is a lazy-initialized variable</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;lblFirst is an Implicitly Unwrapped Optional value&lt;/h2&gt;
+&lt;p&gt;We don’t have to unwrap it manually. We can use it like a usual non-optional variable. Swift runtime will automatically unwrap it for us. See example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+@IBOutlet var lblFirst: UILabel!
+@IBOutlet var lblSecond: UILabel?
+
+// initialize them later in init() function
+// …
+
+// and now can use .text property like that:
+
+// 1 - no ? or ! required, the value is unwrapped automatically!
+// will throw error if lblFirst is nil
+lblFirst.text = “I will throw if lblFirst is nil”
+
+// 2 - 
+// will throw error if lblSecond is nil
+lblSecond?.text = “Question mark or exclamation mark is required”
+
+// will not throw error even though lblSecond is nil
+lblSecond!.text = “Or like that”
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Implicitly Unwrapped Optionals&lt;/h3&gt;
+&lt;p&gt;Swift also has something called implicitly unwrapped optionals. These are optionals that do not need to be unwrapped using either forced unwrapping (!) or optional binding because they are unwrapped implicitly (automatically). They are declared using an exclamation mark (!) rather than a question mark (?). 
+You often see implicitly unwrapped optionals when working with Interface Builder outlets (IBOutlet properties). For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+@IBOutlet weak var lblDescription: UILabel!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this code, the lblDescription outlet property has an exclamation mark after it, indicating it is implicitly unwrapped. This allows you to access the property without unwrapping it.&lt;/p&gt;
+
+&lt;p&gt;In this example, the outlet property isn&apos;t &lt;i&gt;guaranteed&lt;/i&gt; to contain a reference to a label but it absolutely &lt;i&gt;should&lt;/i&gt;. If it doesn&apos;t contain a reference to a label, it means that the connection between the outlet and the label has been broken. In that case, it&apos;s OK to have a run-time error because you want to know that the connection is broken so that you can fix it!&lt;/p&gt;
+&lt;p&gt;Obviously, in cases where you&apos;re not 100 percent sure that a constant or variable contains a value you should use a regular optional instead.&lt;/p&gt;
+&lt;a href=“https://www.iphonelife.com/blog/31369/swift-101-working-swifts-new-optional-values”&gt;Blog post&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What is the difference between line 1 and line 2 variables?&lt;/h2&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+// 1
+@IBOutlet var lblFirst: UILabel!
+
+// 2
+@IBOutlet var lblSecond: UILabel?
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
 			<string>optional value</string>
 			<key>Id</key>
 			<string>42</string>
