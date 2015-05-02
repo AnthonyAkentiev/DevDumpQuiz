@@ -589,7 +589,7 @@ ELF Header:
 			<string>&lt;div&gt;
     &lt;h2&gt;What &lt;strong&gt;vmlinuz&lt;/strong&gt; file contains?&lt;/h2&gt;
 &lt;div&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash”&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
 ubuntu@ip-172-31-15-189:~$ ls -al /vmlinuz 
 lrwxrwxrwx 1 root root 30 Jun  7  2014 /vmlinuz -&gt; boot/vmlinuz-3.13.0-29-generic
 &lt;/code&gt;&lt;/pre&gt;</string>

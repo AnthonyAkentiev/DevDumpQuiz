@@ -6,6 +6,150 @@
 	<array>
 		<dict>
 			<key>Comment</key>
+			<string>optional value</string>
+			<key>Id</key>
+			<string>42</string>
+			<key>Tags</key>
+			<string>Swift</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answer</key>
+			<integer>1</integer>
+			<key>answers</key>
+			<array>
+				<string>Line 1 has error</string>
+				<string>Line 2 has error</string>
+				<string>Line 3 has error</string>
+				<string>Code has no errors and will be compiled</string>
+			</array>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;Line 1 has error&lt;/h2&gt;
+    &lt;p&gt;Initializer required because lblTopic is not an optional value&lt;/p&gt;
+&lt;div&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+class ScoreController: UIViewController {
+	// 1 - Error - ’IBOutlet&apos; property has non-optional type &apos;UITextField&apos;
+    @IBOutlet var lblTopic: UITextField
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Correct way is to use optional:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+class ScoreController: UIViewController {
+	// can be initialized later (manually in code) or automatically with Storyboard
+   	@IBOutlet var lblTopic: UITextField? 
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;…and then connect control to the outlet in XCode Storyboard.&lt;/p&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;Do you see error here?&lt;/h2&gt;
+&lt;div&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+class ScoreController: UIViewController {
+	// 1
+   	@IBOutlet var lblTopic: UITextField
+
+	// 2
+   	@IBOutlet var lblLevel: UITextField!  
+
+	// 3
+	// Optional (iPad Storyboard only)
+   	@IBOutlet var lblCorrect: UITextField?
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>both lines with error</string>
+			<key>Id</key>
+			<string>41</string>
+			<key>Tags</key>
+			<string>Swift</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answer</key>
+			<integer>1</integer>
+			<key>answers</key>
+			<array>
+				<string>Both lines (1 and 2) contain errors</string>
+				<string>Line 1 has error</string>
+				<string>Line 2 has error</string>
+				<string>No errors here</string>
+			</array>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;Both lines contain errors&lt;/h2&gt;
+&lt;div&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+	func tst(){
+        var strDesc: String = &quot;&quot;;
+        let strPicture: String = &quot;Some_string&quot;;
+        
+        // 1 - Type &apos;Int&apos; does not conform to protocol &apos;BooleanType&apos;
+        // != 0 required
+		if(count(strPicture)){
+            strDesc = strDesc + &quot;\r\n&quot; + &quot;(got photo)&quot;
+        }
+        
+        // 2 - Operand of postfix &apos;!&apos; should have optional type; type is &apos;Int&apos;
+        // space required
+		if(count(strPicture)!=0){
+            strDesc = strDesc + &quot;\r\n&quot; + &quot;(got photo)&quot;
+        }
+
+		…
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Good tst function:&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+	func tst(){
+        var strDesc: String = &quot;&quot;;
+        let strPicture: String = &quot;Some_string&quot;;
+                
+        if(count(strPicture) != 0){
+            strDesc = strDesc + &quot;\r\n&quot; + &quot;(got photo)&quot;
+        }
+
+		…
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What lines contain errors?&lt;/h2&gt;
+&lt;div&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+	func tst(){
+        var strDesc: String = &quot;&quot;;
+        let strPicture: String = &quot;Some_string&quot;;
+        
+        // 1
+        if(count(strPicture)){
+            strDesc = strDesc + &quot;\r\n&quot; + &quot;(got photo)&quot;
+        }
+        
+        // 2
+        if(count(strPicture)!=0){
+            strDesc = strDesc + &quot;\r\n&quot; + &quot;(got photo)&quot;
+        }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
 			<string>NS is nextstep </string>
 			<key>Id</key>
 			<string>40</string>
