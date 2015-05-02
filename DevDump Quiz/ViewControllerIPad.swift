@@ -273,7 +273,11 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
         
         // set user selection
         if(!appDelegate.model.getIsAnswerEntered()){
-            appDelegate.model.setAnswerIndex(index + 1)
+            // TODO:
+            var indexes:[Int] = []
+            indexes.append(index + 1)
+            
+            appDelegate.model.setAnswerIndexes(indexes)
         }
         
         let htmlAnswerDesc:String = appDelegate.model.getAnswerDescByIndex(index)
