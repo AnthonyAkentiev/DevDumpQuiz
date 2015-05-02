@@ -10,7 +10,7 @@
 			<key>Id</key>
 			<string>36</string>
 			<key>Tags</key>
-			<string>Web, Screen</string>
+			<string>Web</string>
 			<key>Level</key>
 			<string>2</string>
 			<key>Correct Answer</key>
@@ -39,7 +39,7 @@
 			<key>Id</key>
 			<string>34</string>
 			<key>Tags</key>
-			<string>C/C++, Microsoft, IT History, Screen</string>
+			<string>C/C++, Microsoft, IT History</string>
 			<key>Level</key>
 			<string>3</string>
 			<key>Correct Answer</key>
@@ -101,11 +101,10 @@
 			<key>q</key>
 			<string>&lt;div&gt;
 &lt;h2&gt;When was Visual C++ 1.0 version released?&lt;/h2&gt;
-&lt;p&gt;(Microsoft Visual C++ specific)&lt;/p&gt;
 &lt;/div&gt;
-
 &lt;p&gt;&lt;b&gt;Visual C++ 1.0&lt;/b&gt; included MFC 2.0&lt;/p&gt;
-&lt;p&gt;MFC 1.0 was first introduced in Microsoft C/C++ 7.0&lt;/p&gt;</string>
+&lt;p&gt;MFC 1.0 was first introduced in Microsoft C/C++ 7.0&lt;/p&gt;
+&lt;img src=&quot;http://www.emsps.com/oldtools/photos/ms/c/v1std.jpg&quot; alt=“VisualC++_pack. Internet connection required to view pictures”&gt;&lt;/img&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
@@ -113,7 +112,7 @@
 			<key>Id</key>
 			<string>33</string>
 			<key>Tags</key>
-			<string>C/C++, Microsoft, Screen</string>
+			<string>C/C++, Microsoft</string>
 			<key>Level</key>
 			<string>4</string>
 			<key>Correct Answer</key>
@@ -153,7 +152,7 @@ int main(int argc, char** argv){
 			<key>Id</key>
 			<string>32</string>
 			<key>Tags</key>
-			<string>IT History, Screen</string>
+			<string>IT History</string>
 			<key>Level</key>
 			<string>3</string>
 			<key>Correct Answer</key>
@@ -215,7 +214,7 @@ Spyglass, Inc. licensed the technology and trademarks from NCSA for producing th
 			<key>Id</key>
 			<string>31</string>
 			<key>Tags</key>
-			<string>General, Screen</string>
+			<string>General</string>
 			<key>Level</key>
 			<string>2</string>
 			<key>Correct Answer</key>
