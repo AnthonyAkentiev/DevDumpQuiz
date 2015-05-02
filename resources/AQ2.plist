@@ -13,8 +13,8 @@
 			<string>Linux, Unix</string>
 			<key>Level</key>
 			<string>2</string>
-			<key>Correct Answer</key>
-			<integer>2</integer>
+			<key>Correct Answers</key>
+			<string>2</string>
 			<key>answers</key>
 			<array>
 				<string>hexdump</string>
@@ -39,8 +39,8 @@
 		<dict>
 			<key>Comment</key>
 			<string>jq - json parser</string>
-			<key>Correct Answer</key>
-			<integer>1</integer>
+			<key>Correct Answers</key>
+			<string>1</string>
 			<key>Id</key>
 			<string>20</string>
 			<key>Level</key>
@@ -103,8 +103,8 @@ jq
 		<dict>
 			<key>Comment</key>
 			<string>killall itself</string>
-			<key>Correct Answer</key>
-			<integer>3</integer>
+			<key>Correct Answers</key>
+			<string>3</string>
 			<key>Id</key>
 			<string>19</string>
 			<key>Level</key>
@@ -152,8 +152,8 @@ sudo killall “some-process-name”
 		<dict>
 			<key>Comment</key>
 			<string>find + tar </string>
-			<key>Correct Answer</key>
-			<integer>3</integer>
+			<key>Correct Answers</key>
+			<string>3</string>
 			<key>Id</key>
 			<string>18</string>
 			<key>Level</key>
@@ -220,8 +220,8 @@ sudo find / -name *.jpg -type f -print | xargs tar -cvzf images.tar.gz
 		<dict>
 			<key>Comment</key>
 			<string>Tar -xzvf</string>
-			<key>Correct Answer</key>
-			<integer>4</integer>
+			<key>Correct Answers</key>
+			<string>4</string>
 			<key>Id</key>
 			<string>17</string>
 			<key>Level</key>
@@ -262,8 +262,8 @@ tar -xzvf something
 		<dict>
 			<key>Comment</key>
 			<string>mkdir -p</string>
-			<key>Correct Answer</key>
-			<integer>2</integer>
+			<key>Correct Answers</key>
+			<string>2</string>
 			<key>Id</key>
 			<string>16</string>
 			<key>Level</key>
@@ -300,8 +300,8 @@ mkdir -what_param dir1/dir2/dir3/dir4/
 		<dict>
 			<key>Comment</key>
 			<string>Chmod</string>
-			<key>Correct Answer</key>
-			<integer>1</integer>
+			<key>Correct Answers</key>
+			<string>1</string>
 			<key>Id</key>
 			<string>15</string>
 			<key>Level</key>
@@ -338,8 +338,8 @@ chmod ug+rwx file.txt
 		<dict>
 			<key>Comment</key>
 			<string>Wall command</string>
-			<key>Correct Answer</key>
-			<integer>3</integer>
+			<key>Correct Answers</key>
+			<string>3</string>
 			<key>Id</key>
 			<string>14</string>
 			<key>Level</key>
@@ -378,8 +378,8 @@ wall
 		<dict>
 			<key>Comment</key>
 			<string>Shutdown command</string>
-			<key>Correct Answer</key>
-			<integer>2</integer>
+			<key>Correct Answers</key>
+			<string>2</string>
 			<key>Id</key>
 			<string>13</string>
 			<key>Level</key>
@@ -419,8 +419,8 @@ sudo shutdown -h now
 			</array>
 			<key>Comment</key>
 			<string>YellowDog package manager</string>
-			<key>Correct Answer</key>
-			<integer>3</integer>
+			<key>Correct Answers</key>
+			<string>3</string>
 			<key>Id</key>
 			<string>12</string>
 			<key>Level</key>
@@ -446,8 +446,8 @@ sudo shutdown -h now
 		<dict>
 			<key>Comment</key>
 			<string>GCC compile a.out</string>
-			<key>Correct Answer</key>
-			<integer>4</integer>
+			<key>Correct Answers</key>
+			<string>4</string>
 			<key>Id</key>
 			<string>11</string>
 			<key>Level</key>

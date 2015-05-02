@@ -13,8 +13,8 @@
 			<string>Web</string>
 			<key>Level</key>
 			<string>2</string>
-			<key>Correct Answer</key>
-			<integer>2</integer>
+			<key>Correct Answers</key>
+			<string>2</string>
 			<key>answers</key>
 			<array>
 				<string>This is valid HTML and meta tags will be processed normally</string>
@@ -42,8 +42,8 @@
 			<string>C/C++, Microsoft, IT History</string>
 			<key>Level</key>
 			<string>3</string>
-			<key>Correct Answer</key>
-			<integer>1</integer>
+			<key>Correct Answers</key>
+			<string>1</string>
 			<key>answers</key>
 			<array>
 				<string>1993</string>
@@ -115,8 +115,8 @@
 			<string>C/C++, Microsoft</string>
 			<key>Level</key>
 			<string>4</string>
-			<key>Correct Answer</key>
-			<integer>3</integer>
+			<key>Correct Answers</key>
+			<string>3</string>
 			<key>answers</key>
 			<array>
 				<string>Standard</string>
@@ -155,8 +155,8 @@ int main(int argc, char** argv){
 			<string>IT History</string>
 			<key>Level</key>
 			<string>3</string>
-			<key>Correct Answer</key>
-			<integer>2</integer>
+			<key>Correct Answers</key>
+			<string>2</string>
 			<key>answers</key>
 			<array>
 				<string>Mosaic</string>
@@ -217,8 +217,8 @@ Spyglass, Inc. licensed the technology and trademarks from NCSA for producing th
 			<string>General</string>
 			<key>Level</key>
 			<string>2</string>
-			<key>Correct Answer</key>
-			<integer>3</integer>
+			<key>Correct Answers</key>
+			<string>3</string>
 			<key>answers</key>
 			<array>
 				<string>PNG is loseless, JPEG is lossy</string>
@@ -265,8 +265,8 @@ Spyglass, Inc. licensed the technology and trademarks from NCSA for producing th
 			<string>C/C++</string>
 			<key>Level</key>
 			<string>3</string>
-			<key>Correct Answer</key>
-			<integer>2</integer>
+			<key>Correct Answers</key>
+			<string>2</string>
 			<key>answers</key>
 			<array>
 				<string>The result is fffffffc</string>
@@ -303,8 +303,8 @@ int main(void){
 			<string>C/C++</string>
 			<key>Level</key>
 			<string>1</string>
-			<key>Correct Answer</key>
-			<integer>4</integer>
+			<key>Correct Answers</key>
+			<string>4</string>
 			<key>answers</key>
 			<array>
 				<string>The program reports an error as pointer to member function cannot be defined outside the definition of class</string>
@@ -347,8 +347,8 @@ int main()
 			<string>C/C++</string>
 			<key>Level</key>
 			<string>1</string>
-			<key>Correct Answer</key>
-			<integer>3</integer>
+			<key>Correct Answers</key>
+			<string>3</string>
 			<key>answers</key>
 			<array>
 				<string>Member function and data are by default protected in structures but private in classes</string>
@@ -375,8 +375,8 @@ int main()
 			<string>C/C++</string>
 			<key>Level</key>
 			<string>1</string>
-			<key>Correct Answer</key>
-			<integer>4</integer>
+			<key>Correct Answers</key>
+			<string>4</string>
 			<key>answers</key>
 			<array>
 				<string>It will not compile because class body of Birds is not defined</string>
@@ -411,8 +411,8 @@ class Peacock : protected Birds {};
 			<string>C/C++</string>
 			<key>Level</key>
 			<string>1</string>
-			<key>Correct Answer</key>
-			<integer>4</integer>
+			<key>Correct Answers</key>
+			<string>4</string>
 			<key>answers</key>
 			<array>
 				<string>The result is 25</string>
@@ -445,8 +445,8 @@ class Peacock : protected Birds {};
 			<string>C/C++</string>
 			<key>Level</key>
 			<string>1</string>
-			<key>Correct Answer</key>
-			<integer>4</integer>
+			<key>Correct Answers</key>
+			<string>4</string>
 			<key>answers</key>
 			<array>
 				<string>i==6, j==5</string>
@@ -482,8 +482,8 @@ int j = i++;&lt;/code&gt;&lt;/pre&gt;
 			<string>C/C++</string>
 			<key>Level</key>
 			<string>2</string>
-			<key>Correct Answer</key>
-			<integer>2</integer>
+			<key>Correct Answers</key>
+			<string>2</string>
 			<key>answers</key>
 			<array>
 				<string>2 types of linkage</string>
@@ -538,8 +538,8 @@ int j = i++;&lt;/code&gt;&lt;/pre&gt;
 			<string>C/C++, General</string>
 			<key>Level</key>
 			<string>1</string>
-			<key>Correct Answer</key>
-			<integer>1</integer>
+			<key>Correct Answers</key>
+			<string>1</string>
 			<key>answers</key>
 			<array>
 				<string>842</string>
@@ -598,8 +598,8 @@ int main(int argc, char * argv[] )
 			<string>General</string>
 			<key>Level</key>
 			<string>1</string>
-			<key>Correct Answer</key>
-			<integer>3</integer>
+			<key>Correct Answers</key>
+			<string>3</string>
 			<key>answers</key>
 			<array>
 				<string>Authentication: verifying that &apos;you are permitted to do that&apos;; Authorization: determining if someone is who he is declared to be</string>
@@ -650,8 +650,8 @@ int main(int argc, char * argv[] )
 			<string>C/C++</string>
 			<key>Level</key>
 			<string>1</string>
-			<key>Correct Answer</key>
-			<integer>4</integer>
+			<key>Correct Answers</key>
+			<string>4</string>
 			<key>answers</key>
 			<array>
 				<string>Friend keyword can be used in the class to allow access to another class</string>

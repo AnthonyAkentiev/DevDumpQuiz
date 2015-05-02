@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>questions</key>
+	<array>
+		<dict>
+			<key>Comment</key>
+			<string>stdafx.h</string>
+			<key>Id</key>
+			<string>100</string>
+			<key>Tags</key>
+			<string>C/C++, Screen</string>
+			<key>Level</key>
+			<string>4</string>
+			<key>Correct Answers</key>
+			<string>1+4</string>
+			<key>answers</key>
+			<array>
+				<string>By reference</string>
+				<string>By name</string>
+				<string>By pointer</string>
+				<string>By value</string>
+			</array>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;There are 2 ways to pass an argument to function in C/C++&lt;/h2&gt;
+    &lt;p&gt;1. By value&lt;/p&gt;
+    &lt;p&gt;2. By reference&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Passing arguments by reference&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp”&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+// this function can change values of a, b, c
+void duplicate (int&amp; a, int&amp; b, int&amp; c)
+{
+  a*=2;
+  b*=2;
+  c*=2;
+}
+
+int main ()
+{
+  int x=1, y=3, z=7;
+  duplicate (x, y, z);
+ 
+  // Output will be:
+  // x=2, y=6, z=14
+  //
+  cout &lt;&lt; &quot;x=&quot; &lt;&lt; x &lt;&lt; &quot;, y=&quot; &lt;&lt; y &lt;&lt; &quot;, z=&quot; &lt;&lt; z;
+  return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Passing arguments by value&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-cpp”&gt;
+// Each string will be copied
+std::string concatenate(std::string a, std::string b)
+{
+  return a+b;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;More effective way:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp”&gt;
+// Passing by reference, but function can not change values of a and b
+std::string concatenate(const std::string&amp; a, const std::string&amp; b)
+{
+  return a+b;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;a href=&quot;http://www.cplusplus.com/doc/tutorial/functions/&quot;&gt;Source&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;How can we pass arguments to function in C/C++?&lt;/h2&gt;
+    &lt;p&gt;(Select many)&lt;/p&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp”&gt;
+int functionOne(int param1, int param2){
+	return param1 + param2;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+	</array>
+</dict>
+</plist>

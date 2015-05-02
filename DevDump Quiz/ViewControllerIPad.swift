@@ -40,7 +40,7 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
     
     //
     var items: [String] = []
-    var correctAnswer: Int = 0     // starting from 1
+    var correctAnswers: [Int] = []    // starting from 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -150,11 +150,13 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func highlightGoodAnswer(){
-        var path:NSIndexPath = NSIndexPath(forRow: (correctAnswer - 1), inSection: 0)
-        var selectedCell:UITableViewCell? = tableView?.cellForRowAtIndexPath(path)
-        
-        selectedCell?.textLabel!.textColor = UIColor.blueColor()
-        selectedCell?.detailTextLabel!.textColor = UIColor.blueColor()
+        for answ in correctAnswers {
+            var path:NSIndexPath = NSIndexPath(forRow: (answ - 1), inSection: 0)
+            
+            var selectedCell:UITableViewCell? = tableView?.cellForRowAtIndexPath(path)
+            selectedCell?.textLabel!.textColor = UIColor.blueColor()
+            selectedCell?.detailTextLabel!.textColor = UIColor.blueColor()
+        }
     }
     
     func goToCorrectAnswer(){
@@ -191,7 +193,7 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         items = appDelegate.model.getAnswers()
         
-        correctAnswer = appDelegate.model.getCorrectAnswerIndex()
+        correctAnswers = appDelegate.model.getCorrectAnswerIndexes()
         
         // optional
         tableView?.reloadData()
@@ -231,9 +233,16 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
         
         // highlight if "already answered" mode
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        if(appDelegate.model.getIsAnswerEntered() && (indexPath.row + 1==appDelegate.model.getCorrectAnswerIndex())){
+        if(appDelegate.model.getIsAnswerEntered()){
             cell.textLabel!.textColor = UIColor.blueColor()
             cell.detailTextLabel!.textColor = UIColor.blueColor()
+            
+            for answ in correctAnswers {
+                if(indexPath.row + 1==answ){
+                    cell.textLabel!.textColor = UIColor.blueColor()
+                    cell.detailTextLabel!.textColor = UIColor.blueColor()
+                }
+            }
         }
         
         return cell

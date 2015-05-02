@@ -28,10 +28,7 @@ class CorrectAnswerController: UIViewController {
         
         // is Correct?
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        var correctIndex = appDelegate.model.getCorrectAnswerIndex()
-        var userAnswered = appDelegate.model.getAnswerIndex()
-        
-        if(correctIndex==userAnswered){
+        if(appDelegate.model.isCorrectAnswer()){
             lblIsCorrect.text = "Correct!"
         }else{
             lblIsCorrect.text = "Wrong answer..."

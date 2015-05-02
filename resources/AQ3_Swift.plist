@@ -13,8 +13,8 @@
 			<string>Swift</string>
 			<key>Level</key>
 			<string>1</string>
-			<key>Correct Answer</key>
-			<integer>3</integer>
+			<key>Correct Answers</key>
+			<string>3</string>
 			<key>answers</key>
 			<array>
 				<string>Use line 1</string>
@@ -83,8 +83,8 @@ let len: Int = count(test)
 			<string>Swift</string>
 			<key>Level</key>
 			<string>3</string>
-			<key>Correct Answer</key>
-			<integer>1</integer>
+			<key>Correct Answers</key>
+			<string>1</string>
 			<key>answers</key>
 			<array>
 				<string>If we will use lblFirst like a normal variable (lblFirst.text = &quot;Hello&quot;) -&gt; optional unwrapping will be done automatically</string>
@@ -152,8 +152,8 @@ You often see implicitly unwrapped optionals when working with Interface Builder
 			<string>Swift</string>
 			<key>Level</key>
 			<string>3</string>
-			<key>Correct Answer</key>
-			<integer>1</integer>
+			<key>Correct Answers</key>
+			<string>1</string>
 			<key>answers</key>
 			<array>
 				<string>Line 1 has error</string>
@@ -214,8 +214,8 @@ class ScoreController: UIViewController {
 			<string>Swift</string>
 			<key>Level</key>
 			<string>3</string>
-			<key>Correct Answer</key>
-			<integer>1</integer>
+			<key>Correct Answers</key>
+			<string>1</string>
 			<key>answers</key>
 			<array>
 				<string>Both lines (1 and 2) contain errors</string>
@@ -296,8 +296,8 @@ class ScoreController: UIViewController {
 			<string>Swift, IT History</string>
 			<key>Level</key>
 			<string>3</string>
-			<key>Correct Answer</key>
-			<integer>2</integer>
+			<key>Correct Answers</key>
+			<string>2</string>
 			<key>answers</key>
 			<array>
 				<string>NewStyle</string>

@@ -7,8 +7,8 @@
 		<dict>
 			<key>Comment</key>
 			<string>xxd</string>
-			<key>Correct Answer</key>
-			<integer>4</integer>
+			<key>Correct Answers</key>
+			<string>4</string>
 			<key>Id</key>
 			<string>30</string>
 			<key>Level</key>
@@ -90,8 +90,8 @@ ubuntu@ip-172-31-15-189:~$ xxd
 		<dict>
 			<key>Comment</key>
 			<string>Core-dump</string>
-			<key>Correct Answer</key>
-			<integer>2</integer>
+			<key>Correct Answers</key>
+			<string>2</string>
 			<key>Id</key>
 			<string>29</string>
 			<key>Level</key>
@@ -156,8 +156,8 @@ One popular tool, available on many operating systems, is the GNU binutils&apos;
 		<dict>
 			<key>Comment</key>
 			<string>/dev/tty2</string>
-			<key>Correct Answer</key>
-			<integer>2</integer>
+			<key>Correct Answers</key>
+			<string>2</string>
 			<key>Id</key>
 			<string>28</string>
 			<key>Level</key>
@@ -223,8 +223,8 @@ isig icanon iexten echo echoe echok -echonl -noflsh -xcase -tostop -echoprt -ech
 		<dict>
 			<key>Comment</key>
 			<string>screen</string>
-			<key>Correct Answer</key>
-			<integer>4</integer>
+			<key>Correct Answers</key>
+			<string>4</string>
 			<key>Id</key>
 			<string>27</string>
 			<key>Level</key>
@@ -329,8 +329,8 @@ ubuntu@ip-172-31-15-189:~$
 		<dict>
 			<key>Comment</key>
 			<string>Top half</string>
-			<key>Correct Answer</key>
-			<integer>1</integer>
+			<key>Correct Answers</key>
+			<string>1</string>
 			<key>Id</key>
 			<string>26</string>
 			<key>Level</key>
@@ -485,8 +485,8 @@ int request_irq(unsigned int irq,
 		<dict>
 			<key>Comment</key>
 			<string>bzimage</string>
-			<key>Correct Answer</key>
-			<integer>3</integer>
+			<key>Correct Answers</key>
+			<string>3</string>
 			<key>Id</key>
 			<string>25</string>
 			<key>Level</key>
@@ -522,8 +522,8 @@ int request_irq(unsigned int irq,
 		<dict>
 			<key>Comment</key>
 			<string>vmlinuz</string>
-			<key>Correct Answer</key>
-			<integer>3</integer>
+			<key>Correct Answers</key>
+			<string>3</string>
 			<key>Id</key>
 			<string>24</string>
 			<key>Level</key>
@@ -597,8 +597,8 @@ lrwxrwxrwx 1 root root 30 Jun  7  2014 /vmlinuz -&gt; boot/vmlinuz-3.13.0-29-gen
 		<dict>
 			<key>Comment</key>
 			<string>find metallica</string>
-			<key>Correct Answer</key>
-			<integer>1</integer>
+			<key>Correct Answers</key>
+			<string>1</string>
 			<key>Id</key>
 			<string>23</string>
 			<key>Level</key>
@@ -660,8 +660,8 @@ find /mp3-collection -name &apos;Metallica*&apos; -or -size +10000k
 		<dict>
 			<key>Comment</key>
 			<string>JFS filesystem</string>
-			<key>Correct Answer</key>
-			<integer>4</integer>
+			<key>Correct Answers</key>
+			<string>4</string>
 			<key>Id</key>
 			<string>22</string>
 			<key>Level</key>
@@ -711,8 +711,8 @@ find /mp3-collection -name &apos;Metallica*&apos; -or -size +10000k
 		<dict>
 			<key>Comment</key>
 			<string>mount</string>
-			<key>Correct Answer</key>
-			<integer>2</integer>
+			<key>Correct Answers</key>
+			<string>2</string>
 			<key>Id</key>
 			<string>21</string>
 			<key>Level</key>
