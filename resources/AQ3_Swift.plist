@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>questions</key>
+	<array>
+		<dict>
+			<key>Comment</key>
+			<string>NS is nextstep </string>
+			<key>Id</key>
+			<string>40</string>
+			<key>Tags</key>
+			<string>Swift, IT History</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answer</key>
+			<integer>2</integer>
+			<key>answers</key>
+			<array>
+				<string>NewStyle</string>
+				<string>NextStep</string>
+				<string>NumericSpec</string>
+				<string>NumSpecified</string>
+			</array>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;NS stands for NeXTSTEP&lt;/h2&gt;
+&lt;div&gt;
+&lt;p&gt;&lt;b&gt;NeXTSTEP&lt;/b&gt; (also stylized as &lt;b&gt;NeXTstep&lt;/b&gt;, &lt;b&gt;NeXTStep&lt;/b&gt;, and &lt;b&gt;NEXTSTEP&lt;/b&gt;) is an object-oriented, multitasking operating system which was developed by NeXT Computer to run on its range of proprietary workstation computers, such as the NeXTcube. It was later ported to several other computer architectures.&lt;/p&gt;
+
+&lt;p&gt;A preview release of NeXTSTEP (version 0.8) was shown with the launch of the NeXT Computer on October 12, 1988. The first full release, NeXTSTEP 1.0, shipped on September 18, 1989. The last version, 3.3, was released in early 1995, by which time it ran on not only the Motorola 68000 family processors used in NeXT computers, but also on Intel x86, Sun SPARC, and HP PA-RISC-based systems.&lt;/p&gt;
+
+&lt;p&gt;Apple purchased NeXT in 1997 for $429 million and 1.5 million shares of Apple stock. As part of the agreement, Steve Jobs, Chairman and CEO of NeXT Software, returned to Apple, the company he had cofounded in 1976. The merger promised to marry software from NeXT with Apple&apos;s hardware platforms, eventually resulting in OS X and iOS. Parts of these operating systems incorporated the OPENSTEP foundation.&lt;/p&gt;
+
+&lt;h3&gt;1987–93: NeXT Computer&lt;/h3&gt;
+&lt;h4&gt;First generation&lt;/h4&gt;
+
+&lt;p&gt;NeXT changed its business plan in mid-1986. The company decided to develop both computer hardware and software, instead of just a low-end workstation. A team led by Avie Tevanian, who had joined the company after working as one of the Mach kernel engineers at Carnegie Mellon University, was to develop the NeXTSTEP operating system. The hardware division, led by Rich Page, one of the cofounders who had previously led the Apple Lisa team, designed and developed the hardware. NeXT&apos;s first factory was completed in Fremont, California in 1987. It was capable of producing 150,000 machines per year. NeXT&apos;s first workstation was officially named the NeXT Computer, although it was widely referred to as &quot;the cube&quot; because of its distinctive case, a 1 ft magnesium cube, an edict of Jobs&apos; designed by Apple IIc case designer Frogdesign.&lt;/p&gt;
+
+&lt;p&gt;The original design team had anticipated releasing the computer for US$ 3,000 in spring of 1987 to be ready for sale by summer of that year. Prototype workstations were eventually shown to standing ovations on October 12, 1988. The NeXT Computer was revealed at a lavish (invitation only) gala launch event &quot;NeXT Introduction - the Introduction to the NeXT Generation of Computers for Education&quot; at the Louise M. Davies Symphony Hall, San Francisco, California on Wednesday October 12 1988. The following day, selected educators and software developers were invited (for $100 registration fee) to attend the first public technical overview of the NeXT computer at an event called &quot;The NeXT Day&quot; held at the San Francisco Hilton. This event gave developers interested in developing NeXT software an insight into the software architecture, object-oriented programming and developing for the NeXT Computer. The luncheon speaker was Steve Jobs.&lt;/p&gt;
+
+&lt;p&gt;The first machines were tested in 1989, after which NeXT started selling limited numbers to universities with a beta version of the NeXTSTEP operating system installed. Initially the NeXT Computer was targeted at US higher education establishments only, with a base price of $6,500. The machine was widely reviewed in magazines, generally concentrating on the hardware. When asked if he was upset that the computer&apos;s debut was delayed by several months, Jobs responded, &quot;Late? This computer is five years ahead of its time!”&lt;/p&gt;
+
+&lt;p&gt;The NeXT Computer was based on the new 25 MHz Motorola 68030 central processing unit (CPU). The Motorola 88000 RISC chip was originally considered, but was not available in sufficient quantities. It included between 8 and 64 MB of random access memory (RAM), a 256 MB magneto-optical (MO) drive, a 40 MB (swap-only), 330 MB, or 660 MB hard drive, 10Base-2 Ethernet, NuBus and a 17-inch &lt;i&gt;MegaPixel&lt;/i&gt; grayscale display measuring 1120 by 832 pixels. In 1989 a typical new PC, Macintosh, or Amiga computer included a few MB of RAM, a 640×480 16-color or 320x240 4000-color display, a 10 to 20 megabyte hard drive and few networking capabilities. It also was the first computer to ship with a general-purpose DSP chip (Motorola 56001) on the mother board. This was used to support sophisticated music and sound processing, including the Music Kit software.&lt;/p&gt;
+
+&lt;p&gt;The magneto-optical drive manufactured by Canon was used as the primary mass storage device. These drives were relatively new to the market, and the NeXT was the first computer to use them. They were cheaper than hard drives (blank media especially so: though each had a cost of $150 to Canon, Jobs&apos; typically forthright negotiations saw Canon agree to a retail of only $50 apiece) but slower (with an average seek time of 96 ms). The design made it impossible to move files between computers without a network, since each NeXT Computer had only one MO drive and the disk could not be removed without shutting down the system. Storage options proved challenging for the first NeXT Computers. The magneto-optical media was relatively expensive and had performance and reliability problems despite being faster than a floppy drive. The drive was not sufficient to run as the primary medium running the NeXTSTEP operating system both in terms of speed and capacity.&lt;/p&gt;
+
+&lt;p&gt;In 1989, NeXT struck a deal for former Compaq reseller Businessland to sell NeXT computers in select markets nationwide. Selling through a retailer was a major change from NeXT&apos;s original business model of only selling directly to students and educational institutions. Businessland founder David Norman predicted that sales of the NeXT Computer would surpass sales of Compaq computers after 12 months.&lt;/p&gt;
+
+&lt;p&gt;In 1989, Canon invested US$100 million in NeXT, giving it a 16.67 percent stake, making NeXT worth almost $600 million. Canon invested in NeXT with the condition that it would be able to use the NeXTSTEP environment with its own workstations, which would mean a greatly expanded market for the software. After NeXT exited the hardware business, Canon produced a line of PCs, called &lt;i&gt;object.station&lt;/i&gt;, including models 31, 41, 50 and 52, specifically designed to run NeXTSTEP/Intel. Canon also served as NeXT&apos;s distributor in Japan.&lt;/p&gt;
+
+&lt;p&gt;The first NeXT computers were released on the retail market in 1990, for $9,999. NeXT&apos;s original investor Ross Perot resigned from the board of directors in June 1991 to dedicate more time to Perot Systems, a Plano, Texas-based systems integrator.&lt;/p&gt;
+
+&lt;a href=&quot;http://en.wikipedia.org/wiki/NeXT&quot;&gt;Wiki&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What NS prefix in NSIndexPath stands for?&lt;/h2&gt;
+&lt;div&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+	// toggle checkbox
+    var cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        
+    if(cell.accessoryType == UITableViewCellAccessoryType.None){
+    	cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+    }else{
+    	cell.accessoryType = UITableViewCellAccessoryType.None
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</string>
+		</dict>
+	</array>
+</dict>
+</plist>
