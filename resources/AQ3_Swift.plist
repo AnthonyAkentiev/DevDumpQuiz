@@ -6,66 +6,72 @@
 	<array>
 		<dict>
 			<key>Comment</key>
-			<string>case</string>
+			<string>ref cycle</string>
 			<key>Id</key>
 			<string>52</string>
 			<key>Tags</key>
 			<string>Swift, Screen</string>
 			<key>Level</key>
-			<string>2</string>
+			<string>5</string>
 			<key>Correct Answers</key>
-			<string>2</string>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string>Raw values is the data that case items &quot;contain&quot;</string>
-				<string>Raw values are used to associate constant values to enum cases</string>
-				<string>Associated values describe type of enum case</string>
+				<string>Yes. There is a bug in this code</string>
+				<string>No. Code has no bugs</string>
 			</array>
 			<key>a</key>
-			<string>&lt;h2&gt;&lt;b&gt;Raw values&lt;/b&gt; are used to associate constant (literal) values to enum cases&lt;/h2&gt;
-&lt;p&gt;The value type is part of the enum type, and each enum case must specify a unique raw value (duplicate values are not allowed).&lt;/p&gt;
-&lt;p&gt;The following example shows an enum with raw values of type Int:&lt;/p&gt;
+			<string>&lt;h2&gt;This code has ‘strong reference cycle’ bug&lt;/h2&gt;
+&lt;p&gt;There is a &lt;i&gt;strong reference cycle&lt;/i&gt; between &lt;b&gt;Master&lt;/b&gt; and &lt;b&gt;Detail&lt;/b&gt;, with &lt;b&gt;Master&lt;/b&gt; creating an instance of &lt;b&gt;Detail&lt;/b&gt; and storing a reference to it, and &lt;b&gt;Detail&lt;/b&gt; storing a reference to the instance of its &lt;b&gt;Master&lt;/b&gt; creator. In both cases, references are strong, which means that none of the 2 instances will ever be deallocated, causing a memory leak.&lt;/p&gt;
+&lt;p&gt;To solve the problem it’s necessary to break at least one of the 2 strong relationships, by using either the &lt;b&gt;weak&lt;/b&gt; or &lt;b&gt;unowned&lt;/b&gt; modifier. The differences between the 2 modifiers is:&lt;/p&gt;
+		&lt;h3&gt;unowned&lt;/h3&gt;
+		&lt;p&gt;The reference is assumed to always have a value during its lifetime - as a consequence, the property must be of non-optional type.&lt;/p&gt;
+		&lt;h3&gt;weak&lt;/h3&gt;
+		&lt;p&gt;At some point it’s possible for the reference to have no value - as a consequence, the property must be of optional type.&lt;/p&gt;
+&lt;p&gt;In the above code example, the proper solution is to define in &lt;b&gt;Detail&lt;/b&gt; the reference to &lt;b&gt;Master&lt;/b&gt; as &lt;b&gt;unowned&lt;/b&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
-enum IntEnum : Int {
-    case ONE = 1
-    case TWO = 2
-    case THREE = 3
+class Detail {
+    unowned var master: Master
+    ...
 }
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;An enum value can be converted to its raw value by using the &lt;b&gt;rawValue&lt;/b&gt; property:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
-var enumVar: IntEnum = IntEnum.TWO
-var rawValue: Int = enumVar.rawValue
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A raw value can be converted to an enum instance by using a dedicated initializer:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
-var enumVar: IntEnum? = IntEnum(rawValue: 1)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;i&gt;Associated values&lt;/i&gt; are used to associate arbitrary data to a specific enum case. Each enum case can have zero or more associated values, declared as a tuple in the case definition:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
-enum AssociatedEnum {
-    case EMPTY
-    case WITH_INT(value: Int)
-    case WITH_TUPLE(value: Int, text: String, data: [Float])
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Whereas the type(s) associated to a case are part of the enum declaration, the associated value(s) are instance specific, meaning that an enum case can have different associated values for different enum instances.&lt;/p&gt;
-
 &lt;a href=&quot;http://www.toptal.com/swift/interview-questions&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
 			<string>&lt;div&gt;
-&lt;h2&gt;In Swift enumerations, what’s the difference between raw values and associated values?&lt;/h2&gt;
+&lt;h2&gt;Can you spot bug here?&lt;/h2&gt;
 &lt;/div&gt;
 &lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
-enum IntEnum {
-    case ONE = 1
-    case TWO = 2
-    case THREE = 3
+class Master {
+    lazy var detail: Detail = Detail(master: self)
+    
+    init() {
+        println(&quot;Master init&quot;)
+    }
+    
+    deinit {
+        println(&quot;Master deinit&quot;)
+    }
 }
+
+class Detail {
+    var master: Master
+    
+    init(master: Master) {
+        println(&quot;Detail init&quot;)
+        self.master = master
+    }
+    
+    deinit {
+        println(&quot;Detail deinit&quot;)
+    }
+}
+
+func createMaster() {
+    var master: Master = Master()
+    var detail = master.detail
+}
+    
+createMaster()
 &lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
