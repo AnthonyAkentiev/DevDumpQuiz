@@ -10,7 +10,7 @@
 			<key>Id</key>
 			<string>52</string>
 			<key>Tags</key>
-			<string>Swift, Screen</string>
+			<string>Swift</string>
 			<key>Level</key>
 			<string>5</string>
 			<key>Correct Answers</key>
@@ -80,7 +80,7 @@ createMaster()
 			<key>Id</key>
 			<string>51</string>
 			<key>Tags</key>
-			<string>Swift, Screen</string>
+			<string>Swift</string>
 			<key>Level</key>
 			<string>3</string>
 			<key>Correct Answers</key>
@@ -126,7 +126,7 @@ var len = array1.count
 			<key>Id</key>
 			<string>50</string>
 			<key>Tags</key>
-			<string>Swift, Screen</string>
+			<string>Swift</string>
 			<key>Level</key>
 			<string>4</string>
 			<key>Correct Answers</key>
@@ -175,7 +175,7 @@ var result = planets.reduce(0) { $0 + $1.distanceFromSun }
 			<key>Id</key>
 			<string>49</string>
 			<key>Tags</key>
-			<string>Swift, Screen</string>
+			<string>Swift</string>
 			<key>Level</key>
 			<string>2</string>
 			<key>Correct Answers</key>
@@ -239,7 +239,7 @@ enum IntEnum {
 			<key>Id</key>
 			<string>48</string>
 			<key>Tags</key>
-			<string>Swift, Screen</string>
+			<string>Swift</string>
 			<key>Level</key>
 			<string>3</string>
 			<key>Correct Answers</key>
@@ -285,7 +285,7 @@ struct IntStack {
 			<key>Id</key>
 			<string>47</string>
 			<key>Tags</key>
-			<string>Swift, Screen</string>
+			<string>Swift</string>
 			<key>Level</key>
 			<string>2</string>
 			<key>Correct Answers</key>
@@ -341,7 +341,7 @@ func printString(string: String) {
 			<key>Id</key>
 			<string>46</string>
 			<key>Tags</key>
-			<string>Swift, Screen</string>
+			<string>Swift</string>
 			<key>Level</key>
 			<string>1</string>
 			<key>Correct Answers</key>
@@ -386,7 +386,7 @@ var result = op1 + op2 + op3
 			<key>Id</key>
 			<string>45</string>
 			<key>Tags</key>
-			<string>Swift, Screen</string>
+			<string>Swift</string>
 			<key>Level</key>
 			<string>1</string>
 			<key>Correct Answers</key>
