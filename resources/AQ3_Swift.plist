@@ -6,6 +6,211 @@
 	<array>
 		<dict>
 			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>48</string>
+			<key>Tags</key>
+			<string>Swift, Screen</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string></string>
+				<string></string>
+				<string></string>
+				<string></string>
+			</array>
+			<key>a</key>
+			<string></string>
+			<key>q</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>48</string>
+			<key>Tags</key>
+			<string>Swift, Screen</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string></string>
+				<string></string>
+				<string></string>
+				<string></string>
+			</array>
+			<key>a</key>
+			<string></string>
+			<key>q</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>explicit unwrapping</string>
+			<key>Id</key>
+			<string>47</string>
+			<key>Tags</key>
+			<string>Swift, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>Line 1 has error</string>
+				<string>Line 2 has error</string>
+				<string>Line 3 has error</string>
+				<string>Function &apos;printString&apos; contains error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Line 2 has error - unwrapping could possibly throw error&lt;/h2&gt;
+&lt;p&gt;The second line uses the &lt;b&gt;stringForKey&lt;/b&gt; method of NSUserDefaults, which returns an optional, to account for the key not being found, or for the corresponding value not being convertible to a string.&lt;/p&gt;
+&lt;p&gt;During its execution, if the key is found and the corresponding value is a string, the above code works correctly. But if the key doesn’t exist, or the corresponding value is not a string, the app crashes with the following error:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+fatal error: unexpectedly found nil while unwrapping an Optional value
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The reason is that the forced unwrapping operator ! is attempting to force unwrap a value from a nil optional. The forced unwrapping operator should be used only when an optional is known to contain a non-nil value.&lt;/p&gt;
+&lt;p&gt;The solution consists of making sure that the optional is not nil before force-unwrapping it:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+let userPref = defaults.stringForKey(&quot;userPref&quot;)
+if userPref != nil {
+    printString(userPref!)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;An even better way is by using &lt;i&gt;optional binding&lt;/i&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+if let userPref = defaults.stringForKey(&quot;userPref&quot;) {
+    printString(userPref)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;a href=&quot;http://www.toptal.com/swift/interview-questions&quot;&gt;Source&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;Can you spot the error here?&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift”&gt;
+var defaults = NSUserDefaults.standardUserDefaults()
+var userPref = defaults.stringForKey(&quot;userPref&quot;)!
+printString(userPref)
+
+func printString(string: String) {
+    println(string)
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>implicit cast</string>
+			<key>Id</key>
+			<string>46</string>
+			<key>Tags</key>
+			<string>Swift, Screen</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>Line 1</string>
+				<string>Line 2</string>
+				<string>Line 3</string>
+				<string>There is no error in this code</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Line 3 contains error&lt;/h2&gt;
+&lt;p&gt;Swift doesn’t define any implicit cast between data types, even if they are conceptually almost identical (like UInt and Int).&lt;/p&gt;
+&lt;p&gt;To fix the error, rather than casting, an &lt;b&gt;explicit conversion&lt;/b&gt; is required. In the sample code, all expression operands must be converted to a common same type, which in this case is Double:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+var result = Double(op1) + Double(op2) + op3
+&lt;/code&gt;&lt;/pre&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;Consider the following code:&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift”&gt;
+// 1
+let op1: Int = 1
+
+// 2
+let op2: UInt = 2
+
+// 3
+let op3: Double = 3.34
+
+// 4
+var result = op1 + op2 + op3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Where is the error?&lt;/h2&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>components of NSIndexPath</string>
+			<key>Id</key>
+			<string>45</string>
+			<key>Tags</key>
+			<string>Swift, Screen</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>Section and column</string>
+				<string>Row and column</string>
+				<string>Section and row</string>
+				<string>Row and count</string>
+			</array>
+			<key>a</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;The main properties are: Section and Row&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -&gt; UITableViewCell {
+    let section: Int = indexPath.section
+    let row: Int = indexPath.row
+ 
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let tags:[String:Any] = appDelegate.model.getTags()
+
+    let txt = tags[row];
+    ...
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+    &lt;h2&gt;What are the main properties of NSIndexPath?&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift”&gt;
+extension UITableView {
+    func getAllCheckedCells()-&gt;[NSIndexPath]{
+        var out = [NSIndexPath]()
+        
+        let cnt = self.numberOfRowsInSection(0)
+        for i in 0..&lt;cnt {
+            var indexPath: NSIndexPath = NSIndexPath(forItem: i, inSection: 0)
+            
+            var cell:UITableViewCell? = self.cellForRowAtIndexPath(indexPath)
+            if(cell?.accessoryType == UITableViewCellAccessoryType.Checkmark){
+                out.append(indexPath)
+            }
+        }
+        
+        return out
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
 			<string>string len</string>
 			<key>Id</key>
 			<string>44</string>
