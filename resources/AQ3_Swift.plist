@@ -6,49 +6,272 @@
 	<array>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>case</string>
 			<key>Id</key>
-			<string>48</string>
+			<string>52</string>
 			<key>Tags</key>
 			<string>Swift, Screen</string>
 			<key>Level</key>
-			<string>1</string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string>3</string>
+			<string>2</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>Raw values is the data that case items &quot;contain&quot;</string>
+				<string>Raw values are used to associate constant values to enum cases</string>
+				<string>Associated values describe type of enum case</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;h2&gt;&lt;b&gt;Raw values&lt;/b&gt; are used to associate constant (literal) values to enum cases&lt;/h2&gt;
+&lt;p&gt;The value type is part of the enum type, and each enum case must specify a unique raw value (duplicate values are not allowed).&lt;/p&gt;
+&lt;p&gt;The following example shows an enum with raw values of type Int:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+enum IntEnum : Int {
+    case ONE = 1
+    case TWO = 2
+    case THREE = 3
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;An enum value can be converted to its raw value by using the &lt;b&gt;rawValue&lt;/b&gt; property:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+var enumVar: IntEnum = IntEnum.TWO
+var rawValue: Int = enumVar.rawValue
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A raw value can be converted to an enum instance by using a dedicated initializer:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+var enumVar: IntEnum? = IntEnum(rawValue: 1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;i&gt;Associated values&lt;/i&gt; are used to associate arbitrary data to a specific enum case. Each enum case can have zero or more associated values, declared as a tuple in the case definition:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+enum AssociatedEnum {
+    case EMPTY
+    case WITH_INT(value: Int)
+    case WITH_TUPLE(value: Int, text: String, data: [Float])
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Whereas the type(s) associated to a case are part of the enum declaration, the associated value(s) are instance specific, meaning that an enum case can have different associated values for different enum instances.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.toptal.com/swift/interview-questions&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt;In Swift enumerations, what’s the difference between raw values and associated values?&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+enum IntEnum {
+    case ONE = 1
+    case TWO = 2
+    case THREE = 3
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>array length</string>
+			<key>Id</key>
+			<string>51</string>
+			<key>Tags</key>
+			<string>Swift, Screen</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>6</string>
+				<string>5</string>
+				<string>Code is invalid</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;The value is 5&lt;/h2&gt;
+&lt;p&gt;The &lt;b&gt;len&lt;/b&gt; variable is equal to 5, meaning that &lt;b&gt;array1&lt;/b&gt; has 5 elements, whereas &lt;b&gt;array2&lt;/b&gt; has 6 elements:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+array1 = [1, 2, 3, 4, 5]
+array2 = [1, 2, 3, 4, 5, 6]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When array1 is assigned to array2, a copy of array1 is actually created and assigned.&lt;/p&gt;
+&lt;p&gt;The reason is that swift arrays are value types (implemented as structs) and not reference types (i.e. classes). When a value type is assigned to a variable, passed as argument to a function or method, or otherwise moved around, a copy of it is actually created and assigned or passed. Note that swift dictionaries are also value types, implemented as structs.&lt;/p&gt;
+&lt;p&gt;Value types in swift are:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;structs (incl. arrays and dictionaries)&lt;/li&gt;
+	&lt;li&gt;enumerations&lt;/li&gt;
+		&lt;li&gt;basic data types (boolean, integer, float, etc.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;a href=&quot;http://www.toptal.com/swift/interview-questions&quot;&gt;Source&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+&lt;h2&gt;What is the value of len variable?&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+var array1 = [1, 2, 3, 4, 5]
+var array2 = array1
+array2.append(6)
+var len = array1.count
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>reduce</string>
+			<key>Id</key>
+			<string>50</string>
+			<key>Tags</key>
+			<string>Swift, Screen</string>
+			<key>Level</key>
+			<string>4</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>result is Double</string>
+				<string>result is Float</string>
+				<string>result is Single</string>
+				<string>result is a Function</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;result is a double&lt;/h2&gt;
+
+&lt;p&gt;&lt;b&gt;result&lt;/b&gt; is calculated as the sum of the distance of all planets.&lt;/p&gt;
+&lt;p&gt;Given an initial value and a closure, the &lt;b&gt;reduce&lt;/b&gt; method of the Array&lt;T&gt; struct type returns a single value obtained by recursively applying the closure to each element of the array. The closure takes the value calculated at the previous step (or the initial value if it’s the first iteration) and the current array element, and is expected to return a value of the same type of the initial value.&lt;/p&gt;
+&lt;p&gt;In the above code, the closure returns the sum of what calculated at the previous step, plus the value of the distanceFromSun property for the current element. The end result is the sum of the distances of all planets.&lt;/p&gt;
+&lt;a href=&quot;http://www.toptal.com/swift/interview-questions&quot;&gt;Source&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+&lt;h2&gt;What is the type of result variable?&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+struct Planet {
+    var name: String
+    var distanceFromSun: Double
+}
+
+let planets = [
+    Planet(name: &quot;Mercury&quot;, distanceFromSun: 0.387),
+    Planet(name: &quot;Venus&quot;, distanceFromSun: 0.722),
+    Planet(name: &quot;Earth&quot;, distanceFromSun: 1.0),
+    Planet(name: &quot;Mars&quot;, distanceFromSun: 1.52),
+    Planet(name: &quot;Jupiter&quot;, distanceFromSun: 5.20),
+    Planet(name: &quot;Saturn&quot;, distanceFromSun: 9.58),
+    Planet(name: &quot;Uranus&quot;, distanceFromSun: 19.2),
+    Planet(name: &quot;Neptune&quot;, distanceFromSun: 30.1)
+]
+
+var result = planets.reduce(0) { $0 + $1.distanceFromSun }
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>case</string>
+			<key>Id</key>
+			<string>49</string>
+			<key>Tags</key>
+			<string>Swift, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>Raw values is the data that case items &quot;contain&quot;</string>
+				<string>Raw values are used to associate constant values to enum cases</string>
+				<string>Associated values describe type of enum case</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;&lt;b&gt;Raw values&lt;/b&gt; are used to associate constant (literal) values to enum cases&lt;/h2&gt;
+&lt;p&gt;The value type is part of the enum type, and each enum case must specify a unique raw value (duplicate values are not allowed).&lt;/p&gt;
+&lt;p&gt;The following example shows an enum with raw values of type Int:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+enum IntEnum : Int {
+    case ONE = 1
+    case TWO = 2
+    case THREE = 3
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;An enum value can be converted to its raw value by using the &lt;b&gt;rawValue&lt;/b&gt; property:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+var enumVar: IntEnum = IntEnum.TWO
+var rawValue: Int = enumVar.rawValue
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A raw value can be converted to an enum instance by using a dedicated initializer:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+var enumVar: IntEnum? = IntEnum(rawValue: 1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;i&gt;Associated values&lt;/i&gt; are used to associate arbitrary data to a specific enum case. Each enum case can have zero or more associated values, declared as a tuple in the case definition:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+enum AssociatedEnum {
+    case EMPTY
+    case WITH_INT(value: Int)
+    case WITH_TUPLE(value: Int, text: String, data: [Float])
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Whereas the type(s) associated to a case are part of the enum declaration, the associated value(s) are instance specific, meaning that an enum case can have different associated values for different enum instances.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.toptal.com/swift/interview-questions&quot;&gt;Source&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+&lt;h2&gt;In Swift enumerations, what’s the difference between raw values and associated values?&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+enum IntEnum {
+    case ONE = 1
+    case TWO = 2
+    case THREE = 3
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>mutating</string>
 			<key>Id</key>
 			<string>48</string>
 			<key>Tags</key>
 			<string>Swift, Screen</string>
 			<key>Level</key>
-			<string>1</string>
-			<key>Correct Answers</key>
 			<string>3</string>
+			<key>Correct Answers</key>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>Add mutating keyword</string>
+				<string>Add inline keyword to function definition</string>
+				<string>Use add instead of append</string>
+				<string>Cast Int to NSInteger </string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;h2&gt;Structures are immutable by default&lt;/h2&gt;
+
+&lt;p&gt;Structures are value types. By default, the properties of a value type cannot be modified from within its instance methods.&lt;/p&gt;
+&lt;p&gt;However, you can optionally allow such modification to occur by declaring the instance methods as ‘mutating’; e.g.:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+struct IntStack {
+  var items = [Int]()
+  mutating func add(x: Int) {
+    items.append(x) // All good!
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;a href=&quot;http://www.toptal.com/swift/interview-questions&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+    &lt;h2&gt;How can you fix the error?&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+struct IntStack {
+  var items = [Int]()
+
+  func add(x: Int) {
+    items.append(x) // Compile time error here.
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
