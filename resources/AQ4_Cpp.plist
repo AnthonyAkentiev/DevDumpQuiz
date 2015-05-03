@@ -12,7 +12,7 @@
 			<key>Tags</key>
 			<string>C/C++, Screen</string>
 			<key>Level</key>
-			<string>4</string>
+			<string>1</string>
 			<key>Correct Answers</key>
 			<string>1+4</string>
 			<key>answers</key>
@@ -65,14 +65,6 @@ std::string concatenate(std::string a, std::string b)
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;More effective way:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-cpp”&gt;
-// Passing by reference, but function can not change values of a and b
-std::string concatenate(const std::string&amp; a, const std::string&amp; b)
-{
-  return a+b;
-}
-&lt;/code&gt;&lt;/pre&gt;
 &lt;a href=&quot;http://www.cplusplus.com/doc/tutorial/functions/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
 			<string>&lt;div&gt;
