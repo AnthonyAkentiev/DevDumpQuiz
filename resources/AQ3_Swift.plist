@@ -325,7 +325,7 @@ if let userPref = defaults.stringForKey(&quot;userPref&quot;) {
 			<string>&lt;div&gt;
     &lt;h2&gt;Can you spot the error here?&lt;/h2&gt;
 &lt;/div&gt;
-&lt;pre&gt;&lt;code class=&quot;language-swift”&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
 var defaults = NSUserDefaults.standardUserDefaults()
 var userPref = defaults.stringForKey(&quot;userPref&quot;)!
 printString(userPref)
@@ -364,7 +364,7 @@ var result = Double(op1) + Double(op2) + op3
 			<string>&lt;div&gt;
     &lt;h2&gt;Consider the following code:&lt;/h2&gt;
 &lt;/div&gt;
-&lt;pre&gt;&lt;code class=&quot;language-swift”&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
 // 1
 let op1: Int = 1
 
@@ -418,7 +418,7 @@ func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexP
 			<string>&lt;div&gt;
     &lt;h2&gt;What are the main properties of NSIndexPath?&lt;/h2&gt;
 &lt;/div&gt;
-&lt;pre&gt;&lt;code class=&quot;language-swift”&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
 extension UITableView {
     func getAllCheckedCells()-&gt;[NSIndexPath]{
         var out = [NSIndexPath]()
