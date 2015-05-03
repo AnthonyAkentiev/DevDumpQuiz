@@ -139,7 +139,7 @@ var len = array1.count
 				<string>result is a Function</string>
 			</array>
 			<key>a</key>
-			<string>&lt;h2&gt;result is a double&lt;/h2&gt;
+			<string>&lt;h2&gt;result is a Double&lt;/h2&gt;
 
 &lt;p&gt;&lt;b&gt;result&lt;/b&gt; is calculated as the sum of the distance of all planets.&lt;/p&gt;
 &lt;p&gt;Given an initial value and a closure, the &lt;b&gt;reduce&lt;/b&gt; method of the Array&lt;T&gt; struct type returns a single value obtained by recursively applying the closure to each element of the array. The closure takes the value calculated at the previous step (or the initial value if it’s the first iteration) and the current array element, and is expected to return a value of the same type of the initial value.&lt;/p&gt;
@@ -345,16 +345,16 @@ func printString(string: String) {
 			<key>Level</key>
 			<string>1</string>
 			<key>Correct Answers</key>
-			<string>3</string>
+			<string>4</string>
 			<key>answers</key>
 			<array>
 				<string>Line 1</string>
 				<string>Line 2</string>
 				<string>Line 3</string>
-				<string>There is no error in this code</string>
+				<string>Line 4</string>
 			</array>
 			<key>a</key>
-			<string>&lt;h2&gt;Line 3 contains error&lt;/h2&gt;
+			<string>&lt;h2&gt;Line 4 contains error&lt;/h2&gt;
 &lt;p&gt;Swift doesn’t define any implicit cast between data types, even if they are conceptually almost identical (like UInt and Int).&lt;/p&gt;
 &lt;p&gt;To fix the error, rather than casting, an &lt;b&gt;explicit conversion&lt;/b&gt; is required. In the sample code, all expression operands must be converted to a common same type, which in this case is Double:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
@@ -421,19 +421,7 @@ func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexP
 &lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
 extension UITableView {
     func getAllCheckedCells()-&gt;[NSIndexPath]{
-        var out = [NSIndexPath]()
-        
-        let cnt = self.numberOfRowsInSection(0)
-        for i in 0..&lt;cnt {
-            var indexPath: NSIndexPath = NSIndexPath(forItem: i, inSection: 0)
-            
-            var cell:UITableViewCell? = self.cellForRowAtIndexPath(indexPath)
-            if(cell?.accessoryType == UITableViewCellAccessoryType.Checkmark){
-                out.append(indexPath)
-            }
-        }
-        
-        return out
+        ... 
     }
 }
 &lt;/code&gt;&lt;/pre&gt;</string>
