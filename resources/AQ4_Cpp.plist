@@ -14,22 +14,38 @@
 			<key>Level</key>
 			<string>1</string>
 			<key>Correct Answers</key>
-			<string>4</string>
+			<string>2 + 3</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;h2&gt;Lines 2 and 3 have errors&lt;/h2&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;h2&gt;What lines contain errors?&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+int main() 
+{ 
+  int data = 12; 
+  float fSum = 1.0f; 
+  int* pI = NULL; 
+  float* pF = NULL; 
+ 
+  pI = &amp;data; //1 
+  pI = &amp;fSum; //2 
+  pF = &amp;data; //3 
+  pF = &amp;fSum; //4 
+
+  return 0; 
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>basic types</string>
 			<key>Id</key>
 			<string>103</string>
 			<key>Tags</key>
@@ -37,41 +53,84 @@
 			<key>Level</key>
 			<string>1</string>
 			<key>Correct Answers</key>
-			<string>4</string>
+			<string>1+3</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>int</string>
+				<string>string</string>
+				<string>float</string>
+				<string>vector</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;h2&gt;Basic types&lt;/h2&gt;
+&lt;p&gt;The C language provides many basic types. Most of them are formed from one of the four basic arithmetic type specifiers in C (char, int, float and double), and optional specifiers (signed, unsigned, short, long).&lt;/p&gt;
+
+&lt;h3&gt;Primitive Data Type&lt;/h3&gt;
+&lt;p&gt;In computer science, primitive data type is either of the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a &lt;i&gt;basic type&lt;/i&gt; is a data type provided by a programming language as a basic building block. Most languages allow more complicated composite types to be recursively constructed starting from basic types.&lt;/li&gt;
+&lt;li&gt;a &lt;i&gt;built-in&lt;/i&gt; type is a data type for which the programming language provides built-in support.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In most programming languages, all basic data types are built-in. In addition, many languages also provide a set of composite data types. Opinions vary as to whether a built-in type that is not basic should be considered &quot;primitive”.&lt;/p&gt;
+
+&lt;p&gt;Depending on the language and its implementation, primitive data types may or may not have a one-to-one correspondence with objects in the computer&apos;s memory. However, one usually expects operations on basic primitive data types to be the fastest language constructs there are. Integer addition, for example, can be performed as a single machine instruction, and some processors offer specific instructions to process sequences of characters with a single instruction. In particular, the C standard mentions that &quot;a &apos;plain&apos; int object has the natural size suggested by the architecture of the execution environment&quot;. This means that int is likely to be 32 bits long on a 32-bit architecture. Basic primitive types are almost always value types.&lt;p&gt;
+
+&lt;p&gt;Most languages do not allow the behavior or capabilities of primitive (either built-in or basic) data types to be modified by programs. Exceptions include Smalltalk, which permits all data types to be extended within a program, adding to the operations that can be performed on them or even redefining the built-in operations.&lt;/p&gt;
+
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Primitive_data_type&quot;&gt;&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt;Please select only Primitive/Basic Data Types&lt;/h2&gt;
+&lt;p&gt;(select many)&lt;/p&gt;
+&lt;/div&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>correct pointer to function declaration</string>
 			<key>Id</key>
 			<string>102</string>
 			<key>Tags</key>
 			<string>C/C++, Screen</string>
 			<key>Level</key>
-			<string>1</string>
+			<string>4</string>
 			<key>Correct Answers</key>
-			<string>2</string>
+			<string>4</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>typedef double ()*fptr();</string>
+				<string>typedef double ()*fptr()[];</string>
+				<string>typedef float *()fptr();</string>
+				<string>typedef int (*fptr)();</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;h2&gt;Function Pointer Syntax&lt;/h2&gt;
+&lt;p&gt;The syntax for declaring a function pointer might seem messy at first, but in most cases it&apos;s really quite straight-forward once you understand what&apos;s going on. Let&apos;s look at a simple example:&lt;p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+void (*foo)(int);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this example, foo is a pointer to a function taking one argument, an integer, and that returns void. It&apos;s as if you&apos;re declaring a function called &quot;*foo&quot;, which takes an int and returns void; now, if *foo is a function, then foo must be a pointer to a function. (Similarly, a declaration like int *x can be read as *x is an int, so x must be a pointer to an int.)&lt;/p&gt;
+
+&lt;p&gt;The key to writing the declaration for a function pointer is that you&apos;re just writing out the declaration of a function but with (*func_name) where you&apos;d normally just put func_name.&lt;/p&gt;
+
+&lt;h3&gt;Reading Function Pointer Declarations&lt;/h3&gt;
+
+&lt;p&gt;Sometimes people get confused when more stars are thrown in:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+void *(*foo)(int *);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p?Here, the key is to read inside-out; notice that the innermost element of the expression is *foo, and that otherwise it looks like a normal function declaration. *foo should refer to a function that returns a void * and takes an int *. Consequently, foo is a pointer to just such a function.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.cprogramming.com/tutorial/function-pointers.html&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt;Please select correct definitions&lt;/h2&gt;
+&lt;p&gt;(select many)&lt;/p&gt;
+&lt;/div&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
@@ -148,7 +207,7 @@ public:
 &lt;/div&gt;
 
 &lt;h3&gt;Passing arguments by reference&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;language-cpp”&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
 #include &lt;iostream&gt;
 using namespace std;
 
@@ -175,7 +234,7 @@ int main ()
 
 &lt;h3&gt;Passing arguments by value&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-cpp”&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
 // Each string will be copied
 std::string concatenate(std::string a, std::string b)
 {
@@ -189,7 +248,7 @@ std::string concatenate(std::string a, std::string b)
     &lt;h2&gt;How can we pass arguments to function in C/C++?&lt;/h2&gt;
     &lt;p&gt;(Select many)&lt;/p&gt;
 &lt;/div&gt;
-&lt;pre&gt;&lt;code class=&quot;language-cpp”&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
 int functionOne(int param1, int param2){
 	return param1 + param2;
 }
