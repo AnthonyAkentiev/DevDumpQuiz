@@ -6,6 +6,124 @@
 	<array>
 		<dict>
 			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>104</string>
+			<key>Tags</key>
+			<string>C/C++, Screen</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>4</string>
+			<key>answers</key>
+			<array>
+				<string></string>
+				<string></string>
+				<string></string>
+				<string></string>
+			</array>
+			<key>a</key>
+			<string></string>
+			<key>q</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>103</string>
+			<key>Tags</key>
+			<string>C/C++, Screen</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>4</string>
+			<key>answers</key>
+			<array>
+				<string></string>
+				<string></string>
+				<string></string>
+				<string></string>
+			</array>
+			<key>a</key>
+			<string></string>
+			<key>q</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>102</string>
+			<key>Tags</key>
+			<string>C/C++, Screen</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string></string>
+				<string></string>
+				<string></string>
+				<string></string>
+			</array>
+			<key>a</key>
+			<string></string>
+			<key>q</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>static members of class</string>
+			<key>Id</key>
+			<string>101</string>
+			<key>Tags</key>
+			<string>C/C++, Screen</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>4</string>
+			<key>answers</key>
+			<array>
+				<string>All such static members will continue to live until last object of that class exists</string>
+				<string>These members are destroyed and memory is deallocated</string>
+				<string>These members get initial values set</string>
+				<string>These members continue to exist even if all objects of that class are freed</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Static members of that class will continue to exist even if all objects of that class are freed (destructed, released, out of scope…)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+class StarDestroyer {
+public:
+	static Button m_selfDestructionButton;
+	static int m_destroyedStarsCount;
+};
+
+// Do not forget to init these members later in cpp file
+Button StarDestroyer::m_selfDestructionButton();
+int StartDestroyer::m_destroyedStarsCount = 0;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can define class members static using &lt;b&gt;static&lt;/b&gt; keyword. When we declare a member of a class as static it means no matter how many objects of the class are created, there is only one copy of the static member.&lt;/p&gt;
+
+&lt;p&gt;A static member is shared by all objects of the class. All static data is initialized to zero when the first object is created, if no other initialization is present. We can&apos;t put it in the class definition but it can be initialized outside the class as done in the following example by redeclaring the static variable, using the scope resolution operator &lt;b&gt;::&lt;/b&gt; to identify which class it belongs to.&lt;p&gt;
+
+&lt;a href=&quot;http://www.tutorialspoint.com/cplusplus/cpp_static_members.htm&quot;&gt;Source&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+&lt;h2&gt;What happens to static members of a class after it’s object is destructed?&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+class StarDestroyer {
+public:
+	static Button m_selfDestructionButton;
+	static int m_destroyedStarsCount;
+};
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
 			<string>stdafx.h</string>
 			<key>Id</key>
 			<string>100</string>

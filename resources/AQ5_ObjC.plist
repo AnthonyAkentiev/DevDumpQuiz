@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>questions</key>
+	<array>
+		<dict>
+			<key>Comment</key>
+			<string>ARC mode release</string>
+			<key>Id</key>
+			<string>200</string>
+			<key>Tags</key>
+			<string>Objective C, Screen</string>
+			<key>Level</key>
+			<string>4</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>Yes</string>
+				<string>No</string>
+				<string>The answer is irrelevant to ARC mode</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;You cannot call these in ARC mode:&lt;/h2&gt;
+&lt;ul&gt;
+	&lt;li&gt;retain&lt;/li&gt;
+	&lt;li&gt;release&lt;/li&gt;
+	&lt;li&gt;retainCount&lt;/li&gt;
+	&lt;li&gt;autorelease&lt;/li&gt;
+	&lt;li&gt;dealloc&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+- (void)dealloc
+{
+   [[NSNotificationCenter defaultCenter] removeObserver:self];
+   // no need to call [super dealloc] here
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In Objective-C and Swift programming, &lt;b&gt;Automatic Reference Counting&lt;/b&gt; (ARC) is a memory management enhancement where the burden of keeping track of anobject&apos;s reference count is lifted from the programmer to the compiler. In traditional Objective-C, the programmer would send &lt;i&gt;retain&lt;/i&gt; and &lt;i&gt;release&lt;/i&gt; messages to objects in order to mark objects for deallocation or to prevent deallocation. Under ARC, the compiler does this automatically by examining the source code and then adding the &lt;i&gt;retain&lt;/i&gt; and &lt;i&gt;release&lt;/i&gt; messages in the compiled code.&lt;/p&gt;
+&lt;p&gt;ARC differs from Cocoa&apos;s garbage collection in that there is no background process doing the deallocation of objects. Unlike garbage collection, ARC does not handle reference cycles automatically; it is up to the programmer to break cycles using weak references.&lt;/p&gt;
+&lt;p&gt;Apple Inc. delivered a fully featured version of ARC in 2011 for application development on its Mac OS X Lion and iOS 5 operating systems. Before that, a limited version of ARC (ARCLite) was supported in Xcode 4.2 or later, Mac OS X 10.6 &quot;Snow Leopard&quot; or later, and iOS 4.0 or later. Mac OS X 10.7 &quot;Lion&quot; oriOS 5 is recommended to use all the features, including weak reference support. Apple&apos;s Swift language, introduced in 2014, uses ARC for memory management.&lt;/p&gt;
+
+&lt;h3&gt;More restrictions&lt;/h3&gt;
+
+&lt;p&gt;You cannot cast directly between &lt;i&gt;id&lt;/i&gt; and &lt;i&gt;void*&lt;/i&gt;.This includes casting between Foundation objects and Core Foundation objects.
+You must use special casts, or calls to special functions, to tell the compiler more information about the object&apos;s lifetime.&lt;/p&gt;
+
+&lt;p&gt;You cannot use &lt;b&gt;NSAutoreleasePool&lt;/b&gt; objects.&lt;/p&gt;
+&lt;p&gt;You must use the &lt;b&gt;@autoreleasepool&lt;/b&gt; syntax. This syntax is now available for all Objective-C modes.&lt;/p&gt;
+
+&lt;p&gt;You cannot call the functions &lt;b&gt;NSAllocateObject&lt;/b&gt; and &lt;b&gt;NSDeallocateObject&lt;/b&gt;.&lt;/p&gt;
+&lt;p&gt;You cannot use object pointers in C structures (structs).&lt;/p&gt;
+&lt;p&gt;You cannot use memory zones (&lt;b&gt;NSZone&lt;/b&gt;).&lt;/p&gt;
+&lt;p&gt;To properly cooperate with non-ARC code, you also cannot create a method or a declared property (unless you explicitly choose a different getter) that begins with &quot;copy”.&lt;/p&gt;
+
+
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Automatic_Reference_Counting”&gt;Wikipedia&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+&lt;h2&gt;Can someone call dealloc in ARC mode?&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+- (void)dealloc
+{
+   [[NSNotificationCenter defaultCenter] removeObserver:self];
+   [super dealloc];
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+
+</string>
+		</dict>
+	</array>
+</dict>
+</plist>
