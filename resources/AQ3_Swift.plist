@@ -10,7 +10,7 @@
 			<key>Id</key>
 			<string>59</string>
 			<key>Tags</key>
-			<string>Swift, Screen</string>
+			<string>Swift</string>
 			<key>Level</key>
 			<string>2</string>
 			<key>Correct Answers</key>
@@ -40,7 +40,7 @@
 			<key>Id</key>
 			<string>58</string>
 			<key>Tags</key>
-			<string>Swift, Screen</string>
+			<string>Swift</string>
 			<key>Level</key>
 			<string>3</string>
 			<key>Correct Answers</key>
@@ -86,7 +86,7 @@ println(evens)
 			<key>Id</key>
 			<string>57</string>
 			<key>Tags</key>
-			<string>Swift, Screen</string>
+			<string>Swift</string>
 			<key>Level</key>
 			<string>2</string>
 			<key>Correct Answers</key>
@@ -209,7 +209,7 @@ enum Expr {}
 			<key>Id</key>
 			<string>55</string>
 			<key>Tags</key>
-			<string>Swift, Screen</string>
+			<string>Swift</string>
 			<key>Level</key>
 			<string>2</string>
 			<key>Correct Answers</key>
@@ -242,7 +242,7 @@ class LLNode&lt;T&gt; {
 			<key>Id</key>
 			<string>54</string>
 			<key>Tags</key>
-			<string>Swift, Screen</string>
+			<string>Swift</string>
 			<key>Level</key>
 			<string>4</string>
 			<key>Correct Answers</key>
@@ -286,7 +286,7 @@ The process for working with mixed-language targets differs slightly depending o
 			<key>Id</key>
 			<string>53</string>
 			<key>Tags</key>
-			<string>Swift, Screen</string>
+			<string>Swift</string>
 			<key>Level</key>
 			<string>1</string>
 			<key>Correct Answers</key>
