@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>pointer cast</string>
 			<key>Id</key>
 			<string>104</string>
 			<key>Tags</key>
@@ -17,10 +17,10 @@
 			<string>2 + 3</string>
 			<key>answers</key>
 			<array>
-				<string>1</string>
-				<string>2</string>
-				<string>3</string>
-				<string>4</string>
+				<string></string>
+				<string></string>
+				<string></string>
+				<string></string>
 			</array>
 			<key>a</key>
 			<string>&lt;h2&gt;Lines 2 and 3 have errors&lt;/h2&gt;</string>
@@ -95,7 +95,7 @@ int main() 
 			<key>Level</key>
 			<string>4</string>
 			<key>Correct Answers</key>
-			<string>4</string>
+			<string>4+0</string>
 			<key>answers</key>
 			<array>
 				<string>typedef double ()*fptr();</string>

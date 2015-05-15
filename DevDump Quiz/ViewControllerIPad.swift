@@ -151,11 +151,13 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
     
     func highlightGoodAnswer(){
         for answ in correctAnswers {
-            var path:NSIndexPath = NSIndexPath(forRow: (answ - 1), inSection: 0)
+            if(answ != 0){
+                var path:NSIndexPath = NSIndexPath(forRow: (answ - 1), inSection: 0)
             
-            var selectedCell:UITableViewCell? = tableView?.cellForRowAtIndexPath(path)
-            selectedCell?.textLabel!.textColor = UIColor.blueColor()
-            selectedCell?.detailTextLabel!.textColor = UIColor.blueColor()
+                var selectedCell:UITableViewCell? = tableView?.cellForRowAtIndexPath(path)
+                selectedCell?.textLabel!.textColor = UIColor.blueColor()
+                selectedCell?.detailTextLabel!.textColor = UIColor.blueColor()
+            }
         }
     }
     
@@ -234,19 +236,32 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
         // highlight if "already answered" mode
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         if(appDelegate.model.getIsAnswerEntered()){
-            cell.textLabel!.textColor = UIColor.blueColor()
-            cell.detailTextLabel!.textColor = UIColor.blueColor()
-            
-            for answ in correctAnswers {
-                if(indexPath.row + 1==answ){
-                    cell.textLabel!.textColor = UIColor.blueColor()
-                    cell.detailTextLabel!.textColor = UIColor.blueColor()
-                }
-            }
+            highlightCell(cell,andWithIndexPath:indexPath)
         }
         
         return cell
     }
+    
+    func highlightCell(cell:UITableViewCell,andWithIndexPath:NSIndexPath){
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        assert(appDelegate.model.getIsAnswerEntered())
+
+        // user answered
+        for answ in appDelegate.model.userAnswered {
+            if(andWithIndexPath.row + 1==answ){
+                cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            }
+        }
+        
+        // correct answers
+        for answ in correctAnswers {
+            if(andWithIndexPath.row + 1==answ){
+                cell.textLabel!.textColor = UIColor.blueColor()
+                cell.detailTextLabel!.textColor = UIColor.blueColor()
+            }
+        }
+    }
+
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectAnswer(indexPath.row)
@@ -273,11 +288,11 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
         
         // set user selection
         if(!appDelegate.model.getIsAnswerEntered()){
-            // TODO:
-            var indexes:[Int] = []
-            indexes.append(index + 1)
+            let indexPath = NSIndexPath(forRow: index, inSection: 0)
             
-            appDelegate.model.setAnswerIndexes(indexes)
+            if let cell = tableView?.cellForRowAtIndexPath(indexPath){
+                onCellClicked(cell,withIndexPath:indexPath)
+            }
         }
         
         let htmlAnswerDesc:String = appDelegate.model.getAnswerDescByIndex(index)
@@ -287,6 +302,34 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
         
         // select label
         highlightLabel(index)
+    }
+    
+    func onCellClicked(cell:UITableViewCell,withIndexPath indexPath:NSIndexPath){
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        if(correctAnswers.count > 1){
+            // Multi answer mode - set checkbox
+            if(cell.accessoryType == UITableViewCellAccessoryType.None){
+                cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            }else{
+                cell.accessoryType = UITableViewCellAccessoryType.None
+            }
+        }else{
+            // Single answer mode
+        }
+        
+        // collect all selected items
+        var indexes:[Int] = []
+        
+        if let table = tableView {
+            var checked: [NSIndexPath] = table.getAllCheckedCells()
+            
+            for ch in checked {
+                indexes.append(ch.row + 1)
+            }
+        
+            appDelegate.model.setAnswerIndexes(indexes)
+        }
     }
     
     func initLabels(){
