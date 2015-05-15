@@ -6,6 +6,256 @@
 	<array>
 		<dict>
 			<key>Comment</key>
+			<string>inheritance + polymorphism</string>
+			<key>Id</key>
+			<string>57</string>
+			<key>Tags</key>
+			<string>Swift, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1+2</string>
+			<key>answers</key>
+			<array>
+				<string>Inheritance</string>
+				<string>Polymorphism</string>
+				<string>Multimethods</string>
+				<string>Incapsulation</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;This code is using ‘inheritance’ and ‘polymorphism’ language features&lt;/h2&gt;
+&lt;p&gt;Parametric polymorphism is a programming language feature to provide compile time polymorphism, Parametric Polymorphism is better know as Generics, a function using generics can be made to handle any time of data regardless its type while maintaining static type correctness.&lt;/p&gt;
+
+&lt;p&gt;Both &lt;b&gt;Cat&lt;/b&gt; and &lt;b&gt;Dog&lt;/b&gt; are implementing the &lt;b&gt;Speaking&lt;/b&gt; protocol, they return different type from their speak function. Lets write a function that calls the Speakers:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+func speak&lt;T: Speaking&gt;(speaker: T) -&gt; T.Voice {
+  return speaker.speak()
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;a href=&quot;http://nsomar.com/parametric-compile-time-polymorphism-in-swift/“&gt;Blog post&lt;/a&gt;
+
+&lt;h3&gt;Protocols&lt;/h3&gt;
+&lt;p&gt;A &lt;i&gt;protocol&lt;/i&gt; defines a blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality. The protocol doesn’t actually provide an implementation for any of these requirements—it only describes what an implementation will look like. The protocol can then be &lt;i&gt;adopted&lt;/i&gt; by a class, structure, or enumeration to provide an actual implementation of those requirements. Any type that satisfies the requirements of a protocol is said to &lt;i&gt;conform&lt;/i&gt; to that protocol.&lt;/p&gt;
+
+&lt;p&gt;Protocols can require that conforming types have specific instance properties, instance methods, type methods, operators, and subscripts.&lt;/p&gt;
+
+&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Protocols.html#//apple_ref/doc/uid/TP40014097-CH25-ID267&quot;&gt;Apple Documentation&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What language features this code sample uses?&lt;/h2&gt;
+&lt;p&gt;(select all)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+protocol Speaking {
+  typealias Voice
+  func speak () -&gt; Voice
+}
+
+class Dog : Speaking {
+  func speak() -&gt; String {
+    return &quot;BARK!&quot;
+  }
+}
+
+class Cat : Speaking {
+  func speak() -&gt; [String] {
+    return [&quot;Meooww&quot;, &quot;Meooww&quot;]
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>generic subclass</string>
+			<key>Id</key>
+			<string>56</string>
+			<key>Tags</key>
+			<string>Swift, Screen</string>
+			<key>Level</key>
+			<string>5</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string></string>
+				<string></string>
+				<string></string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Error: classes derived from generic classes must also be generic&lt;/h2&gt;
+
+&lt;p&gt;Subclasses are not permitted to specify a concrete type for a superclass&apos; type parameter.&lt;/p&gt;
+&lt;p&gt;Bad line is #3. Correct code:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+class Boxed&lt;T&gt; {
+  let v: T
+
+  // 1
+  init (v: T) { self.v = v }
+}
+ 
+// 2
+class ExprR&lt;T&gt; : Boxed&lt;Expr&gt; {}
+ 
+// 3
+enum Expr {}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Generics&lt;/h3&gt;
+&lt;p&gt;&lt;i&gt;Generic code&lt;/i&gt; enables you to write flexible, reusable functions and types that can work with any type, subject to requirements that you define. You can write code that avoids duplication and expresses its intent in a clear, abstracted manner.&lt;/p&gt;
+
+&lt;p&gt;Generics are one of the most powerful features of Swift, and much of the Swift standard library is built with generic code. For example, Swift’s &lt;b&gt;Array&lt;/b&gt; and &lt;b&gt;Dictionary&lt;/b&gt; types are both generic collections. You can create an array that holds &lt;b&gt;Int&lt;/b&gt; values, or an array that holds &lt;b&gt;String&lt;/b&gt; values, or indeed an array for any other type that can be created in Swift. Similarly, you can create a dictionary to store values of any specified type, and there are no limitations on what that type can be.&lt;/p&gt;
+
+&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Generics.html&quot;&gt;Apple Documentation&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;This code has bug. Can you spot it?&lt;/h2&gt;
+&lt;p&gt;What line contains error?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+class Boxed&lt;T&gt; {
+  let v: T
+
+  // 1
+  init (v: T) { self.v = v }
+}
+ 
+// 2
+class ExprR : Boxed&lt;Expr&gt; {}
+ 
+// 3
+enum Expr {}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>valid? 1</string>
+			<key>Id</key>
+			<string>55</string>
+			<key>Tags</key>
+			<string>Swift, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>Yes</string>
+				<string>No</string>
+				<string>This code is valid if we will remove ; at the end of all lines</string>
+				<string>This code is valid if we will add intitalizers for key and next fields</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;The code is totally good!&lt;/h2&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+&lt;h2&gt;Is that valid Swift code?&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+class LLNode&lt;T&gt; { 
+      var key: T? 
+      var next: LLNode&lt;T&gt;? 
+
+      init() { } ;
+};
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>bridging</string>
+			<key>Id</key>
+			<string>54</string>
+			<key>Tags</key>
+			<string>Swift, Screen</string>
+			<key>Level</key>
+			<string>4</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>Swift can&apos;t call Objective-C code</string>
+				<string>Swift can call Objective-C through the &apos;Briding header&apos;</string>
+				<string>Swift can call Objective-C code using so called &quot;Mix-and-use&quot; paradigm </string>
+				<string>Swift can easily call some Objective-C code that has special modifications</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Mix and match (i.e. Bridging Header)&lt;/h2&gt;
+&lt;p&gt;Swift’s compatibility with Objective-C lets you create a project that contains files written in either language. You can use this feature, called mix and match, to write apps that have a mixed-language codebase. Using mix and match, you can implement part of your app’s functionality using the latest Swift features and seamlessly incorporate it back into your existing Objective-C codebase.&lt;/p&gt;
+
+&lt;p&gt;Objective-C and Swift files can coexist in a single project, whether the project was originally an Objective-C or Swift project. You can simply add a file of the other language directly to an existing project. This natural workflow makes creating mixed-language app and framework targets as straightforward as creating an app or framework target written in a single language.
+The process for working with mixed-language targets differs slightly depending on whether you’re writing an app or a framework. The general import model for working with both languages within the same target is depicted below and described in more detail in the following sections.&lt;/p&gt;
+
+&lt;h3&gt;To import Objective-C code into Swift&lt;/h3&gt;
+
+&lt;p&gt;1) In your Objective-C bridging header file, import every Objective-C header you want to expose to Swift. For example:&lt;/p&gt;  &lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+    #import &quot;XYZCustomCell.h&quot;
+    #import &quot;XYZCustomView.h&quot;
+	#import &quot;XYZCustomViewController.h&quot;
+&lt;/code&gt;&lt;/pre&gt;		
+
+&lt;p&gt;2) Under Build Settings, make sure the Objective-C Bridging Header build setting under Swift Compiler - Code Generation has a path to the header. The path should be relative to your project, similar to the way your Info.plist path is specified in Build Settings. In most cases, you should not need to modify this setting. &lt;/p&gt;
+
+&lt;p&gt;Any public Objective-C headers listed in this bridging header file will be visible to Swift. The Objective-C functionality will be available in any Swift file within that target automatically, without any import statements. Use your custom Objective-C code with the same Swift syntax you use with system classes.&lt;/p&gt;
+
+&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html#//apple_ref/doc/uid/TP40014216-CH10-XID_78&quot;&gt;Apple Documentation&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+&lt;h2&gt;Interoperability&lt;/h2&gt;
+&lt;p&gt;How one can call existing Objective-C library code from within Swift?&lt;/p&gt;
+&lt;/div&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>paradigms</string>
+			<key>Id</key>
+			<string>53</string>
+			<key>Tags</key>
+			<string>Swift, Screen</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>1+2+3</string>
+			<key>answers</key>
+			<array>
+				<string>Imperative</string>
+				<string>Functional</string>
+				<string>Object-oriented</string>
+				<string>Agent-oriented</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Swift is a multi-paradigm programming language&lt;/h2&gt;
+&lt;p&gt;Swift makes use of these programming paradigms: object-oriented, functional, imperative.&lt;/p&gt;
+
+&lt;p&gt;Swift is compiled programming language created by Apple Inc. for iOS and OS X development. Introduced at Apple&apos;s 2014 Worldwide Developers Conference (WWDC), Swift is designed to work with Apple&apos;s Cocoa and Cocoa Touch frameworks and the large body of existing Objective-C code written for Apple products. Swift is intended to be more resilient to erroneous code (&quot;safer&quot;) than Objective-C, and also more concise. It is built with the LLVM compiler framework included in Xcode 6, and uses the Objective-C runtime, allowing C, Objective-C, C++ and Swift code to run within a single program.&lt;/p&gt;
+
+&lt;h3&gt;Basic features&lt;/h3&gt;
+
+&lt;p&gt;Swift is a replacement for the Objective-C language that employs contemporary programming language theory concepts and strives to present a simpler syntax. During its introduction, it was described simply as &quot;Objective-C without the C”.&lt;/p&gt;
+&lt;p&gt;By default, Swift does not expose pointers and other unsafe accessors, contrary to Objective-C, which uses pointers pervasively to refer to object instances. Additionally, Objective-C&apos;s use of a Smalltalk-like syntax for making method calls has been replaced with a dot-notation style and namespace system more familiar to programmers from other common OO languages like JavaScript, Java or C#. Swift introduces true named parameters and retains key Objective-C concepts, including protocols, closures and categories, often replacing former syntax with cleaner versions and allowing these concepts to be applied to other language structures, like enums.&lt;/p&gt;
+
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Swift_(programming_language)&quot;&gt;Wiki&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+&lt;h2&gt;What programming paradigms Swift language “includes”?&lt;/h2&gt;
+&lt;p&gt;(Select all)&lt;/p&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift”&gt;
+// Sample Swift language code:
+import UIKit
+
+class ScoreController: UIViewController {
+    @IBOutlet var lblTotalQuestion: UITextField!
+    @IBOutlet var lblCorrect: UITextField!
+    @IBOutlet var lblLevel: UITextField!
+    @IBOutlet var lblTopic: UITextField!
+
+    @IBAction func onContinue(){
+        performSegueWithIdentifier(&quot;goToMainMenu&quot;,sender:self)
+    }
+}&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
 			<string>ref cycle</string>
 			<key>Id</key>
 			<string>52</string>

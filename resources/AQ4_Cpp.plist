@@ -6,11 +6,168 @@
 	<array>
 		<dict>
 			<key>Comment</key>
+			<string>returning local object</string>
+			<key>Id</key>
+			<string>107</string>
+			<key>Tags</key>
+			<string>C/C++, Screen</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>No</string>
+				<string>Yes</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Returning local object by reference&lt;/h2&gt;
+&lt;p&gt;This is mostly a beginner’s mistake, but it is worth mentioning since there is a lot of legacy code that suffers from this issue. Programmer wanted to do some kind of optimization by avoiding unnecessary copying.&lt;/p&gt;
+
+&lt;p&gt;The object “sum” will now point to the local object “result”. But where is the object “result” located after the SumComplex function is executed? Nowhere. It was located on the stack, but after the function returned the stack was unwrapped and all local objects from the function were destructed. This will eventually result in an undefined behaviour, even for primitive types. To avoid performance issues, sometimes it is possible to use return value optimization:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+Complex SumComplex(const Complex&amp; a, const Complex&amp; b)
+{
+     return Complex(a.real + b.real, a.imaginar + b.imaginar);
+}
+
+Complex sum = SumComplex(a, b);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For most of today’s compilers, if a return line contains a constructor of an object the code will be optimized to avoid all unnecessary copying - the constructor will be executed directly on the “sum” object.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.toptal.com/c-plus-plus/top-10-common-c-plus-plus-developer-mistakes&quot;&gt;Source&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+&lt;h2&gt;Is code below valid?&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+Complex&amp; SumComplex(const Complex&amp; a, const Complex&amp; b)
+{
+    Complex result;
+
+    return result;
+}
+
+const Complex&amp; sum = SumComplex(a, b);
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>virtual destructor</string>
+			<key>Id</key>
+			<string>106</string>
+			<key>Tags</key>
+			<string>C/C++, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>No</string>
+				<string>Yes</string>
+			</array>
+			<key>a</key>
+			<string>&lt;div&gt;
+&lt;h2&gt;Forgotten virtual destructor&lt;/h2&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This is one of the most common errors that leads to &lt;b&gt;memory leaks&lt;/b&gt; inside derived classes if there is dynamic memory allocated inside them. There are some cases when virtual destructor is not desirable, i.e. when a class is not intended for inheritance and its size and performance is crucial. Virtual destructor or any other virtual function introduces additional data inside a class structure, i.e. a pointer to a virtual table which makes the size of any instance of the class bigger.&lt;/p&gt;
+
+&lt;p&gt;However, in most cases classes can be inherited even if it is not originally intended. So it is a very good practice to add a virtual destructor when a class is declared. Otherwise, if a class must not contain virtual functions due to performance reasons, it is a good practice to put a comment inside a class declaration file indicating that the class should not be inherited. One of the best options to avoid this issue is to use an IDE that supports virtual destructor creation during a class creation.&lt;/p&gt;
+
+&lt;p&gt;One additional point to the subject are classes/templates from the standard library. They are not intended for inheritance and they do not have a virtual destructor. If, for example, we create a new enhanced string class that publicly inherits from &lt;b&gt;std::string&lt;/b&gt; there is possibility that somebody will use it incorrectly with a pointer or a reference to &lt;b&gt;std::string&lt;/b&gt; and cause a memory leak.&lt;/p&gt;
+
+&lt;p&gt;To avoid such C++ issues, a safer way of reusing of a class/template from the standard library is to use private inheritance or composition.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.toptal.com/c-plus-plus/top-10-common-c-plus-plus-developer-mistakes?utm_medium=sponsored_post&amp;utm_campaign=cpp_mistakes&amp;utm_source=facebook.com&quot;&gt;Source&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+&lt;h2&gt;Is there  any problem in code below?&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+class MyString : public std::string
+{
+	~MyString(){
+	}
+};
+
+int main()
+{
+	std::string *s = new MyString();
+	delete s;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>exception after new</string>
+			<key>Id</key>
+			<string>105</string>
+			<key>Tags</key>
+			<string>C/C++, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>No</string>
+				<string>Yes</string>
+			</array>
+			<key>a</key>
+			<string>&lt;div&gt;
+&lt;h2&gt;Code has potential memory leak&lt;/h2&gt;
+&lt;/div&gt;
+&lt;p&gt;If an exception is thrown, the &lt;b&gt;a&lt;/b&gt; object is never deleted. The following example shows a safer and shorter way to do that. It uses &lt;b&gt;auto_ptr&lt;/b&gt; which is deprecated in C++11, but the old standard is still widely used. It can be replaced with C++11 &lt;b&gt;unique_ptr&lt;/b&gt; or &lt;b&gt;scoped_ptr&lt;/b&gt; from Boost if possible.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+void SomeMethod()
+{
+  std::auto_ptr&lt;ClassA&gt; a(new ClassA); 
+  SomeOtherMethod();      // it can throw an exception
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;A bit about exceptions&lt;/h3&gt;
+
+&lt;p&gt;In the C++ exception mechanism, control moves from the throw statement to the first catch statement that can handle the thrown type. When the catch statement is reached, all of the automatic variables that are in scope between the throw and catch statements are destroyed in a process that is known as stack unwinding. In stack unwinding, execution proceeds as follows:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Control reaches the &lt;b&gt;try&lt;/b&gt; statement by normal sequential execution. The guarded section in the &lt;b&gt;try&lt;/b&gt; block is executed.&lt;/li&gt;
+
+&lt;li&gt;If no exception is thrown during execution of the guarded section, the &lt;b&gt;catch&lt;/b&gt; clauses that follow the &lt;b&gt;try&lt;/b&gt; block are not executed. Execution continues at the statement after the last &lt;b&gt;catch&lt;/b&gt; clause that follows the associated &lt;b&gt;try&lt;/b&gt; block.&lt;/li&gt;
+
+&lt;li&gt;If an exception is thrown during execution of the guarded section or in any routine that the guarded section calls either directly or indirectly, an exception object is created from the object that is created by the &lt;b&gt;throw&lt;/b&gt; operand. (This implies that a copy constructor may be involved.) At this point, the compiler looks for a &lt;b&gt;catch&lt;/b&gt; clause in a higher execution context that can handle an exception of the type that is thrown, or for a &lt;b&gt;catch&lt;/b&gt; handler that can handle any type of exception. The &lt;b&gt;catch&lt;/b&gt; handlers are examined in order of their appearance after the &lt;b&gt;try&lt;/b&gt; block. If no appropriate handler is found, the next dynamically enclosing &lt;b&gt;try&lt;/b&gt; block is examined. This process continues until the outermost enclosing &lt;b&gt;try&lt;/b&gt; block is examined.&lt;/li&gt;
+ 
+&lt;li&gt;If a matching handler is still not found, or if an exception occurs during the unwinding process but before the handler gets control, the predefined run-time function &lt;b&gt;terminate&lt;/b&gt; is called. If an exception occurs after the exception is thrown but before the unwind begins, &lt;b&gt;terminate&lt;/b&gt; is called.&lt;/li&gt;
+
+&lt;li&gt;If a matching &lt;b&gt;catch&lt;/b&gt; handler is found, and it catches by value, its formal parameter is initialized by copying the exception object. If it catches by reference, the parameter is initialized to refer to the exception object. After the formal parameter is initialized, the process of unwinding the stack begins. This involves the destruction of all automatic objects that were fully constructed—but not yet destructed—between the beginning of the &lt;b&gt;try&lt;/b&gt; block that is associated with the &lt;b&gt;catch&lt;/b&gt; handler and the throw site of the exception. Destruction occurs in reverse order of construction. The &lt;b&gt;catch&lt;/b&gt; handler is executed and the program resumes execution after the last handler—that is, at the first statement or construct that is not a &lt;b&gt;catch&lt;/b&gt; handler. Control can only enter a &lt;b&gt;catch&lt;/b&gt; handler through a thrown exception, never through a &lt;b&gt;goto&lt;/b&gt; statement or a &lt;b&gt;case&lt;/b&gt; label in a &lt;b&gt;switch&lt;/b&gt; statement.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;a href=&quot;https://msdn.microsoft.com/en-us/library/hh254939.aspx&quot;&gt;MSDN&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;div&gt;
+&lt;h2&gt;Do you see any problem here?&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+void someMethod() const
+{
+  ClassA* a = new ClassA;
+  SomeOtherMethod();
+  delete a;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
 			<string>pointer cast</string>
 			<key>Id</key>
 			<string>104</string>
 			<key>Tags</key>
-			<string>C/C++, Screen</string>
+			<string>C/C++</string>
 			<key>Level</key>
 			<string>1</string>
 			<key>Correct Answers</key>
@@ -49,7 +206,7 @@ int main() 
 			<key>Id</key>
 			<string>103</string>
 			<key>Tags</key>
-			<string>C/C++, Screen</string>
+			<string>C/C++</string>
 			<key>Level</key>
 			<string>1</string>
 			<key>Correct Answers</key>
@@ -91,7 +248,7 @@ int main() 
 			<key>Id</key>
 			<string>102</string>
 			<key>Tags</key>
-			<string>C/C++, Screen</string>
+			<string>C/C++</string>
 			<key>Level</key>
 			<string>4</string>
 			<key>Correct Answers</key>
@@ -138,7 +295,7 @@ void *(*foo)(int *);
 			<key>Id</key>
 			<string>101</string>
 			<key>Tags</key>
-			<string>C/C++, Screen</string>
+			<string>C/C++</string>
 			<key>Level</key>
 			<string>1</string>
 			<key>Correct Answers</key>
@@ -187,7 +344,7 @@ public:
 			<key>Id</key>
 			<string>100</string>
 			<key>Tags</key>
-			<string>C/C++, Screen</string>
+			<string>C/C++</string>
 			<key>Level</key>
 			<string>1</string>
 			<key>Correct Answers</key>
