@@ -6,6 +6,82 @@
 	<array>
 		<dict>
 			<key>Comment</key>
+			<string>language features</string>
+			<key>Id</key>
+			<string>59</string>
+			<key>Tags</key>
+			<string>Swift, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1+2+3+4</string>
+			<key>answers</key>
+			<array>
+				<string>Tuples</string>
+				<string>Extensions</string>
+				<string>Protocols</string>
+				<string>Generics</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Swift has all these features built-in&lt;/h2&gt;
+
+&lt;p&gt;Swift is a multi-paradigm, compiled programming language created by Apple Inc. for iOS and OS X development. Introduced at Apple&apos;s 2014 Worldwide Developers Conference (WWDC), Swift is designed to work with Apple&apos;s Cocoa and Cocoa Touch frameworks and the large body of existing Objective-C code written for Apple products. Swift is intended to be more resilient to erroneous code (&quot;safer&quot;) than Objective-C, and also more concise. It is built with the LLVM compiler framework included in Xcode 6, and uses the Objective-C runtime, allowing C, Objective-C, C++ and Swift code to run within a single program, but its proprietary nature may hinder Swift&apos;s adoption outside the Apple ecosystem.&lt;/p&gt;
+
+&lt;p&gt;Development on Swift began in 2010 by Chris Lattner, with the eventual collaboration of many other programmers at Apple. Swift took language ideas &quot;from Objective-C, Rust, Haskell, Ruby, Python, C#, CLU, and far too many others to list&quot;. On June 2, 2014, the Worldwide Developers Conference (WWDC) application became the first publicly released app written in Swift. A beta version of the programming language was released to registered Apple developers at the conference, but the company did not promise that the final version of Swift would be source-compatible with the test version. Apple planned to make source code converters available if needed for the full release.&lt;/p&gt;
+
+&lt;a href=“http://en.wikipedia.org/wiki/Swift_(programming_language)”&gt;Wiki&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What language features Swift offers?&lt;/h2&gt;
+&lt;p&gt;(Select all)&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>array and div</string>
+			<key>Id</key>
+			<string>58</string>
+			<key>Tags</key>
+			<string>Swift, Screen</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>{2, 4, 6, 8}</string>
+				<string>[2, 4, 6, 8]</string>
+				<string>[2, 4, 6, 8, 10]</string>
+				<string>[1, 2, 4, 6, 8, 10]</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;The output of this program is:&lt;/h2&gt;
+&lt;p&gt;[2, 4, 6, 8, 10]&lt;/p&gt;
+
+&lt;br&gt;
+&lt;p&gt;This little script is very simple; the key points of the algorithm are as follows:&lt;p&gt;
+&lt;p&gt;1. You create an empty (and mutable) array.&lt;/p&gt;
+&lt;p&gt;2. The for loop iterates over the numbers from 1 to 10 (remember “…” is inclusive!).&lt;/p&gt;
+&lt;p&gt;3. If the condition (that the number must be even) is met, you add it to the array.&lt;/p&gt;
+
+&lt;p&gt;The above code is imperative in nature. The instructions tell the computer how to locate the even numbers by giving it explicit instructions that use basic control structures, in this case &lt;b&gt;if&lt;/b&gt; and &lt;b&gt;for-in&lt;/b&gt;.&lt;/p&gt;
+
+&lt;p&gt;The code works just fine but the important bit—testing whether the number is even—is buried inside the for loop. There’s also some tight coupling, where the desired action of adding the number to the array is inside the condition. If you wanted to print each even number somewhere else in your app, there’s no good way to reuse code without resorting to copy-and-paste.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.raywenderlich.com/82599/swift-functional-programming-tutorial&quot;&gt;Blog post&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
+var evens = [Int]()
+for i in 1...10 {
+  if i % 2 == 0 {
+    evens.append(i)
+  }
+}
+println(evens)
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
 			<string>inheritance + polymorphism</string>
 			<key>Id</key>
 			<string>57</string>
@@ -71,7 +147,7 @@ class Cat : Speaking {
 			<key>Id</key>
 			<string>56</string>
 			<key>Tags</key>
-			<string>Swift, Screen, Bug</string>
+			<string>Swift</string>
 			<key>Level</key>
 			<string>5</string>
 			<key>Correct Answers</key>
