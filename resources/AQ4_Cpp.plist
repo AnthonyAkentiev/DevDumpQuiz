@@ -10,7 +10,7 @@
 			<key>Id</key>
 			<string>107</string>
 			<key>Tags</key>
-			<string>C/C++, Screen</string>
+			<string>C/C++</string>
 			<key>Level</key>
 			<string>1</string>
 			<key>Correct Answers</key>
@@ -59,7 +59,7 @@ const Complex&amp; sum = SumComplex(a, b);
 			<key>Id</key>
 			<string>106</string>
 			<key>Tags</key>
-			<string>C/C++, Screen</string>
+			<string>C/C++</string>
 			<key>Level</key>
 			<string>2</string>
 			<key>Correct Answers</key>
@@ -107,7 +107,7 @@ int main()
 			<key>Id</key>
 			<string>105</string>
 			<key>Tags</key>
-			<string>C/C++, Screen</string>
+			<string>C/C++</string>
 			<key>Level</key>
 			<string>2</string>
 			<key>Correct Answers</key>

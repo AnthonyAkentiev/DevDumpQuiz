@@ -71,11 +71,11 @@ class Cat : Speaking {
 			<key>Id</key>
 			<string>56</string>
 			<key>Tags</key>
-			<string>Swift, Screen</string>
+			<string>Swift, Screen, Bug</string>
 			<key>Level</key>
 			<string>5</string>
 			<key>Correct Answers</key>
-			<string>3</string>
+			<string>3+0</string>
 			<key>answers</key>
 			<array>
 				<string></string>
@@ -174,7 +174,7 @@ class LLNode&lt;T&gt; {
 			<key>answers</key>
 			<array>
 				<string>Swift can&apos;t call Objective-C code</string>
-				<string>Swift can call Objective-C through the &apos;Briding header&apos;</string>
+				<string>Swift can call Objective-C through the &apos;Bridging header&apos;</string>
 				<string>Swift can call Objective-C code using so called &quot;Mix-and-use&quot; paradigm </string>
 				<string>Swift can easily call some Objective-C code that has special modifications</string>
 			</array>
@@ -239,7 +239,7 @@ The process for working with mixed-language targets differs slightly depending o
 &lt;h2&gt;What programming paradigms Swift language “includes”?&lt;/h2&gt;
 &lt;p&gt;(Select all)&lt;/p&gt;
 &lt;/div&gt;
-&lt;pre&gt;&lt;code class=&quot;language-swift”&gt;
+&lt;pre&gt;&lt;code class=&quot;language-swift&quot;&gt;
 // Sample Swift language code:
 import UIKit
 

@@ -138,6 +138,9 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
         btnOk.enabled = false
         
         // 2 - update model
+        // collect all selected items
+        setAnswers()
+        
         appDelegate.model.setAnswerEntered(true)
         
         // 3 - move to next view controller
@@ -158,6 +161,31 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
                 selectedCell?.textLabel!.textColor = UIColor.blueColor()
                 selectedCell?.detailTextLabel!.textColor = UIColor.blueColor()
             }
+        }
+    }
+    
+    // Update model
+    func setAnswers(){
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        var indexes:[Int] = []
+        
+        if let table = tableView {
+            if(correctAnswers.count > 1){
+                var checked: [NSIndexPath] = table.getAllCheckedCells()
+                
+                for ch in checked {
+                    indexes.append(ch.row + 1)
+                }
+                
+                appDelegate.model.setAnswerIndexes(indexes)
+            }else{
+                // or selected
+                let indexPath = table.indexPathForSelectedRow();
+                indexes.append(indexPath!.row + 1)
+            }
+            
+            appDelegate.model.setAnswerIndexes(indexes)
         }
     }
     
@@ -316,19 +344,6 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
             }
         }else{
             // Single answer mode
-        }
-        
-        // collect all selected items
-        var indexes:[Int] = []
-        
-        if let table = tableView {
-            var checked: [NSIndexPath] = table.getAllCheckedCells()
-            
-            for ch in checked {
-                indexes.append(ch.row + 1)
-            }
-        
-            appDelegate.model.setAnswerIndexes(indexes)
         }
     }
     
