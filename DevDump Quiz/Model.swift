@@ -30,10 +30,10 @@ extension Array {
     }
 }
 
-class Model: QuestionsBase {
+class Model: QuestionsBase {    
     var isSwipeHelpShownQuestion: Bool = false
     var isAnswerEntered:Bool = false
-    var userAnswered:Int = 0   // starting from 1
+    var userAnswered:[Int] = []   // starting from 1
     
     // Statistics:
     var questionIndex: Int = 0      // can be bigger than arr!
@@ -102,8 +102,8 @@ class Model: QuestionsBase {
         return curAnswers
     }
     
-    func getCorrectAnswerIndex()->Int{
-        return curCorrectAnswerIndex
+    func getCorrectAnswerIndexes()->[Int]{
+        return curCorrectAnswerIndexes
     }
     
     // this is full HTML description
@@ -124,11 +124,11 @@ class Model: QuestionsBase {
         return self.curCorrectAnswer
     }
     
-    func setAnswerIndex(index:Int){
-        userAnswered = index
+    func setAnswerIndexes(indexes:[Int]){
+        userAnswered = indexes
     }
     
-    func getAnswerIndex()->Int{
+    func getAnswerIndexes()->[Int]{
         return userAnswered
     }
     
@@ -136,16 +136,38 @@ class Model: QuestionsBase {
         // remember answer and mark question as "already shown"
         assert(count(curQuestionID) != 0)
         
+        let isCorrect = isCorrectAnswer()
         markQuestionAsAnsweredWithId(
             curQuestionID as String,
-            andResult:(userAnswered == curCorrectAnswerIndex),
-            andAnswer:userAnswered)
+            andResult:isCorrect,
+            andAnswers:userAnswered)
         
-        if(userAnswered==curCorrectAnswerIndex){
+        if(isCorrect){
             correctAnswers++
         }
         
         isAnswerEntered = val
+    }
+    
+    func isCorrectAnswer()->Bool{
+        var correctSelected = 0
+        
+        var totalCorrectIndexes: [Int] = []
+        
+        // intersection
+        for indx in curCorrectAnswerIndexes {
+            if(indx != 0){
+                totalCorrectIndexes.append(indx)
+            }
+            
+            for answ in userAnswered {
+                if(answ == indx){
+                    correctSelected++
+                }
+            }
+        }
+        
+        return (totalCorrectIndexes.count == correctSelected) && (correctSelected == userAnswered.count)
     }
     
     func getIsAnswerEntered()->Bool{
@@ -256,7 +278,7 @@ class Model: QuestionsBase {
     func nextQuestion(){
         // reset
         isAnswerEntered = false
-        userAnswered = 0
+        userAnswered = []
         
         // random and that was not already asked
         selectNextQuestionIndex()
@@ -272,7 +294,7 @@ class Model: QuestionsBase {
         
         // the questionIndex must be the same
         isAnswerEntered = false
-        userAnswered = 0
+        userAnswered = []
         
         loadQuestion()
     }

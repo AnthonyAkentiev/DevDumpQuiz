@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class Tags: NSObject {
     var totalTags = [String:Any]()
     var selectedTags = [String]()   // not indexes, but tag strings

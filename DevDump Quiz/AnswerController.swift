@@ -14,8 +14,7 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
     @IBOutlet var btnOk: UIButton!
     
     var items: [String] = []
-    // starting from 1
-    var correctAnswer: Int = 0
+    var correctAnswers:[Int] = [] // each item starts from 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +29,9 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
         btnOk.enabled = !appDelegate.model.getIsAnswerEntered()
         
         // select
-        if(appDelegate.model.getAnswerIndex() != 0){
-            var row:Int = appDelegate.model.getAnswerIndex() - 1
+        if(appDelegate.model.getAnswerIndexes().count != 0){
+            // TODO: select all indexes
+            var row:Int = appDelegate.model.getAnswerIndexes()[0] - 1
             var path:NSIndexPath = NSIndexPath(forRow: row, inSection: 0)
             
             tableView.selectRowAtIndexPath(
@@ -39,8 +39,8 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
                 animated: false,
                 scrollPosition: UITableViewScrollPosition.None)
             
-            let htmlAnswerDesc:String = appDelegate.model.getAnswerDescByIndex(row)
-            loadHtmlFromString(htmlAnswerDesc)
+            //let htmlAnswerDesc:String = appDelegate.model.getAnswerDescByIndex(row)
+            //loadHtmlFromString(htmlAnswerDesc)
         }else{
             // required to fix bug with no-swipe
             loadHtmlFromString("")
@@ -51,7 +51,7 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         items = appDelegate.model.getAnswers()
         
-        correctAnswer = appDelegate.model.getCorrectAnswerIndex()
+        correctAnswers = appDelegate.model.getCorrectAnswerIndexes()
     }
     
     override func didReceiveMemoryWarning() {
@@ -71,7 +71,7 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     @IBAction func onOk(){
-        assert(correctAnswer>0)
+        assert(correctAnswers.count>0)
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
@@ -96,10 +96,15 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func highlightGoodAnswer(){
-        var path:NSIndexPath = NSIndexPath(forRow: (correctAnswer - 1), inSection: 0)
-        var selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(path)!
-        selectedCell.textLabel!.textColor = UIColor.blueColor()
-        selectedCell.detailTextLabel!.textColor = UIColor.blueColor()
+        for answ in correctAnswers {
+            if(answ != 0){
+                var path:NSIndexPath = NSIndexPath(forRow: (answ - 1), inSection: 0)
+            
+                var selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(path)!
+                selectedCell.textLabel!.textColor = UIColor.blueColor()
+                selectedCell.detailTextLabel!.textColor = UIColor.blueColor()
+            }
+        }
     }
     
     func moveToCorrectAnswer(){
@@ -128,24 +133,69 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         // highlight if "already answered" mode
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        if(appDelegate.model.getIsAnswerEntered() && (indexPath.row + 1==appDelegate.model.getCorrectAnswerIndex())){
-            cell.textLabel!.textColor = UIColor.blueColor()
-            cell.detailTextLabel!.textColor = UIColor.blueColor()
+        if(appDelegate.model.getIsAnswerEntered()){
+            highlightCell(cell,andWithIndexPath:indexPath)
         }
         
         return cell
     }
     
+    func highlightCell(cell:UITableViewCell,andWithIndexPath:NSIndexPath){
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        assert(appDelegate.model.getIsAnswerEntered())
+        
+        // user answered
+        for answ in appDelegate.model.userAnswered {
+            if(andWithIndexPath.row + 1==answ){
+                cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            }
+        }
+        
+        // correct answers
+        for answ in correctAnswers {
+            if(andWithIndexPath.row + 1==answ){
+                cell.textLabel!.textColor = UIColor.blueColor()
+                cell.detailTextLabel!.textColor = UIColor.blueColor()
+            }
+        }
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
-        // set user selection
+        // checkbox or selection
         if(!appDelegate.model.getIsAnswerEntered()){
-            appDelegate.model.setAnswerIndex(indexPath.row + 1)
+            var cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+            onCellClicked(cell,withIndexPath:indexPath)
         }
         
         let htmlAnswerDesc:String = appDelegate.model.getAnswerDescByIndex(indexPath.row)
         loadHtmlFromString(htmlAnswerDesc)
+    }
+    
+    func onCellClicked(cell:UITableViewCell,withIndexPath indexPath:NSIndexPath){
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        if(correctAnswers.count > 1){
+            // Multi answer mode - set checkbox
+            if(cell.accessoryType == UITableViewCellAccessoryType.None){
+                cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            }else{
+                cell.accessoryType = UITableViewCellAccessoryType.None
+            }
+        }else{
+            // Single answer mode
+        }
+        
+        // collect all selected items
+        var indexes:[Int] = []
+        var checked: [NSIndexPath] = tableView.getAllCheckedCells()
+    
+        for ch in checked {
+            indexes.append(ch.row + 1)
+        }
+        
+        appDelegate.model.setAnswerIndexes(indexes)
     }
     
     /////////////////////

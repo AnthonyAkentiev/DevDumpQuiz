@@ -27,7 +27,10 @@ class QuestionsBase: Tags {
     var curAnswersHtml:[String] = []
     var curQuestionTags:String = ""
     var curQuestionLevel:String = ""
-    var curCorrectAnswerIndex:Int = 0 // starting from 1
+
+    //var curCorrectAnswerIndex:Int = 0 // starting from 1
+    var curCorrectAnswerIndexes:[Int] = []  // multi answers...
+    
     var curCorrectAnswer:String = ""
     
     //////////////////////////////////////////////////////////////////
@@ -77,8 +80,11 @@ class QuestionsBase: Tags {
         
         // TODO: manually update this list for debug
         var aqs = [
-            "AQ1",
-            "AQ2"
+            "AQ1_Linux",
+            "AQ2",
+            "AQ3_Swift",
+            "AQ4_Cpp",
+            "AQ5_ObjC"
         ]
         
         for aq in aqs {
@@ -290,14 +296,16 @@ class QuestionsBase: Tags {
         var a: String = dict.objectForKey("a") as! String
         var tags: String = dict.objectForKey("Tags") as! String
         var level: String = dict.objectForKey("Level") as! String
-        var correctAnswer: Int = dict.objectForKey("Correct Answer") as! Int
+        //var correctAnswer: Int = dict.objectForKey("Correct Answer") as! Int
+        var correctAnswers: String = dict.objectForKey("Correct Answers") as! String
         
         // Unique app ID (different questions from different files should not collide)
         curQuestionID = id
         
         curQuestionTags = tags
         curQuestionLevel = level
-        curCorrectAnswerIndex = correctAnswer
+        
+        parseCorrectAnswers(correctAnswers)
         
         curQuestion = prepareHtml(q)
         curCorrectAnswer = prepareHtml(a)
@@ -313,8 +321,29 @@ class QuestionsBase: Tags {
         }
     }
     
+    func parseCorrectAnswers(correctAnswers:String){
+        if correctAnswers.rangeOfString("+") != nil{
+            // multi answers
+            let answersIndexes:[String] = correctAnswers.componentsSeparatedByString("+")
+            
+            curCorrectAnswerIndexes = []
+            for answerIndex in answersIndexes {
+                let tr = answerIndex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                
+                curCorrectAnswerIndexes.append(tr.toInt()!)
+            }
+        }else{
+            // single answer
+            curCorrectAnswerIndexes = []
+            
+            let tr = correctAnswers.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+            
+            curCorrectAnswerIndexes.append(tr.toInt()!)
+        }
+    }
+    
     // When user answer the question - we mark it with "IsAsked" and "Answered" 
-    func markQuestionAsAnsweredWithId(id:String, andResult:Bool, andAnswer:Int){
+    func markQuestionAsAnsweredWithId(id:String, andResult:Bool, andAnswers:[Int]){
         NSLog("User answered question \(id) with result: \(andResult)")
         
         // get q object from plist in Documents
@@ -323,7 +352,8 @@ class QuestionsBase: Tags {
         assert(ID==id)
         
         q.setObject(true, forKey: "IsAsked")
-        q.setObject(andAnswer, forKey: "Answered")
+        // need for recap
+        q.setObject(andAnswers, forKey: "Answered")
         
         // save to read/write plist file
         updateQuestionWithId(id.toInt()!, andValue:q)
@@ -416,7 +446,7 @@ class QuestionsBase: Tags {
     }
     
     private func updateTotalTags(totalTags:[String:Any], tag:String, isAskedCount:Int)->[String:Any]{
-        var tagTrimmed = tag.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        let tagTrimmed = tag.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         
         // copy ((
         var out = totalTags

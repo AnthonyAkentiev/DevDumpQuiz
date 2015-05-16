@@ -8,6 +8,23 @@
 
 import UIKit
 
+extension UITableView {
+    func getAllCheckedCells()->[NSIndexPath]{
+        var out = [NSIndexPath]()
+        
+        var cnt = self.numberOfRowsInSection(0)
+        for i in 0..<cnt {
+            var indexPath: NSIndexPath = NSIndexPath(forItem: i, inSection: 0)
+            
+            var cell:UITableViewCell? = self.cellForRowAtIndexPath(indexPath)
+            if(cell?.accessoryType == UITableViewCellAccessoryType.Checkmark){
+                out.append(indexPath)
+            }
+        }
+        
+        return out
+    }
+}
 
 class MainMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var buttonStart: UIButton!
@@ -119,7 +136,7 @@ class MainMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         
         // update view
-        var checked: [NSIndexPath] = getAllCheckedCells()
+        var checked: [NSIndexPath] = tableView.getAllCheckedCells()
         var rows = [Int]()
         for s in checked {
             rows.append(s.row)
@@ -148,22 +165,6 @@ class MainMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
         buttonStart.setTitle("Start \(cnt) random questions round", forState: UIControlState.Normal)
 
         buttonStart.enabled = (cnt != 0)
-    }
-    
-    func getAllCheckedCells()->[NSIndexPath]{
-        var out: [NSIndexPath] = [NSIndexPath]()
-        
-        var cnt = tableView.numberOfRowsInSection(0)
-        for i in 0..<cnt {
-            var indexPath: NSIndexPath = NSIndexPath(forItem: i, inSection: 0)
-            
-            var cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-            if(cell.accessoryType == UITableViewCellAccessoryType.Checkmark){
-                out.append(indexPath)
-            }
-        }
-        
-        return out
     }
     
 }

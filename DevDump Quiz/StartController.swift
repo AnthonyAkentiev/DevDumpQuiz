@@ -27,10 +27,10 @@ class StartController: UIViewController {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         // set all label texts:
-        lblTotalQuestion.text = "Question: " + String(appDelegate.model.getQuestionIndex()) + "/" + String(appDelegate.model.getTotalQuestionsInRound())
+        lblTotalQuestion.text = "Complete: " + String(appDelegate.model.getQuestionIndex() - 1) + "/" + String(appDelegate.model.getTotalQuestionsInRound())
         
         lblCorrect.text = "Сorrect: " + String(appDelegate.model.getCorrectAnswersInRound()) + "/" +
-            String(appDelegate.model.getQuestionIndex())
+            String(appDelegate.model.getQuestionIndex() - 1)
         
         lblLevel.text = "Question level: " + (appDelegate.model.getQuestionLevel() as String) + "/10"
         lblTopic.text = "Question tags: " + (appDelegate.model.getQuestionTags() as String)
