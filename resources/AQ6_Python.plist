@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>argument passing</string>
 			<key>Id</key>
 			<string>304</string>
 			<key>Tags</key>
@@ -14,41 +14,84 @@
 			<key>Level</key>
 			<string>2</string>
 			<key>Correct Answers</key>
-			<string>2</string>
+			<string>4</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>By value</string>
+				<string>By reference</string>
+				<string>By name</string>
+				<string>Neither of all above</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;Strictly speaking you can’t call Pythons calling style: call-by-reference or call-by-value. But some people do.&lt;/p&gt;
+
+&lt;h3&gt;First explanation&lt;/h3&gt;
+&lt;p&gt;There are books which call the strategy of Python call-by-value and others call it call-by-reference. You may ask yourself, what is right.&lt;/p&gt;
+&lt;p&gt;The authors who call the mechanism call-by-value and those who call it call-by-reference are stretching the definitions until they fit.&lt;/p&gt;
+&lt;p&gt;Correctly speaking, Python uses a mechanism, which is known as &quot;Call-by-Object&quot;, sometimes also called &quot;Call by Object Reference&quot; or &quot;Call by Sharing”.&lt;/p&gt;
+
+&lt;p&gt;If you pass immutable arguments like integers, strings or tuples to a function, the passing acts like call-by-value. The object reference is passed to the function parameters. They can&apos;t be changed within the function, because they can&apos;t be changed at all, i.e. they are immutable. It&apos;s different, if we pass mutable arguments. They are also passed by object reference, but they can be changed in place in the function. If we pass a list to a function, we have to consider two cases: Elements of a list can be changed in place, i.e. the list will be changed even in the caller&apos;s scope. If a new list is assigned to the name, the old list will not be affected, i.e. the list in the caller&apos;s scope will remain untouched.&lt;/p&gt;
+
+&lt;p&gt;First, let&apos;s have a look at the integer variables. The parameter inside of the function remains a reference to the arguments variable, as long as the parameter is not changed. As soon as a new value will be assigned to it, Python creates a separate local variable. The caller&apos;s variable will not be changed this way:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python”&gt;
+def ref_demo(x):
+    print &quot;x=&quot;,x,&quot; id=&quot;,id(x)
+    x=42
+    print &quot;x=&quot;,x,&quot; id=&quot;,id(x)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the example above, we used the id() function, which takes an object as a parameter. id(obj) returns the &quot;identity&quot; of the object &quot;obj&quot;. This identity, the return value of the function, is an integer which is unique and constant for this object during its lifetime. Two different objects with non-overlapping lifetimes may have the same id() value.&lt;/p&gt;
+
+&lt;p&gt;If you call the function ref_demo() - like we do in the green block further down - we can check with the id() function what happens to x. We can see that in the main scope, x has the identity 41902552. In the first print statement of the ref_demo() function, the x from the main scope is used, because we can see that we get the same identity. After we have assigned the value 42 to x, x gets a new identity 41903752, i.e. a separate memory location from the global x. So, when we are back in the main scope x has still the original value 9.&lt;/p&gt;
+
+&lt;p&gt;This means that Python initially behaves like call-by-reference, but as soon as we are changing the value of such a variable, Python &quot;switches&quot; to call-by-value.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.python-course.eu/passing_arguments.php&quot;&gt;Source&lt;/a&gt;
+
+&lt;h3&gt;Second explanation&lt;/h3&gt;
+&lt;p&gt;The short answer is &quot;neither&quot;, actually it is called &quot;call by object” or “call by sharing&quot;(you can check here for more info). The longer one starts with the fact that this terminology is probably not the best one to describe how Python works. In Python everything is an object and all variables hold references to objects. The values of these references are to the functions. As result you can not change the value of the reference but you can modify the object if it is mutable. Remember numbers, strings and tuples are immutable, list and dicts are mutable.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.ilian.io/python-interview-question-and-answers/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;h2&gt;How are arguments passed to function in Python?&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python”&gt;
+def func(list):
+   print list
+   list += [47,11]
+   print list
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>range/xrange</string>
 			<key>Id</key>
 			<string>303</string>
 			<key>Tags</key>
 			<string>Python</string>
 			<key>Level</key>
-			<string>2</string>
+			<string>3</string>
 			<key>Correct Answers</key>
-			<string>2</string>
+			<string>4</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>range and xrange is completely equal</string>
+				<string>xrange includes last element, but range doesn&apos;t</string>
+				<string>range is lazy, but xrange is not</string>
+				<string>xrange is lazy, but range is not</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;&lt;b&gt;range&lt;/b&gt; creates a list, so if you do range(1, 10000000) it creates a list in memory with 10000000 elements.
+xrange is a sequence object that evaluates lazily.&lt;/p&gt;
+
+&lt;a href=&quot;http://stackoverflow.com/questions/94935/what-is-the-difference-between-range-and-xrange-functions-in-python-2-x&quot;&gt;Stackoverflow&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;h2&gt;What is the difference between range and xrange?&lt;/h2&gt;
+&lt;p&gt;(Python 2)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python”&gt;
+for i in range(0, 20):
+for i in xrange(0, 20):
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
