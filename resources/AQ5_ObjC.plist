@@ -25,7 +25,7 @@
 			<key>q</key>
 			<string>&lt;h2&gt;Are these 2 lines equal?&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-objectivec”&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
 // 1
 [friend performSelector:@selector(tellAbout:) withObject:aNeighbor];
 
@@ -61,7 +61,7 @@
 &lt;p&gt;Even though any methods added by a category are available to all instances of the class and its subclasses, you’ll need to import the category header file in any source code file where you wish to use the additional methods, otherwise you’ll run into compiler warnings and errors.&lt;/p&gt;
 &lt;p&gt;The category implementation might look like this:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-objectivec”&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
 #import &quot;XYZPerson+XYZPersonNameDisplayAdditions.h&quot;
 
 @implementation XYZPerson (XYZPersonNameDisplayAdditions)
@@ -76,7 +76,7 @@
 			<key>q</key>
 			<string>&lt;h2&gt;What language feature is used in this example?&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-objectivec”&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
 #import &quot;XYZPerson.h&quot;
 @interface XYZPerson (XYZPersonNameDisplayAdditions)
     - (NSString*) lastNameFirstNameString;
