@@ -6,6 +6,260 @@
 	<array>
 		<dict>
 			<key>Comment</key>
+			<string>blocks on the main thread</string>
+			<key>Id</key>
+			<string>205</string>
+			<key>Tags</key>
+			<string>Objective C, Screen</string>
+			<key>Level</key>
+			<string>5</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>This code can not be compiled because some lines contain errors</string>
+				<string>This code will be compiled but will throw exception if executed</string>
+				<string>This code will be compiled and executed without exceptions, but has memory leak</string>
+				<string>This code is OK</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;This code has memory leak&lt;/h2&gt;
+&lt;p&gt;This is a classic example of a retain cycle. The parent will retain the children array, and the array will retain each TTChild object added to it. Each child object that is created will &lt;i&gt;also&lt;/i&gt; retain its parent, so that even after the last external reference to parent is cleared, the retain count on parent will still be greater than zero and it will not be removed.&lt;p&gt;
+&lt;p&gt;In order to fix this, the child’s reference back to the parent needs to be declared as a &lt;b&gt;weak&lt;/b&gt; reference as follows:&lt;p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+@interface TTChild : NSObject
+
+@property (weak, atomic) TTParent *parent;
+
+@end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;a href=&quot;http://www.toptal.com/ios/interview-questions&quot;&gt;Source&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Is there any problems in this code?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+#import &quot;TTAppDelegate.h&quot;
+
+@interface TTParent : NSObject
+
+@property (atomic) NSMutableArray *children;
+
+@end
+
+@implementation TTParent
+@end
+
+@interface TTChild : NSObject
+
+@property (atomic) TTParent *parent;
+
+@end
+
+@implementation TTChild
+@end
+
+@implementation TTAppDelegate
+
+- (BOOL)application:(UIApplication *)application
+  didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    TTParent *parent = [[TTParent alloc] init];
+    parent.children = [[NSMutableArray alloc] init];
+    for (int i = 0; i &lt; 10; i++) {
+        TTChild *child = [[TTChild alloc] init];
+        child.parent = parent;
+        [parent.children addObject:child];
+    }
+    return YES;
+}
+@end
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>blocks on the main thread</string>
+			<key>Id</key>
+			<string>204</string>
+			<key>Tags</key>
+			<string>Objective C, Screen</string>
+			<key>Level</key>
+			<string>4</string>
+			<key>Correct Answers</key>
+			<string>3+4</string>
+			<key>answers</key>
+			<array>
+				<string>UI update code must always be running in block</string>
+				<string>We want to separate that code from all other UI update operations that run simultaneously</string>
+				<string>We want UI update code to run in the main thread</string>
+				<string>UI updates that are not executed on the main thread can lead to undefined behavior</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Consider this code:&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+@interface TTWaitController : UIViewController
+
+@property (strong, nonatomic) UILabel *alert;
+
+@end
+
+@implementation TTWaitController
+
+- (void)viewDidLoad
+{
+    CGRect frame = CGRectMake(20, 200, 200, 20);
+    self.alert = [[UILabel alloc] initWithFrame:frame];
+    self.alert.text = @&quot;Please wait 10 seconds...&quot;;
+    self.alert.textColor = [UIColor whiteColor];
+    [self.view addSubview:self.alert];
+
+    NSOperationQueue *waitQueue = [[NSOperationQueue alloc] init];
+    [waitQueue addOperationWithBlock:^{
+        [NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+        self.alert.text = @&quot;Thanks!&quot;;
+    }];
+}
+
+@end
+
+@implementation TTAppDelegate
+
+- (BOOL)application:(UIApplication *)application
+  didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [[TTWaitController alloc] init];
+    [self.window makeKeyAndVisible];
+    return YES;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When the above code dispatches work using NSOperationQueue’s method addOperationWithBlock, there is no guarantee that the block being enqueued will be executed on the main thread. Notice that the content of the UILabel is being updated within the body of the block. UI updates that are not executed on the main thread can lead to undefined behaviour. This code might appear to be working correctly for a long time before anything goes wrong, but UI updates should &lt;i&gt;always&lt;/i&gt; happen on the main thread.&lt;/p&gt;
+
+&lt;p&gt;The easiest way to fix the potential issue is to change the body of the block so that the update is re-enqueued using the main thread’s queue&lt;/p&gt;
+
+&lt;a href=&quot;http://www.toptal.com/ios/interview-questions&quot;&gt;Source&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Why we use waitQueue?&lt;/h2&gt;
+(select all)
+
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+[waitQueue addOperationWithBlock:^{
+    [NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        self.alert.text = @&quot;Thanks!&quot;;
+    }];
+}];
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>reuseIdentifier</string>
+			<key>Id</key>
+			<string>203</string>
+			<key>Tags</key>
+			<string>Objective C, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>That will make sure all cells/rows have same layout</string>
+				<string>That will help to store cells in UITableView </string>
+				<string>That will help to improve performance and memory consumption</string>
+				<string>That will tag cell so we can get it by reuseIdentier later</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;reuseIdentifier can improve performance and memory consumption&lt;/h2&gt;
+&lt;p&gt;The &lt;i&gt;reuseIdentifier&lt;/i&gt; is used to group together similar rows in an &lt;i&gt;UITableView&lt;/i&gt;; i.e., rows that differ only in their content, but otherwise have similar layouts.&lt;/p&gt;
+&lt;p&gt;A &lt;i&gt;UITableView&lt;/i&gt; will normally allocate just enough &lt;i&gt;UITableViewCell&lt;/i&gt; objects to display the content visible in the table. If &lt;i&gt;reuseIdentifier&lt;/i&gt; is set to a non-nil value, then when the table view is scrolled, &lt;i&gt;UITableView&lt;/i&gt; will first attempt to reuse an already allocated &lt;i&gt;UITableViewCell&lt;/i&gt; with the same &lt;i&gt;reuseIdentifier&lt;/i&gt;. If &lt;i&gt;reuseIdentifier&lt;/i&gt; has not been set, the &lt;i&gt;UITableView&lt;/i&gt; will be forced to allocate new &lt;i&gt;UITableViewCell&lt;/i&gt; objects for each new item that scrolls into view, potentially leading to laggy animations.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.toptal.com/ios/interview-questions&quot;&gt;Source&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is the purpose of the reuseIdentifier? What is the advantage of setting it to a non-nil value?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>atomic properties</string>
+			<key>Id</key>
+			<string>202</string>
+			<key>Tags</key>
+			<string>Objective C, Screen</string>
+			<key>Level</key>
+			<string>4</string>
+			<key>Correct Answers</key>
+			<string>1+2+3</string>
+			<key>answers</key>
+			<array>
+				<string>&apos;Atomic&apos; properties are guaranteed to always return a fully initialized object</string>
+				<string>Properties are &apos;atomic&apos; by default. You can only specify &apos;nonatomic&apos; to change default behaviour</string>
+				<string>Setting property to &apos;nonatomic&apos; can gain you a bit of performance if retrieving an uninitialized value is not a risk (external syncronization)</string>
+				<string>Atomic properties are writen all-at-once to memory</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Atomic and nonatomic properties&lt;/h2&gt;
+&lt;p&gt;Properties specified as &lt;b&gt;atomic&lt;/b&gt; are guaranteed to always return a fully initialized object. This also happens to be the default state for synthesized properties so, while it’s a good practice to specify &lt;b&gt;atomic&lt;/b&gt; to remove the potential for confusion, if you leave it off, your properties will still be &lt;b&gt;atomic&lt;/b&gt;. This guarantee of &lt;b&gt;atomic&lt;/b&gt; properties comes at a cost to performance, however. If you have a property for which you know that retrieving an uninitialized value is not a risk (e.g. if all access to the property is already synchronized via other means), then setting it to &lt;b&gt;nonatomic&lt;/b&gt; can gain you a bit of performance.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.toptal.com/ios/interview-questions&quot;&gt;Source&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is the difference between atomic and nonatomic properties?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
+@property(nonatomic, retain) UITextField *userName;
+@property(atomic, retain) UITextField *userName;
+@property(retain) UITextField *userName;
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>managed context</string>
+			<key>Id</key>
+			<string>201</string>
+			<key>Tags</key>
+			<string>Objective C, Screen</string>
+			<key>Level</key>
+			<string>5</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>Persistent store</string>
+				<string>Managed object context</string>
+				<string>Core Data object context</string>
+				<string>Document base object</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Managed object context&lt;/h2&gt;
+&lt;p&gt;A &lt;b&gt;Managed object context&lt;/b&gt; is basically a temporary “scratch pad” in an application for a (presumably) related collection of objects. These objects collectively represent an internally consistent view of one or more persistent stores. A single &lt;b&gt;Managed object context&lt;/b&gt; instance exists in one and only one context, but multiple copies of an object can exist in different contexts.&lt;p&gt;
+
+&lt;p&gt;You can think of a &lt;b&gt;Managed object context&lt;/b&gt; as an intelligent scratch pad. When you fetch objects from a persistent store, you bring temporary copies onto the scratch pad where they form an object graph (or a collection of object graphs). You can then modify those objects however you like. Unless you actually save those changes, though, the persistent store remains unchanged.&lt;/p&gt;
+
+&lt;p&gt;Key functionality provided by a managed object context includes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;i&gt;Life-cycle management&lt;/i&gt;. The context provides validation, inverse relationship handling, and undo/redo. Through a context you can retrieve or “fetch” objects from a persistent store, make changes to those objects, and then either discard the changes or commit them back to the persistent store. The context is responsible for watching for changes in its objects and maintains an undo manager so you can have finer-grained control over undo and redo. You can insert new objects and delete ones you have fetched, and commit these modifications to the persistent store.&lt;/li&gt;
+
+&lt;li&gt;&lt;i&gt;Notifications&lt;/i&gt;. A context posts notifications at various points which can optionally be monitored elsewhere in your application.&lt;/li&gt;
+
+&lt;li&gt;&lt;i&gt;Concurrency&lt;/i&gt;. Core Data uses thread (or serialized queue) confinement to protect managed objects and managed object contexts. In OS X v10.7 and later and iOS v5.0 and later, when you create a context you can specify the concurrency pattern with which you will use it using initWithConcurrencyType:.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;a href=&quot;http://www.toptal.com/ios/interview-questions&quot;&gt;Source&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Guess what is missing in sentences below&lt;/h2&gt;
+&lt;p&gt;A &lt;b&gt;—&lt;/b&gt; is basically a temporary “scratch pad” in an application for a (presumably) related collection of objects. These objects collectively represent an internally consistent view of one or more persistent stores. A single &lt;b&gt;—&lt;/b&gt; instance exists in one and only one context, but multiple copies of an object can exist in different contexts.&lt;p&gt;
+
+&lt;p&gt;You can think of a &lt;b&gt;—&lt;/b&gt; as an intelligent scratch pad. When you fetch objects from a persistent store, you bring temporary copies onto the scratch pad where they form an object graph (or a collection of object graphs). You can then modify those objects however you like. Unless you actually save those changes, though, the persistent store remains unchanged.&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
 			<string>ARC mode release</string>
 			<key>Id</key>
 			<string>200</string>
