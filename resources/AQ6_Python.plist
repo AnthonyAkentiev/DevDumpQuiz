@@ -50,12 +50,12 @@ def ref_demo(x):
 &lt;a href=&quot;http://www.python-course.eu/passing_arguments.php&quot;&gt;Source&lt;/a&gt;
 
 &lt;h3&gt;Second explanation&lt;/h3&gt;
-&lt;p&gt;The short answer is &quot;neither&quot;, actually it is called &quot;call by object” or “call by sharing&quot;(you can check here for more info). The longer one starts with the fact that this terminology is probably not the best one to describe how Python works. In Python everything is an object and all variables hold references to objects. The values of these references are to the functions. As result you can not change the value of the reference but you can modify the object if it is mutable. Remember numbers, strings and tuples are immutable, list and dicts are mutable.&lt;/p&gt;
+&lt;p&gt;The short answer is &quot;neither&quot;, actually it is called &quot;call by object” or “call by sharing&quot;. The longer one starts with the fact that this terminology is probably not the best one to describe how Python works. In Python everything is an object and all variables hold references to objects. The values of these references are to the functions. As result you can not change the value of the reference but you can modify the object if it is mutable. Remember numbers, strings and tuples are immutable, list and dicts are mutable.&lt;/p&gt;
 
 &lt;a href=&quot;http://www.ilian.io/python-interview-question-and-answers/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
 			<string>&lt;h2&gt;How are arguments passed to function in Python?&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&quot;language-python”&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
 def func(list):
    print list
    list += [47,11]
@@ -88,7 +88,7 @@ xrange is a sequence object that evaluates lazily.&lt;/p&gt;
 			<key>q</key>
 			<string>&lt;h2&gt;What is the difference between range and xrange?&lt;/h2&gt;
 &lt;p&gt;(Python 2)&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-python”&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
 for i in range(0, 20):
 for i in xrange(0, 20):
 &lt;/code&gt;&lt;/pre&gt;</string>
@@ -117,7 +117,7 @@ for i in xrange(0, 20):
 &lt;a href=&quot;http://www.toptal.com/python/interview-questions&quot;&gt;&lt;/a&gt;</string>
 			<key>q</key>
 			<string>&lt;h2&gt;What will this list comprehension output will be?&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&quot;language-python”&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
 #        0   1   2   3    4    5    6    7    8
 list = [ 1 , 3 , 5 , 8 , 10 , 13 , 18 , 36 , 78 ]
 
@@ -150,7 +150,7 @@ list = [ 1 , 3 , 5 , 8 , 10 , 13 , 18 , 36 , 78 ]
 &lt;a href=&quot;http://www.toptal.com/python/interview-questions&quot;&gt;&lt;/a&gt;</string>
 			<key>q</key>
 			<string>&lt;h2&gt;What will be the output of the code below?&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&quot;language-python”&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
 def multipliers():
     return [lambda x : i * x for i in range(4)]
     
@@ -183,7 +183,7 @@ print [m(2) for m in multipliers()]
 &lt;a href=&quot;http://www.toptal.com/python/interview-questions&quot;&gt;&lt;/a&gt;</string>
 			<key>q</key>
 			<string>&lt;h2&gt;What will be the output of the code below?&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&quot;language-python”&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
 list = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;]
 print list[10:]
 &lt;/code&gt;&lt;/pre&gt;</string>
