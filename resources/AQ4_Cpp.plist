@@ -10,17 +10,17 @@
 			<key>Id</key>
 			<string>108</string>
 			<key>Tags</key>
-			<string>C/C++,Screen</string>
+			<string>C/C++</string>
 			<key>Level</key>
 			<string>3</string>
 			<key>Correct Answers</key>
 			<string>4</string>
 			<key>answers</key>
 			<array>
-				<string>3</string>
-				<string>7</string>
-				<string>9</string>
-				<string>11</string>
+				<string>The result is 3</string>
+				<string>The result is 7</string>
+				<string>The result is 9</string>
+				<string>The result is 11</string>
 			</array>
 			<key>a</key>
 			<string>&lt;h2&gt;Output is 11&lt;/h2&gt;
@@ -30,7 +30,7 @@
 char a[ROWS][COLS];  // assume ROWS and COLS are const ints
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Because arrays are laid out in memory by row, each &lt;i&gt;row length&lt;/i&gt; is COLS (the number of columns is the size of a row). Let&apos;s assume that you want to find the address of a[r][c]. The &lt;i&gt;baseAddress of the array is the address of the first element. The &lt;i&gt;rowSize&lt;/i&gt; is COLS in the above example. The &lt;i&gt;elementSize&lt;/i&gt; is the number of bytes required to represent the data (typically 1 for char, 4 for int, 4 for float, and 8 for double).&lt;/p&gt;
+&lt;p&gt;Because arrays are laid out in memory by row, each &lt;i&gt;row length&lt;/i&gt; is COLS (the number of columns is the size of a row). Let&apos;s assume that you want to find the address of a[r][c]. The &lt;i&gt;baseAddress&lt;/i&gt; of the array is the address of the first element. The &lt;i&gt;rowSize&lt;/i&gt; is COLS in the above example. The &lt;i&gt;elementSize&lt;/i&gt; is the number of bytes required to represent the data (typically 1 for char, 4 for int, 4 for float, and 8 for double).&lt;/p&gt;
 
 &lt;p&gt;address = baseAddress + elementSize * (r*rowSize + c);&lt;/p&gt;
 

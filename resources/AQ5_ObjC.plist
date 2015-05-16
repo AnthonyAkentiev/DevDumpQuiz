@@ -10,7 +10,7 @@
 			<key>Id</key>
 			<string>208</string>
 			<key>Tags</key>
-			<string>Objective C, Screen</string>
+			<string>Objective C</string>
 			<key>Level</key>
 			<string>2</string>
 			<key>Correct Answers</key>
@@ -39,7 +39,7 @@
 			<key>Id</key>
 			<string>207</string>
 			<key>Tags</key>
-			<string>Objective C, Screen</string>
+			<string>Objective C</string>
 			<key>Level</key>
 			<string>3</string>
 			<key>Correct Answers</key>
@@ -90,7 +90,7 @@
 			<key>Id</key>
 			<string>206</string>
 			<key>Tags</key>
-			<string>Objective C, Swift, C/C++, Screen</string>
+			<string>Objective C, Swift, C/C++</string>
 			<key>Level</key>
 			<string>2</string>
 			<key>Correct Answers</key>
@@ -140,7 +140,7 @@ extern double f(int, double);
 			<key>Id</key>
 			<string>205</string>
 			<key>Tags</key>
-			<string>Objective C, Swift, Screen</string>
+			<string>Objective C, Swift</string>
 			<key>Level</key>
 			<string>4</string>
 			<key>Correct Answers</key>
