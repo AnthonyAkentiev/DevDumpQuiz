@@ -84,7 +84,8 @@ class QuestionsBase: Tags {
             "AQ2",
             "AQ3_Swift",
             "AQ4_Cpp",
-            "AQ5_ObjC"
+            "AQ5_ObjC",
+            "AQ6_Python"
         ]
         
         for aq in aqs {
