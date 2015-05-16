@@ -6,11 +6,11 @@
 	<array>
 		<dict>
 			<key>Comment</key>
-			<string>blocks on the main thread</string>
+			<string>retain cycle</string>
 			<key>Id</key>
 			<string>205</string>
 			<key>Tags</key>
-			<string>Objective C, Screen</string>
+			<string>Objective C</string>
 			<key>Level</key>
 			<string>5</string>
 			<key>Correct Answers</key>
@@ -83,7 +83,7 @@
 			<key>Id</key>
 			<string>204</string>
 			<key>Tags</key>
-			<string>Objective C, Screen</string>
+			<string>Objective C</string>
 			<key>Level</key>
 			<string>4</string>
 			<key>Correct Answers</key>
@@ -142,7 +142,7 @@
 
 &lt;a href=&quot;http://www.toptal.com/ios/interview-questions&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string>&lt;h2&gt;Why we use waitQueue?&lt;/h2&gt;
+			<string>&lt;h2&gt;Why we use mainQueue?&lt;/h2&gt;
 (select all)
 
 &lt;pre&gt;&lt;code class=&quot;language-objectivec&quot;&gt;
@@ -160,7 +160,7 @@
 			<key>Id</key>
 			<string>203</string>
 			<key>Tags</key>
-			<string>Objective C, Screen</string>
+			<string>Objective C</string>
 			<key>Level</key>
 			<string>2</string>
 			<key>Correct Answers</key>
@@ -191,7 +191,7 @@
 			<key>Id</key>
 			<string>202</string>
 			<key>Tags</key>
-			<string>Objective C, Screen</string>
+			<string>Objective C</string>
 			<key>Level</key>
 			<string>4</string>
 			<key>Correct Answers</key>
@@ -223,7 +223,7 @@
 			<key>Id</key>
 			<string>201</string>
 			<key>Tags</key>
-			<string>Objective C, Screen</string>
+			<string>Objective C</string>
 			<key>Level</key>
 			<string>5</string>
 			<key>Correct Answers</key>
