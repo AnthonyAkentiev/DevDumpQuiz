@@ -6,6 +6,47 @@
 	<array>
 		<dict>
 			<key>Comment</key>
+			<string>selectors in swift?</string>
+			<key>Id</key>
+			<string>60</string>
+			<key>Tags</key>
+			<string>Swift, Screen</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>Yes</string>
+				<string>No</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Yes, Swift has Selector&lt;/h2&gt;
+&lt;p&gt;Swift itself doesn&apos;t use selectors — several of the ObjC patterns that make use of selectors are replaced by something else in Swift. (Use optional chaining instead of &lt;b&gt;respondsToSelector:&lt;/b&gt; tests, and don&apos;t use &lt;b&gt;performSelector:&lt;/b&gt; because it&apos;s not type safe.)&lt;/p&gt;
+
+&lt;p&gt;When interacting with ObjC-based APIs that take selectors, you can use a string to represent one; e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-swift”&gt;
+myButton.addTarget(self, action: &quot;buttonTapped:&quot;, forControlEvents: .TouchUpInside)
+let timer = NSTimer(timeInterval: 1, target: self, selector: &quot;test&quot;, userInfo: nil, repeats: false)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;b&gt;SEL&lt;/b&gt; type in ObjC maps to the &lt;b&gt;Selector&lt;/b&gt; type in Swift. Since a Selector can be automatically created from a string literal when needed, there&apos;s no need to pass Selector(&quot;string&quot;) or NSSelectorFromString(&quot;string”).&lt;/p&gt;
+
+&lt;p&gt;Because selectors are an ObjC thing, their strings follow ObjC method naming rules—for a method that takes an argument, the selector ends with a colon (&quot;:&quot;). For example, the selector string for a method named test() is just &quot;test&quot;, but the selector for test(this:String) is &quot;test:”.&lt;/p&gt;
+
+&lt;p&gt;Also note that the method referenced by the selector must be exposed to the ObjC runtime. This is already the case if it&apos;s in a class that (ultimately) inherits from NSObject, but if it&apos;s in a pure Swift class you&apos;ll need to preface that method&apos;s declaration with @objc.&lt;/p&gt;
+
+&lt;a href=&quot;http://stackoverflow.com/questions/24007650/selector-in-swift&quot;&gt;Stack Overflow&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Is there any selectors in Swift language (like Objective-C has)?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objectivec”&gt;
+[friend performSelector:@selector(tellAbout:) withObject:aNeighbor];
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
 			<string>language features</string>
 			<key>Id</key>
 			<string>59</string>
