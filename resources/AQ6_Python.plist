@@ -6,6 +6,231 @@
 	<array>
 		<dict>
 			<key>Comment</key>
+			<string>list dup</string>
+			<key>Id</key>
+			<string>314</string>
+			<key>Tags</key>
+			<string>Python</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>unique_list = list(set(dup_list))</string>
+				<string>unique_list = unique(dup_list)</string>
+				<string>unique_list = list(unique(dup_list))</string>
+				<string>unique_list = list(map(unique,dup_list))</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;The correct way&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+dup_list = [1,2,3,4,4,4,5,1,2,7,8,8,10]
+unique_list = list(set(dup_list))
+print unique_list
+[1, 2, 3, 4, 5, 7, 8, 10]
+&lt;/code&gt;&lt;/pre&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;How to make a list with unique element from a list with duplicate elements?&lt;/h2&gt;
+&lt;p&gt;(Python 3)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+dup_list = [1,2,3,4,4,4,5,1,2,7,8,8,10]
+unique_list = …
+print unique_list
+[1, 2, 3, 4, 5, 7, 8, 10]
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>Duck typing</string>
+			<key>Id</key>
+			<string>313</string>
+			<key>Tags</key>
+			<string>Python</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>Garbage collection</string>
+				<string>Duck typing</string>
+				<string>Monkey patching</string>
+				<string>Polymorphism</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Duck typing&lt;/h2&gt;
+&lt;p&gt;In computer programming with object-oriented programming languages, duck typing is a layer of programming language and design rules on top of typing. Typing is concerned with assigning a type to any object. Duck typing is concerned with establishing the suitability of an object for some purpose. With normal typing, suitability is assumed to be determined by an object&apos;s type only. In duck typing, an object&apos;s suitability is determined by the presence of certain methods and properties (with appropriate meaning), rather than the actual type of the object.&lt;/p&gt;
+
+&lt;p&gt;The name of the concept refers to the duck test, attributed to James Whitcomb Riley, which may be phrased as follows:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In duck typing, a programmer is only concerned with ensuring that objects behave as demanded of them in a given context, rather than ensuring that they are of a specific type. For example, in a non-duck-typed language, one would create a function that requires that the object passed into it be of type &lt;i&gt;Duck&lt;/i&gt;, in order to ensure that that function can then use the object&apos;s &lt;i&gt;walk&lt;/i&gt; and &lt;i&gt;quack&lt;/i&gt; methods. In a duck-typed language, the function would take an object of any type and simply call its &lt;i&gt;walk&lt;/i&gt; and &lt;i&gt;quack&lt;/i&gt; methods, producing a run-time error if they are not defined. Instead of specifying types formally, duck typing practices rely on documentation, clear code, and testing to ensure correct use.&lt;/p&gt;
+
+&lt;h3&gt;Criticism&lt;/h3&gt;
+&lt;p&gt;One issue with duck typing is that it forces programmers to have a much wider understanding of the code they are working with at any given time. For instance, in Python, one could easily create a class called Wine, which expects a class implementing the &quot;press&quot; attribute as an ingredient. However, a class called Trousers might also implement the press() method. With duck typing, in order to prevent strange, hard-to-detect errors, the developer needs to be aware of each potential use of the method &quot;press&quot;, even when it&apos;s conceptually unrelated to what they are working on. By way of contrast, in a strongly and statically typed language that uses type hierarchies and parameter type checking, it&apos;s much harder to supply an unexpected object type to a class. For example, in a language like Java, the ambiguity in the above reuse of the method name press() would not be a problem unless one of the two classes was deliberately defined as a child of the other.&lt;/p&gt;
+
+&lt;p&gt;Proponents of duck typing, such as Guido van Rossum, argue that the issue is handled by testing, and the necessary knowledge of the codebase required to maintain it.&lt;/p&gt;
+&lt;p&gt;Criticisms around duck typing tend to be special cases of broader points of contention regarding dynamically typed versus statically typed programming language semantics.&lt;/p&gt;
+
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Duck_typing&quot;&gt;Wiki&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What language feature/paradigm is shown in this Python example?&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+class Duck:
+    def quack(self):
+        print(&quot;Quaaaaaack!&quot;)
+    def feathers(self):
+        print(&quot;The duck has white and gray feathers.&quot;)
+ 
+class Person:
+    def quack(self):
+        print(&quot;The person imitates a duck.&quot;)
+    def feathers(self):
+        print(&quot;The person takes a feather from the ground and shows it.&quot;)
+    def name(self):
+        print(&quot;John Smith&quot;)
+ 
+def in_the_forest(duck):
+    duck.quack()
+    duck.feathers()
+ 
+def game():
+    donald = Duck()
+    john = Person()
+    in_the_forest(donald)
+    in_the_forest(john)
+ 
+game()
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>decorators</string>
+			<key>Id</key>
+			<string>312</string>
+			<key>Tags</key>
+			<string>Python</string>
+			<key>Level</key>
+			<string>4</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>Decorators allow you to modify/change output of a Streams</string>
+				<string>Decorators allow you to change modify/change behaviour of a Streams</string>
+				<string>Decorators allow you to inject or modify code in functions or classes</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;According to Bruce Eckel&apos;s Introduction to Python Decorators &quot;Decorators allow you to inject or modify code in functions or classes&quot;. In other words decorators allow you to wrap a function or class method call and execute some code before or after the execution of the original code. And also you can nest them e.g. to use more than one decorator for a specific function. Usage examples include - logging the calls to specific method, checking for permission(s), checking and/or modifying the arguments passed to the method etc.&lt;/p&gt;
+&lt;h3&gt;Decorators vs. the Decorator Pattern&lt;/h3&gt;
+&lt;p&gt;First, you need to understand that the word &quot;decorator&quot; was used with some trepidation, because there was concern that it would be completely confused with the Decorator pattern from the Design Patterns book. At one point other terms were considered for the feature, but &quot;decorator&quot; seems to be the one that sticks.
+Indeed, you can use Python decorators to implement the Decorator pattern, but that&apos;s an extremely limited use of it. Python decorators, I think, are best equated to macros.&lt;/p&gt;
+&lt;h3&gt;History of Macros&lt;/h3&gt;
+&lt;p&gt;The macro has a long history, but most people will probably have had experience with C preprocessor macros. The problems with C macros were (1) they were in a different language (not C) and (2) the behavior was sometimes bizarre, and often inconsistent with the behavior of the rest of C.&lt;/p&gt;
+&lt;p&gt;Both Java and C# have added annotations, which allow you to do some things to elements of the language. Both of these have the problems that (1) to do what you want, you sometimes have to jump through some enormous and untenable hoops, which follows from (2) these annotation features have their hands tied by the bondage-and-discipline (or as Martin Fowler gently puts it: &quot;Directing&quot;) nature of those languages.&lt;/p&gt;
+&lt;p&gt;In a slightly different vein, many C++ programmers (myself included) have noted the generative abilities of C++ templates and have used that feature in a macro-like fashion.&lt;/p&gt;
+&lt;p&gt;Many other languages have incorporated macros, but without knowing much about it I will go out on a limb and say that Python decorators are similar to Lisp macros in power and possibility.&lt;/p&gt;
+
+&lt;h3&gt;The Goal of Macros&lt;/h3&gt;
+&lt;p&gt;I think it&apos;s safe to say that the goal of macros in a language is to provide a way to modify elements of the language. That&apos;s what decorators do in Python -- they modify functions, and in the case of class decorators, entire classes. This is why they usually provide a simpler alternative to metaclasses.&lt;/p&gt;
+&lt;p&gt;The major failings of most language&apos;s self-modification approaches are that they are too restrictive and that they require a different language (I&apos;m going to say that Java annotations with all the hoops you must jump through to produce an interesting annotation comprises a &quot;different language”).&lt;/p&gt;
+&lt;p&gt;Python falls into Fowler&apos;s category of &quot;enabling&quot; languages, so if you want to do modifications, why create a different or restricted language? Why not just use Python itself? And that&apos;s what Python decorators do.&lt;/p&gt;
+
+&lt;h3&gt;What Can You Do With Decorators?&lt;/h3&gt;
+&lt;p&gt;Decorators allow you to inject or modify code in functions or classes. Sounds a bit like &lt;i&gt;Aspect-Oriented Programming&lt;/i&gt; (AOP) in Java, doesn&apos;t it? Except that it&apos;s both much simpler and (as a result) much more powerful. For example, suppose you&apos;d like to do something at the entry and exit points of a function (such as perform some kind of security, tracing, locking, etc. -- all the standard arguments for AOP). With decorators, it looks like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+@entryExit
+def func1():
+    print &quot;inside func1()&quot;
+
+@entryExit
+def func2():
+    print &quot;inside func2()&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The @ indicates the application of the decorator.&lt;/p&gt;
+&lt;a href=&quot;http://www.artima.com/weblogs/viewpost.jsp?thread=240808&quot;&gt;Source&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What are decorators?&lt;/h2&gt;
+&lt;p&gt;(select all)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+@entryExit
+def func1():
+    print &quot;inside func1()&quot;
+
+@entryExit
+def func2():
+    print &quot;inside func2()&quot;
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>arrays vs tuples</string>
+			<key>Id</key>
+			<string>311</string>
+			<key>Tags</key>
+			<string>Python</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>3+4</string>
+			<key>answers</key>
+			<array>
+				<string>Tuples are mutable while arrays are not</string>
+				<string>Tuples can not be use as keys for dictionaries, arrays can&apos;t be used too</string>
+				<string>Tuples can be used as keys for dictionaries, but arrays can&apos;t</string>
+				<string>Lists are mutable while tuples are not</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;There is a little difference between arrays and tuples&lt;/h2&gt;
+&lt;p&gt;First list are mutable while tuples are not, and second tuples can be hashed e.g. to be used as keys for dictionaries. As an example of their usage, tuples are used when the order of the elements in the sequence matters e.g. a geographic coordinates, &quot;list&quot; of points in a path or route, or set of actions that should be executed in specific order. Don&apos;t forget that you can use them a dictionary keys. For everything else use lists.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.ilian.io/python-interview-question-and-answers/&quot;&gt;Source&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is the difference between lists and tuples?&lt;/h2&gt;
+&lt;p&gt;(select all)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+tup1 = (&apos;physics&apos;, &apos;chemistry&apos;, 1997, 2000);
+tup2 = (1, 2, 3, 4, 5 );
+tup3 = &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;;
+
+list1 = [‘cat’, ‘dog’, 1997, 2000];
+list2 = [1, 2, 3, 4, 5, 6, 7 ];
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>PEP 8</string>
+			<key>Id</key>
+			<string>310</string>
+			<key>Tags</key>
+			<string>Python</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1+2</string>
+			<key>answers</key>
+			<array>
+				<string>Coding convention</string>
+				<string>Set of recomendation</string>
+				<string>Binary format that Python uses</string>
+				<string>Integrated Developement Environment </string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;PEP 8 is a coding convention(a set of recommendations) how to write your Python code in order to make it more readable and useful for those after you.&lt;/p&gt;
+
+&lt;h3&gt;PEP 8 Documentation&lt;/h3&gt;
+&lt;p&gt;This document gives coding conventions for the Python code comprising the standard library in the main Python distribution. Please see the companion informational PEP describing style guidelines for the C code in the C implementation of Python.&lt;/p&gt;
+&lt;p&gt;This document and PEP 257 (Docstring Conventions) were adapted from Guido&apos;s original Python Style Guide essay, with some additions from Barry&apos;s style guide.&lt;p&gt;
+&lt;p&gt;This style guide evolves over time as additional conventions are identified and past conventions are rendered obsolete by changes in the language itself.&lt;/p&gt;
+&lt;a href=&quot;https://www.python.org/dev/peps/pep-0008/“&gt;PEP 8 Documentation&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is PEP 8?&lt;/h2&gt;
+&lt;p&gt;(select all)&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
 			<string>creator of Python</string>
 			<key>Id</key>
 			<string>309</string>
@@ -35,7 +260,7 @@
 			<key>q</key>
 			<string>&lt;h2&gt;Who created Python language?&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-python”&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
 #rotozoom graphics raster demo Tkinter
 #by Antoni Gual 
 
@@ -203,7 +428,7 @@ t.mainloop()
 &lt;p&gt;Well, monkey patching is changing a functions inside some modules or method of some classes, when you don&apos;t have access to change source codes.&lt;/p&gt;
 &lt;p&gt;Monkey patching occur in the runtime. For example:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-python”&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
 import datetime
 datetime.datetime.now = lambda: datetime.datetime(2012, 12, 12)
 &lt;/code&gt;&lt;/pre&gt;
@@ -275,7 +500,7 @@ datetime.datetime.now = lambda: datetime.datetime(2012, 12, 12)
 
 &lt;p&gt;First, let&apos;s have a look at the integer variables. The parameter inside of the function remains a reference to the arguments variable, as long as the parameter is not changed. As soon as a new value will be assigned to it, Python creates a separate local variable. The caller&apos;s variable will not be changed this way:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-python”&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
 def ref_demo(x):
     print &quot;x=&quot;,x,&quot; id=&quot;,id(x)
     x=42
