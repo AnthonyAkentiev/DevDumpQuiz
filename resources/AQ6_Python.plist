@@ -6,6 +6,247 @@
 	<array>
 		<dict>
 			<key>Comment</key>
+			<string>creator of Python</string>
+			<key>Id</key>
+			<string>309</string>
+			<key>Tags</key>
+			<string>Python, IT History</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>Richard Stallman</string>
+				<string>Guido van Rossum</string>
+				<string>Joseph Fasel</string>
+				<string>Yukihiro Matsumoto</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Guido van Rossum&lt;/h2&gt;
+
+&lt;p&gt;(born 31 January 1956) is a Dutch computer programmer who is best known as the author of the Python programming language. In the Python community, Van Rossum is known as a &quot;Benevolent Dictator For Life&quot; (BDFL), meaning that he continues to oversee the Python development process, making decisions where necessary. He was employed by Google from 2005 until 7 December 2012, where he spent half his time developing the Python language.&lt;/p&gt;
+
+&lt;p&gt;About the origin of Python, Van Rossum wrote in 1996: Over six years ago, in December 1989, I was looking for a &quot;hobby&quot; programming project that would keep me occupied during the week around Christmas. My office ... would be closed, but I had a home computer, and not much else on my hands. I decided to write an interpreter for the new scripting language I had been thinking about lately: a descendant of ABC that would appeal to Unix/C hackers. I chose Python as a working title for the project, being in a slightly irreverent mood (and a big fan of Monty Python&apos;s Flying Circus).&lt;p&gt;
+
+&lt;p&gt;In 2000 he further wrote: Python&apos;s predecessor, ABC, was inspired by SETL – Lambert Meertens spent a year with the SETL group at NYU before coming up with the final ABC design!&lt;/p&gt;
+
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Guido_van_Rossum&quot;&gt;Wiki&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Who created Python language?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python”&gt;
+#rotozoom graphics raster demo Tkinter
+#by Antoni Gual 
+
+import tkinter
+from math import sin,cos
+from random  import randint
+x,y=320,200 
+  
+class App:
+    def __init__(self, t):
+       self.img = tkinter.PhotoImage(width=x,height=y) 
+       self.c = tkinter.Label(t,image=self.img);self.c.pack()
+       t.after_idle(self.do_rotozoom)
+       self.ang=0
+       
+    def do_rotozoom(self):
+       self.ang=(self.ang+1)%100
+       cs1=cs[self.ang]
+       ss1=ss[self.ang]
+       self.img.put((&quot; &quot;.join(((&quot;{&quot;+&quot; &quot;.join(clr[((i*cs1-j*ss1) &amp; (j*cs1+i*ss1))//256] 
+          for i in range(-160,159)))+&quot;}&quot; for j in range(-100,99)))))
+       t.after(20,self.do_rotozoom)     
+
+#precalculate trig
+cs,ss,ang=[],[],0
+for i in range(100):
+    aa=abs(sin(ang))*255
+    cs.append(int(cos(ang)*aa))
+    ss.append(int(sin(ang)*aa))
+    ang+=0.062832
+#precalculate a b/w color table   
+clr=[]
+for i in range(256):
+    clr.append( &quot;#{:06x}&quot;.format(i*0x10101))
+    
+t=tkinter.Tk()
+a = App(t )
+t.mainloop()
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>oldest language</string>
+			<key>Id</key>
+			<string>308</string>
+			<key>Tags</key>
+			<string>Python, C/C++, Functional, IT History</string>
+			<key>Level</key>
+			<string>4</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>C language</string>
+				<string>Python language</string>
+				<string>Lisp language</string>
+				<string>Pascal language</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;LISP programming language&lt;/h2&gt;
+
+&lt;p&gt;LISP - 1958&lt;/p&gt;
+&lt;p&gt;Pascal - 1970&lt;/p&gt;
+&lt;p&gt;C - 1972&lt;/p&gt;
+&lt;p&gt;Haskell (not in list) - 1990&lt;/p&gt;
+&lt;p&gt;Python - 1991&lt;/p&gt;
+
+&lt;h3&gt;LISP&lt;/h3&gt;
+
+&lt;p&gt;Lisp (historically, LISP) is a family of computer programming languages with a long history and a distinctive, fully parenthesized Polish prefix notation. Originally specified in 1958, Lisp is the second-oldest high-level programming language in widespread use today; only Fortran is older (by one year). Like Fortran, Lisp has changed a great deal since its early days, and a number of dialects have existed over its history. Today, the most widely known general-purpose Lisp dialects are Common Lisp and Scheme. Since its release in 2007, Clojure, a Lisp dialect hosted on the JVM, has become popular for professional applications.&lt;/p&gt;
+
+&lt;p&gt;Lisp was originally created as a practical mathematical notation for computer programs, influenced by the notation of Alonzo Church&apos;s lambda calculus. It quickly became the favored programming language for artificial intelligence (AI) research. As one of the earliest programming languages, Lisp pioneered many ideas in computer science, including tree data structures, automatic storage management, dynamic typing, conditionals, higher-order functions, recursion, and the self-hosting compiler.&lt;/p&gt;
+
+&lt;p&gt;The name LISP derives from &quot;LISt Processing&quot;. Linked lists are one of Lisp language&apos;s major data structures, and Lisp source code is itself made up of lists. As a result, Lisp programs can manipulate source code as a data structure, giving rise to the macro systems that allow programmers to create new syntax or new domain-specific languages embedded in Lisp.&lt;/p&gt;
+
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Lisp_(programming_language)&quot;&gt;Wiki&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Select the oldest Programming Language&lt;/h2&gt;
+&lt;p&gt;He-he-he)))&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>CPython</string>
+			<key>Id</key>
+			<string>307</string>
+			<key>Tags</key>
+			<string>Python, IT History</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1+2</string>
+			<key>answers</key>
+			<array>
+				<string>Most widely used implementation of Python language</string>
+				<string>Interpreter</string>
+				<string>Virtual Machine</string>
+				<string>&quot;Common Python&quot; interpretator of Python language</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;CPython&lt;/h2&gt;
+&lt;p&gt;CPython is the default, most widely used implementation of the Python programming language. It is written in C. In addition to CPython, there are other &quot;production-quality&quot; Python implementations: Jython, written in Java for the JVM, PyPy, written in RPython and translated into C, and IronPython, which is written in C# for the Common Language Infrastructure. There are also several experimental implementations.&lt;/p&gt;
+&lt;p&gt;CPython is a bytecode interpreter. It has a foreign function interface with several languages including C, in which one must explicitly write bindings in a language other than Python.&lt;/p&gt;
+
+&lt;h3&gt;Concurrency issues&lt;h3&gt;
+
+&lt;p&gt;A significant drawback to using CPython is the presence of a Global Interpreter Lock on each CPython interpreter process, which effectively disables concurrent Python threads within one process. To be truly concurrent in multitasking environment, separate CPython interpreter processes have to be run, which makes establishing communication between them a difficult task, though the &lt;i&gt;multiprocessing&lt;/i&gt; module mitigates this somewhat. A lot of discussion took place whether to remove the GIL from CPython, even after the rejection of the “free threading” patches on CPython from Greg Stein which effectively replaced GIL with fine-grained locking. The rejection was mainly based on the overhead the patch inflicted to execution of single process code.&lt;/p&gt;
+
+&lt;a href=&quot;https://en.wikipedia.org/wiki/CPython&quot;&gt;Source&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is CPython?&lt;/h2&gt;
+&lt;p&gt;(select all)&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>GIL</string>
+			<key>Id</key>
+			<string>306</string>
+			<key>Tags</key>
+			<string>Python</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>Global Interpreter Lock</string>
+				<string>Global Identifier List</string>
+				<string>Greedy Identification List</string>
+				<string>Global Internationalization List</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Global Interpreter Lock&lt;/h2&gt;
+&lt;p&gt;In CPython, the &lt;b&gt;global interpreter lock&lt;/b&gt;, or &lt;b&gt;GIL&lt;/b&gt;, is a mutex that prevents multiple native threads from executing Python bytecodes at once. This lock is necessary mainly because CPython&apos;s memory management is not thread-safe. (However, since the GIL exists, other features have grown to depend on the guarantees that it enforces.)&lt;/p&gt;
+
+&lt;p&gt;CPython extensions must be GIL-aware in order to avoid defeating threads. For an explanation, see Global interpreter lock.&lt;/p&gt;
+
+&lt;p&gt;The GIL is controversial because it prevents multithreaded CPython programs from taking full advantage of multiprocessor systems in certain situations. Note that potentially blocking or long-running operations, such as I/O, image processing, and NumPy number crunching, happen &lt;i&gt;outside&lt;/i&gt; the GIL. Therefore it is only in multithreaded programs that spend a lot of time inside the GIL, interpreting CPython bytecode, that the GIL becomes a bottleneck.&lt;/p&gt;
+
+&lt;p&gt;However the GIL degrades performance even when it is not a bottleneck. Summarizing those slides: The system call overhead is significant, especially on multicore hardware. Two threads calling a function may take twice as much time as a single thread calling the function twice. The GIL can cause I/O-bound threads to be scheduled ahead of CPU-bound threads. And it prevents signals from being delivered.&lt;/p&gt;
+
+&lt;a href=&quot;https://wiki.python.org/moin/GlobalInterpreterLock&quot;&gt;CPython documentation&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What GIL in CPython stands for?&lt;/h2&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>monkeypatching</string>
+			<key>Id</key>
+			<string>305</string>
+			<key>Tags</key>
+			<string>Python</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>Inheritance</string>
+				<string>Monkey patching</string>
+				<string>Duck typing</string>
+				<string>Hot patching</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Monkey patching&lt;/h2&gt;
+&lt;p&gt;Well, monkey patching is changing a functions inside some modules or method of some classes, when you don&apos;t have access to change source codes.&lt;/p&gt;
+&lt;p&gt;Monkey patching occur in the runtime. For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python”&gt;
+import datetime
+datetime.datetime.now = lambda: datetime.datetime(2012, 12, 12)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Is a monkeypatching. More complex is to change class methods or methods of instances.&lt;/p&gt;
+&lt;a href=&quot;http://www.quora.com/What-is-monkeypatching-How-can-you-do-it-in-Python&quot;&gt;Source&lt;/a&gt;
+
+&lt;p&gt;A &lt;b&gt;monkey patch&lt;/b&gt; is a way for a program to extend or modify supporting system software locally (affecting only the running instance of the program). This process has also been termed &lt;b&gt;duck punching&lt;/b&gt;.&lt;p&gt;
+
+&lt;h3&gt;Etymology&lt;/h3&gt;
+
+&lt;p&gt;The term &lt;i&gt;monkey patch&lt;/i&gt; seems to have come from an earlier term, &lt;i&gt;guerrilla patch&lt;/i&gt;, which referred to changing code sneakily – and possibly incompatibly with other such patches – at runtime. The word guerrilla, homophonous with gorilla (or nearly so), became &lt;i&gt;monkey&lt;/i&gt;, possibly to make the patch sound less intimidating. An alternative etymology is that it refers to “monkeying about” with the code (messing with it).&lt;/p&gt;
+
+&lt;p&gt;The definition of the term varies depending upon the community using it. In Ruby, Python, and many other dynamic programming languages, the term &lt;i&gt;monkey patch&lt;/i&gt; only refers to dynamic modifications of a class or module at runtime, motivated by the intent to patch existing third-party code as a workaround to a bug or feature which does not act as desired. Other forms of modifying classes at runtime have different names, based on their different intents. For example, in Zope and Plone, security patches are often delivered using dynamic class modification, but they are called hot fixes.&lt;/p&gt;
+
+&lt;h3&gt;Applications&lt;/h3&gt;
+&lt;p&gt;Monkey patching is used to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Replace methods/attributes/functions at runtime, e.g. to stub out a function during testing;&lt;/li&gt;
+&lt;li&gt;Modify/extend behaviour of a third-party product without maintaining a private copy of the source code;&lt;/li&gt;
+&lt;li&gt;Apply a patch at runtime to the objects in memory, instead of the source code on disk;&lt;/li&gt;
+&lt;li&gt;Distribute security or behavioural fixes that live alongside the original source code (an example of this would be distributing the fix as a plugin for the Ruby on Rails platform).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Pitfalls&lt;/h3&gt;
+
+&lt;p&gt;Carelessly written or poorly documented monkey patches can lead to problems:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;They can lead to upgrade problems when the patch makes assumptions about the patched object that are no longer true; if the product you have changed changes with a new release it may very well break your patch. For this reason monkey patches are often made conditional, and only applied if appropriate.&lt;/li&gt;
+&lt;li&gt;If two modules attempt to monkey patch the same method, one of them (whichever one runs last) &quot;wins&quot; and the other patch has no effect, unless monkey patches are written with a pattern like alias_method_chain.&lt;/li&gt;
+&lt;li&gt;They create a discrepancy between the original source code on disk and the observed behaviour that can be very confusing to anyone unaware of the patches&apos; existence.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Even if monkey patching isn&apos;t used, some see a problem with the availability of the feature, since the ability to use monkey patching in a programming language is incompatible with enforcing strong encapsulation, as required by the object-capability model, between objects.&lt;/p&gt;
+
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Monkey_patch&quot;&gt;Wiki&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is missing?&lt;/h2&gt;
+&lt;p&gt;(words missing) in Python is changing a functions inside some modules or method of some classes, when you don&apos;t have access to change source codes.&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
 			<string>argument passing</string>
 			<key>Id</key>
 			<string>304</string>
