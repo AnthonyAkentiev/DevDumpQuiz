@@ -95,10 +95,10 @@
 		9944E6B51AF3885C008E544E /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				9969AECF1AF382EC00DFB8EE /* AppDelegate.swift */,
 				99E3F32C1B07549700F4D955 /* Tags.swift */,
 				99E3F32A1B07548900F4D955 /* Model.swift */,
 				99E3F3281B0753BF00F4D955 /* QuestionsBase.swift */,
-				9969AECF1AF382EC00DFB8EE /* AppDelegate.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
