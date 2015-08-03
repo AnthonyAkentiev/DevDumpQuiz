@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>questions</key>
+	<array>
+		<dict>
+			<key>Comment</key>
+			<string>zip function</string>
+			<key>Id</key>
+			<string>334</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>[(&apos;a&apos;, 1, 1), (&apos;b&apos;, 2, 4), (&apos;c&apos;, 3, 9)]</string>
+				<string>[(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;), (1, 2, 3), (1, 4, 9)]</string>
+				<string>[(1, 4, 9), (1, 2, 3), (&apos;a&apos;, &apos;b&apos;, &apos;c&apos;)]</string>
+				<string>Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Zip function&lt;/h2&gt;
+ &lt;p&gt;The built-in zip function can be used, well, to zip lists together. It returns a list of tuples, where the nth tuple contains the nth  item from each of the passed in lists. The returned list is truncated in length to the length of the shortest argument sequence. When t here are multiple arguments which are all of the same length, zip() is similar to map() with an initial argument of None. With a single  sequence argument, it returns a list of 1-tuples. With no arguments, it returns an empty list.&lt;/p&gt; 
+  
+ &lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+  
+ &lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+ a = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]
+ b = [1, 2, 3]
+ c = [1, 4, 9]
+ print zip(a, b, c)
+ &lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>sets and lists</string>
+			<key>Id</key>
+			<string>335</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>1</string>
+				<string>2</string>
+				<string>12</string>
+				<string>Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Sets and lists&lt;/h2&gt;
+ &lt;p&gt;Sets differ from lists in that they enforce uniqueness (they can&apos;t contain more than one of the same item) and are unordered. Sets al so support a myriad of different logical operations. In this example, we check if the list is unique. This is easy; we just have to conv ert it to a set and check if the length is the same. Of course, you can convert the set back into a list, but remember that ordering is  not preserved.&lt;/p&gt;
+  
+ &lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+ numbers = [1,2,3,3,4,1]
+ if len(numbers) == len(set(numbers)):
+     print 1
+ else:
+      print 2
+ &lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>dict</string>
+			<key>Id</key>
+			<string>336</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</string>
+				<string>[1, 2, 3]</string>
+				<string>[(&apos;a&apos;, 1), (&apos;b&apos;, 2), (&apos;c&apos;, 3)]</string>
+				<string>Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Dictionary&lt;/h2&gt;
+ &lt;p&gt;To get a list of keys, you can just cast the dict into a list. It&apos;s cleaner, though to call .keys() on the dictionary to get a list o f the keys, or .iterkeys() to get an iterator. Similarly, you can call .values() or .itervalues() to get a list or iterator of dictionar y values. Remember though, that dicts are inherently unordered and so these values won&apos;t be in any meaningful order. To preserve both ke ys and values, you can turn a dict into a list or iterator of 2-item tuples by using .items() or .iteritems().&lt;/p&gt;
+  
+ &lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+ dictionary = {&apos;a&apos;: 1, &apos;b&apos;: 2, &apos;c&apos;: 3}
+ print dictionary.items()
+ &lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>inline value selection</string>
+			<key>Id</key>
+			<string>337</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Inline value selection&lt;/h2&gt;
+ &lt;p&gt;Python supports the way to select values inline. The syntax is: &apos;value_if_true if test else value_if_false&apos;. So, you can do simple se lection of values in one line, with no weird syntax or major caveats. You can also chain multiple tests in one line, like it is done in  this example. The first if/else is evaluated first, and if test1 is false the second if/else is evaluated. You can do more complicated t hings too, especially if you throw in some parentheses.&lt;/p&gt;
+  
+ &lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+ test1 = False
+ test2 = True
+ result = 1 if test1 else 2 if test2 else 3
+ print result
+ &lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>338</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string></string>
+				<string></string>
+				<string></string>
+				<string></string>
+			</array>
+			<key>a</key>
+			<string></string>
+			<key>q</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>339</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string></string>
+				<string></string>
+				<string></string>
+				<string></string>
+			</array>
+			<key>a</key>
+			<string></string>
+			<key>q</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>340</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string></string>
+				<string></string>
+				<string></string>
+				<string></string>
+			</array>
+			<key>a</key>
+			<string></string>
+			<key>q</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>341</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string></string>
+				<string></string>
+				<string></string>
+				<string></string>
+			</array>
+			<key>a</key>
+			<string></string>
+			<key>q</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>342</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string></string>
+				<string></string>
+				<string></string>
+				<string></string>
+			</array>
+			<key>a</key>
+			<string></string>
+			<key>q</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>343</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string></string>
+				<string></string>
+				<string></string>
+				<string></string>
+			</array>
+			<key>a</key>
+			<string></string>
+			<key>q</key>
+			<string></string>
+		</dict>
+	</array>
+</dict>
+</plist>

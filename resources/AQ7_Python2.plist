@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>questions</key>
+	<array>
+		<dict>
+			<key>Comment</key>
+			<string>strings</string>
+			<key>Id</key>
+			<string>315</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>I wish that I&apos;d never heard him say, &apos;&apos;&apos;She said, &quot;He said, &apos;Give me five dollars&apos;&quot;&apos;&apos;&apos;</string>
+				<string>I wish that I&apos;d never heard him say, She said, &quot;He said, &apos;Give me five dollars&apos;&quot;</string>
+				<string>I wish that I&apos;d never heard him say, She said, He said, Give me five dollars</string>
+				<string>Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;I wish that I&apos;d never heard him say, &apos;&apos;&apos;She said, &quot;He said, &apos;Give me five dollars&apos;&quot;&apos;&apos;&apos;&lt;/p&gt;
+ &lt;p&gt;If you&apos;re coming from a different language, you&apos;re probably used to using single quotes for one thing (e.g. chars) and double quotes  for another (e.g. strings). Python lets you use both, although not interchangeably (if you start with one, you have to end with the same  one). Python also has a two more types of quotes. A triple quote, &apos;&apos;&apos;, is created by typing three single quotes. A triple-double quote,  &quot;&quot;&quot;, is created by typing three double quotes. So, you can have several layers of quoting before you need to worry about escaping your  quotes.&lt;/p&gt;
+  
+ &lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+  
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+ print &quot;&quot;&quot;I wish that I&apos;d never heard him say, &apos;&apos;&apos;She said, &quot;He said, &apos;Give me five dollars&apos;&quot;&apos;&apos;&apos;&quot;&quot;&quot;
+ &lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>false if empty</string>
+			<key>Id</key>
+			<string>316</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>empty empty</string>
+				<string>not empty not empty</string>
+				<string>not empty empty</string>
+				<string>Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;The correct answer is:&lt;/h2&gt;
+ &lt;p&gt;&lt;strong&gt;not empty not empty&lt;/strong&gt;&lt;/p&gt;
+ &lt;p&gt;Unlike some programming languages (Javascript, etc.) Python types are false if empty, and true if not. That means you don&apos;t have to c heck, for example, that the length of a string, tuple, list, or dict is 0 or is equal to an empty one. It is enough to just check the tr uthfulness of the object. As you would expect, the number zero is also false, while all other numbers are true. In this example, the exp ressions are equivalent. Here, &apos;my_object&apos; is a string, but it could easily be another Python type (with appropriate modifications to th e equality test).&lt;/p&gt; 
+  
+ &lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+  
+ &lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+ my_object = &apos;Test&apos;
+ if len(my_object):
+      print &apos;not empty&apos;
+ else:
+      print &apos;empty&apos;
+ 
+ if my_object:
+      print &apos;not empty&apos;
+ else:
+      print &apos;empty&apos;
+ &lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>find</string>
+			<key>Id</key>
+			<string>317</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>Success!</string>
+				<string>Success! Success!</string>
+				<string>nothing</string>
+				<string>Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;The correct answer is:&lt;/h2&gt;
+ &lt;p&gt;Success! Success!&lt;/p&gt;
+ &lt;p&gt;You may know that you can test if a list, tuple, or dict contains an item by testing the expression &apos;item in list&apos; or &apos;item not in li st&apos;. But not many know that this would work for strings as well. In this example, the first comparison &quot;if string.find(&apos;Hi&apos;) != -1&quot; is c ompletely equivalent to &quot;if &apos;Hi&apos; in string&quot; but the second option is much cleaner and simpler.&lt;/p&gt;
+ 
+ &lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+  
+ &lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+ string = &apos;Hi there&apos;
+ if string.find(&apos;Hi&apos;) != -1: 
+      print &apos;Success!&apos;
+ 
+ if &apos;Hi&apos; in string:
+      print &apos;Success!&apos;
+ &lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>join</string>
+			<key>Id</key>
+			<string>318</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>4</string>
+			<key>answers</key>
+			<array>
+				<string>Error</string>
+				<string>The first three letters are: a, b, c,.</string>
+				<string>The first three letters are: a b c.</string>
+				<string>The first three letters are: a, b, c.</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;The correct answer is:&lt;/h2&gt;
+ &lt;p&gt;The first three letters are: a, b, c.&lt;/p&gt;
+ &lt;p&gt;Lists don&apos;t print nicely. It&apos;s of course obvious what the list is, but an average user doesn&apos;t want to see brackets around everything . There&apos;s a trivial solution to this, using a string&apos;s &apos;join&apos; method. The join method turns the list into a string by casting each item  into a string and connecting them with the string that join was called on. It&apos;s even smart enough to not put one after the last element.  As an added advantage, this is pretty fast, running in linear time. Don&apos;t ever create a string by &apos;+&apos;ing list items together in a for l oop: not only is it ugly, but it takes much longer.&lt;/p&gt;
+ 
+ &lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+  
+ &lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+ letters = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]
+ print &apos;The first three letters are: %s.&apos; % &apos;, &apos;.join(letters)
+ &lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>division</string>
+			<key>Id</key>
+			<string>319</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>4</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>2 2 2 2</string>
+				<string>2.5 2.5 2.5 2.5</string>
+				<string>2 2 2.5 2</string>
+				<string>2.5 2 2.5 2</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;The correct answer is:&lt;/h2&gt;
+ &lt;p&gt;&lt;strong&gt;2 2 2.5 2&lt;/strong&gt;&lt;/p&gt;
+ 
+ &lt;p&gt;By default, if you divide one integer by another, the result will be truncated into an integer. For example, executing 5/2 returns 2.  There are two was to fix this. The first and simplest way is to just turn one of the integers into a float. If the values are static, y ou can just append a .0 to one to make it a float: 5.0/2 returns 2.5. Alternatively, you can just cast one of the values: float(5) / 2 r eturns 2.5. The other way is to do a &quot;from __future__ import division&quot; to change Python to always return a float as the result of a divi sion. After such an import, 5/2 will return 2.5. If you still need to use the truncating integer division somewhere, you can then use th e // operator: 5//2 will always return 2.&lt;/p&gt;
+  
+ &lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of these two programs?&lt;/h2&gt;
+ 
+ &lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+ #program 1
+ print 5/2
+ print 5//2
+ 
+ #program 2
+ from __future__ import division
+ print 5/2
+ print 5//2
+ &lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>lambda</string>
+			<key>Id</key>
+			<string>320</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>4</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>3 3</string>
+				<string>3</string>
+				<string>3 5</string>
+				<string>Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;The correct answer is:&lt;/h2&gt;
+ &lt;p&gt;&lt;strong&gt;3 5&lt;/strong&gt;&lt;/p&gt;
+ 
+ &lt;p&gt;Sometimes you need to pass a function as an argument, or you want to do a short but complex operation multiple times. You could defin e your function the normal way, or you could make a lambda function, a mini-function that returns the result of a single expression. In  this example, the two definitions are completely identical. The advantage of the lambda function is that it is in itself an expression,  and can be used inside another statement. A lambda function has the syntax: lambda variable(s) : expression.&lt;/p&gt;
+  
+ &lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+ &lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+ def add(a,b): return a+b
+ add2 = lambda a,b: a+b
+ print add(1, 2)
+ print add2(2, 3)
+ &lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>lambda and map</string>
+			<key>Id</key>
+			<string>330</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>4</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>[1, 4, 9, 16] [1, 4, 9, 16]</string>
+				<string>[1, 4, 9, 16] [1, 4, 9, 16] [1, 4, 9, 16]</string>
+				<string>[1, 4, 9, 16]</string>
+				<string>Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Lambdas and map function&lt;/h2&gt;
+ &lt;p&gt;In this example we are trying to square every element in a list. A freshly-initiated Python programmer might write code on lines 3 an d 4. It effectively &apos;maps&apos; one list to another list. He could also use the map function on line 5. This code is definitely shorter (1 li ne instead of 3) but it&apos;s pretty ugly. It&apos;s hard to tell at a glance what the map function does (it accepts a function and a list, and a pplies the function to every element of that list). There are a cleaner way to do it with list comprehension on line 6. This does the ex act same thing as the previous two examples, but it&apos;s short (unlike the first example) and clean (unlike the second example).&lt;/p&gt;
+  
+ &lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+ &lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+ numbers = [1,2,3,4]
+ squares1 = []
+ for number in numbers: # line 3
+      squares1.append(number*number) # line 4
+ squares2 = map(lambda x: x*x, numbers) # line 5
+ squares3 = [number*number for number in numbers] #line 6
+ print squares1, squares2, squares3
+ &lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>arrays</string>
+			<key>Id</key>
+			<string>331</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>(0, 1) (0, 2) (1, 2) [(0, 1), (0, 2), (1, 2)]</string>
+				<string>[(0, 1), (0, 2), (1, 2)] (0, 1) (0, 2) (1, 2)</string>
+				<string>(0, 1) (0, 2) (1, 2) (0, 1) (0, 2) (1, 2)</string>
+				<string>Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;List comprehensions&lt;/h2&gt;
+ &lt;p&gt;List comprehensions and generator expressions can be used for more than just mapping and filtering; you can create rather complex lis ts of lists with them. Not only can you map and filter, you can nest the for expressions. In this example, uou can see that the nested &apos; for&apos; statements are pretty crazy. With a list comprehension, though, you can do this more quickly. As you can see, the last line of code  iterates over 3 values of y, and for each of those values, iterates over 3 values of x and then filters and maps. Each list item then,  is itself a list of x, y.&lt;/p&gt;
+  
+ &lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+ for x in (0,1,2):
+      for y in (0,1,2):
+           if x &lt; y:
+                print (x, y)
+ 
+ print [(x, y) for x in (0,1,2) for y in (0,1,2) if x &lt; y]
+ &lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>lambdas and reduce</string>
+			<key>Id</key>
+			<string>332</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>120</string>
+				<string>60</string>
+				<string>36</string>
+				<string>Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Reduce and lambdas&lt;/h2&gt;
+ &lt;p&gt;Although list comprehensions can map and filter, there isn&apos;t a simple way to use a list comprehension to reduce a list. By this I mea n applying a function to the first two list elements, then to that result and the next list element, and so on until a single value is r eached. For example, maybe you want find the product of all of the values in a list. You could make a for loop, or you could use the bui lt-in function reduce. Now it&apos;s not as pretty as a list comprehension, but it is shorter than a for loop.&lt;/p&gt;
+ 
+ &lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ &lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+ numbers = [1,2,3,4,5]
+ result = reduce(lambda a,b: a*b, numbers)
+ print result
+ &lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>generator</string>
+			<key>Id</key>
+			<string>333</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>4</string>
+			<key>answers</key>
+			<array>
+				<string>1 1</string>
+				<string>2 2</string>
+				<string>1 2</string>
+				<string>2 1</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Generator Expression&lt;/h2&gt;
+ &lt;p&gt;With the built-in any function, you can check to see if any element in a list satisfies a condition cleanly and efficiently. any is a ctually smart enough to bail and return True after the first item that satisfies the condition. Here, I use a generator expression that  returns a True or False value for each element, and pass it to any. The generator expression only computes these values as they are need ed, and any only requests the values it needs. The built-in all function does the same but for every element. As you might expect, it&apos;s  smart enough to bail after the first element that doesn&apos;t match, returning False.&lt;/p&gt;
+  
+ &lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+ &lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+ numbers = [1,10,100,1000,10000]
+ if all(number &lt; 10 for number in numbers):
+      print 1
+ else: print 2
+ 
+ if any(number &lt; 10 for number in numbers):
+      print 1
+ else: print 2
+ &lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+	</array>
+</dict>
+</plist>

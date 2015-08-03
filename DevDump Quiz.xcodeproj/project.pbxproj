@@ -10,6 +10,8 @@
 		99040B091AF81F6700DD570D /* AQ5_ObjC.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99040B081AF81F6700DD570D /* AQ5_ObjC.plist */; };
 		99076CC41AF3AE060084FD54 /* CorrectAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99076CC31AF3AE060084FD54 /* CorrectAnswerView.swift */; };
 		9920C46F1AF4EC67007FD2D9 /* AQ3_Swift.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9920C46E1AF4EC67007FD2D9 /* AQ3_Swift.plist */; };
+		99264FF61B6F8F4C00772AED /* AQ7_Python2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99264FF51B6F8F4C00772AED /* AQ7_Python2.plist */; };
+		99264FF81B6F96E400772AED /* AQ8_Python3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99264FF71B6F96E400772AED /* AQ8_Python3.plist */; };
 		9944E6B41AF38843008E544E /* ViewControllerIPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9944E6B31AF38843008E544E /* ViewControllerIPad.swift */; };
 		9969AED01AF382EC00DFB8EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969AECF1AF382EC00DFB8EE /* AppDelegate.swift */; };
 		9969AED51AF382EC00DFB8EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9969AED31AF382EC00DFB8EE /* Main.storyboard */; };
@@ -47,6 +49,8 @@
 		99040B081AF81F6700DD570D /* AQ5_ObjC.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ5_ObjC.plist; path = resources/AQ5_ObjC.plist; sourceTree = SOURCE_ROOT; };
 		99076CC31AF3AE060084FD54 /* CorrectAnswerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorrectAnswerView.swift; sourceTree = "<group>"; };
 		9920C46E1AF4EC67007FD2D9 /* AQ3_Swift.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ3_Swift.plist; path = resources/AQ3_Swift.plist; sourceTree = SOURCE_ROOT; };
+		99264FF51B6F8F4C00772AED /* AQ7_Python2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ7_Python2.plist; path = resources/AQ7_Python2.plist; sourceTree = SOURCE_ROOT; };
+		99264FF71B6F96E400772AED /* AQ8_Python3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ8_Python3.plist; path = resources/AQ8_Python3.plist; sourceTree = SOURCE_ROOT; };
 		9944E6B31AF38843008E544E /* ViewControllerIPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerIPad.swift; sourceTree = "<group>"; };
 		9969AECA1AF382EC00DFB8EE /* DevDump Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DevDump Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9969AECE1AF382EC00DFB8EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -178,6 +182,8 @@
 				9975CF441AF53FE200A698F0 /* AQ4_Cpp.plist */,
 				99040B081AF81F6700DD570D /* AQ5_ObjC.plist */,
 				997CFCE31B07A405001BE575 /* AQ6_Python.plist */,
+				99264FF51B6F8F4C00772AED /* AQ7_Python2.plist */,
+				99264FF71B6F96E400772AED /* AQ8_Python3.plist */,
 			);
 			name = "In-App-Purchases";
 			sourceTree = "<group>";
@@ -274,7 +280,9 @@
 				9969AED71AF382EC00DFB8EE /* Images.xcassets in Resources */,
 				9975C4061AF38E7600478404 /* StoryboardiPad.storyboard in Resources */,
 				99040B091AF81F6700DD570D /* AQ5_ObjC.plist in Resources */,
+				99264FF81B6F96E400772AED /* AQ8_Python3.plist in Resources */,
 				997CFCE41B07A405001BE575 /* AQ6_Python.plist in Resources */,
+				99264FF61B6F8F4C00772AED /* AQ7_Python2.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
