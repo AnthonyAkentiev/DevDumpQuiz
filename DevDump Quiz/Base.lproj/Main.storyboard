@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5uo-kG-FJn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5uo-kG-FJn">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -120,12 +120,19 @@
                                     <action selector="onSkip" destination="BYZ-38-t0r" eventType="touchDown" id="Kpf-IB-t7s"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;-- Swipe --&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3V-Gr-Gjn">
-                                <rect key="frame" x="16" y="308" width="568" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please swipe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3V-Gr-Gjn">
+                                <rect key="frame" x="156" y="308" width="428" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swipe" translatesAutoresizingMaskIntoConstraints="NO" id="idG-Xy-xha">
+                                <rect key="frame" x="234" y="234" width="132" height="132"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="2au-82-GtE"/>
+                                    <constraint firstAttribute="height" constant="132" id="ATs-zT-VD4"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4J-Jx-DB7">
                                 <rect key="frame" x="26" y="558" width="548" height="30"/>
                             </button>
@@ -133,14 +140,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5bz-S3-Swb" secondAttribute="bottom" constant="45" id="5SQ-k1-wkJ"/>
-                            <constraint firstItem="m3V-Gr-Gjn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="7k9-Li-yV5"/>
+                            <constraint firstItem="m3V-Gr-Gjn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="183" id="7k9-Li-yV5"/>
+                            <constraint firstAttribute="centerX" secondItem="idG-Xy-xha" secondAttribute="centerX" id="Ax0-bi-8sG"/>
+                            <constraint firstItem="idG-Xy-xha" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="Ec8-U3-7LS"/>
+                            <constraint firstItem="m3V-Gr-Gjn" firstAttribute="centerY" secondItem="idG-Xy-xha" secondAttribute="centerY" id="LNH-bR-DLS"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="X4J-Jx-DB7" secondAttribute="bottom" constant="12" id="Lxl-Ao-5bi"/>
                             <constraint firstItem="hvQ-07-fE0" firstAttribute="top" secondItem="5bz-S3-Swb" secondAttribute="bottom" constant="8" id="Lxz-Rh-ggt"/>
                             <constraint firstItem="5bz-S3-Swb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OXm-km-E8f"/>
                             <constraint firstItem="5bz-S3-Swb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="SXB-SB-Q7u"/>
                             <constraint firstItem="X4J-Jx-DB7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="XRV-JP-EJ9"/>
                             <constraint firstAttribute="trailing" secondItem="hvQ-07-fE0" secondAttribute="trailing" constant="16" id="XYu-Nl-qEg"/>
+                            <constraint firstItem="m3V-Gr-Gjn" firstAttribute="leading" secondItem="idG-Xy-xha" secondAttribute="trailing" constant="8" id="Xkg-ia-FRt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hvQ-07-fE0" secondAttribute="bottom" constant="8" id="cZC-yK-xH4"/>
+                            <constraint firstAttribute="centerY" secondItem="idG-Xy-xha" secondAttribute="centerY" id="e4Q-6J-Uc1"/>
                             <constraint firstAttribute="trailing" secondItem="5bz-S3-Swb" secondAttribute="trailing" constant="16" id="gQw-O8-lOx"/>
                             <constraint firstAttribute="trailing" secondItem="m3V-Gr-Gjn" secondAttribute="trailing" constant="16" id="gXc-yR-DyJ"/>
                             <constraint firstItem="hvQ-07-fE0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="gvH-TP-RbS"/>
@@ -151,15 +163,19 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="m3V-Gr-Gjn"/>
                                 <exclude reference="X4J-Jx-DB7"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="7k9-Li-yV5"/>
                                 <exclude reference="OXm-km-E8f"/>
+                                <exclude reference="Ec8-U3-7LS"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="btnSkip" destination="hvQ-07-fE0" id="thF-ja-we2"/>
+                        <outlet property="imgSwipeHand" destination="idG-Xy-xha" id="sPE-xk-MSU"/>
                         <outlet property="lblSwipe" destination="m3V-Gr-Gjn" id="pXZ-Oc-hZY"/>
                         <outlet property="view1" destination="5bz-S3-Swb" id="Kat-NF-fpi"/>
                         <segue destination="96B-w3-u53" kind="show" identifier="showAnswersPanel" id="kUJ-FV-WZd"/>
@@ -439,9 +455,12 @@
             <point key="canvasLocation" x="398" y="-712"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="swipe" width="128" height="128"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kUJ-FV-WZd"/>
         <segue reference="J8F-YL-9it"/>
-        <segue reference="yt2-0M-HyX"/>
+        <segue reference="hga-0V-m1w"/>
+        <segue reference="kUJ-FV-WZd"/>
     </inferredMetricsTieBreakers>
 </document>

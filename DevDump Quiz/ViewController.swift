@@ -5,19 +5,23 @@ class ViewController: UIViewController {
     @IBOutlet var btnSkip: UIButton!
     
     @IBOutlet var lblSwipe: UILabel?
+    @IBOutlet var imgSwipeHand: UIImageView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //lblSwipe!.hidden = true
-        
         load()
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        // this var is saved to plist file
         if(appDelegate.model.isSwipeHelpShownQuestion){
             // hide "Swipe" (help) label if it was already shown...
             lblSwipe?.hidden = true
+            imgSwipeHand?.hidden = true
         }else{
+            //view1!.hidden = true
+            
             // hide it after little time
             var timer = NSTimer.scheduledTimerWithTimeInterval(
                 NSTimeInterval(appDelegate.getParamInteger("WaitBeforeHideSwipeLabel")),
@@ -85,7 +89,11 @@ class ViewController: UIViewController {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         lblSwipe?.hidden = true
+        imgSwipeHand?.hidden = true
+        
         appDelegate.model.isSwipeHelpShownQuestion = true
+        
+        //view1!.hidden = false
     }
 }
 
