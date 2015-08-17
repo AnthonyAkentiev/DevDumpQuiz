@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>questions</key>
+	<array>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>560</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>5</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>java.lang.StackOverflowError</string>
+				<string>Compilation error</string>
+				<string>0</string>
+				<string>null</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Whenever we create the object of any class constructor will be called first and memory allocated for all non static variables.&lt;/p&gt;
+&lt;p&gt;Here B b = new B(); variable is object and assigned to new object of same class.&lt;/p&gt;
+&lt;p&gt;B b = new B(); statement leads to recursive execution of constructor will create infinite objects so at run time an exception will be raised.&lt;/p&gt;
+&lt;p&gt;Exception in thread &quot;main&quot; java.lang.StackOverflowError.&lt;/p&gt;
+&lt;p&gt;The common cause for a stack overflow exception  is a bad recursive call. Typically this is caused when your recursive functions doesn&apos;t have the correct termination condition.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.instanceofjava.com/2015/05/10-tricky-core-java-interview-coding.html&quot;&gt;instanceofjava page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is the output of following program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+package com.instanceofjava;
+public class B {
+    B b = new B();
+    public int show() {
+        return 0;
+    }
+    public static void main(String[] args)  {
+        B b= new B();
+        System.out.println(b.show());
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>static method</string>
+			<key>Id</key>
+			<string>561</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>Static method called</string>
+				<string>Compilation Error</string>
+				<string>Runtime Error</string>
+				<string>null</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Static methods are meant to be relevant to all the instances of a class rather than to any specific instance. They are similar to static variables in that sense. An example would be a static method to sum the values of all the variables of an instance for a class. For example, if there were a Product class it might have a static method to compute the average price of all products.&lt;/p&gt;
+&lt;p&gt;We can call static methods using reference variable which is pointing to null because static methods are class level so we can either call using class name and reference variable which is pointing to null.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.instanceofjava.com/2015/05/10-tricky-core-java-interview-coding.html&quot;&gt;instanceofjava page&lt;/a&gt;
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Method_(computer_programming)#Static_methods&quot;&gt;Wikipedia page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is the output of following program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+package com.instanceofjava;
+public class A {
+    public static void show() {
+        System.out.println(&quot;Static method called&quot;);
+    }
+    public static void main(String[] args) {
+        A obj=null;
+        obj.show();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>562</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>4</string>
+			<key>answers</key>
+			<array>
+				<string>1111</string>
+				<string>4</string>
+				<string>2</string>
+				<string>6</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;The increment/decrement operators can be applied before (prefix) or after (postfix) the operand. The code result++; and ++result; will both end in result being incremented by one. The only difference is that the prefix version (++result) evaluates to the incremented value, whereas the postfix version (result++) evaluates to the original value. If you are just performing a simple increment/decrement, it doesn&apos;t really matter which version you choose. But if you use this operator in part of a larger expression, the one that you choose may make a significant difference.&lt;/p&gt;
+&lt;p&gt;On line 5: a = 1111 - 1109 = 2&lt;/p&gt;
+&lt;p&gt;On line 6: a = 2 + 4 = 6&lt;/p&gt;
+
+&lt;a href=&quot;http://www.instanceofjava.com/2015/05/10-tricky-core-java-interview-coding.html&quot;&gt;instanceofjava page&lt;/a&gt;
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op1.html&quot;&gt;oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is the output of following program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+package com.instanceofjava;
+public class A { 
+    public static void main(String[] args) {
+        int a = 1111;
+        a = a-- - --a; // line 5
+        a = a++ + ++a; // line 6
+        System.out.println(a);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>563</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>4</string>
+			<key>answers</key>
+			<array>
+				<string>0</string>
+				<string>null</string>
+				<string>Compilation Error</string>
+				<string>Runtime Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;The conditional operator ? : uses the boolean value of one expression to decide which of two other expressions should be evaluated. The conditional operator has three operand expressions. ? appears between the first and second expressions, and : appears between the second and third expressions.&lt;/p&gt;
+&lt;p&gt;If one of the second and third operands is of primitive type T, and the type of the other is the result of applying boxing conversion to T, then the type of the conditional expression is T.&lt;/p&gt;
+&lt;p&gt;In this example, the compiler interprets null as a null reference to an Integer, applies the autoboxing/unboxing rules for the conditional operator, and moves happily on. This will generate a NullPointerException at run time.&lt;/p&gt;
+
+&lt;a href=&quot;http://stackoverflow.com/a/8099021/1389883&quot;&gt;Stackoverflow answer&lt;/a&gt;
+&lt;a href=&quot;http://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.25&quot;&gt;oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is the output of following program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+package com.instanceofjava;
+public class Main { 
+    public int temp()
+    {
+         return(true ? null : 0);
+    }
+    public static void main(String[] args) {
+        Main m=new Main();
+        System.out.println(m.temp());
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>static override</string>
+			<key>Id</key>
+			<string>564</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>Yes</string>
+				<string>No</string>
+				<string>Yes, in static classes only</string>
+				<string>Yes, in non-static classes only</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;The answer is NO if you think from the perspective of how an overriden method should behave in Java. But, you don&apos;t get any compiler error if you try to override a static method. That means, if you try to override, Java doesn&apos;t stop you doing that; but you certainly don&apos;t get the same effect as you get for non-static methods. Overriding in Java simply means that the particular method would be called based on the run time type of the object and not on the compile time type of it (which is the case with overriden static methods). It happens because they are class methods and hence access to them is always resolved during compile time only using the compile time type information. Accessing them using object references is just an extra liberty given by the designers of Java.&lt;/p&gt;
+
+&lt;a href=&quot;http://geekexplains.blogspot.ru/2008/06/can-you-override-static-methods-in-java.html&quot;&gt;geekexplains post&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Does Java allow overriding of static methods?&lt;/h2&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>@override keyword</string>
+			<key>Id</key>
+			<string>565</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>4</string>
+			<key>answers</key>
+			<array>
+				<string>method 1</string>
+				<string>method 2</string>
+				<string>Runtime Error</string>
+				<string>Compilation Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;A primitive - wrapper class in the Java programming language is one of eight classes provided in the java.lang package to provide object methods for the eight primitive types. All of the primitive wrapper classes in Java are immutable. J2SE 5.0 introduced autoboxing of primitive types into their wrapper object, and automatic unboxing of the wrapper objects into their primitive value—the implicit conversion between the wrapper objects and primitive values.&lt;/p&gt;
+&lt;p&gt;The problem of this code is that A.method and B.method have different signatures: the first one with int primitive type as a parameter and the second one with Integer class as a parameter. But overriding requires two methods to have the same signatures, so this code won&apos;t compile.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.instanceofjava.com/2015/05/10-tricky-core-java-interview-coding.html&quot;&gt;instanceofjava page&lt;/a&gt;
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Primitive_wrapper_class&quot;&gt;Wikipedia page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is the output of following program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+package com.instanceofjava;
+class A {
+    void method(int i) {
+        System.out.println(&quot;method 1&quot;);
+    }
+} 
+class B extends A {
+    @Override
+    void method(Integer i) {
+        System.out.println(&quot;method 2&quot;);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        B b = new B();
+        b.method(1);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>566</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>line 4 and 5</string>
+				<string>line 4</string>
+				<string>line 5</string>
+				<string>none of them</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;According to Java documentation, the Integer class has two constructors: Integer(int value) - constructs a newly allocated Integer object that represents the specified int value, and Integer(String s) - constructs a newly allocated Integer object that represents the int value indicated by the String parameter. The string is converted to an int value in exactly the manner used by the parseInt method for radix 10. new Integer(null) call is not ambiguous to compiler because there is only one match (int is a primitive type and it can&apos;t be null!) - Integer(String s).&lt;/p&gt;
+&lt;p&gt;On the other side, the String class has many constructors too, but new Stirng(null) call is ambiguous to compiler because both constructor String(java.lang.StringBuffer) and constructor String(java.lang.StringBuilder) match null value. So compiler is unable to determine which method to call here.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.instanceofjava.com/2015/05/10-tricky-core-java-interview-coding.html&quot;&gt;instanceofjava page&lt;/a&gt;
+&lt;a href=&quot;https://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html&quot;&gt;oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Which line will throw compile time error?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+package com.instanceofjava;
+class A {  
+    public static void main(String [] args) {
+        Integer i = new Integer(null); // line 4
+        String s = new String(null); // line 5
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>567</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>ONE32TWOTHREE54FOURFIVE5</string>
+				<string>ONE32TWOTHREE9FOURFIVE5</string>
+				<string>ONE5TWOTHREE9FOURFIVE5</string>
+				<string>ONE5TWOTHREE54FOURFIVE5</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Strings are commonly concatenated with the + operator. Such a concatenation can be a mixture of any objects. For each object that is not a String, its toString() method is called to convert it to a String. The objects in this example are:&lt;/p&gt;
+&lt;p&gt;&quot;ONE&quot;, 3, 2, &quot;TWO&quot;, &quot;THREE&quot;, 5+4, &quot;FOUR&quot;, &quot;FIVE&quot;, 5&lt;/p&gt;
+&lt;p&gt;When all these objects get converted to String, we get: &quot;ONE&quot; + &quot;3&quot; + &quot;2&quot; + &quot;TWO&quot; + &quot;THREE&quot; + &quot;9&quot; + &quot;FOUR&quot; + &quot;FIVE&quot; + &quot;5&quot;&lt;/p&gt;
+&lt;p&gt;And after actual concatenation: &quot;ONE32TWOTHREE9FOURFIVE5&quot;&lt;/p&gt;
+
+&lt;a href=&quot;http://www.instanceofjava.com/2015/05/10-tricky-core-java-interview-coding.html&quot;&gt;instanceofjava page&lt;/a&gt;
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/data/strings.html&quot;&gt;oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is the output of following program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+package com.instanceofjava;
+class A {  
+    public static void main(String [] args) {
+		String s = &quot;ONE&quot;+3+2+&quot;TWO&quot;+&quot;THREE&quot;+(5+4)+&quot;FOUR&quot;+&quot;FIVE&quot;+5;
+        System.out.println(s);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>568</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>0</string>
+				<string>1</string>
+				<string>11</string>
+				<string>22</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Reference data type parameters, such as objects, are also passed into methods by value. This means that when the method returns, the passed-in reference still references the same object as before. However, the values of the object&apos;s fields can be changed in the method, if they have the proper access level.&lt;/p&gt;
+&lt;p&gt;Primitive arguments, such as an int or a double, are passed into methods by value. This means that any changes to the values of the parameters exist only within the scope of the method. When the method returns, the parameters are gone and any changes to them are lost.&lt;/p&gt;
+&lt;p&gt;int is a primitive type, so it is passed by value. The method chain looks like this: method1(11) -&gt; method2(121) -&gt; method3(11) -&gt; method4(0) -&gt; 11&lt;/p&gt;
+
+&lt;a href=&quot;http://www.instanceofjava.com/2015/05/10-tricky-core-java-interview-coding.html&quot;&gt;instanceofjava page&lt;/a&gt;
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html&quot;&gt;oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is the output of following program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+package com.instanceofjava;
+class A {
+    static int method1(int i) {
+        return method2(i *= 11);
+    }
+    static int method2(int i) {
+        return method3(i /= 11);
+    }
+    static int method3(int i) {
+        return method4(i -= 11);
+    }
+    static int method4(int i) {
+        return i += 11;
+    }
+    public static void main(String [] args) {
+        System.out.println(method1(11));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>println null</string>
+			<key>Id</key>
+			<string>569</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>4</string>
+			<key>answers</key>
+			<array>
+				<string>&quot;null&quot;</string>
+				<string>&quot;&quot;</string>
+				<string>Runtime Error</string>
+				<string>Compilation Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;There are 3 overloaded println methods:&lt;/p&gt;
+&lt;p&gt;void println(String str)&lt;/p&gt;
+&lt;p&gt;void println(char[] ch)&lt;/p&gt;
+&lt;p&gt;void println(Object ch)&lt;/p&gt;
+&lt;p&gt;The call System.out.println(null) is ambiguous to compiler because println(null) here will find the two best specific matches i.e. println(String) and println(char[]). Since null can fit in both, the compiler is unable to determine which method to call here.&lt;/p&gt;
+&lt;p&gt;But if we write System.out.println((String)null) or System.out.println((char[])null) the code compiles fine because the type is explicit.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.instanceofjava.com/2014/12/what-happens-when-systemoutprintlnnull.html&quot;&gt;instanceofjava page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is the output of following program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+package com.instanceofjava;
+class A {
+    public static void main(String [] args) {
+        System.out.println(null);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+	</array>
+</dict>
+</plist>
