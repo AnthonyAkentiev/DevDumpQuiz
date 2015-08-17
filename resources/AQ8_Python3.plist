@@ -134,7 +134,7 @@
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>and and or</string>
 			<key>Id</key>
 			<string>338</string>
 			<key>Tags</key>
@@ -142,22 +142,31 @@
 			<key>Level</key>
 			<string>2</string>
 			<key>Correct Answers</key>
-			<string>1</string>
+			<string>2</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>2</string>
+				<string>1</string>
+				<string>12</string>
+				<string>Error</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;h2&gt;&apos;and&apos; and &apos;or&apos;&lt;/h2&gt;
+&lt;p&gt;In Python, &apos;and&apos; and &apos;or&apos; are complex creatures. If test is true, the and statement skips over it and returns its right half, here 1 or 2. As processing continues left to right, the or statement returns the first true value, 1. If test is false, the and statement returns test. As processing continues left to right, the remaining statement is test or 2. Since test is false, the or statement skips over it and returns its right half, 2.&lt;/p&gt;
+ 
+&lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+test = True
+result = test and 1 or 2
+print result
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>true and false as indexes</string>
 			<key>Id</key>
 			<string>339</string>
 			<key>Tags</key>
@@ -165,110 +174,158 @@
 			<key>Level</key>
 			<string>2</string>
 			<key>Correct Answers</key>
-			<string>1</string>
+			<string>2</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>1</string>
+				<string>2</string>
+				<string>12</string>
+				<string>Error</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;h2&gt;True and False as indexes&lt;/h2&gt;
+&lt;p&gt;2&lt;/p&gt;
+&lt;p&gt;There is a way to select values in Python: use True and False as list indexes, taking advantage of the fact that False == 0 and True == 1. However, this method suffers from a significant flaw: both list items are evaluated before truthfulness is checked. For strings or other simple items, this is not a big deal. But if each item involves significant computation or I/O, you really don&apos;t want to do twice the work that you have to. Also note that the index method only works when you know that test is False or True (or 0 or 1, but not any other integer or an arbitrary object).&lt;/p&gt;
+ 
+&lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+test = True
+result = [&apos;1&apos;,&apos;2&apos;][test]
+print result
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>default value</string>
 			<key>Id</key>
 			<string>340</string>
 			<key>Tags</key>
 			<string>Python, Screen</string>
 			<key>Level</key>
-			<string>2</string>
+			<string>4</string>
 			<key>Correct Answers</key>
-			<string>1</string>
+			<string>2</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>[1] [2]</string>
+				<string>[1] [1, 2]</string>
+				<string>[1] [1]</string>
+				<string>Error</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;h2&gt;Default values&lt;/h2&gt;
+&lt;p&gt;[1] [1, 2]&lt;/p&gt;
+&lt;p&gt;The default value for a function argument is only evaluated once, when the function is defined. Python simply assigns this value to the correct variable name when the function is called. Python doesn&apos;t check if that value (that location in memory) was changed. It just continues to assign that value to any caller that needs it. So, if the value is changed, the change will persist across function calls. Above, when we appended a value to the list represented by stuff, we actually changed the default value for all eternity. When we called function again looking for a default value, the modified default was given to us.&lt;/p&gt;
+ 
+&lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+def function(item, stuff = []):
+    stuff.append(item)
+    print stuff
+
+function(1)
+function(2)
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>many arg</string>
 			<key>Id</key>
 			<string>341</string>
 			<key>Tags</key>
 			<string>Python, Screen</string>
 			<key>Level</key>
-			<string>2</string>
-			<key>Correct Answers</key>
 			<string>1</string>
+			<key>Correct Answers</key>
+			<string>2</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>No</string>
+				<string>Yes</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;h2&gt;Function arguments&lt;/h2&gt;
+&lt;p&gt;Python lets you have arbitrary numbers of arguments in your functions. First define any required arguments (if any), then use a variable with a &apos;*&apos; prepended to it. Python will take the rest of the non-keyword arguments, put them in a list or tuple, and assign them to this variable. You can also have arbitrary numbers of keyword arguments. After you&apos;ve defined all other arguments, use a variable with &apos;**&apos; prepended to it. Python will take the rest of the keyword arguments, put them in a dictionary, and assign them to this variable.&lt;/p&gt;
+ 
+&lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;h2&gt;Does Python support arbitrary numbers of arguments in functions?&lt;/h2&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>keyword arguments</string>
 			<key>Id</key>
 			<string>342</string>
 			<key>Tags</key>
 			<string>Python, Screen</string>
 			<key>Level</key>
-			<string>2</string>
+			<string>3</string>
 			<key>Correct Answers</key>
-			<string>1</string>
+			<string>4</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>1 2 3 (4, 5, 6)</string>
+				<string>1 2 3</string>
+				<string>(4, 5, 6)</string>
+				<string>Error</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;h2&gt;Keyword arguments&lt;/h2&gt;
+&lt;p&gt;Passing both arbitrary non-keyword arguments and named (non-arbitrary) keyword arguments in one function is seemingly impossible. This is because named keyword arguments must be defined before the &apos;*&apos; parameter in the function definition, and are filled before that parameter is filled. In this example we have a problem: there is no way to specify &apos;actually_print&apos; as a named keyword argument while simultaneously providing arbitrary non-keyword arguments. The only way to pass &apos;actually_print&apos; in this situation is to pass it as a non-keyword argument.&lt;/p&gt;
+ 
+&lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+def do_something(a, b, c, actually_print = True, *args):
+    if actually_print:
+        print a, b, c, args
+do_something(1, 2, 3, actually_print = True, 4, 5, 6)
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>list/dict as function args</string>
 			<key>Id</key>
 			<string>343</string>
 			<key>Tags</key>
 			<string>Python, Screen</string>
 			<key>Level</key>
-			<string>2</string>
+			<string>3</string>
 			<key>Correct Answers</key>
 			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>1 2</string>
+				<string>1</string>
+				<string>2</string>
+				<string>Error</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;h2&gt;Lists and Dictionaries as function arguments&lt;/h2&gt;
+&lt;p&gt;Since you can receive arguments as a list or dictionary, it&apos;s not terribly surprising, that you can send arguments to a function from a list or dictionary. To send a list as non-keyword arguments, just prepend it with a &apos;*&apos;. And, to send a dictionary as keyword arguments (this is probably more common), prepend it with &apos;**&apos;. You can also combine lists with arguments or dictionaries with arguments and ordinary arguments in one function call.&lt;/p&gt;
+ 
+&lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+def do_something(actually_do_something=True, print_a_bunch_of_numbers=False):
+    if actually_do_something:
+        print &apos;1&apos;
+        if print_a_bunch_of_numbers:
+            print &apos;2&apos;
+
+kwargs = {&apos;actually_do_something&apos;: True, &apos;print_a_bunch_of_numbers&apos;: True}
+do_something(**kwargs)
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 	</array>
 </dict>
