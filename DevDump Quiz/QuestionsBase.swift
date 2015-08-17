@@ -90,7 +90,11 @@ class QuestionsBase: Tags {
             "AQ6_Python",
             "AQ7_Python2",
             "AQ8_Python3",
-            "AQ9_Python4"
+            "AQ9_Python4",
+            
+            // Java:
+            "AQ10_Java1",
+            "AQ11_Java2",
         ]
         
         for aq in aqs {
