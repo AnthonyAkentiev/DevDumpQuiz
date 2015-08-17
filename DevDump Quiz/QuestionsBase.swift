@@ -97,7 +97,8 @@ class QuestionsBase: Tags {
             "AQ11_Java2",
             "AQ12_Java3",
             "AQ13_Java4",
-            "AQ14_Java4",
+            "AQ14_Java5",
+            "AQ15_Java6"
         ]
         
         for aq in aqs {

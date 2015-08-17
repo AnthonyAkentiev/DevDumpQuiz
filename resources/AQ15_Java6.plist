@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>questions</key>
+	<array>
+		<dict>
+			<key>Comment</key>
+			<string>default modifier</string>
+			<key>Id</key>
+			<string>550</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>4</string>
+			<key>answers</key>
+			<array>
+				<string>considered to be &quot;public&quot;</string>
+				<string>considered to be &quot;private&quot;</string>
+				<string>considered to be &quot;protected&quot;</string>
+				<string>considered to be package-private</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;At the member level, you can use the public modifier or no modifier (package-private) just as with top-level classes, and with the same meaning. For members, there are two additional access modifiers: private and protected. The private modifier specifies that the member can only be accessed in its own class. The protected modifier specifies that the member can only be accessed within its own package (as with package-private) and, in addition, by a subclass of its class in another package.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html&quot;&gt;docs.oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;If a method has no access modifier, it is ... &lt;/h2&gt;&lt;p&gt;(select all)&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>sqrt</string>
+			<key>Id</key>
+			<string>551</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>NaN</string>
+				<string>0</string>
+				<string>i</string>
+				<string>Runtime Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Math.sqrt returns the correctly rounded positive square root of a double value. Special cases:&lt;/p&gt;
+&lt;p&gt;If the argument is NaN or less than zero, then the result is NaN.&lt;/p&gt;
+&lt;p&gt;If the argument is positive infinity, then the result is positive infinity.&lt;/p&gt;
+&lt;p&gt;If the argument is positive zero or negative zero, then the result is the same as the argument.&lt;/p&gt;
+&lt;p&gt;Otherwise, the result is the double value closest to the true mathematical square root of the argument value.&lt;/p&gt;
+
+&lt;a href=&quot;http://docs.oracle.com/javase/7/docs/api/java/lang/Math.html&quot;&gt;docs.oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+double a = Math.sqrt(-1);
+System.out.println(a);
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>sqrt</string>
+			<key>Id</key>
+			<string>552</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>NaN</string>
+				<string>Infinity</string>
+				<string>0</string>
+				<string>Runtime Exception</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Math.sqrt returns the correctly rounded positive square root of a double value. Special cases:&lt;/p&gt;
+&lt;p&gt;If the argument is NaN or less than zero, then the result is NaN.&lt;/p&gt;
+&lt;p&gt;If the argument is positive infinity, then the result is positive infinity.&lt;/p&gt;
+&lt;p&gt;If the argument is positive zero or negative zero, then the result is the same as the argument.&lt;/p&gt;
+&lt;p&gt;Otherwise, the result is the double value closest to the true mathematical square root of the argument value.&lt;/p&gt;
+
+&lt;a href=&quot;http://docs.oracle.com/javase/7/docs/api/java/lang/Math.html&quot;&gt;docs.oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+double a = Math.sqrt(Double.POSITIVE_INFINITY);
+System.out.println(a);
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>hash map</string>
+			<key>Id</key>
+			<string>553</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2+4</string>
+			<key>answers</key>
+			<array>
+				<string>HashQueue</string>
+				<string>HashSet</string>
+				<string>HashList</string>
+				<string>HashMap</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;HashSet and HashMap exist in JDK. These are the only hash table implementations, there is no HashQueue or HashList in JDK.&lt;/p&gt;
+&lt;p&gt;HashSet class implements the Set interface, backed by a hash table (actually a HashMap instance). It makes no guarantees as to the iteration order of the set; in particular, it does not guarantee that the order will remain constant over time. This class permits the null element.&lt;/p&gt;
+&lt;p&gt;HashMap is a hash table based implementation of the Map interface. This implementation provides all of the optional map operations, and permits null values and the null key. (The HashMap class is roughly equivalent to Hashtable, except that it is unsynchronized and permits nulls.) This class makes no guarantees as to the order of the map; in particular, it does not guarantee that the order will remain constant over time.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/collections/implementations/index.html&quot;&gt;docs.oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Choose JDK&apos;s hash table implementations&lt;/h2&gt;&lt;p&gt;(select all)&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>arr</string>
+			<key>Id</key>
+			<string>554</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1+3</string>
+			<key>answers</key>
+			<array>
+				<string>ArrayList</string>
+				<string>ArrayQueue</string>
+				<string>ArrayDeque</string>
+				<string>ArraySet</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;ArrayList and ArrayDeque exist in JDK. These are the only resizable array implementations, there is no ArrayQueue or ArraySet in JDK.&lt;/p&gt;
+&lt;p&gt;ArrayList is a resizable-array implementation of the List interface. Implements all optional list operations, and permits all elements, including null. In addition to implementing the List interface, this class provides methods to manipulate the size of the array that is used internally to store the list. (This class is roughly equivalent to Vector, except that it is unsynchronized.)&lt;/p&gt;
+&lt;p&gt;ArrayDeque is a resizable-array implementation of the Deque interface. Array deques have no capacity restrictions; they grow as necessary to support usage. They are not thread-safe; in the absence of external synchronization, they do not support concurrent access by multiple threads. Null elements are prohibited. This class is likely to be faster than Stack when used as a stack, and faster than LinkedList when used as a queue.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/collections/implementations/index.html&quot;&gt;docs.oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Choose JDK&apos;s resizable array implementations&lt;/h2&gt;&lt;p&gt;(select all)&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>555</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>c</string>
+				<string>ab</string>
+				<string>This code won&apos;t compile</string>
+				<string>Runtime Exception</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;This code is correct, it compiles and throws no exceptions. String literal &quot;abc&quot; internally converted to String by the compiler, so you can execute any String method on it. Using String literals is preferred: when you create String object using new() operator, it always create a new object in heap memory. On the other hand, if you create object using String literal syntax e.g. &quot;Java&quot;, it may return an existing object from String pool (a cache of String object in Perm gen space, which is now moved to heap space in recent Java release), if it&apos;s already exists. Otherwise it will create a new string object and put in string pool for future re-use.&lt;/p&gt;
+
+&lt;a href=&quot;http://java67.blogspot.ru/2014/08/difference-between-string-literal-and-new-String-object-Java.html&quot;&gt;java67 blog page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+String c = &quot;abc&quot;.substring(2,3);
+System.out.println(c);
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>quotes</string>
+			<key>Id</key>
+			<string>556</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>/&quot;</string>
+				<string>\&quot;</string>
+				<string>&quot;&quot;</string>
+				<string>&apos;&quot;</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;\&quot;&lt;/p&gt;
+&lt;p&gt;In computing and telecommunication, an escape character is a character which invokes an alternative interpretation on subsequent characters in a character sequence. An escape character is a particular case of metacharacters. Generally, the judgement of whether something is an escape character or not depends on context. In Java language, a character preceded by a backslash (\) is an escape sequence and has special meaning to the compiler. The only correct answer is \&quot;.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/data/characters.html&quot;&gt;docs.oracle page&lt;/a&gt;
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Escape_character&quot;&gt;Wikipedia page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;How do you escape double quote character in String?&lt;/h2&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>isEmpty</string>
+			<key>Id</key>
+			<string>557</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>4</string>
+			<key>answers</key>
+			<array>
+				<string>true</string>
+				<string>Compilation Error</string>
+				<string>Runtime Exception</string>
+				<string>false</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;According to Java&apos;s documentation, isEmpty() method returns true if, and only if, length() is 0. length() method returns the length of this string. The length is equal to the number of Unicode code units in the string. String c contains one character (space) so it&apos;s length is 1 and isEmpty() method returns false.&lt;/p&gt;
+
+&lt;a href=&quot;http://docs.oracle.com/javase/7/docs/api/java/lang/String.html&quot;&gt;docs.oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+String c = &quot; &quot;;
+System.out.println(c.isEmpty());
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>Null pointer exception</string>
+			<key>Id</key>
+			<string>558</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>0</string>
+				<string>Compilation Error</string>
+				<string>Runtime Exception</string>
+				<string>4</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;More specifically, java.lang.NullPointerException will be thrown because c is null, it doesn&apos;t refer to any String object.&lt;/p&gt;
+&lt;p&gt;According to Java&apos;s documentation, java.lang.NullPointerException is thrown when an application attempts to use null in a case where an object is required. These include:&lt;/p&gt;
+&lt;p&gt;Calling the instance method of a null object.&lt;/p&gt;
+&lt;p&gt;Accessing or modifying the field of a null object.&lt;/p&gt;
+&lt;p&gt;Taking the length of null as if it were an array.&lt;/p&gt;
+&lt;p&gt;Accessing or modifying the slots of null as if it were an array.&lt;/p&gt;
+&lt;p&gt;Throwing null as if it were a Throwable value.&lt;/p&gt;
+
+&lt;a href=&quot;http://docs.oracle.com/javase/7/docs/api/java/lang/NullPointerException.html&quot;&gt;docs.oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+String c = null;
+System.out.println(c.length());
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>floating pointer</string>
+			<key>Id</key>
+			<string>559</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>false true</string>
+				<string>true false</string>
+				<string>false false</string>
+				<string>true true</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Floating-point operators produce no exceptions. An operation that overflows produces a signed infinity, an operation that underflows produces a denormalized value or a signed zero, and an operation that has no mathematically definite result produces NaN. All numeric operations with NaN as an operand produce NaN as a result. As has already been described, NaN is unordered, so a numeric comparison operation involving one or two NaNs returns false and any != comparison involving NaN returns true, including x!=x when x is NaN.&lt;/p&gt;
+
+&lt;a href=&quot;http://stackoverflow.com/a/8819776/1389883&quot;&gt;Stackoverflow answer&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+System.out.println(Double.NaN==Double.NaN);
+System.out.println(Double.NaN!=Double.NaN);
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+	</array>
+</dict>
+</plist>
