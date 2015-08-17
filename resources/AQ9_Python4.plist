@@ -1,5 +1,354 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>questions</key>
+	<array>
+		<dict>
+			<key>Comment</key>
+			<string>decorators</string>
+			<key>Id</key>
+			<string>344</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>Nothing</string>
+				<string>42</string>
+				<string>43</string>
+				<string>Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Decorators&lt;/h2&gt;
+&lt;p&gt;A decorator is a function that wraps another function: the main function is called and its return value is passed to the decorator. The decorator then returns a function that replaces the wrapped function as far as the rest of the program is concerned. In this example, &apos;function&apos; is passed to &apos;decorator1&apos;. &apos;decorator1&apos; returns a function that calls &apos;function&apos; and adds 1. This function is then passed to &apos;decorator2&apos;, which returns a function that calls the function returned by &apos;decorator1&apos; and prints the result. This last function is the function you are actually calling when you call &apos;function&apos;.&lt;/p&gt;
+ 
+&lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+def decorator1(func):
+    return lambda: func() + 1
+
+def decorator2(func):
+    def print_func():
+        print func()
+    return print_func
+
+@decorator2
+@decorator1
+def function():
+    return 41
+
+function()
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>Method vs function</string>
+			<key>Id</key>
+			<string>345</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>Hey</string>
+				<string>Hey Hey</string>
+				<string>Nothing</string>
+				<string>Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Method vs function&lt;/h2&gt;
+&lt;p&gt;Methods are just regular functions that when called from an instance are passed that instance as the first argument (usually called &apos;self&apos;). If for some reason you&apos;re not calling the function from an instance (you are using class name instead), you can always pass the instance manually as the first argument. In this example, although these statements have different syntax, internally, they are exactly the same.&lt;/p&gt;
+ 
+&lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+class Class:
+    def method(self):
+        print &apos;Hey&apos;
+
+instance = Class()
+instance.method()
+Class.method(instance)
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>Existence of method or property</string>
+			<key>Id</key>
+			<string>346</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>4</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>hasattr(MyClass, &apos;answer&apos;)</string>
+				<string>hasmember(MyClass, &apos;answer&apos;)</string>
+				<string>hasprop(MyClass, &apos;answer&apos;)</string>
+				<string>hasfunc(MyClass, &apos;answer&apos;)</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;hasattr/has_key functions&lt;/h2&gt;
+&lt;p&gt;Need to know if a particular class or instance has a particular property or method? You can use the built-in &apos;hasattr&apos; function to check; it accepts the object and the attribute (as a string) to check for. You use similarly to the dict &apos;has_key&apos; method (although it works completely differently). But don&apos;t overuse hasattr. If you&apos;ve written your class in manner where you need to keep checking to see if a property exists, you&apos;ve written it wrong. Just always have the value exist and set it to None (or whatever) if it&apos;s not being used. These functions are best used for handling polymorphism, that is, allowing your function/class/whatever to support different kinds of objects.&lt;/p&gt;
+ 
+&lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;How do you check for property or method existence?&lt;/h2&gt;
+ 
+## список ответов:
+1) hasattr(MyClass, &apos;answer&apos;)
+2) hasmember(MyClass, &apos;answer&apos;)
+3) hasprop(MyClass, &apos;answer&apos;)
+4) hasfunc(MyClass, &apos;answer&apos;)</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>Class properties</string>
+			<key>Id</key>
+			<string>347</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>1 2</string>
+				<string>2 1</string>
+				<string>1 1</string>
+				<string>Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Class properties&lt;/h2&gt;
+&lt;p&gt;You can add, modify, or delete a class property or method long after the class has been created, and even after it has been instantiated. Just access the property or method as Class.attribute. No matter when they were created, instances of the class will respect these changes. But don&apos;t get carried away with modifying preexisting methods, it&apos;s bad form and can confuse the crap out of any objects using that class. On the other hand, adding methods is a lot less (but still somewhat) dangerous.&lt;/p&gt;
+ 
+&lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+class Class:
+   def method(self):
+        print &apos;1&apos;
+
+instance = Class()
+instance.method()
+
+def new_method(self):
+    print &apos;2&apos;
+
+Class.method = new_method
+instance.method()
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>static methods</string>
+			<key>Id</key>
+			<string>348</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>4</string>
+			<key>answers</key>
+			<array>
+				<string>Class methods must be defined in class, static methods must be defined outside any class</string>
+				<string>Class methods and static methods are exactly the same thing</string>
+				<string>Static methods receive the class as the first argument, class methods don&apos;t</string>
+				<string>Class methods receive the class as the first argument, static methods don&apos;t</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Class methods vs static methods&lt;/h2&gt;
+&lt;p&gt;Class methods receive the class as the first argument, static methods don&apos;t&lt;/p&gt;
+&lt;p&gt;Occasionally when writing a class you want to include a function that is called from the class, not the instance. Python actually gives you two ways to do this, depending if your method needs to (or should) know about which class called it. Both involve applying decorators to your methods. A &apos;class method&apos; receives the class as the first argument, just as a regular instance method receives the instance as the first argument. So, the method is aware if it is being called from its own class or from a subclass. A &apos;static method&apos; receives no information about where it is called; it is essentially a regular function, just in a different scope.&lt;/p&gt;
+ 
+&lt;a href=&quot;http://www.siafoo.net/article/52&quot;&gt;siafoo article&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is the difference between class methods and static methods?&lt;/h2&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>equals</string>
+			<key>Id</key>
+			<string>349</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>True True</string>
+				<string>False False</string>
+				<string>True False</string>
+				<string>Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Someone could think that in this example it&apos;s doing 1 &lt; x, which comes out as True, and then comparing True &lt; 10, which is also True, then no, that&apos;s really not what happens. It&apos;s really translating into 1 &lt; x and x &lt; 10, but with less typing and each term is only evaluated once. All of these examples also work as expected:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+x = 5
+print x &lt; 10 &lt; x*10 &lt; 100
+#True
+print 10 &gt; x &lt;= 9
+#True
+&lt;/code&gt;&lt;/pre&gt;
+ 
+&lt;a href=&quot;http://stackoverflow.com/a/101945/1389883&quot;&gt;stackoverflow answer&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+x = 5
+print 1 &lt; x &lt; 10
+print 5 == x &gt; 4
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>multiple asignment</string>
+			<key>Id</key>
+			<string>350</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>5, 10, 5, 10</string>
+				<string>5, 10, 10, 5</string>
+				<string>5, 10, 5, 5</string>
+				<string>Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Multiple asignment&lt;/h2&gt;
+&lt;p&gt;The right-hand side of the assignment is an expression that creates a new tuple. The left-hand side of the assignment immediately unpacks that (unreferenced) tuple to the names a and b. After the assignment, the new tuple is unreferenced and marked for garbage collection, and the values bound to a and b have been swapped. This technique is called in-place value swapping. As Python docs say, note that multiple assignment is really just a combination of tuple packing and sequence unpacking.&lt;/p&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+a = 5
+b = 10
+print a, b
+a, b = b, a
+print a, b
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>for statetement</string>
+			<key>Id</key>
+			<string>351</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>1 2</string>
+				<string>1</string>
+				<string>2</string>
+				<string>Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;&apos;For&apos; statement&lt;/h2&gt;
+&lt;p&gt;The for statement in Python differs a bit from what you may be used to in C or Pascal. Python’s for statement iterates over the items of any sequence (a list or a string), in the order that they appear in the sequence. Loop statements may have an else clause; it is executed when the loop terminates through exhaustion of the list (with for) or when the condition becomes false (with while), but not when the loop is terminated by a break statement.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.python.org/2/tutorial/controlflow.html&quot;&gt;docs.python page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+for i in range (5):
+	if (i == 5):
+		print 1
+else:
+	print 2
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>pass statement</string>
+			<key>Id</key>
+			<string>352</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>Yes</string>
+				<string>No</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;The pass statement does nothing. It can be used when a statement is required syntactically but the program requires no action. This is commonly used for creating minimal classes. Another place pass can be used is as a place-holder for a function or conditional body when you are working on new code, allowing you to keep thinking at a more abstract level. The pass is silently ignored:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+def initlog(*args):
+	pass   # Remember to implement this!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;a href=&quot;https://docs.python.org/2/tutorial/controlflow.html&quot;&gt;docs.python page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Is this code correct?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+class MyClass:
+	pass
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>set</string>
+			<key>Id</key>
+			<string>353</string>
+			<key>Tags</key>
+			<string>Python, Screen</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>set([1, 2, 3, 4, 3, 4, 5, 6])</string>
+				<string>set([3, 4])</string>
+				<string>set([1, 2, 3, 4, 5, 6])</string>
+				<string>Error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;A set object is an unordered collection of distinct hashable objects. Common uses include membership testing, removing duplicates from a sequence, and computing mathematical operations such as intersection, union, difference, and symmetric difference. Non-empty sets (not frozensets) can be created by placing a comma-separated list of elements within braces, for example: {&apos;jack&apos;, &apos;sjoerd&apos;}, in addition to the set constructor. In this example, intersection operator is uesd. It return a new set with elements common to the set and all others.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset&quot;&gt;docs.python page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+a = set([1,2,3,4])
+b = set([3,4,5,6])
+print a &amp; b
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+	</array>
+</dict>
 </plist>
