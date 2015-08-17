@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>questions</key>
+	<array>
+		<dict>
+			<key>Comment</key>
+			<string>this keyword</string>
+			<key>Id</key>
+			<string>540</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>4</string>
+			<key>answers</key>
+			<array>
+				<string>this keyword doesn&apos;t exist in Java</string>
+				<string>this is a copy of the current object</string>
+				<string>this keyword is deprecated and no longer used</string>
+				<string>this is a reference to the current object</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Within an instance method or a constructor, this is a reference to the current object — the object whose method or constructor is being called. You can refer to any member of the current object from within an instance method or a constructor by using this.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/thiskey.html&quot;&gt;docs.oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What does &quot;this&quot; keyword mean?&lt;/h2&gt;&lt;p&gt;(select all)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+class MyClass
+{
+    int n;
+ 
+    public MyClass(int n)
+    {
+          this.n = n;  
+          
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>change this</string>
+			<key>Id</key>
+			<string>541</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>Yes</string>
+				<string>No</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;No, it&apos;s not correct. this is bound to the current object. You can change the state of the object which is referred by this, but you can&apos;t make this point to some other object, this is final.&lt;/p&gt;
+
+&lt;a href=&quot;http://stackoverflow.com/a/6044168/1389883&quot;&gt;Stackoverflow answer&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Is this code snippet correct?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+class SomeClass {
+	public void set(SomeClass c) {
+		this = c;
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>member to me</string>
+			<key>Id</key>
+			<string>542</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>Yes</string>
+				<string>No, because SomeClass type is not fully defined on line 2</string>
+				<string>No, because SomeClass&apos; size will never be calculated due to the infinite recursion</string>
+				<string>No, because members of the same type can&apos;t be public</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;This code snippet is correct because Java has no restrictions on member&apos;s type or it&apos;s access modifiers. SomeClass&apos; size will be calculated successfully because SomeClass member is a reference and it has constant size.&lt;/p&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Is this code snippet correct?&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+class SomeClass {
+    public SomeClass member; // line 2
+    public int member2;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>java set is</string>
+			<key>Id</key>
+			<string>543</string>
+			<key>Tags</key>
+			<string>Java, Screen3</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>interface, extends Queue, supports element insertion and removal at both ends</string>
+				<string>interface, extends Collection, no duplicate elements permitted, may or may not be ordered</string>
+				<string>interface, extends Collection, ordered, also known as a sequence, duplicates are generally permitted, allows positional access</string>
+				<string>interface, extends Collection, designed for holding elements before processing, provides additional insertion, extraction, and inspection operations</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Set - The familiar set abstraction. No duplicate elements permitted. May or may not be ordered. Extends the Collection interface.&lt;/p&gt;
+&lt;p&gt;List - Ordered collection, also known as a sequence. Duplicates are generally permitted. Allows positional access. Extends the Collection interface.&lt;/p&gt;
+&lt;p&gt;Queue - A collection designed for holding elements before processing. Besides basic Collection operations, queues provide additional insertion, extraction, and inspection operations.&lt;/p&gt;
+&lt;p&gt;Deque - A double ended queue, supporting element insertion and removal at both ends. Extends the Queue interface.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/7/docs/technotes/guides/collections/reference.html&quot;&gt;docs.oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Java Set is an ...&lt;/h2&gt;&lt;p&gt;(select all)&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>queue</string>
+			<key>Id</key>
+			<string>544</string>
+			<key>Tags</key>
+			<string>Java, Screen3</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>4</string>
+			<key>answers</key>
+			<array>
+				<string>interface, extends Queue, supports element insertion and removal at both ends</string>
+				<string>interface, extends Collection, no duplicate elements permitted, may or may not be ordered</string>
+				<string>interface, extends Collection, ordered, also known as a sequence, duplicates are generally permitted, allows positional access</string>
+				<string>interface, extends Collection, designed for holding elements before processing, provides additional insertion, extraction, and inspection operations</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Set - The familiar set abstraction. No duplicate elements permitted. May or may not be ordered. Extends the Collection interface.&lt;/p&gt;
+&lt;p&gt;List - Ordered collection, also known as a sequence. Duplicates are generally permitted. Allows positional access. Extends the Collection interface.&lt;/p&gt;
+&lt;p&gt;Queue - A collection designed for holding elements before processing. Besides basic Collection operations, queues provide additional insertion, extraction, and inspection operations.&lt;/p&gt;
+&lt;p&gt;Deque - A double ended queue, supporting element insertion and removal at both ends. Extends the Queue interface.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/7/docs/technotes/guides/collections/reference.html&quot;&gt;docs.oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Java Queue is an ...&lt;/h2&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>list</string>
+			<key>Id</key>
+			<string>545</string>
+			<key>Tags</key>
+			<string>Java, Screen3</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>interface, extends Queue, supports element insertion and removal at both ends</string>
+				<string>interface, extends Collection, no duplicate elements permitted, may or may not be ordered</string>
+				<string>interface, extends Collection, ordered, also known as a sequence, duplicates are generally permitted, allows positional access</string>
+				<string>interface, extends Collection, designed for holding elements before processing, provides additional insertion, extraction, and inspection operations</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Set&lt;/h2&gt;&lt;p&gt;Set - The familiar set abstraction. No duplicate elements permitted. May or may not be ordered. Extends the Collection interface.&lt;/p&gt;
+&lt;p&gt;List - Ordered collection, also known as a sequence. Duplicates are generally permitted. Allows positional access. Extends the Collection interface.&lt;/p&gt;
+&lt;p&gt;Queue - A collection designed for holding elements before processing. Besides basic Collection operations, queues provide additional insertion, extraction, and inspection operations.&lt;/p&gt;
+&lt;p&gt;Deque - A double ended queue, supporting element insertion and removal at both ends. Extends the Queue interface.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/7/docs/technotes/guides/collections/reference.html&quot;&gt;docs.oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Java List is an ...&lt;/h2&gt;&lt;p&gt;(select all)&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>deque</string>
+			<key>Id</key>
+			<string>546</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>interface, extends Queue, supports element insertion and removal at both ends</string>
+				<string>interface, extends Collection, no duplicate elements permitted, may or may not be ordered</string>
+				<string>interface, extends Collection, ordered, also known as a sequence, duplicates are generally permitted, allows positional access</string>
+				<string>interface, extends Collection, designed for holding elements before processing, provides additional insertion, extraction, and inspection operations</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Deque&lt;/h2&gt;&lt;p&gt;Deque - The familiar set abstraction. No duplicate elements permitted. May or may not be ordered. Extends the Collection interface.&lt;/p&gt;
+&lt;p&gt;List - Ordered collection, also known as a sequence. Duplicates are generally permitted. Allows positional access. Extends the Collection interface.&lt;/p&gt;
+&lt;p&gt;Queue - A collection designed for holding elements before processing. Besides basic Collection operations, queues provide additional insertion, extraction, and inspection operations.&lt;/p&gt;
+&lt;p&gt;Deque - A double ended queue, supporting element insertion and removal at both ends. Extends the Queue interface.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/7/docs/technotes/guides/collections/reference.html&quot;&gt;docs.oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Java Deque is an ...&lt;/h2&gt;&lt;p&gt;(select all)&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>lifo</string>
+			<key>Id</key>
+			<string>547</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>Queue</string>
+				<string>Stack</string>
+				<string>Map</string>
+				<string>PriorityQueue</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;LIFO&lt;/h2&gt;&lt;p&gt;LIFO stands for &quot;Last In - First Out&quot; and stack represents this type of a container.&lt;/p&gt;
+&lt;p&gt;Queue represents FILO structure.&lt;/p&gt;
+&lt;p&gt;Map and PriorityQueue represent neither of these structures.&lt;/p&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;LIFO structure is represented by&lt;/h2&gt;&lt;p&gt;(select all)&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>fifo</string>
+			<key>Id</key>
+			<string>548</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>Queue</string>
+				<string>Stack</string>
+				<string>Map</string>
+				<string>PriorityQueue</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;FIFO&lt;/h2&gt;&lt;p&gt;FIFO stands for &quot;First In - First Out&quot; and queue represents this type of a container.&lt;/p&gt;
+&lt;p&gt;Stack represents LIFO structure.&lt;/p&gt;
+&lt;p&gt;Map and PriorityQueue represent neither of these structures.&lt;/p&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;FIFO structure is represented by&lt;/h2&gt;</string>
+		</dict>
+		<dict>
+			<key>New item</key>
+			<dict>
+				<key>Comment</key>
+				<string></string>
+				<key>Id</key>
+				<string>540</string>
+				<key>Tags</key>
+				<string>Java, Screen2</string>
+				<key>Level</key>
+				<string>1</string>
+				<key>Correct Answers</key>
+				<string>1</string>
+				<key>answers</key>
+				<array>
+					<string></string>
+					<string></string>
+					<string></string>
+					<string></string>
+				</array>
+				<key>a</key>
+				<string></string>
+				<key>q</key>
+				<string></string>
+			</dict>
+			<key>Comment</key>
+			<string>access levels</string>
+			<key>Id</key>
+			<string>549</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>1+2+4</string>
+			<key>answers</key>
+			<array>
+				<string>public</string>
+				<string>protected</string>
+				<string>default</string>
+				<string>private</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;At the member level, you can use the public modifier or no modifier (package-private) just as with top-level classes, and with the same meaning. For members, there are two additional access modifiers: private and protected. The private modifier specifies that the member can only be accessed in its own class. The protected modifier specifies that the member can only be accessed within its own package (as with package-private) and, in addition, by a subclass of its class in another package.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html&quot;&gt;docs.oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Choose valid Java access modifiers&lt;/h2&gt;&lt;p&gt;(select all)&lt;/p&gt;</string>
+		</dict>
+	</array>
+</dict>
+</plist>
