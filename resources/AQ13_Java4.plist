@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>questions</key>
+	<array>
+		<dict>
+			<key>Comment</key>
+			<string>encapsulation</string>
+			<key>Id</key>
+			<string>530</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>Encapsulation</string>
+				<string>Polymorphism</string>
+				<string>Inheritance</string>
+				<string>Method overriding</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Encapsulation&lt;/h2&gt;&lt;p&gt;Encapsulation is the packing of data and functions into a single component. The features of encapsulation are supported using classes in most object-oriented programming languages, although other alternatives also exist. It allows selective hiding of properties and methods in an object by building an impenetrable wall to protect the code from accidental corruption.&lt;/p&gt;
+&lt;p&gt;In programming languages and type theory, polymorphism is the provision of a single interface to entities of different types.[1] A polymorphic type is a type whose operations can also be applied to values of some other type, or types.&lt;/p&gt;
+&lt;p&gt;In object-oriented programming (OOP), inheritance is when an object or class is based on another object or class, using the same implementation (inheriting from a class) specifying implementation to maintain the same behavior (realizing an interface; inheriting behavior). It is a mechanism for code reuse and to allow independent extensions of the original software via public classes and interfaces.&lt;/p&gt;
+&lt;p&gt;Method overriding, in object oriented programming, is a language feature that allows a subclass or child class to provide a specific implementation of a method that is already provided by one of its superclasses or parent classes. The implementation in the subclass overrides (replaces) the implementation in the superclass by providing a method that has same name, same parameters or signature, and same return type as the method in the parent class.&lt;/p&gt;
+
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Encapsulation_(object-oriented_programming)&quot;&gt;Wikipedia page&lt;/a&gt;
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Polymorphism_(computer_science)&quot;&gt;Wikipedia page&lt;/a&gt;
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)&quot;&gt;Wikipedia page&lt;/a&gt;
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Method_overriding&quot;&gt;Wikipedia page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;The following code illustrates the idea of&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+class Employee {
+    private int salary = 50000;
+    public int getSalary() {
+        return salary;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>polymorphism</string>
+			<key>Id</key>
+			<string>531</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>Encapsulation</string>
+				<string>Polymorphism</string>
+				<string>Inheritance</string>
+				<string>Method overriding</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Polymorphism&lt;/h2&gt;
+&lt;p&gt;Encapsulation is the packing of data and functions into a single component. The features of encapsulation are supported using classes in most object-oriented programming languages, although other alternatives also exist. It allows selective hiding of properties and methods in an object by building an impenetrable wall to protect the code from accidental corruption.&lt;/p&gt;
+&lt;p&gt;In programming languages and type theory, polymorphism is the provision of a single interface to entities of different types.[1] A polymorphic type is a type whose operations can also be applied to values of some other type, or types.&lt;/p&gt;
+&lt;p&gt;In object-oriented programming (OOP), inheritance is when an object or class is based on another object or class, using the same implementation (inheriting from a class) specifying implementation to maintain the same behavior (realizing an interface; inheriting behavior). It is a mechanism for code reuse and to allow independent extensions of the original software via public classes and interfaces.&lt;/p&gt;
+&lt;p&gt;Method overriding, in object oriented programming, is a language feature that allows a subclass or child class to provide a specific implementation of a method that is already provided by one of its superclasses or parent classes. The implementation in the subclass overrides (replaces) the implementation in the superclass by providing a method that has same name, same parameters or signature, and same return type as the method in the parent class.&lt;/p&gt;
+
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Encapsulation_(object-oriented_programming)&quot;&gt;Wikipedia page&lt;/a&gt;
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Polymorphism_(computer_science)&quot;&gt;Wikipedia page&lt;/a&gt;
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)&quot;&gt;Wikipedia page&lt;/a&gt;
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Method_overriding&quot;&gt;Wikipedia page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;The following code illustrates the idea of&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+class Calculator {
+    public int Add(int a, int b) {
+        return a+b;
+    }
+    public double Add(double a, double b) {
+        return a+b;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>inheritance</string>
+			<key>Id</key>
+			<string>532</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>Encapsulation</string>
+				<string>Polymorphism</string>
+				<string>Inheritance</string>
+				<string>Method overriding</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Inheritance&lt;/h2&gt;
+&lt;p&gt;Encapsulation is the packing of data and functions into a single component. The features of encapsulation are supported using classes in most object-oriented programming languages, although other alternatives also exist. It allows selective hiding of properties and methods in an object by building an impenetrable wall to protect the code from accidental corruption.&lt;/p&gt;
+&lt;p&gt;In programming languages and type theory, polymorphism is the provision of a single interface to entities of different types.[1] A polymorphic type is a type whose operations can also be applied to values of some other type, or types.&lt;/p&gt;
+&lt;p&gt;In object-oriented programming (OOP), inheritance is when an object or class is based on another object or class, using the same implementation (inheriting from a class) specifying implementation to maintain the same behavior (realizing an interface; inheriting behavior). It is a mechanism for code reuse and to allow independent extensions of the original software via public classes and interfaces.&lt;/p&gt;
+&lt;p&gt;Method overriding, in object oriented programming, is a language feature that allows a subclass or child class to provide a specific implementation of a method that is already provided by one of its superclasses or parent classes. The implementation in the subclass overrides (replaces) the implementation in the superclass by providing a method that has same name, same parameters or signature, and same return type as the method in the parent class.&lt;/p&gt;
+
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Encapsulation_(object-oriented_programming)&quot;&gt;Wikipedia page&lt;/a&gt;
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Polymorphism_(computer_science)&quot;&gt;Wikipedia page&lt;/a&gt;
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)&quot;&gt;Wikipedia page&lt;/a&gt;
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Method_overriding&quot;&gt;Wikipedia page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;The following code illustrates the idea of ...&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+class Animal { }
+class Dog extends Animal { }
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>method overriding</string>
+			<key>Id</key>
+			<string>533</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>4</string>
+			<key>answers</key>
+			<array>
+				<string>Encapsulation</string>
+				<string>Polymorphism</string>
+				<string>Inheritance</string>
+				<string>Method overriding</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Method overriding&lt;/h2&gt;
+&lt;p&gt;Encapsulation is the packing of data and functions into a single component. The features of encapsulation are supported using classes in most object-oriented programming languages, although other alternatives also exist. It allows selective hiding of properties and methods in an object by building an impenetrable wall to protect the code from accidental corruption.&lt;/p&gt;
+&lt;p&gt;In programming languages and type theory, polymorphism is the provision of a single interface to entities of different types.[1] A polymorphic type is a type whose operations can also be applied to values of some other type, or types.&lt;/p&gt;
+&lt;p&gt;In object-oriented programming (OOP), inheritance is when an object or class is based on another object or class, using the same implementation (inheriting from a class) specifying implementation to maintain the same behavior (realizing an interface; inheriting behavior). It is a mechanism for code reuse and to allow independent extensions of the original software via public classes and interfaces.&lt;/p&gt;
+&lt;p&gt;Method overriding, in object oriented programming, is a language feature that allows a subclass or child class to provide a specific implementation of a method that is already provided by one of its superclasses or parent classes. The implementation in the subclass overrides (replaces) the implementation in the superclass by providing a method that has same name, same parameters or signature, and same return type as the method in the parent class.&lt;/p&gt;
+
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Encapsulation_(object-oriented_programming)&quot;&gt;Wikipedia page&lt;/a&gt;
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Polymorphism_(computer_science)&quot;&gt;Wikipedia page&lt;/a&gt;
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)&quot;&gt;Wikipedia page&lt;/a&gt;
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Method_overriding&quot;&gt;Wikipedia page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;The following code illustrates the idea of ...&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+class Thought {
+    public void message() {
+        System.out.println(&quot;I feel like I am diagonally parked in a parallel universe.&quot;);
+    }
+}
+class Advice extends Thought {
+    public void message() {
+        System.out.println(&quot;Warning: Dates in calendar are closer than they appear.&quot;);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>any parameter</string>
+			<key>Id</key>
+			<string>534</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>void method();</string>
+				<string>void method(Object obj);</string>
+				<string>void method(object obj);</string>
+				<string>void method(obj);</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Class Object (not object!) is the root of the class hierarchy. Every class has Object as a superclass. All objects, including arrays, implement the methods of this class.&lt;/p&gt;
+&lt;a href=&quot;https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html&quot;&gt;docs.oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is the correct signature of a method that accepts any type as a parameter?&lt;/h2&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>instance of</string>
+			<key>Id</key>
+			<string>535</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>if (o castable String)</string>
+				<string>if (o is String)</string>
+				<string>if (o instanceof String)</string>
+				<string>if (o typeof String)</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;The instanceof operator compares an object to a specified type. You can use it to test if an object is an instance of a class, an instance of a subclass, or an instance of a class that implements a particular interface. castable, is and typeof operators don&apos;t exist in Java.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op2.html&quot;&gt;docs.oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;How do you check if the Object is a String type?&lt;/h2&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>if syntax</string>
+			<key>Id</key>
+			<string>536</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>if (a == b) { }</string>
+				<string>if a == b { }</string>
+				<string>if a = b { }</string>
+				<string>if (a = b) { }</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;The second and third statements are incorrect because Java requires all conditions to be in brackets.&lt;/p&gt;
+&lt;p&gt;The third and fourth statements are incorrect because there is &quot;=&quot; operator, which is an assignment operator and it doesn&apos;t compare two objects.&lt;/p&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Choose the correct if statement(s):&lt;/h2&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>extends/implements</string>
+			<key>Id</key>
+			<string>537</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>true false</string>
+				<string>false true</string>
+				<string>true true</string>
+				<string>false false</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;The instanceof operator compares an object to a specified type. You can use it to test if an object is an instance of a class, an instance of a subclass, or an instance of a class that implements a particular interface.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op2.html&quot;&gt;docs.oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+class A { }
+interface B { }
+class C extends A implements B {}
+...
+C c = new C();
+System.out.println((c instanceof A) + &quot; &quot; + (c instanceof B));
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>types</string>
+			<key>Id</key>
+			<string>538</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2+4</string>
+			<key>answers</key>
+			<array>
+				<string>int, Int</string>
+				<string>double, Double</string>
+				<string>string, String</string>
+				<string>float, Float</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;double and float are primitive types, the Double class wraps a value of the primitive type double in an object and the Float class wraps a value of the primitive type float in an object.&lt;/p&gt;
+&lt;p&gt;int is a primitive type, but there is no Int class (there is an Integer class).&lt;/p&gt;
+&lt;p&gt;String is a class, but there is no string type.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html&quot;&gt;docs.oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Choose the correct Java types:&lt;/h2&gt;&lt;p&gt;(select all)&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>bad var name</string>
+			<key>Id</key>
+			<string>539</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>Yes</string>
+				<string>No</string>
+				<string>Yes, but it is considered to be a bad practice</string>
+				<string>Yes, but for local variables only</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;A variable&apos;s name can be any legal identifier — an unlimited-length sequence of Unicode letters and digits, beginning with a letter, the dollar sign &quot;$&quot;, or the underscore character &quot;_&quot;. The convention, however, is to always begin your variable names with a letter, not &quot;$&quot; or &quot;_&quot;. Additionally, the dollar sign character, by convention, is never used at all. You may find some situations where auto-generated names will contain the dollar sign, but your variable names should always avoid using it.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html&quot;&gt;docs.oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Is the following variable name correct?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+int abc$abc = 25;
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+	</array>
+</dict>
+</plist>

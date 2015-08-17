@@ -29,6 +29,7 @@
 		99DB0B4C1B8198F600C4F189 /* AQ10_Java1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DB0B4B1B8198F600C4F189 /* AQ10_Java1.plist */; };
 		99DB0B4E1B81E87B00C4F189 /* AQ11_Java2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DB0B4D1B81E87B00C4F189 /* AQ11_Java2.plist */; };
 		99DB0B501B81EE3D00C4F189 /* AQ12_Java3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DB0B4F1B81EE3D00C4F189 /* AQ12_Java3.plist */; };
+		99DB0B521B81F48D00C4F189 /* AQ13_Java4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DB0B511B81F48D00C4F189 /* AQ13_Java4.plist */; };
 		99E3F31F1B07534A00F4D955 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E3F31E1B07534A00F4D955 /* ViewController.swift */; };
 		99E3F3211B07536A00F4D955 /* ScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E3F3201B07536A00F4D955 /* ScoreController.swift */; };
 		99E3F3231B07537D00F4D955 /* AnswerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E3F3221B07537D00F4D955 /* AnswerController.swift */; };
@@ -76,6 +77,7 @@
 		99DB0B4B1B8198F600C4F189 /* AQ10_Java1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ10_Java1.plist; path = resources/AQ10_Java1.plist; sourceTree = SOURCE_ROOT; };
 		99DB0B4D1B81E87B00C4F189 /* AQ11_Java2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ11_Java2.plist; path = resources/AQ11_Java2.plist; sourceTree = SOURCE_ROOT; };
 		99DB0B4F1B81EE3D00C4F189 /* AQ12_Java3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ12_Java3.plist; path = resources/AQ12_Java3.plist; sourceTree = SOURCE_ROOT; };
+		99DB0B511B81F48D00C4F189 /* AQ13_Java4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ13_Java4.plist; path = resources/AQ13_Java4.plist; sourceTree = SOURCE_ROOT; };
 		99E3F31E1B07534A00F4D955 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		99E3F3201B07536A00F4D955 /* ScoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreController.swift; sourceTree = "<group>"; };
 		99E3F3221B07537D00F4D955 /* AnswerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerController.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				99DB0B4B1B8198F600C4F189 /* AQ10_Java1.plist */,
 				99DB0B4D1B81E87B00C4F189 /* AQ11_Java2.plist */,
 				99DB0B4F1B81EE3D00C4F189 /* AQ12_Java3.plist */,
+				99DB0B511B81F48D00C4F189 /* AQ13_Java4.plist */,
 			);
 			name = "In-App-Purchases";
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				9920C46F1AF4EC67007FD2D9 /* AQ3_Swift.plist in Resources */,
 				9969AED51AF382EC00DFB8EE /* Main.storyboard in Resources */,
 				99D5B33D1AF387BD005CE456 /* stub_basic_langs.html in Resources */,
+				99DB0B521B81F48D00C4F189 /* AQ13_Java4.plist in Resources */,
 				9969AEDA1AF382EC00DFB8EE /* LaunchScreen.xib in Resources */,
 				99D5B33A1AF387BD005CE456 /* AQ1_Linux.plist in Resources */,
 				9975CF451AF53FE200A698F0 /* AQ4_Cpp.plist in Resources */,
