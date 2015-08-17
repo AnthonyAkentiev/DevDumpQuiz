@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>questions</key>
+	<array>
+		<dict>
+			<key>Comment</key>
+			<string>iterations</string>
+			<key>Id</key>
+			<string>520</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>6</string>
+				<string>3</string>
+				<string>9</string>
+				<string>0</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;On the first line variable x is being initialized with value 0.&lt;/p&gt;
+&lt;p&gt;Then there is a &quot;for&quot; loop. It repeatedly executes the following line:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+x += i;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;but with different value of i each time. First time the value of i is 3 and decrements each time by 1 until it becomes 1.&lt;/p&gt;
+&lt;p&gt;3 + 2 + 1 = 6, so the correct answer is 6.&lt;/p&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+int x = 0;
+for (int i = 3; i &gt;= 1; --i) {
+    x += i;
+}
+System.out.println(x);
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>array multiply</string>
+			<key>Id</key>
+			<string>521</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>4</string>
+			<key>answers</key>
+			<array>
+				<string>Fourth line: m = m * arr[i];</string>
+				<string>Third line: for (int i = 1; i &lt;= 3; ++i) {</string>
+				<string>Third line: for (int i = 0; i &lt;= 3; ++i) {</string>
+				<string>Second line: int m = 1;</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;The problem of this code is that variable m is initialized with zero and multiplication by zero always gives zero as a result.&lt;/p&gt;
+&lt;p&gt;So, no matter what elements of array are, the result is always zero.&lt;/p&gt;
+&lt;p&gt;In order to fix this problem you should simply change the second line and initialize variable m with 1.&lt;/p&gt;
+&lt;p&gt;All other lines are correct.&lt;/p&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Which line needs to be changed so that this program prints the product of elements of array arr?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+int arr[] = {2, 3, 4};
+int m = 0;
+for (int i = 0; i &lt; 3; ++i) {
+    m *= arr[i];
+}
+System.out.println(m);
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>iterations with add</string>
+			<key>Id</key>
+			<string>522</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>4.4</string>
+				<string>4.6</string>
+				<string>4.5</string>
+				<string>3.0</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;On the first line variable n is being initialized with value 3.0.&lt;/p&gt;
+&lt;p&gt;The postfix &quot;f&quot; is used in order to show that 3.0 is float.&lt;/p&gt;
+&lt;p&gt;Then there is a &quot;while&quot; loop. It repeatedly executes the following line:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+n += 0.2;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and it does it while the value of variable n is less than 4.5.&lt;/p&gt;
+&lt;p&gt;Values of variable n changes the following way: 3.0, 3.2, 3.4, 3.6, 3.8, 4.0, 4.2, 4.4, 4.6.&lt;/p&gt;
+&lt;p&gt;The last value that is less then 4.5 is 4.4 so it is incremented by 0.2 one more time (it is 4.6 now) and gets printed.&lt;/p&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+float n = 3.0f;
+while (n &lt; 4.5) {
+    n += 0.2;
+}
+System.out.println(n);
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>iterations multiply</string>
+			<key>Id</key>
+			<string>523</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>0</string>
+				<string>55</string>
+				<string>30</string>
+				<string>Nothing, program will be stuck in an infinite loop</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;On the first line variable n is being initialized with value 1.&lt;/p&gt;
+&lt;p&gt;On the second line variable s is being initialized with value 0.&lt;/p&gt;
+&lt;p&gt;Then there is a &quot;while&quot; loop. It repeatedly executes the following line:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+s += n*n;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But the problem is that the value of variable n never changes, it always stays the same and equals to 1.&lt;/p&gt;
+&lt;p&gt;So the condition in while loop always returns true and this loop runs forever.&lt;/p&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+int n = 1;
+int s = 0;
+while (n &lt; 5) {
+	s += n*n;
+}
+System.out.println(s);
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>iterate multiple</string>
+			<key>Id</key>
+			<string>524</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>0 6 12 18</string>
+				<string>0 9 24 36</string>
+				<string>0 12 36 48</string>
+				<string>Nothing, program will be stuck in an infinite loop</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;On the first line variable x is being initialized with value 0.&lt;/p&gt;
+&lt;p&gt;On the second line variable y is being initialized with value 0.&lt;/p&gt;
+&lt;p&gt;Then there is a &quot;while&quot; loop. It repeatedly executes the following code:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+if (x &lt;= 5) y = x * 3;
+else y = x * 4;
+System.out.print(y + &quot; &quot;);
+x += 3;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;On the first run y equals to zero so zero gets printed.&lt;/p&gt;
+&lt;p&gt;On the second run y equals to 3*3=9 so 9 gets prined.&lt;/p&gt;
+&lt;p&gt;Now we can tell that the correct answer is the second one.&lt;/p&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+int x = 0;
+int y = 0;
+while (x &lt;= 10) {
+    if (x &lt;= 5) y = x * 3;
+    else y = x * 4;
+    System.out.print(y + &quot; &quot;);
+    x += 3;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>substring</string>
+			<key>Id</key>
+			<string>525</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>some text</string>
+				<string>some</string>
+				<string>text</string>
+				<string>Runtime exception will be thrown</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;The correct answer is &quot;some text&quot; because String is an immutable class (its methods cannot modify its fields, and also the fields are always private and recommended to be final) and you cannot change the current String but you can return a new String, i.e: &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+String a = s.substring(0,4);
+System.out.println(a); // prints &quot;some&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Generally speaking, substring method doesn&apos;t change the current string, instead it returns the new one.&lt;/p&gt;
+
+&lt;a href=&quot;http://stackoverflow.com/a/8798424/1389883&quot;&gt;Stackoverflow answer&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+String s = &quot;some text&quot;;
+s.substring(0,4);
+System.out.println(s);
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>class Thing</string>
+			<key>Id</key>
+			<string>526</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>Lines 1, 2, 3, 4</string>
+				<string>Lines 2, 4</string>
+				<string>Lines 1, 3</string>
+				<string>Line 1</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Lines 2 and 4 are incorrect because Java has no operator &quot;::&quot;. Lines 1 and 3 are correct because Java has operator &quot;.&quot;. But remember that line 3 is considered to be a bad practice because it gets access to the static field via object, which may be counter-intuitive. Counter-intuitive code hampers ease of maintenance. Logically, we expect that static data is not changed or accessed via objects, so use a class name instead.&lt;/p&gt;
+
+&lt;a href=&quot;http://stackoverflow.com/a/4869169/1389883&quot;&gt;Stackoverflow answer&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Which of the following line will compile successfully?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+class Thing {
+	public static int v;
+}
+...
+int a = Thing.v; // line 1
+int b = Thing::v; // line 2
+int c = new Thing().v; // line 3
+int d = new Thing()::v; // line 4
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>int to string</string>
+			<key>Id</key>
+			<string>527</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1+2+3</string>
+			<key>answers</key>
+			<array>
+				<string>String.valueOf(number)</string>
+				<string>&quot;&quot; + number</string>
+				<string>Integer.toString(number)</string>
+				<string>number.toString()</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;The First, second and third option are correct. The first and third options are basically identical. String.valueOf(int) delegates to Integer.toString(int) for radixes of 10. As for the second one, the compiler converts &quot;&quot; + number into a StringBuilder internally and uses .append(int) to &quot;add&quot; the integer to the string.&lt;/p&gt;
+
+&lt;a href=&quot;http://stackoverflow.com/a/5071064/1389883&quot;&gt;Stackoverflow answer&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;How do you convert integer to string?&lt;/h2&gt;&lt;p&gt;(select all)&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>string to int</string>
+			<key>Id</key>
+			<string>528</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1+2</string>
+			<key>answers</key>
+			<array>
+				<string>Integer.valueOf(str)</string>
+				<string>Integer.parseInt(str)</string>
+				<string>str.toInt()</string>
+				<string>str.toInteger()</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Both first and second answers are correct. But there is a slight difference between these methods:&lt;/p&gt;
+&lt;p&gt;valueOf returns new instance of java.lang.Integer while parseInt returns primitive int:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+Integer x = Integer.valueOf(str);
+int y = Integer.parseInt(str);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;a href=&quot;http://stackoverflow.com/a/5585876/1389883&quot;&gt;Stackoverflow answer&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;How do you convert string to int?&lt;/h2&gt;&lt;p&gt;(select all)&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>first and last indexes</string>
+			<key>Id</key>
+			<string>529</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>the first element is at index 0, the last one is at index n</string>
+				<string>the first element is at index 0, the last one is at index n-1</string>
+				<string>the first element is at index 1, the last one is at index n</string>
+				<string>the first element is at index 1, the last one is at index n-1</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;the first element is at index 0, the last one is at index n-1&lt;/p&gt;
+&lt;p&gt;In Java, numbering in arrays always begins with 0. The 1st elemnt, for example, would therefore be accessed at index 0 and the nth element would be accessed at index n-1.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html&quot;&gt;docs.oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Choose the correct answer.&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+int[] arr = new int[n];
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+	</array>
+</dict>
+</plist>
