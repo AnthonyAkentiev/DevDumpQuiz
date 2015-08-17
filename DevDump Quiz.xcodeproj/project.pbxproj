@@ -26,6 +26,7 @@
 		99D5B33C1AF387BD005CE456 /* Q1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99D5B3381AF387BD005CE456 /* Q1.plist */; };
 		99D5B33D1AF387BD005CE456 /* stub_basic_langs.html in Resources */ = {isa = PBXBuildFile; fileRef = 99D5B3391AF387BD005CE456 /* stub_basic_langs.html */; };
 		99DB0B4A1B818B5700C4F189 /* AQ9_Python4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DB0B491B818B5700C4F189 /* AQ9_Python4.plist */; };
+		99DB0B4C1B8198F600C4F189 /* AQ10_Java1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DB0B4B1B8198F600C4F189 /* AQ10_Java1.plist */; };
 		99E3F31F1B07534A00F4D955 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E3F31E1B07534A00F4D955 /* ViewController.swift */; };
 		99E3F3211B07536A00F4D955 /* ScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E3F3201B07536A00F4D955 /* ScoreController.swift */; };
 		99E3F3231B07537D00F4D955 /* AnswerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E3F3221B07537D00F4D955 /* AnswerController.swift */; };
@@ -70,6 +71,7 @@
 		99D5B3381AF387BD005CE456 /* Q1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Q1.plist; path = resources/Q1.plist; sourceTree = SOURCE_ROOT; };
 		99D5B3391AF387BD005CE456 /* stub_basic_langs.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = stub_basic_langs.html; path = resources/stub_basic_langs.html; sourceTree = SOURCE_ROOT; };
 		99DB0B491B818B5700C4F189 /* AQ9_Python4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ9_Python4.plist; path = resources/AQ9_Python4.plist; sourceTree = SOURCE_ROOT; };
+		99DB0B4B1B8198F600C4F189 /* AQ10_Java1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ10_Java1.plist; path = resources/AQ10_Java1.plist; sourceTree = SOURCE_ROOT; };
 		99E3F31E1B07534A00F4D955 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		99E3F3201B07536A00F4D955 /* ScoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreController.swift; sourceTree = "<group>"; };
 		99E3F3221B07537D00F4D955 /* AnswerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				99264FF51B6F8F4C00772AED /* AQ7_Python2.plist */,
 				99264FF71B6F96E400772AED /* AQ8_Python3.plist */,
 				99DB0B491B818B5700C4F189 /* AQ9_Python4.plist */,
+				99DB0B4B1B8198F600C4F189 /* AQ10_Java1.plist */,
 			);
 			name = "In-App-Purchases";
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				99264FF81B6F96E400772AED /* AQ8_Python3.plist in Resources */,
 				997CFCE41B07A405001BE575 /* AQ6_Python.plist in Resources */,
 				99264FF61B6F8F4C00772AED /* AQ7_Python2.plist in Resources */,
+				99DB0B4C1B8198F600C4F189 /* AQ10_Java1.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

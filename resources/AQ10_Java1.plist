@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>questions</key>
+	<array>
+		<dict>
+			<key>Comment</key>
+			<string>arrays</string>
+			<key>Id</key>
+			<string>500</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>4</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>int[] Integer</string>
+				<string>Integer int[]</string>
+				<string>int[] int[]</string>
+				<string>This code won&apos;t compile</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Arrays&lt;/h2&gt;
+&lt;p&gt;&quot;int[] a&quot; and &quot;int b[]&quot; are both simple Java arrays. The &quot;int array[]&quot; syntax was only added to help C programmers get used to Java. But if you happen to declare more than one variable in the same declaration:&lt;p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+int[] a, b;  // Both a and b are arrays of type int
+int c[], d;  // WARNING: c is an array, but d is just a regular int
+&lt;/code&gt;&lt;pre&gt;
+&lt;p&gt;Note that the second line is bad coding style, you should&apos;t be using it in real projects.&lt;/p&gt;
+ 
+&lt;a href=&quot;http://stackoverflow.com/questions/129178/difference-between-int-array-and-int-array&quot;&gt;Stackoverflow post&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+int[] a = {1};
+int b[] = {1};
+System.out.println(a.getClass().getSimpleName() + &quot; &quot; + b.getClass().getSimpleName());
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>print array</string>
+			<key>Id</key>
+			<string>501</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>1+2</string>
+			<key>answers</key>
+			<array>
+				<string>System.out.println(Arrays.toString(strArray));</string>
+				<string>System.out.println(Arrays.deepToString(strArray));</string>
+				<string>System.out.println(strArray);</string>
+				<string>System.out.println(strArray.toString());</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Arrays&lt;/h2&gt;
+&lt;p&gt;Correct ways of printing Java arrays are 1 and 2. In this case, the result will be the same, it doesn&apos;t matter if you are using &quot;Arrays.toString&quot; or &quot;Arrays.deepToString&quot;. But if you happen to have an array of custom class (user-defined class), you should use &quot;Arrays.deepToString&quot; to get contents of each member of your user-defined class. Third answer is incorrect (as well as the fourth one) because it prints not contents but object&apos;s identifier.&lt;/p&gt;
+ 
+&lt;a href=&quot;http://stackoverflow.com/questions/409784/whats-the-simplest-way-to-print-a-java-array&quot;&gt;Stackoverflow post&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;How to print contents of Java array?&lt;/h2&gt;
+&lt;p&gt;(select all)&lt;/p&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+String[] strArray = new String[] {&quot;Item1&quot;, &quot;Item2&quot;, &quot;Item3&quot;};
+//printing line goes here
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>declare arrays</string>
+			<key>Id</key>
+			<string>502</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1+2+3</string>
+			<key>answers</key>
+			<array>
+				<string>int[] myIntArray = new int[3];</string>
+				<string>int[] myIntArray = {1,2,3};</string>
+				<string>int[] myIntArray = new int[]{1,2,3};</string>
+				<string>int[] myIntArray = []{1,2,3};</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Answers 1, 2 and 3 are correct. In Java there are 3 ways of declaring arrays allowed:&lt;/p&gt;
+&lt;p&gt;1. The array is initialized with default values (&quot;0&quot; in our case).&lt;/p&gt;
+&lt;p&gt;2. The array is initialized with initializer-list (values between &quot;{&quot; and &quot;}&quot;).&lt;/p&gt;
+&lt;p&gt;3. The array is initialized with initializer-list (values between &quot;{&quot; and &quot;}&quot;), and specifying array&apos;s type right before initializer-list.&lt;/p&gt;
+&lt;p&gt;The second way doesn&apos;t work with return statements. &quot;return {1,2,3}&quot;&quot; gives an error, while &quot;return new int[]{1,2,3}&quot;&quot; works fine (assuming of course that your function returns an integer array).&lt;/p&gt;
+&lt;p&gt;Fourth answer is incorrect, Java syntax doesn&apos;t allow such statements.&lt;/p&gt;
+
+&lt;a href=&quot;http://stackoverflow.com/questions/1200621/declare-array-in-java&quot;&gt;Stackoverflow post&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;How to declare one dimensional int array in Java?&lt;/h2&gt;&lt;p&gt;(select all)&lt;/p&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>function overtloading</string>
+			<key>Id</key>
+			<string>503</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>Yes</string>
+				<string>No</string>
+				<string>Only primitive types (int, boolean, short, etc.</string>
+				<string>Only classes (String, user-defined classes, etc.)</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Function overloading&lt;/h2&gt;
+&lt;p&gt;No, Java does not support function overloading by return type.&lt;/p&gt;
+&lt;p&gt;In Java, you are not forced to use function&apos;s return value. Let&apos;s see an example:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+int func();
+string func();
+int main() { func(); }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can&apos;t tell which &quot;func()&quot; is being called. This can only be resolved if you are using function&apos;s return value.&lt;/p&gt;
+&lt;a href=&quot;http://stackoverflow.com/questions/442026/function-overloading-by-return-type&quot;&gt;Stackoverflow post&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Does Java support function overloading by return type?&lt;/h2&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>method call</string>
+			<key>Id</key>
+			<string>504</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>4</string>
+			<key>Correct Answers</key>
+			<string>1+2+3+4</string>
+			<key>answers</key>
+			<array>
+				<string>myMethod();</string>
+				<string>myMethod(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;);</string>
+				<string>myMethod(&quot;a&quot;);</string>
+				<string>myMethod(new String[]{&quot;a&quot;, &quot;b&quot;, &quot;c&quot;});</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;All four options are possible, you can pass 0, 1, or more values as a parameter this way.&lt;/p&gt;
+&lt;p&gt;In Java, the parameter(s) passed in this way is always an array - even if there&apos;s just one or zero.&lt;/p&gt;
+&lt;p&gt;The parameter that gets the ... must be the last in the method signature. So, &quot;myMethod(int i, String... strings)&quot; is okay, but &quot;myMethod(String... strings, int i)&quot; is not okay.&lt;/p&gt;
+
+
+&lt;a href=&quot;http://stackoverflow.com/questions/3158730/java-3-dots-in-parameters&quot;&gt;Stackoverflow post&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Which line(s) can be used to call the following method?&lt;/h2&gt;&lt;p&gt;(select all)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+public void myMethod(String... strings){
+    // method body
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>505</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>Yes</string>
+				<string>No, because of invalid method declaration</string>
+				<string>No, because of invalid access modifiers</string>
+				<string>No, because of invalid return value</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;This code compiles successfully.&lt;/p&gt;
+&lt;p&gt;Method &quot;get&quot; returns an &quot;int[]&quot;.&lt;/p&gt;
+&lt;p&gt;Java Language Specification (8.4 Method Declarations): For compatibility with older versions of the Java platform, a declaration form for a method that returns an array is allowed to place (some or all of) the empty bracket pairs that form the declaration of the array type after the parameter list. This is supported by the obsolescent production:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+MethodDeclarator:
+	MethodDeclarator [ ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;but should not be used in new code.&lt;/p&gt;
+
+&lt;a href=&quot;http://stackoverflow.com/questions/4699309/weird-after-java-method-signature&quot;&gt;Stackoverflow post&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Will be the following Java code compiled successfully?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+public class Sample {
+  public int get()[] {
+    return new int[]{1, 2, 3};
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>506</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>This code won&apos;t compile due to the error on line 3</string>
+				<string>This code won&apos;t compile due to the error on line 4</string>
+				<string>This code won&apos;t compile due to the error on lines 3 and 4</string>
+				<string>This code compiles fine</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;This code won&apos;t compile due to the error on line 3.&lt;/p&gt;
+&lt;p&gt;JLS §15.26.2 Compound Assignment Operators:&lt;/p&gt;
+&lt;p&gt;A compound assignment expression of the form E1 op= E2 is equivalent to E1 = (T)((E1) op (E2)), where T is the type of E1, except that E1 is evaluated only once.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+short x = 3;
+x += 4.6;
+
+//same as:
+
+short x = 3;
+x = (short)(x + 4.6);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;a href=&quot;http://stackoverflow.com/questions/8710619/java-operator&quot;&gt;Stackoverflow post&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Choose the correct answer.&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+int i = 5;
+long j = 8;
+i = i + j; // line 3
+i += j; // line 4
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>507</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>4</string>
+			<key>answers</key>
+			<array>
+				<string>This code won&apos;t compile</string>
+				<string>This code compiles, but throws Runtime error on line 2</string>
+				<string>This code compiles, but throws Runtime error on line 3</string>
+				<string>This code compiles and prints &quot;123&quot;</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;This code compiles and prints &quot;123&quot;.&lt;/p&gt;
+&lt;p&gt;HashMap allows one null key and any number of null values, unlike Hashtable, that does not allow null keys or values.&lt;/p&gt;
+&lt;p&gt;Null&apos;s hash always equals to 0.&lt;/p&gt;
+&lt;p&gt;So, none of the rules are broken here, we are using null as a key and assigning it to value 123.&lt;/p&gt;
+&lt;p&gt;Even the following code is correct:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+HashMap&lt;String, Integer&gt; map = new HashMap&lt;String, Integer&gt;();
+map.put(null,  null);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;a href=&quot;http://stackoverflow.com/questions/40471/differences-between-hashmap-and-hashtable&quot;&gt;Stackoverflow post&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What can you say about the following code?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+HashMap&lt;String, Integer&gt; map = new HashMap&lt;String, Integer&gt;();
+map.put(null,  123); // line 2
+System.out.println(map.get(null)); // line 3
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>string comparison</string>
+			<key>Id</key>
+			<string>508</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>str1 == str2</string>
+				<string>str1.equals(str2)</string>
+				<string>java.util.StringCompare(str1, str2)</string>
+				<string>java.util.StringEqual(str1, str2)</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Reference equality&lt;/h2&gt;
+&lt;p&gt;== operator tests for reference equality.&lt;/p&gt;
+&lt;p&gt;.equals() tests for value equality.&lt;/p&gt;
+&lt;p&gt;Consequently, if you actually want to test whether two strings have the same value you should use .equals().&lt;/p&gt;
+&lt;p&gt;java.util.StringCompare() and java.util.StringEqual() don&apos;t exist, &quot;java.util&quot; (or any other package) doesn&apos;t have such members.&lt;/p&gt;
+
+&lt;a href=&quot;http://stackoverflow.com/questions/513832/how-do-i-compare-strings-in-java&quot;&gt;Stackoverflow post&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;How to compare string contents in Java?&lt;/h2&gt;
+ 
+## список ответов:
+1) str1 == str2
+2) str1.equals(str2)
+3) java.util.StringCompare(str1, str2)
+4) java.util.StringEqual(str1, str2)</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>nested classes</string>
+			<key>Id</key>
+			<string>509</string>
+			<key>Tags</key>
+			<string>Java, Screen2</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>4</string>
+			<key>answers</key>
+			<array>
+				<string>Yes, but only in static outer class</string>
+				<string>No</string>
+				<string>Yes, but only in non-static outer class</string>
+				<string>Yes</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;Nested classes&lt;/h2&gt;
+&lt;p&gt;Nested classes are divided into two categories: static and non-static. Nested classes that are declared static are simply called static nested classes. Non-static nested classes are called inner classes. A static nested class interacts with the instance members of its outer class (and other classes) just like any other top-level class. In effect, a static nested class is behaviorally a top-level class that has been nested in another top-level class for packaging convenience.&lt;/p&gt;
+
+&lt;a href=&quot;http://docs.oracle.com/javase/tutorial/java/javaOO/nested.html&quot;&gt;docs.oracle.com page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Does Java support nested classes?&lt;/h2&gt;</string>
+		</dict>
+	</array>
+</dict>
+</plist>
