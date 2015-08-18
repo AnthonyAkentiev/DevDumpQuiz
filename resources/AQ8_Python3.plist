@@ -298,7 +298,7 @@ do_something(1, 2, 3, actually_print = True, 4, 5, 6)
 			<key>Tags</key>
 			<string>Python, Screen</string>
 			<key>Level</key>
-			<string>3</string>
+			<string>2</string>
 			<key>Correct Answers</key>
 			<string>1</string>
 			<key>answers</key>

@@ -51,7 +51,7 @@ class CorrectAnswerController: UIViewController {
         lblCorrect?.text = String(appDelegate.model.getCorrectAnswersInRound()) + "/" +
             String(appDelegate.model.getQuestionIndex())
         
-        lblLevel?.text = (appDelegate.model.getQuestionLevel() as String) + "/10"
+        lblLevel?.text = (appDelegate.model.getQuestionLevel() as String) + "/5"
         lblTopic?.text = (appDelegate.model.getQuestionTags() as String)
         
         var progressVal: Float =
