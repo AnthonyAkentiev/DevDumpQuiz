@@ -33,6 +33,8 @@
 		99DB0B541B81FBDA00C4F189 /* AQ14_Java5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DB0B531B81FBDA00C4F189 /* AQ14_Java5.plist */; };
 		99DB0B561B821F5100C4F189 /* AQ15_Java6.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DB0B551B821F5100C4F189 /* AQ15_Java6.plist */; };
 		99DB0B581B82260600C4F189 /* AQ16_Java7.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DB0B571B82260600C4F189 /* AQ16_Java7.plist */; };
+		99DB0B5A1B822E6C00C4F189 /* AQ17_Java8.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DB0B591B822E6C00C4F189 /* AQ17_Java8.plist */; };
+		99DB0B5C1B830C7900C4F189 /* AQ18_Java9.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DB0B5B1B830C7900C4F189 /* AQ18_Java9.plist */; };
 		99E3F31F1B07534A00F4D955 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E3F31E1B07534A00F4D955 /* ViewController.swift */; };
 		99E3F3211B07536A00F4D955 /* ScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E3F3201B07536A00F4D955 /* ScoreController.swift */; };
 		99E3F3231B07537D00F4D955 /* AnswerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E3F3221B07537D00F4D955 /* AnswerController.swift */; };
@@ -84,6 +86,8 @@
 		99DB0B531B81FBDA00C4F189 /* AQ14_Java5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ14_Java5.plist; path = resources/AQ14_Java5.plist; sourceTree = SOURCE_ROOT; };
 		99DB0B551B821F5100C4F189 /* AQ15_Java6.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ15_Java6.plist; path = resources/AQ15_Java6.plist; sourceTree = SOURCE_ROOT; };
 		99DB0B571B82260600C4F189 /* AQ16_Java7.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ16_Java7.plist; path = resources/AQ16_Java7.plist; sourceTree = SOURCE_ROOT; };
+		99DB0B591B822E6C00C4F189 /* AQ17_Java8.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ17_Java8.plist; path = resources/AQ17_Java8.plist; sourceTree = SOURCE_ROOT; };
+		99DB0B5B1B830C7900C4F189 /* AQ18_Java9.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ18_Java9.plist; path = resources/AQ18_Java9.plist; sourceTree = SOURCE_ROOT; };
 		99E3F31E1B07534A00F4D955 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		99E3F3201B07536A00F4D955 /* ScoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreController.swift; sourceTree = "<group>"; };
 		99E3F3221B07537D00F4D955 /* AnswerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerController.swift; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 				99DB0B531B81FBDA00C4F189 /* AQ14_Java5.plist */,
 				99DB0B551B821F5100C4F189 /* AQ15_Java6.plist */,
 				99DB0B571B82260600C4F189 /* AQ16_Java7.plist */,
+				99DB0B591B822E6C00C4F189 /* AQ17_Java8.plist */,
+				99DB0B5B1B830C7900C4F189 /* AQ18_Java9.plist */,
 			);
 			name = "In-App-Purchases";
 			sourceTree = "<group>";
@@ -300,6 +306,8 @@
 				99D5B33D1AF387BD005CE456 /* stub_basic_langs.html in Resources */,
 				99DB0B521B81F48D00C4F189 /* AQ13_Java4.plist in Resources */,
 				9969AEDA1AF382EC00DFB8EE /* LaunchScreen.xib in Resources */,
+				99DB0B5C1B830C7900C4F189 /* AQ18_Java9.plist in Resources */,
+				99DB0B5A1B822E6C00C4F189 /* AQ17_Java8.plist in Resources */,
 				99D5B33A1AF387BD005CE456 /* AQ1_Linux.plist in Resources */,
 				9975CF451AF53FE200A698F0 /* AQ4_Cpp.plist in Resources */,
 				99D5B33B1AF387BD005CE456 /* AQ2.plist in Resources */,

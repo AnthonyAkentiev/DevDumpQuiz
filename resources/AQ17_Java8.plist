@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>questions</key>
+	<array>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>570</string>
+			<key>Tags</key>
+			<string>Java, Screen4</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>line 1, 2 and 3</string>
+				<string>line 1 and 2</string>
+				<string>line 1</string>
+				<string>none of them</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;null can only be assigned to reference type, you cannot assign null to primitive variables e.g. int, double, float or boolean. Compiler will complain if you do so. When you directly assign null to primitive it&apos;s compile time error, but if you assign null to a wrapper class object and then assign that object to respective primitive type, compiler doesn&apos;t complain, but you would be greeted by null pointer exception at runtime. This happens because of autoboxing in Java.&lt;/p&gt;
+
+&lt;a href=&quot;http://javarevisited.blogspot.ru/2014/12/9-things-about-null-in-java.html&quot;&gt;javarevisited page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Which of the following lines lead to compile time error?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+int i = null; // line 1
+Integer itr = null; // line 2
+int j = itr; // line 3
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>integer throw</string>
+			<key>Id</key>
+			<string>571</string>
+			<key>Tags</key>
+			<string>Java, Screen4</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>Compile time error</string>
+				<string>Runtime Error</string>
+				<string>null</string>
+				<string>0</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;When you directly assign null to primitive error it&apos;s compile time error, but if you assign null to a wrapper class object and then assign that object to respective primitive type, compiler doesn&apos;t complain, but you would be greeted by null pointer exception at runtime. This happens because of autoboxing in Java.&lt;/p&gt;
+&lt;p&gt;Autoboxing is the automatic conversion that the Java compiler makes between the primitive types and their corresponding object wrapper classes. For example, converting an int to an Integer, a double to a Double, and so on. If the conversion goes the other way, this is called unboxing.&lt;/p&gt;
+&lt;p&gt;In this example, Integer can have null value, but primitive type int can&apos;t, so it throws null pointer exception.&lt;/p&gt;
+
+&lt;a href=&quot;http://javarevisited.blogspot.ru/2014/12/9-things-about-null-in-java.html&quot;&gt;javarevisited page&lt;/a&gt;
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html&quot;&gt;oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is the output of following program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+Integer k = null;
+int j = k;
+System.out.println(j);
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>HashMap</string>
+			<key>Id</key>
+			<string>572</string>
+			<key>Tags</key>
+			<string>Java, Screen4</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>Compile time error</string>
+				<string>Runtime error</string>
+				<string>null</string>
+				<string>123</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;You can&apos;t use primitive types as generic arguments in Java. Use instead:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+Map&lt;String, Integer&gt; myMap = new HashMap&lt;String, Integer&gt;();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In generic classes, a type variable can be any non-primitive type you specify: any class type, any interface type, any array type, or even another type variable. This happens because anything that is used as generics has to be convertable to Object, and the primitive types aren&apos;t. So they can&apos;t be used in generics.&lt;/p&gt;
+
+&lt;a href=&quot;http://stackoverflow.com/a/1780390/1389883&quot;&gt;Stackoverflow answer&lt;/a&gt;
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/generics/types.html&quot;&gt;oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is the output of following program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+Map&lt;String, int&gt; myMap = new HashMap&lt;String, int&gt;();
+myMap.put(&quot;123&quot;, 123);
+System.out.println(myMap.get(&quot;123&quot;));
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>573</string>
+			<key>Tags</key>
+			<string>Java, Screen4</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>Compile time error</string>
+				<string>Runtime error</string>
+				<string>1 - 1; 2 - 2; 3 - 3;</string>
+				<string>1 - 0; 2 - 0; 3 - 0;</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;This code looks very simple and innocuous. All you are doing is finding how many times a number has appeared in a array, classic technique to find duplicates in Java array. Developer is getting the previous count, increasing it by one and putting it back into Map. He might have thought that auto-boxing will take care of converting Integer to int, but he forget that when there is no count exist for a number, get() method of HashMap will return null, not zero because default value of Integer is null not 0, and auto boxing will throw null pointer exception while trying to convert it into an int variable.&lt;/p&gt;
+
+&lt;a href=&quot;http://javarevisited.blogspot.ru/2014/12/9-things-about-null-in-java.html&quot;&gt;javarevisited answer&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is the output of following program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+Map&lt;Integer, Integer&gt; numberAndCount = new HashMap&lt;Integer, Integer&gt;();
+Integer[] numbers = {1, 2, 2, 3, 3, 3};
+for (Integer i : numbers) {
+    Integer count = numberAndCount.get(i);
+    count += 1;
+    numberAndCount.put(i, count);
+}
+for (Map.Entry&lt;Integer, Integer&gt; e : numberAndCount.entrySet()) {
+    System.out.print(e.getKey() + &quot; - &quot; + e.getValue() + &quot;; &quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>574</string>
+			<key>Tags</key>
+			<string>Java, Screen4</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>Runtime error</string>
+				<string>[7, 6, 5, 4, 3, 2, 1]</string>
+				<string>[1, 2, 3, 4, 5, 6, 7]</string>
+				<string>[7, 6, 4, 5, 3, 2, 1]</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;The program loops through array and swap the elements of array e.g. swap first element with last element, swap second element with second last element until you reach the middle of the array. This way, all elements of array will be reversed. Key thing to keep in mind in this algorithm is that you only need to iterate till middle element, if you go beyond that then you end up swapping elements twice and result in same array. If length of array is even, there will be two middle element and we need to swap them, but in case of odd length there is just one middle element and it will not be swapped.&lt;/p&gt;
+
+&lt;a href=&quot;http://javarevisited.blogspot.ru/2015/03/how-to-reverse-array-in-place-in-java.html&quot;&gt;javarevisited answer&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is the output of following program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+int[] numbers = {1, 2, 3, 4, 5, 6, 7};
+for (int i = 0; i &lt; numbers.length / 2; i++) {
+    int temp = numbers[i];
+    numbers[i] = numbers[numbers.length - 1 - i];
+    numbers[numbers.length - 1 - i] = temp;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>enum</string>
+			<key>Id</key>
+			<string>575</string>
+			<key>Tags</key>
+			<string>Java, Screen4</string>
+			<key>Level</key>
+			<string>1</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>Compile time error on line 4</string>
+				<string>Compile time error on line 5</string>
+				<string>Compile time error on line 6</string>
+				<string>This code compiles fine</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;The enum declaration defines a class (called an enum type). The enum class body can include methods and other fields. The compiler automatically adds some special methods when it creates an enum. For example, they have a static values method that returns an array containing all of the values of the enum in the order they are declared. This method is commonly used in combination with the for-each construct to iterate over the values of an enum type.&lt;/p&gt;
+&lt;p&gt;The constructor for an enum type must be package-private or private access. It automatically creates the constants that are defined at the beginning of the enum body. You cannot invoke an enum constructor yourself.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html&quot;&gt;oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Choose the correct statement(s)?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+enum Day {
+    SUNDAY, MONDAY, TUESDAY, WEDNESDAY,
+    THURSDAY, FRIDAY, SATURDAY;
+    public void print() { } // line 4
+    public Day() { } // line 5
+    public int someValue; // line 6
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>constructors</string>
+			<key>Id</key>
+			<string>576</string>
+			<key>Tags</key>
+			<string>Java, Screen4</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>231</string>
+				<string>123</string>
+				<string>321</string>
+				<string>Compile time error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Java programming language enum types are much more powerful than their counterparts in other languages. The enum declaration defines a class (called an enum type). The enum class body can include methods and other fields. The compiler automatically adds some special methods when it creates an enum.&lt;/p&gt;
+&lt;p&gt;Enum constants are created only once for the whole execution. All enum constants are created when you refer any enum constant first time in your code. While creating each enum constant, corresponding constructor is called. In this example, when Enums.B is called in main() method, constructors for A(), B(10) and C(&quot;ccc&quot;, 20) are executed successively.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html&quot;&gt;oracle page&lt;/a&gt;
+&lt;a href=&quot;http://javaconceptoftheday.com/18-points-every-java-developer-should-know-about-enums-in-java/&quot;&gt;javaconceptoftheday page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is the output of following program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+enum Enums {
+    A, B(10), C(&quot;ccc&quot;, 20);
+    private Enums() {
+        System.out.print(1);
+    }
+    private Enums(int i) {
+        System.out.print(2);
+    }
+    private Enums(String s, int j) {
+        System.out.print(3);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Enums en = Enums.B;
+        Enums en2 = Enums.C;
+        Enums en3 = Enums.A;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>577</string>
+			<key>Tags</key>
+			<string>Java, Screen4</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>4</string>
+			<key>answers</key>
+			<array>
+				<string>Runtime error</string>
+				<string>A</string>
+				<string>0</string>
+				<string>Compile time error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;The enum declaration defines a class (called an enum type). The enum class body can include methods and other fields. The compiler automatically adds some special methods when it creates an enum. For example, they have a static values method that returns an array containing all of the values of the enum in the order they are declared. This method is commonly used in combination with the for-each construct to iterate over the values of an enum type.&lt;/p&gt;
+&lt;p&gt;Java requires that the constants be defined first, prior to any fields or methods. Also, when there are fields and methods, the list of enum constants must end with a semicolon.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html&quot;&gt;oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is the output of following program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+enum Enums {
+    int i;
+    A, B, C;
+}
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(Enums.A);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>enums2</string>
+			<key>Id</key>
+			<string>578</string>
+			<key>Tags</key>
+			<string>Java, Screen4</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>Method Of InterfaceOne</string>
+				<string>Runtime error</string>
+				<string>Compile time error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;The enum declaration defines a class (called an enum type). The enum class body can include methods and other fields. The compiler automatically adds some special methods when it creates an enum. For example, they have a static values method that returns an array containing all of the values of the enum in the order they are declared. This method is commonly used in combination with the for-each construct to iterate over the values of an enum type.&lt;/p&gt;
+&lt;p&gt;All enum types extend java.lang.Enum class by default. As multiple inheritance is not supported in java, they can’t extend any other classes. But enum types can implement any number of interfaces, user-defined or not.&lt;/p&gt;
+
+&lt;a href=&quot;http://javaconceptoftheday.com/18-points-every-java-developer-should-know-about-enums-in-java/&quot;&gt;javaconceptoftheday page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What is the output of following program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+interface InterfaceOne {
+    abstract void methodOfInterfaceOne();
+}
+enum Enums implements InterfaceOne {
+    A, B, C;
+    public void methodOfInterfaceOne() {
+        System.out.println(&quot;Method Of InterfaceOne&quot;);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Enums.A.methodOfInterfaceOne();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>enum3</string>
+			<key>Id</key>
+			<string>579</string>
+			<key>Tags</key>
+			<string>Java, Screen4</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>line 2</string>
+				<string>line 3</string>
+				<string>line 13</string>
+				<string>line 14</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;The enum declaration defines a class (called an enum type). The enum class body can include methods and other fields. The compiler automatically adds some special methods when it creates an enum. For example, they have a static values method that returns an array containing all of the values of the enum in the order they are declared. This method is commonly used in combination with the for-each construct to iterate over the values of an enum type.&lt;/p&gt;
+&lt;p&gt;Enum constants can have their own body called Constant Specific Body. Each Constant Specific Body is assigned to the unique enum value. In that body, you can define fields and methods. But, these methods and fields are visible within the Constant Specific Body in which they are defined. So, in this example, method1() can&apos;t be called from main()&apos;s method scope.&lt;/p&gt;
+
+&lt;a href=&quot;http://javaconceptoftheday.com/18-points-every-java-developer-should-know-about-enums-in-java/&quot;&gt;javaconceptoftheday page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Which of the lines are incorrect?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+enum Enums {
+    ONE { // line 2
+         void method1() { // line 3
+             System.out.println(&quot;method1&quot;);
+         }
+    };
+    void method2() {
+        System.out.println(&quot;method2&quot;);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Enums.ONE.method1(); // line 13
+        Enums.ONE.method2(); // line 14
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+	</array>
+</dict>
+</plist>
