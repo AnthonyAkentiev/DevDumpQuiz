@@ -6,30 +6,30 @@
 	<array>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>inherit enum</string>
 			<key>Id</key>
 			<string>580</string>
 			<key>Tags</key>
 			<string>Java, Screen4</string>
 			<key>Level</key>
-			<string>2</string>
-			<key>Correct Answers</key>
 			<string>3</string>
+			<key>Correct Answers</key>
+			<string>2</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>Yes</string>
+				<string>No</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;The reason you can&apos;t extend Enums is because it would lead to problems with polymorphism. Say you have an enum MyEnum with values A, B, and C , and extend it with value D as MyExtEnum. Suppose a method expects a myEnum value somewhere, for instance as a parameter. It should be legal to supply a MyExtEnum value, because it&apos;s a subtype, but now what are you going to do when it turns out the value is D? To eliminate this problem, extending enums is illegal.&lt;/p&gt;
+
+&lt;a href=&quot;http://stackoverflow.com/a/55435/1389883&quot;&gt;Stackoverflow answer&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;h2&gt;Is it possible to make an enum that is inherited from other enum?&lt;/h2&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>initializer block</string>
 			<key>Id</key>
 			<string>581</string>
 			<key>Tags</key>
@@ -37,22 +37,42 @@
 			<key>Level</key>
 			<string>2</string>
 			<key>Correct Answers</key>
-			<string>3</string>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>Message1 Message2</string>
+				<string>Message2 Message1</string>
+				<string>Runtime error</string>
+				<string>Compile time error</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;A static initialization block is a normal block of code enclosed in braces, { }, and preceded by the static keyword. A class can have any number of static initialization blocks, and they can appear anywhere in the class body. The runtime system guarantees that static initialization blocks are called in the order that they appear in the source code.&lt;/p&gt;
+&lt;p&gt;Normally, you would put code to initialize an instance variable in a constructor. There is an alternatives to using a constructor to initialize instance variables: instance initializer blocks. Initializer blocks for instance variables look just like static initializer blocks, but without the static keyword. The Java compiler copies initializer blocks into every constructor. Therefore, this approach can be used to share a block of code between multiple constructors.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/initial.html&quot;&gt;oracle page&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;h2&gt;What is the output of following program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+class A {
+    static {
+        System.out.print(&quot;Message1 &quot;);
+    }
+    {
+        System.out.print(&quot;Message2 &quot;);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A a = new A();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>constants enum</string>
 			<key>Id</key>
 			<string>582</string>
 			<key>Tags</key>
@@ -63,15 +83,22 @@
 			<string>3</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>Planet.members();</string>
+				<string>Planet.constants();</string>
+				<string>Planet.values();</string>
+				<string>Planet.data();</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;The compiler automatically adds some special methods when it creates an enum. For example, they have a static values() method that returns an array containing all of the values of the enum in the order they are declared. This method is commonly used in combination with the for-each construct to iterate over the values of an enum type, as follows:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+for (Planet p : Planet.values()) {
+    System.out.println(p);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html&quot;&gt;oracle page&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;h2&gt;How do you retrieve the enum constants of any enum type?&lt;/h2&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
@@ -83,18 +110,21 @@
 			<key>Level</key>
 			<string>2</string>
 			<key>Correct Answers</key>
-			<string>3</string>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>Planet.Earth.ordinal();</string>
+				<string>Planet.Earth.position();</string>
+				<string>Planet.Earth.location();</string>
+				<string>Planet.Earth.order();</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;Planet.Earth.ordinal();&lt;/p&gt;
+&lt;p&gt;The compiler automatically adds some special methods when it creates an enum. For example, they have a static values() method that returns an array containing all of the values of the enum in the order they are declared. This method is commonly used in combination with the for-each construct to iterate over the values of an enum type, The other method added automatically by compiler is ordinal(). It returns the ordinal of this enumeration constant (its position in its enum declaration, where the initial constant is assigned an ordinal of zero).&lt;/p&gt;
+
+&lt;a href=&quot;http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html&quot;&gt;oracle page&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;h2&gt;How do you retrieve the enum value&apos;s position in its enum declaration?&lt;/h2&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
@@ -109,19 +139,30 @@
 			<string>3</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>true true</string>
+				<string>false true</string>
+				<string>true false</string>
+				<string>false false</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;Every compile-time constant expression that is of type String will be put into the String pool. Essentially that means: if the compiler can (easily) &quot;calculate&quot; the value of the String without running the program, then it will be put into the pool. That&apos;s true for the Strings s1 and s2. s3 is not a compile-time constant expression, because i is a non-constant variable, thus s3 can&apos;t be put into the String pool. It means that s3 is computed by concatenation at runtime and therefore distinct, that&apos;s why equality operator returns false.&lt;/p&gt;
+
+&lt;a href=&quot;http://stackoverflow.com/a/16729182/1389883&quot;&gt;Stackoverflow post&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;h2&gt;What is the output of following program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+String s1 = &quot;hill5&quot;;
+String s2 = &quot;hill&quot; + 5;
+int i = 5;
+String s3 = &quot;hill&quot; + i;
+System.out.println(s1==s2);
+System.out.println(s1==s3);
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>HashSet</string>
 			<key>Id</key>
 			<string>585</string>
 			<key>Tags</key>
@@ -129,41 +170,56 @@
 			<key>Level</key>
 			<string>2</string>
 			<key>Correct Answers</key>
-			<string>3</string>
+			<string>2</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>1 1 2 2 3 3 4 5</string>
+				<string>1 2 3 4 5</string>
+				<string>Runtime Error</string>
+				<string>5 4 3 3 2 2 1 1</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;Set is a collection that contains no duplicate elements. More formally, sets contain no pair of elements e1 and e2 such that e1.equals(e2), and at most one null element. As implied by its name, this interface models the mathematical set abstraction. Hashset class implements the Set interface, backed by a hash table (actually a HashMap instance). It makes no guarantees as to the iteration order of the set; in particular, it does not guarantee that the order will remain constant over time. This class permits the null element.&lt;/p&gt;
+
+&lt;a href=&quot;http://docs.oracle.com/javase/7/docs/api/java/util/Set.html&quot;&gt;oracle page&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;h2&gt;What is the output of following program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+int a[] = new int[] {1, 1, 2, 2, 3, 3, 4, 5};
+Set&lt;Integer&gt; set = new HashSet&lt;Integer&gt;();
+for (int i : a) {
+    set.add(i);
+}
+for (int i : set) {
+    System.out.println(i);
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>super</string>
 			<key>Id</key>
 			<string>586</string>
 			<key>Tags</key>
 			<string>Java, Screen4</string>
 			<key>Level</key>
-			<string>2</string>
+			<string>1</string>
 			<key>Correct Answers</key>
-			<string>3</string>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>Using &quot;super&quot; keyword</string>
+				<string>Using &quot;base&quot; keyword</string>
+				<string>Using &quot;this&quot; keyword</string>
+				<string>There is no way</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;If your method overrides one of its superclass&apos;s methods, you can invoke the overridden method through the use of the keyword super. You can also use super to refer to a hidden field (although hiding fields is discouraged). You can also use the super keyword to invoke a superclass&apos;s constructor. Note: If a constructor does not explicitly invoke a superclass constructor, the Java compiler automatically inserts a call to the no-argument constructor of the superclass. If the super class does not have a no-argument constructor, you will get a compile-time error. Object does have such a constructor, so if Object is the only superclass, there is no problem.&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/IandI/super.html&quot;&gt;oracle page&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;h2&gt;How do you invoke the overridden method in class?&lt;/h2&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
@@ -175,41 +231,52 @@
 			<key>Level</key>
 			<string>2</string>
 			<key>Correct Answers</key>
-			<string>3</string>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>line 1</string>
+				<string>line 2</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;Difference between throw and throws in java:&lt;/p&gt;
+&lt;p&gt;Throw: throw keyword used to throw user defined exceptions (we can throw predefined exception too); if we are having our own validations in our code we can use this throw keyword; for Ex: BookNotFoundException, InvalidAgeException (user defined)&lt;/p&gt;
+&lt;p&gt;Throws: using throws keyword we can explicitly provide the information about unhandled exceptions of the method to the end user, Java compiler, JVM; using throws keyword we can avoid try-catch with respect to the statements which are proven to generate checked exceptions; it us highly recommended not to avoid try-catch with respect to the statements which are proven to generate exceptions in main method using throws keyword to the main() method.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.instanceofjava.com/2014/12/difference-between-throw-and-throws-in.html&quot;&gt;instanceofjava page&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;h2&gt;Which lines are incorrect?&lt;/h2&gt;&lt;p&gt;(select all)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+void method(Object o) throw NullPointerException { // line 1
+    if (o == null) throw new NullPointerException(); // line 2
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>main</string>
 			<key>Id</key>
 			<string>588</string>
 			<key>Tags</key>
 			<string>Java, Screen4</string>
 			<key>Level</key>
-			<string>2</string>
+			<string>1</string>
 			<key>Correct Answers</key>
-			<string>3</string>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>JVM would never execute main method by passing null</string>
+				<string>The first element in args is always path to the executable</string>
+				<string>Args&apos;s elements never contain spaces</string>
+				<string>Args&apos;s elements can&apos;t be empty</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;JVM would never execute main method by passing null&lt;/p&gt;
+&lt;p&gt;args array is the mechanism through which the runtime system passes information to your application. Each string in the array is called a command-line argument. Command-line arguments let users affect the operation of the application without recompiling it. In order to pass a string with spaces as an argument, you need to surround it with double quotes, and if you want to pass en empty string, you can juast write 2 double quotes. If there are no command-line arguments passed, args will be an empty array, but not null!&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/getStarted/application/&quot;&gt;oracle page&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;h2&gt;Choose the correct statement(s) about Java&apos;s main(String[] args) method&lt;/h2&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
@@ -219,20 +286,33 @@
 			<key>Tags</key>
 			<string>Java, Screen4</string>
 			<key>Level</key>
-			<string>2</string>
+			<string>1</string>
 			<key>Correct Answers</key>
-			<string>3</string>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>true</string>
+				<string>false</string>
+				<string>Compile time error</string>
+				<string>Runtime Error</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;The conditional operator ? : uses the boolean value of one expression to decide which of two other expressions should be evaluated. The conditional operator has three operand expressions. ? appears between the first and second expressions, and : appears between the second and third expressions. The conditional operator is syntactically right-associative (it groups right-to-left). Thus, a?b:c?d:e?f:g means the same as a?b:(c?d:(e?f:g)).&lt;/p&gt;
+
+&lt;a href=&quot;https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html&quot;&gt;oracle page&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;h2&gt;What is the output of following program?&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+boolean a = false;
+boolean b = true;
+boolean c = false;
+boolean d = true;
+boolean e = false;
+boolean f = false;
+boolean g = true;
+System.out.println(a?b:c?d:e?f:g);
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 	</array>
 </dict>
