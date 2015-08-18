@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>questions</key>
+	<array>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>590</string>
+			<key>Tags</key>
+			<string>Java, Screen4</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>This snippet won&apos;t compile successfully</string>
+				<string>This snippet compiles successfully and throws no Runtime errors</string>
+				<string>This snippet compiles successfully, but throws a Runtime error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Java allows you to create and initialize a new collection as an expression by using the &quot;double-brace&quot; syntax. The first brace creates a new AnonymousInnerClass, the second declares an instance initializer block that is run when the anonymous inner class is instantiated. This type of initializer block is formally called an &quot;instance initializer&quot;, because it is declared within the instance scope of the class -- &quot;static initializers&quot; are a related concept where the keyword static is placed before the brace that starts the block, and which is executed at the class level as soon as the classloader completes loading the class. The initializer block can use any methods, fields and final variables available in the containing scope, but one has to be wary of the fact that initializers are run before constructors (but not before superclass constructors).&lt;/p&gt;
+ 
+&lt;a href=&quot;http://www.c2.com/cgi/wiki?DoubleBraceInitialization&quot;&gt;c2 wiki page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Choose the correct answer.&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+private static final Set&lt;String&gt; Names = new HashSet&lt;String&gt;() {{
+	add(&quot;James&quot;);
+	add(&quot;John&quot;);
+ }};
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>instanceof</string>
+			<key>Id</key>
+			<string>591</string>
+			<key>Tags</key>
+			<string>Java, Screen4</string>
+			<key>Level</key>
+			<string>4</string>
+			<key>Correct Answers</key>
+			<string>4</string>
+			<key>answers</key>
+			<array>
+				<string>Yes</string>
+				<string>No, because &quot;instanceof&quot; throws a Runtime exception if object being checked is null</string>
+				<string>No, because &quot;instanceof&quot; always returns &quot;true&quot; if object being checked is null</string>
+				<string>No, because &quot;instanceof&quot; always returns &quot;false&quot; if object being checked is null</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Java&apos;s &quot;instanceof&quot; statement is implemented in such a way that checking for null is not necessary, but it will return false if used against any reference variable with null value or null literal itself. This is an important property of instanceof operation which makes it useful for type casting checks.&lt;/p&gt;
+ 
+&lt;a href=&quot;http://javarevisited.blogspot.ru/2014/12/9-things-about-null-in-java.html&quot;&gt;javarevisited answer&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Is this code snippet correct?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+String object = null;
+if (object instanceof String) {
+	//some code, line 3
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>592</string>
+			<key>Tags</key>
+			<string>Java, Screen4</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>This snippet won&apos;t compile successfully</string>
+				<string>This snippet compiles successfully and throws no Runtime errors</string>
+				<string>This snippet compiles successfully, but throws a Runtime error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Final initialization can be postponed, but the value of a final variable must be set once. Using final keyword makes sure that even with a complex flow of logic return values are always set. It&apos;s too easy to miss a case and return null by accident. It doesn&apos;t make returning null impossible, just obvious that it&apos;s on purpose.&lt;/p&gt;
+ 
+&lt;a href=&quot;http://stackoverflow.com/a/169064/1389883&quot;&gt;Stackoverflow answer&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Choose the correct answer.&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+public Object getElementAt(int index) {
+    final Object element;
+    if (index == 0) {
+         element = &quot;Result 1&quot;;
+    } else if (index == 1) {
+         element = &quot;Result 2&quot;;
+    } else {
+         element = &quot;Result 3&quot;;
+    }
+    return element;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>google link caveat</string>
+			<key>Id</key>
+			<string>593</string>
+			<key>Tags</key>
+			<string>Java, Screen4</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>This snippet won&apos;t compile successfully</string>
+				<string>This snippet compiles successfully and throws no Runtime errors</string>
+				<string>This snippet compiles successfully, but throws a Runtime error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;It becomes easier to understand if we rearrange this code:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+class Example
+{
+  public static void main(String[] args)
+  {
+    http:
+    //google.com
+    System.out.println(&quot;Hello World!&quot;);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Choose the correct answer.&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+class Example
+{
+  public static void main(String[] args)
+  {
+    http://google.com
+    System.out.println(&quot;Hello World!&quot;);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>extends</string>
+			<key>Id</key>
+			<string>594</string>
+			<key>Tags</key>
+			<string>Java, Screen4</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>This snippet won&apos;t compile successfully</string>
+				<string>This snippet compiles successfully and throws no Runtime errors</string>
+				<string>This snippet compiles successfully, but throws a Runtime error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;Java allows you to define a class in a block, which is a group of zero or more statements between balanced braces, and they are called local classes. You can use them if you need to create more than one instance of a class, access its constructor, or introduce a new, named type (because, for example, you need to invoke additional methods later).&lt;/p&gt;
+ 
+&lt;a href=&quot;http://stackoverflow.com/a/146121/1389883&quot;&gt;Stackoverflow answer&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Choose the correct answer.&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+public Foo foo(String in) {
+    class FooFormat extends Format {
+        public Object parse(String s, ParsePosition pp) { // parse stuff }
+    }
+    return (Foo) new FooFormat().parse(in);
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>xxx</string>
+			<key>Id</key>
+			<string>595</string>
+			<key>Tags</key>
+			<string>Java, Screen4</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>2</string>
+			<key>answers</key>
+			<array>
+				<string>&quot;first&quot;, &quot;second&quot;, &quot;third&quot;</string>
+				<string>&quot;first&quot;, &quot;second&quot;</string>
+				<string>&quot;third&quot;</string>
+				<string>nothing</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;The break statement terminates the labeled statement; it does not transfer the flow of control to the label. Control flow is transferred to the statement immediately following the labeled (terminated) statement.&lt;/p&gt;
+&lt;p&gt;You could replace xxx with &quot;first&quot; or &quot;second&quot; (to break the outer or inner loop), since both loops are being executed, when you hit the break statement, but replacing &quot;xxx&quot; with &quot;third&quot; won&apos;t compile.&lt;/p&gt;
+ 
+&lt;a href=&quot;http://stackoverflow.com/a/14960484&quot;&gt;Stackoverflow answer&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What can replace &quot;xxx&quot;?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+first:
+for( int i = 0; i &lt; 10; i++) {
+  second:
+  for(int j = 0; j &lt; 5; j ++ )
+  {
+    break xxx;
+  }
+}
+
+third:
+for( int a = 0; a &lt; 10; a++) {
+
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>596</string>
+			<key>Tags</key>
+			<string>Java, Screen4</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>line 1</string>
+				<string>line 2</string>
+				<string>none</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;None of the lines are correct, both of them cause compilation error.&lt;/p&gt;
+&lt;p&gt;Interestingly, the Java language specification regards const as a reserved keyword — i.e., one that cannot be used as variable identifier — but assigns no semantics to it. It is thought that the reservation of the keyword occurred to allow for an extension of the Java language to include C++-style const methods and pointer to const type. The enhancement request ticket in the Java Community Process for implementing const correctness in Java was closed in 2005, implying that const correctness will probably never find its way into the official Java specification.&lt;/p&gt;
+
+ 
+&lt;a href=&quot;http://stackoverflow.com/a/2735906&quot;&gt;Stackoverflow answer&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Which of these lines are correct?&lt;/h2&gt;&lt;p&gt;(select all)&lt;/p&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+int const = 1; // line 1
+const int i = 1; // line 2
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string></string>
+			<key>Id</key>
+			<string>597</string>
+			<key>Tags</key>
+			<string>Java, Screen4</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>This snippet won&apos;t compile successfully</string>
+				<string>This snippet compiles successfully and throws no Runtime errors</string>
+				<string>This snippet compiles successfully, but throws a Runtime error</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;This snippet won&apos;t compile successfully&lt;/h2&gt;
+&lt;p&gt;Interestingly, the Java keyword list specifies the goto keyword, but it is marked as &quot;not used&quot;.&lt;/p&gt;
+&lt;p&gt;James Gosling created the original JVM with support of goto statements, but then he removed this feature as needless. The main reason goto is unnecessary is that usually it can be replaced with more readable statements (like break/continue) or by extracting a piece of code into a method.&lt;/p&gt;
+
+ 
+&lt;a href=&quot;http://stackoverflow.com/a/4547764&quot;&gt;Stackoverflow answer&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;Choose the correct answer.&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+int x = 1;
+here:
+if (x == 1) {
+    x = 2; 
+    goto here;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>statics in class</string>
+			<key>Id</key>
+			<string>598</string>
+			<key>Tags</key>
+			<string>Java, Screen4</string>
+			<key>Level</key>
+			<string>3</string>
+			<key>Correct Answers</key>
+			<string>1</string>
+			<key>answers</key>
+			<array>
+				<string>4</string>
+				<string>Runtime exception will be thrown</string>
+				<string>2</string>
+				<string>This code won&apos;t compile successfully</string>
+			</array>
+			<key>a</key>
+			<string>&lt;h2&gt;The output of this program is: 4&lt;/h2&gt;
+&lt;p&gt;This code compiles fine and throws no exceptions because no rules of encapsulation are broken here. Instances of the same class can access private members of other instances. That is happening in method &quot;addThings&quot;: instance &quot;t1&quot; of class &quot;Thing&quot; accesses private member &quot;x&quot; of another instance &quot;t2&quot; of the same class &quot;Thing&quot;.&lt;/p&gt;
+
+ 
+&lt;a href=&quot;http://stackoverflow.com/a/321782&quot;&gt;Stackoverflow answer&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;What will be the output of this program?&lt;/h2&gt;
+ 
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
+public class HelloWorld{
+    static class Thing {
+		private int x = 2;
+		public int addThings(Thing t2) {
+			return this.x + t2.x;
+		}
+	}
+
+     public static void main(String []args){
+        Thing t1 = new Thing();
+        Thing t2 = new Thing(); 
+        System.out.println(t1.addThings(t2));
+     }
+}
+
+&lt;/code&gt;&lt;/pre&gt;</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>class by name</string>
+			<key>Id</key>
+			<string>599</string>
+			<key>Tags</key>
+			<string>Java, Screen4</string>
+			<key>Level</key>
+			<string>2</string>
+			<key>Correct Answers</key>
+			<string>3</string>
+			<key>answers</key>
+			<array>
+				<string>Class.byName(className).newInstance()</string>
+				<string>Class.forName(className).instantiate()</string>
+				<string>Class.forName(className).newInstance()</string>
+				<string>Class.getByName(className).instantiate()</string>
+			</array>
+			<key>a</key>
+			<string>&lt;p&gt;If the fully-qualified name of a class is available, it is possible to get the corresponding Class using the static method Class.forName(). This cannot be used for primitive types. The syntax for names of array classes is described by Class.getName(). This syntax is applicable to references and primitive types.&lt;/p&gt;
+&lt;p&gt;If you have a Class object, you can invoke &quot;Class.newInstance()&quot; on it and use returned reference as an ordinarily-constructed class instance.&lt;/p&gt;
+
+ 
+&lt;a href=&quot;https://docs.oracle.com/javase/tutorial/reflect/class/classNew.html&quot;&gt;docs.oracle page&lt;/a&gt;</string>
+			<key>q</key>
+			<string>&lt;h2&gt;How do you instantiate an arbitrary class by it&apos;s name?&lt;/h2&gt;</string>
+		</dict>
+	</array>
+</dict>
+</plist>

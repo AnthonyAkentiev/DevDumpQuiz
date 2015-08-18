@@ -35,6 +35,7 @@
 		99DB0B581B82260600C4F189 /* AQ16_Java7.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DB0B571B82260600C4F189 /* AQ16_Java7.plist */; };
 		99DB0B5A1B822E6C00C4F189 /* AQ17_Java8.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DB0B591B822E6C00C4F189 /* AQ17_Java8.plist */; };
 		99DB0B5C1B830C7900C4F189 /* AQ18_Java9.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DB0B5B1B830C7900C4F189 /* AQ18_Java9.plist */; };
+		99DB0B5E1B83157000C4F189 /* AQ19_Java10.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DB0B5D1B83157000C4F189 /* AQ19_Java10.plist */; };
 		99E3F31F1B07534A00F4D955 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E3F31E1B07534A00F4D955 /* ViewController.swift */; };
 		99E3F3211B07536A00F4D955 /* ScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E3F3201B07536A00F4D955 /* ScoreController.swift */; };
 		99E3F3231B07537D00F4D955 /* AnswerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E3F3221B07537D00F4D955 /* AnswerController.swift */; };
@@ -88,6 +89,7 @@
 		99DB0B571B82260600C4F189 /* AQ16_Java7.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ16_Java7.plist; path = resources/AQ16_Java7.plist; sourceTree = SOURCE_ROOT; };
 		99DB0B591B822E6C00C4F189 /* AQ17_Java8.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ17_Java8.plist; path = resources/AQ17_Java8.plist; sourceTree = SOURCE_ROOT; };
 		99DB0B5B1B830C7900C4F189 /* AQ18_Java9.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ18_Java9.plist; path = resources/AQ18_Java9.plist; sourceTree = SOURCE_ROOT; };
+		99DB0B5D1B83157000C4F189 /* AQ19_Java10.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ19_Java10.plist; path = resources/AQ19_Java10.plist; sourceTree = SOURCE_ROOT; };
 		99E3F31E1B07534A00F4D955 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		99E3F3201B07536A00F4D955 /* ScoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreController.swift; sourceTree = "<group>"; };
 		99E3F3221B07537D00F4D955 /* AnswerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerController.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				99DB0B571B82260600C4F189 /* AQ16_Java7.plist */,
 				99DB0B591B822E6C00C4F189 /* AQ17_Java8.plist */,
 				99DB0B5B1B830C7900C4F189 /* AQ18_Java9.plist */,
+				99DB0B5D1B83157000C4F189 /* AQ19_Java10.plist */,
 			);
 			name = "In-App-Purchases";
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				99D5B33B1AF387BD005CE456 /* AQ2.plist in Resources */,
 				99DB0B4A1B818B5700C4F189 /* AQ9_Python4.plist in Resources */,
 				99DB0B581B82260600C4F189 /* AQ16_Java7.plist in Resources */,
+				99DB0B5E1B83157000C4F189 /* AQ19_Java10.plist in Resources */,
 				99D5B33C1AF387BD005CE456 /* Q1.plist in Resources */,
 				9969AED71AF382EC00DFB8EE /* Images.xcassets in Resources */,
 				9975C4061AF38E7600478404 /* StoryboardiPad.storyboard in Resources */,
