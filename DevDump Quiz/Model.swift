@@ -55,20 +55,40 @@ class Model: QuestionsBase {
     override init(){
         super.init()
         
+        loadEverything()
+    }
+    
+    func save(){
+        saveVars()
+    }
+    
+    func clearHistory(){
+        // Single big Q1.plist file
+        let dstPath = getQPath()
+        if(NSFileManager.defaultManager().fileExistsAtPath(dstPath)){
+            var err:NSError?
+            
+            NSFileManager.defaultManager().removeItemAtPath(
+                dstPath,
+                error: &err)
+            
+            // TODO: check error
+            
+            loadEverything()
+        }
+    }
+    
+    func loadEverything(){
         // copy read-only Q1.plist to Documents/Q1.plist
         // + merge new downloaded Q files
         prepareQuestions()
-       
+        
         populateTotalTags()
         
         loadSelectedTagsFromFile()
         
         // isSwipeHelpShownQuestion and all other persistent variables
         loadVars()
-    }
-    
-    func save(){
-        saveVars()
     }
 
     // Statistics:
@@ -139,6 +159,7 @@ class Model: QuestionsBase {
         let isCorrect = isCorrectAnswer()
         markQuestionAsAnsweredWithId(
             curQuestionID as String,
+            andValue:true,
             andResult:isCorrect,
             andAnswers:userAnswered)
         

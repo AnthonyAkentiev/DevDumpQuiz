@@ -22,9 +22,9 @@
 	<string>1</string>
 	<key>GameParams</key>
 	<dict>
-		<key>IpadShowTableForAnswers</key>
-		<true/>
 		<key>DEBUG_CopyAQs</key>
+		<true/>
+		<key>IpadShowTableForAnswers</key>
 		<true/>
 		<key>IsRandomizeQuestions</key>
 		<true/>
@@ -52,15 +52,12 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 </dict>
 </plist>

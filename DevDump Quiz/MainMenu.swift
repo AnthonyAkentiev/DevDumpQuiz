@@ -34,12 +34,15 @@ class MainMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // This is optional (only for iPad)
     @IBOutlet var textTotalQuestions: UITextField?
     
+    @IBOutlet var spinner: UIActivityIndicatorView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    
+        spinner?.hidden = true
+        
         // select all tags (only first time)!
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.model.selectAllTags()
         
         updateStats()
@@ -57,6 +60,17 @@ class MainMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     
+    func showSpinner(){
+        spinner?.hidden = false
+        spinner?.hidesWhenStopped = true;
+        spinner?.startAnimating()
+    }
+    
+    func hideSpinner(){
+        spinner?.stopAnimating()
+        spinner?.hidden = true
+    }
+    
     @IBAction func onStartGame(){
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
@@ -70,6 +84,40 @@ class MainMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }else{
             performSegueWithIdentifier("startGame",sender:self)
         }
+    }
+    
+    @IBAction func onClearAllHistory() {
+        let msgTitle = "Clear All History"
+        let msg = "Do you really want to clear all history?"
+        
+        var ac = UIAlertDialog(
+            style: UIAlertDialogStyle.Alert,
+            title: msgTitle,
+            andMessage: msg)
+        
+        ac.addButtonWithTitle(
+            "Yes",
+            andHandler: onYesClicked)
+        
+        ac.addButtonWithTitle(
+            "No",
+            andHandler: nil)
+        
+        ac.showInViewController(self)
+    }
+    
+    func onYesClicked(action:Int){
+        NSLog("Clear all")
+        
+        // TODO:
+        self.showSpinner()
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.model.clearHistory()
+        self.tableView.reloadData()
+        
+        // TODO:
+        self.hideSpinner()
     }
     
     /////////// TABLE VIEW stuff goes here:

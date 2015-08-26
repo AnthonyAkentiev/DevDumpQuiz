@@ -361,7 +361,7 @@ class QuestionsBase: Tags {
     }
     
     // When user answer the question - we mark it with "IsAsked" and "Answered" 
-    func markQuestionAsAnsweredWithId(id:String, andResult:Bool, andAnswers:[Int]){
+    func markQuestionAsAnsweredWithId(id:String, andValue:Bool, andResult:Bool, andAnswers:[Int]){
         NSLog("User answered question \(id) with result: \(andResult)")
         
         // get q object from plist in Documents
@@ -369,13 +369,14 @@ class QuestionsBase: Tags {
         var ID: String = q.objectForKey("Id") as! String
         assert(ID==id)
         
-        q.setObject(true, forKey: "IsAsked")
+        q.setObject(andValue, forKey: "IsAsked")
         // need for recap
         q.setObject(andAnswers, forKey: "Answered")
         
         // save to read/write plist file
         updateQuestionWithId(id.toInt()!, andValue:q)
     }
+
 
     func getTotalQuestionsCount()->Int{
         let path = getQPath()

@@ -12,6 +12,7 @@
 		9920C46F1AF4EC67007FD2D9 /* AQ3_Swift.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9920C46E1AF4EC67007FD2D9 /* AQ3_Swift.plist */; };
 		99264FF61B6F8F4C00772AED /* AQ7_Python2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99264FF51B6F8F4C00772AED /* AQ7_Python2.plist */; };
 		99264FF81B6F96E400772AED /* AQ8_Python3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99264FF71B6F96E400772AED /* AQ8_Python3.plist */; };
+		99363B681B8DCD6100ABC57F /* UIAlertDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 99363B671B8DCD6100ABC57F /* UIAlertDialog.m */; };
 		9944E6B41AF38843008E544E /* ViewControllerIPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9944E6B31AF38843008E544E /* ViewControllerIPad.swift */; };
 		9969AED01AF382EC00DFB8EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969AECF1AF382EC00DFB8EE /* AppDelegate.swift */; };
 		9969AED51AF382EC00DFB8EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9969AED31AF382EC00DFB8EE /* Main.storyboard */; };
@@ -62,6 +63,9 @@
 		9920C46E1AF4EC67007FD2D9 /* AQ3_Swift.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ3_Swift.plist; path = resources/AQ3_Swift.plist; sourceTree = SOURCE_ROOT; };
 		99264FF51B6F8F4C00772AED /* AQ7_Python2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ7_Python2.plist; path = resources/AQ7_Python2.plist; sourceTree = SOURCE_ROOT; };
 		99264FF71B6F96E400772AED /* AQ8_Python3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ8_Python3.plist; path = resources/AQ8_Python3.plist; sourceTree = SOURCE_ROOT; };
+		99363B661B8DCD6100ABC57F /* UIAlertDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIAlertDialog.h; path = UIAlertView/UIAlertDialog.h; sourceTree = "<group>"; };
+		99363B671B8DCD6100ABC57F /* UIAlertDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIAlertDialog.m; path = UIAlertView/UIAlertDialog.m; sourceTree = "<group>"; };
+		99363B6C1B8DCF8000ABC57F /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		9944E6B31AF38843008E544E /* ViewControllerIPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerIPad.swift; sourceTree = "<group>"; };
 		9969AECA1AF382EC00DFB8EE /* DevDump Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DevDump Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9969AECE1AF382EC00DFB8EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,13 +122,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99363B691B8DCD6400ABC57F /* UIAlertDialog */ = {
+			isa = PBXGroup;
+			children = (
+				99363B661B8DCD6100ABC57F /* UIAlertDialog.h */,
+				99363B671B8DCD6100ABC57F /* UIAlertDialog.m */,
+			);
+			name = UIAlertDialog;
+			sourceTree = "<group>";
+		};
 		9944E6B51AF3885C008E544E /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				9969AECF1AF382EC00DFB8EE /* AppDelegate.swift */,
 				99E3F32C1B07549700F4D955 /* Tags.swift */,
-				99E3F32A1B07548900F4D955 /* Model.swift */,
 				99E3F3281B0753BF00F4D955 /* QuestionsBase.swift */,
+				99E3F32A1B07548900F4D955 /* Model.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -150,6 +163,8 @@
 		9969AECC1AF382EC00DFB8EE /* DevDump Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				99363B6C1B8DCF8000ABC57F /* Bridging-Header.h */,
+				99363B691B8DCD6400ABC57F /* UIAlertDialog */,
 				9944E6B51AF3885C008E544E /* Base */,
 				99E3F3241B07539600F4D955 /* StartController.swift */,
 				99E3F3261B0753AA00F4D955 /* MainMenu.swift */,
@@ -344,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99363B681B8DCD6100ABC57F /* UIAlertDialog.m in Sources */,
 				99E3F3271B0753AA00F4D955 /* MainMenu.swift in Sources */,
 				9944E6B41AF38843008E544E /* ViewControllerIPad.swift in Sources */,
 				99E3F32D1B07549700F4D955 /* Tags.swift in Sources */,
@@ -441,10 +457,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -480,9 +497,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -498,6 +516,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -511,6 +530,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
