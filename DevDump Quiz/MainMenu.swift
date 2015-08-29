@@ -90,11 +90,14 @@ class MainMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let msgTitle = "Clear All History"
         let msg = "Do you really want to clear all history?"
         
+        // immediately here
+        self.showSpinner()
+        
         var ac = UIAlertDialog(
             style: UIAlertDialogStyle.Alert,
             title: msgTitle,
             andMessage: msg)
-        
+
         ac.addButtonWithTitle(
             "Yes",
             andHandler: onYesClicked)
@@ -109,14 +112,12 @@ class MainMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func onYesClicked(action:Int){
         NSLog("Clear all")
         
-        // TODO:
-        self.showSpinner()
+        //self.showSpinner()
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.model.clearHistory()
         self.tableView.reloadData()
         
-        // TODO:
         self.hideSpinner()
     }
     
