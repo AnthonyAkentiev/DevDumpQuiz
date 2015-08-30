@@ -11,21 +11,53 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DevDump Quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMh-JP-P0x">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMh-JP-P0x">
                     <rect key="frame" x="131" y="225" width="219" height="30"/>
                     <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="30"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1536--2048-сплешь" translatesAutoresizingMaskIntoConstraints="NO" id="9Cq-Ia-TBE">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="9Cq-Ia-TBE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0u7-Ro-QiY"/>
+                <constraint firstItem="9Cq-Ia-TBE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2Ix-FT-9e2"/>
+                <constraint firstAttribute="trailing" secondItem="9Cq-Ia-TBE" secondAttribute="trailing" id="CQP-cV-1ya"/>
+                <constraint firstAttribute="bottom" secondItem="9Cq-Ia-TBE" secondAttribute="bottom" id="WOf-n3-r3L"/>
                 <constraint firstAttribute="centerY" secondItem="lMh-JP-P0x" secondAttribute="centerY" id="gcD-03-PcD"/>
                 <constraint firstAttribute="centerX" secondItem="lMh-JP-P0x" secondAttribute="centerX" id="uM8-RD-5Pc"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="9Cq-Ia-TBE"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="0u7-Ro-QiY"/>
+                    <exclude reference="2Ix-FT-9e2"/>
+                    <exclude reference="CQP-cV-1ya"/>
+                    <exclude reference="WOf-n3-r3L"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=regular">
+                <mask key="subviews">
+                    <include reference="9Cq-Ia-TBE"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="0u7-Ro-QiY"/>
+                    <include reference="2Ix-FT-9e2"/>
+                    <include reference="CQP-cV-1ya"/>
+                    <include reference="WOf-n3-r3L"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
+    <resources>
+        <image name="1536--2048-сплешь" width="1536" height="2048"/>
+    </resources>
 </document>
