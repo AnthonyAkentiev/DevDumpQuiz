@@ -16,12 +16,12 @@
 		9944E6B41AF38843008E544E /* ViewControllerIPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9944E6B31AF38843008E544E /* ViewControllerIPad.swift */; };
 		9969AED01AF382EC00DFB8EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969AECF1AF382EC00DFB8EE /* AppDelegate.swift */; };
 		9969AED51AF382EC00DFB8EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9969AED31AF382EC00DFB8EE /* Main.storyboard */; };
-		9969AED71AF382EC00DFB8EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9969AED61AF382EC00DFB8EE /* Images.xcassets */; };
 		9969AEDA1AF382EC00DFB8EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9969AED81AF382EC00DFB8EE /* LaunchScreen.xib */; };
 		9969AEE61AF382EC00DFB8EE /* DevDump_QuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969AEE51AF382EC00DFB8EE /* DevDump_QuizTests.swift */; };
 		9975C4061AF38E7600478404 /* StoryboardiPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9975C4041AF38E7600478404 /* StoryboardiPad.storyboard */; };
 		9975CF451AF53FE200A698F0 /* AQ4_Cpp.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9975CF441AF53FE200A698F0 /* AQ4_Cpp.plist */; };
 		997CFCE41B07A405001BE575 /* AQ6_Python.plist in Resources */ = {isa = PBXBuildFile; fileRef = 997CFCE31B07A405001BE575 /* AQ6_Python.plist */; };
+		99C819771B95636900E6413D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99C819761B95636900E6413D /* Images.xcassets */; };
 		99D5B33A1AF387BD005CE456 /* AQ1_Linux.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99D5B3361AF387BD005CE456 /* AQ1_Linux.plist */; };
 		99D5B33B1AF387BD005CE456 /* AQ2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99D5B3371AF387BD005CE456 /* AQ2.plist */; };
 		99D5B33C1AF387BD005CE456 /* Q1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99D5B3381AF387BD005CE456 /* Q1.plist */; };
@@ -71,7 +71,6 @@
 		9969AECE1AF382EC00DFB8EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9969AECF1AF382EC00DFB8EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9969AED41AF382EC00DFB8EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9969AED61AF382EC00DFB8EE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9969AED91AF382EC00DFB8EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9969AEDF1AF382EC00DFB8EE /* DevDump QuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DevDump QuizTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9969AEE41AF382EC00DFB8EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,6 +78,7 @@
 		9975C4051AF38E7600478404 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "DevDump Quiz/Base.lproj/StoryboardiPad.storyboard"; sourceTree = "<group>"; };
 		9975CF441AF53FE200A698F0 /* AQ4_Cpp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ4_Cpp.plist; path = resources/AQ4_Cpp.plist; sourceTree = SOURCE_ROOT; };
 		997CFCE31B07A405001BE575 /* AQ6_Python.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ6_Python.plist; path = resources/AQ6_Python.plist; sourceTree = SOURCE_ROOT; };
+		99C819761B95636900E6413D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		99D5B3361AF387BD005CE456 /* AQ1_Linux.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ1_Linux.plist; path = resources/AQ1_Linux.plist; sourceTree = SOURCE_ROOT; };
 		99D5B3371AF387BD005CE456 /* AQ2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ2.plist; path = resources/AQ2.plist; sourceTree = SOURCE_ROOT; };
 		99D5B3381AF387BD005CE456 /* Q1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Q1.plist; path = resources/Q1.plist; sourceTree = SOURCE_ROOT; };
@@ -175,8 +175,8 @@
 				99076CC31AF3AE060084FD54 /* CorrectAnswerView.swift */,
 				9969AED31AF382EC00DFB8EE /* Main.storyboard */,
 				9975C4041AF38E7600478404 /* StoryboardiPad.storyboard */,
-				9969AED61AF382EC00DFB8EE /* Images.xcassets */,
 				9969AED81AF382EC00DFB8EE /* LaunchScreen.xib */,
+				99C819761B95636900E6413D /* Images.xcassets */,
 				9969AECD1AF382EC00DFB8EE /* Supporting Files */,
 			);
 			path = "DevDump Quiz";
@@ -318,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99DB0B4E1B81E87B00C4F189 /* AQ11_Java2.plist in Resources */,
+				99C819771B95636900E6413D /* Images.xcassets in Resources */,
 				9920C46F1AF4EC67007FD2D9 /* AQ3_Swift.plist in Resources */,
 				9969AED51AF382EC00DFB8EE /* Main.storyboard in Resources */,
 				99DB0B541B81FBDA00C4F189 /* AQ14_Java5.plist in Resources */,
@@ -333,7 +334,6 @@
 				99DB0B581B82260600C4F189 /* AQ16_Java7.plist in Resources */,
 				99DB0B5E1B83157000C4F189 /* AQ19_Java10.plist in Resources */,
 				99D5B33C1AF387BD005CE456 /* Q1.plist in Resources */,
-				9969AED71AF382EC00DFB8EE /* Images.xcassets in Resources */,
 				9975C4061AF38E7600478404 /* StoryboardiPad.storyboard in Resources */,
 				99040B091AF81F6700DD570D /* AQ5_ObjC.plist in Resources */,
 				99DB0B501B81EE3D00C4F189 /* AQ12_Java3.plist in Resources */,

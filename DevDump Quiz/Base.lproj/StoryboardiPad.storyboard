@@ -139,24 +139,24 @@
                                 <exclude reference="PMR-NT-3iv"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="1jb-3b-cEd"/>
-                                <exclude reference="ZjY-IS-Jfc"/>
-                                <exclude reference="dND-vS-xPs"/>
+                                <exclude reference="aWq-l0-lfN"/>
+                                <exclude reference="tEe-rv-99R"/>
                                 <exclude reference="5Xc-RB-sNE"/>
                                 <exclude reference="Njp-PB-toy"/>
                                 <exclude reference="zNe-09-DHQ"/>
-                                <exclude reference="31w-A3-t0w"/>
-                                <exclude reference="XpP-g7-Eqi"/>
-                                <exclude reference="hKk-9J-ri4"/>
-                                <exclude reference="Wjz-Qf-YEM"/>
+                                <exclude reference="1jb-3b-cEd"/>
+                                <exclude reference="ZjY-IS-Jfc"/>
                                 <exclude reference="QVa-IA-VhW"/>
                                 <exclude reference="d2j-4I-8Yv"/>
-                                <exclude reference="aWq-l0-lfN"/>
-                                <exclude reference="tEe-rv-99R"/>
                                 <exclude reference="4yr-5d-TH8"/>
                                 <exclude reference="ikq-GR-Fnt"/>
                                 <exclude reference="tAS-vi-h6h"/>
                                 <exclude reference="SGP-eV-Mb3"/>
+                                <exclude reference="Wjz-Qf-YEM"/>
+                                <exclude reference="dND-vS-xPs"/>
+                                <exclude reference="31w-A3-t0w"/>
+                                <exclude reference="XpP-g7-Eqi"/>
+                                <exclude reference="hKk-9J-ri4"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -167,24 +167,24 @@
                                 <include reference="PMR-NT-3iv"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="1jb-3b-cEd"/>
-                                <include reference="ZjY-IS-Jfc"/>
-                                <include reference="dND-vS-xPs"/>
+                                <include reference="aWq-l0-lfN"/>
+                                <include reference="tEe-rv-99R"/>
                                 <include reference="5Xc-RB-sNE"/>
                                 <include reference="Njp-PB-toy"/>
                                 <include reference="zNe-09-DHQ"/>
-                                <include reference="31w-A3-t0w"/>
-                                <include reference="XpP-g7-Eqi"/>
-                                <include reference="hKk-9J-ri4"/>
-                                <include reference="Wjz-Qf-YEM"/>
+                                <include reference="1jb-3b-cEd"/>
+                                <include reference="ZjY-IS-Jfc"/>
                                 <include reference="QVa-IA-VhW"/>
                                 <include reference="d2j-4I-8Yv"/>
-                                <include reference="aWq-l0-lfN"/>
-                                <include reference="tEe-rv-99R"/>
                                 <include reference="4yr-5d-TH8"/>
                                 <include reference="ikq-GR-Fnt"/>
                                 <include reference="tAS-vi-h6h"/>
                                 <include reference="SGP-eV-Mb3"/>
+                                <include reference="Wjz-Qf-YEM"/>
+                                <include reference="dND-vS-xPs"/>
+                                <include reference="31w-A3-t0w"/>
+                                <include reference="XpP-g7-Eqi"/>
+                                <include reference="hKk-9J-ri4"/>
                             </mask>
                         </variation>
                     </view>

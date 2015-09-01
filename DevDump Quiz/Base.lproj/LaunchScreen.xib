@@ -17,47 +17,47 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1536--2048-сплешь" translatesAutoresizingMaskIntoConstraints="NO" id="9Cq-Ia-TBE">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="768-1024-splash" translatesAutoresizingMaskIntoConstraints="NO" id="GhY-wN-T6K">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="9Cq-Ia-TBE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0u7-Ro-QiY"/>
-                <constraint firstItem="9Cq-Ia-TBE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2Ix-FT-9e2"/>
-                <constraint firstAttribute="trailing" secondItem="9Cq-Ia-TBE" secondAttribute="trailing" id="CQP-cV-1ya"/>
-                <constraint firstAttribute="bottom" secondItem="9Cq-Ia-TBE" secondAttribute="bottom" id="WOf-n3-r3L"/>
+                <constraint firstItem="GhY-wN-T6K" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="DXJ-Di-Rpx"/>
+                <constraint firstItem="GhY-wN-T6K" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Whb-Qs-FTI"/>
+                <constraint firstAttribute="trailing" secondItem="GhY-wN-T6K" secondAttribute="trailing" id="ei1-ik-aC1"/>
                 <constraint firstAttribute="centerY" secondItem="lMh-JP-P0x" secondAttribute="centerY" id="gcD-03-PcD"/>
+                <constraint firstAttribute="bottom" secondItem="GhY-wN-T6K" secondAttribute="bottom" id="rNd-1b-cNt"/>
                 <constraint firstAttribute="centerX" secondItem="lMh-JP-P0x" secondAttribute="centerX" id="uM8-RD-5Pc"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="subviews">
-                    <exclude reference="9Cq-Ia-TBE"/>
+                    <exclude reference="GhY-wN-T6K"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="0u7-Ro-QiY"/>
-                    <exclude reference="2Ix-FT-9e2"/>
-                    <exclude reference="CQP-cV-1ya"/>
-                    <exclude reference="WOf-n3-r3L"/>
+                    <exclude reference="DXJ-Di-Rpx"/>
+                    <exclude reference="Whb-Qs-FTI"/>
+                    <exclude reference="ei1-ik-aC1"/>
+                    <exclude reference="rNd-1b-cNt"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=regular">
                 <mask key="subviews">
-                    <include reference="9Cq-Ia-TBE"/>
+                    <include reference="GhY-wN-T6K"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="0u7-Ro-QiY"/>
-                    <include reference="2Ix-FT-9e2"/>
-                    <include reference="CQP-cV-1ya"/>
-                    <include reference="WOf-n3-r3L"/>
+                    <include reference="DXJ-Di-Rpx"/>
+                    <include reference="Whb-Qs-FTI"/>
+                    <include reference="ei1-ik-aC1"/>
+                    <include reference="rNd-1b-cNt"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
     <resources>
-        <image name="1536--2048-сплешь" width="1536" height="2048"/>
+        <image name="768-1024-splash" width="1536" height="2048"/>
     </resources>
 </document>
