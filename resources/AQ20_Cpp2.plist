@@ -6,233 +6,444 @@
 	<array>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>cast</string>
 			<key>Id</key>
 			<string>600</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>3</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>3</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>-25</string>
+				<string>0</string>
+				<string>4294967271</string>
+				<string>4294967321</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt; The answer is not -25. Rather, the answer (which will surprise many) is 4294967271, assuming 32 bit integers. Why?&lt;/p&gt;
+
+&lt;p&gt; In C++, if the types of two operands differ from one another, then the
+operand with the “lower type” will be promoted to the type of the “higher
+type” operand, using the following type hierarchy (listed here from highest
+type to lowest type): long double, double, float, unsigned long int, long int,
+unsigned int, int (lowest).&lt;/p&gt;
+
+&lt;p&gt; So when the two operands are, as in our example, 25u (unsigned int) and 50 (int), the 50 is promoted to also being an unsigned integer (i.e., 50u). &lt;/p&gt;
+
+&lt;p&gt; Moreover, the result of the operation will be of the type of the operands.  Therefore, the result of 25u - 50u will itself be an unsigned integer as well.  So the result of -25 converts to 4294967271 when promoted to being an unsigned integer.  &lt;/p&gt;
+
+&lt;a href=&quot;http://www.toptal.com/c-plus-plus/interview-questions&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What will the line of code below print out? (Consider 32 bit
+architecture)&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+cout &lt;&lt; 25u - 50;
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>increment</string>
 			<key>Id</key>
 			<string>601</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>1</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>2</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>i = 5, j = 6</string>
+				<string>i = 6, j = 5</string>
+				<string>i = 6, j = 6</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt; After the above code executes, i will equal 6, but j will equal 5.&lt;/p&gt;
+
+&lt;p&gt; Understanding the reason for this is fundamental to understanding how the unary increment (++) and decrement (--) operators work in C++.&lt;/p&gt;
+
+&lt;p&gt; When these operators precede a variable, the value of the variable is modified first and then the modified value is used. For example, if we modified the above code snippet to instead say int j = ++i;, i would be incremented to 6 and then j would be set to that modified value, so both would end up being equal to 6.&lt;/p&gt;
+
+&lt;p&gt; However, when these operators follow a variable, the unmodified value of the variable is used and then it is incremented or decremented. That’s why, in the statement int j = i++; in the above code snippet, j is first set to the unmodified value of i (i.e., 5) and then i is incremented to 6.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.toptal.com/c-plus-plus/interview-questions&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What will i and j equal after the code below is executed? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+int i = 5;
+int j = i++;
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>pointer</string>
 			<key>Id</key>
 			<string>602</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>1</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>x is a pointer to a string, y is a string</string>
+				<string>y is a pointer to a string, x is a string</string>
+				<string>both x and y are pointer to string types</string>
+				<string>none of the mentioned</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt; The &apos;*&apos; is to be grouped with the variables not the data types. So when using &apos;*&apos; in such declaration of several variables it is necessary to insert it befor each variable like following: &lt;br&gt;string *x, *y; &lt;/p&gt;
+
+&lt;p&gt; For the good practice always avoid using declaration of several variables in one line. It is prefferable to use the following form: &lt;br&gt; string *x; &lt;br&gt; string *y; &lt;/p&gt;
+
+&lt;br&gt;
+&lt;a
+href=&quot;http://www.sanfoundry.com/c-plus-plus-aptitude-question-answer-pointers/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; Choose the right option &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+string* x, y;
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>function decl correct/incorrect</string>
 			<key>Id</key>
 			<string>603</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>1</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>2 + 3</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>int Sum(int a, int b = 2, int c = 3);</string>
+				<string>int Sum(int a = 5, int b);</string>
+				<string>int Sum(int a = 0, int b, int c = 3);</string>
+				<string>int Sum(int a = 2);</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;Two Important rules are applied when using default arguments. First, only rightmost arguments should be defaulted. This means that a default argument cannot be followed by a non-default argument in a function call. Secondly, once a default argument is used in function call, all the subsequent arguments in that function’s argument list must be defaulted. &lt;/p&gt;
+
+&lt;br&gt;
+&lt;a
+href=&quot;http://simplifiedcplus.blogspot.com/p/default-arguments-and-function.html&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; Which of the following function declaration is/are incorrect? (multiple
+    answers are acceptable)&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>base class</string>
 			<key>Id</key>
 			<string>604</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>3</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>C B</string>
+				<string>A B</string>
+				<string>B B</string>
+				<string>A A</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;A base class pointer can point to objects of children classes. A base class pointer can also point to objects of grandchildren classes. Therefor, the line “A *a = new C;” is valid. The line “a-&gt;fun();” prints “C” because the object pointed is of class C and fun() is declared virtual in both A and B (See this for details). The second line of output is printed by statement “b-&gt;fun();”.&lt;/p&gt;
+&lt;a href=&quot;http://www.geeksforgeeks.org/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What is the output of the following program? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include&lt;iostream&gt;
+
+using namespace std;
+
+class A
+{
+  public:
+    virtual void fun() {cout &lt;&lt; &quot;A&quot; &lt;&lt; endl ;}
+};
+class B: public A
+{
+  public:
+    virtual void fun() {cout &lt;&lt; &quot;B&quot; &lt;&lt; endl;}
+};
+class C: public B
+{
+  public:
+    virtual void fun() {cout &lt;&lt; &quot;C&quot; &lt;&lt; endl;}
+};
+
+int main()
+{
+  A *a = new C;
+  A *b = new B;
+  a-&gt;fun();
+  b-&gt;fun();
+  return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>array</string>
 			<key>Id</key>
 			<string>605</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>B::fun()</string>
+				<string>A::fun()</string>
+				<string>Compile error</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;In general, the purpose of using templates in C++ is to avoid code redundancy.  We create generic classes (or functions) that can be used for any datatype as long as logic is identical. Datatype becomes a parameter and an instance of class/function is created at compile time when a data type is passed. C++ Templates also allow nontype (a parameter that represents a value, not a datatype) things as parameters.&lt;/p&gt;
+&lt;p&gt;In the above program, there is a generic class A which takes a nontype parameter N. The class B inherits from an instance of generic class A. The value of N for this instance of A is 2. The class B overrides fun() of class A&lt;2&gt;. The class C inherits from B. In main(), there is a pointer ‘a’ of type A&lt;2&gt; that points to an instance of C. When ‘a-&gt;fun()’ is called, the function of class B is executed because fun() is virtual and virtual functions are called according to the actual object, not according to pointer. In class C, there is no function ‘fun()’, so it is looked up in the hierarchy and found in class B.&lt;/p&gt;
+&lt;a href=&quot;http://www.geeksforgeeks.org/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What is the output of the following C++ program? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+using namespace std;
+ 
+template &lt;int N&gt;
+class A {
+     int arr[N];
+  public:
+        virtual void fun() { cout &lt;&lt; &quot;A::fun()&quot;; }
+};
+ 
+class B : public A&lt;2&gt; {
+  public:
+       void fun() { cout &lt;&lt; &quot;B::fun()&quot;; }
+};
+ 
+class C : public B { };
+ 
+int main() {
+     A&lt;2&gt; *a = new C;
+        a-&gt;fun();
+           return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>template fun</string>
 			<key>Id</key>
 			<string>606</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>3</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>3</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>fun 4</string>
+				<string>fun 20</string>
+				<string>compile error</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;The value of nontype parameters must be constant as they are used at compile time to create instance of classes/functions. In the above program, templated fun() receives a nontype parameter and tries to modify it which is not possible. Therefore, compiler error.&lt;/p&gt;
+&lt;a href=&quot;http://www.geeksforgeeks.org/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What is the output of the following C++ program? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+using namespace std;
+ 
+template &lt;int i&gt;
+int fun()
+{
+     i = 20;
+     cout &lt;&lt; &quot;fun&quot; &lt;&lt; i &lt;&lt;  endl;
+}
+ 
+int main() {
+     fun&lt;4&gt;();
+        return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>Derived with no pointer</string>
 			<key>Id</key>
 			<string>607</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>3</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>Compiler Error</string>
+				<string>Base::fun() called</string>
+				<string>Base::fun(int i) called</string>
+				<string>Derived::fun(char c) called</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;In the above program, fun() of base class is not accessible in the derived class. If a derived class creates a member method with name same as one of the methods in base class, then all the base class methods with this name become hidden in derived class. &lt;/p&gt;
+&lt;p&gt;Even if the signature of the derived class method is different, all the overloaded methods in base class become hidden.&lt;/p&gt;
+&lt;a href=&quot;http://www.geeksforgeeks.org/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What is the output of the following C++ program? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include&lt;iostream&gt;
+using namespace std;
+
+class Base 
+{
+  public:
+    int fun()      { cout &lt;&lt; &quot;Base::fun() called&quot;; }
+    int fun(int i) { cout &lt;&lt; &quot;Base::fun(int i) called&quot;; }
+};
+
+class Derived: public Base 
+{
+  public:
+    int fun(char x)   { cout &lt;&lt; &quot;Derived::fun(char ) called&quot;; }
+};
+
+int main() 
+{
+  Derived d;
+  d.fun();
+  return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>global var + local var</string>
 			<key>Id</key>
 			<string>608</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>2</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>2</string>
+				<string>10</string>
+				<string>1</string>
+				<string>Compiler error: variable redefinition</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;If Scope Resolution Operator is placed before a variable name then the global variable is referenced. So if we remove the following line from the above program then it will fail in compilation.&lt;/p&gt;
+
+&lt;br&gt;
+&lt;a href=&quot;http://www.geeksforgeeks.org/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What is the output of the following C++ program? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include&lt;iostream&gt;
+using namespace std;
+
+int x = 10;
+void fun()
+{
+  int x = 2;
+  {
+    int x = 1;
+    cout &lt;&lt; ::x &lt;&lt; endl; 
+  }
+}
+
+int main()
+{
+  fun();
+  return 0;
+}
+
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>constructor</string>
 			<key>Id</key>
 			<string>609</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>Constructor called</string>
+				<string>Constructor called; Constructor called</string>
+				<string>Compiler Error</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;If we take a closer look at the statement “Point t1, *t2;:” then we can see that only one object is constructed here. t2 is just a pointer variable, not an object.&lt;/p&gt;
+
+&lt;br&gt;
+&lt;a href=&quot;http://www.geeksforgeeks.org/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What is the output of the following C++ program? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include&lt;iostream&gt;
+using namespace std;
+class Point {
+  private:
+    int x;
+    int y;
+  public:
+    Point(int i, int j);  // Constructor
+};
+
+Point::Point(int i = 0, int j = 0)  {
+  x = i;
+  y = j;
+  cout &lt;&lt; &quot;Constructor called&quot;;
+}
+
+int main()
+{
+  Point t1, *t2;
+  return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 	</array>
 </dict>
