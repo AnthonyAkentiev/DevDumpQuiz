@@ -45,6 +45,11 @@
 		99E3F3291B0753BF00F4D955 /* QuestionsBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E3F3281B0753BF00F4D955 /* QuestionsBase.swift */; };
 		99E3F32B1B07548900F4D955 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E3F32A1B07548900F4D955 /* Model.swift */; };
 		99E3F32D1B07549700F4D955 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E3F32C1B07549700F4D955 /* Tags.swift */; };
+		99EDB5151BDD48ED00719A5B /* AQ20_Cpp2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99EDB5141BDD48ED00719A5B /* AQ20_Cpp2.plist */; settings = {ASSET_TAGS = (); }; };
+		99EDB51A1BDD49C500719A5B /* AQ21_Cpp3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99EDB5161BDD49C500719A5B /* AQ21_Cpp3.plist */; settings = {ASSET_TAGS = (); }; };
+		99EDB51B1BDD49C500719A5B /* AQ22_Cpp4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99EDB5171BDD49C500719A5B /* AQ22_Cpp4.plist */; settings = {ASSET_TAGS = (); }; };
+		99EDB51C1BDD49C500719A5B /* AQ23_Cpp5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99EDB5181BDD49C500719A5B /* AQ23_Cpp5.plist */; settings = {ASSET_TAGS = (); }; };
+		99EDB51D1BDD49C500719A5B /* AQ24_Cpp6.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99EDB5191BDD49C500719A5B /* AQ24_Cpp6.plist */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +107,11 @@
 		99E3F3281B0753BF00F4D955 /* QuestionsBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsBase.swift; sourceTree = "<group>"; };
 		99E3F32A1B07548900F4D955 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		99E3F32C1B07549700F4D955 /* Tags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
+		99EDB5141BDD48ED00719A5B /* AQ20_Cpp2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ20_Cpp2.plist; path = resources/AQ20_Cpp2.plist; sourceTree = SOURCE_ROOT; };
+		99EDB5161BDD49C500719A5B /* AQ21_Cpp3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ21_Cpp3.plist; path = resources/AQ21_Cpp3.plist; sourceTree = SOURCE_ROOT; };
+		99EDB5171BDD49C500719A5B /* AQ22_Cpp4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ22_Cpp4.plist; path = resources/AQ22_Cpp4.plist; sourceTree = SOURCE_ROOT; };
+		99EDB5181BDD49C500719A5B /* AQ23_Cpp5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ23_Cpp5.plist; path = resources/AQ23_Cpp5.plist; sourceTree = SOURCE_ROOT; };
+		99EDB5191BDD49C500719A5B /* AQ24_Cpp6.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ24_Cpp6.plist; path = resources/AQ24_Cpp6.plist; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +242,11 @@
 				99DB0B591B822E6C00C4F189 /* AQ17_Java8.plist */,
 				99DB0B5B1B830C7900C4F189 /* AQ18_Java9.plist */,
 				99DB0B5D1B83157000C4F189 /* AQ19_Java10.plist */,
+				99EDB5141BDD48ED00719A5B /* AQ20_Cpp2.plist */,
+				99EDB5161BDD49C500719A5B /* AQ21_Cpp3.plist */,
+				99EDB5171BDD49C500719A5B /* AQ22_Cpp4.plist */,
+				99EDB5181BDD49C500719A5B /* AQ23_Cpp5.plist */,
+				99EDB5191BDD49C500719A5B /* AQ24_Cpp6.plist */,
 			);
 			name = "In-App-Purchases";
 			sourceTree = "<group>";
@@ -320,13 +335,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				99DB0B4E1B81E87B00C4F189 /* AQ11_Java2.plist in Resources */,
+				99EDB51D1BDD49C500719A5B /* AQ24_Cpp6.plist in Resources */,
 				99D80CFD1B95B34700EF612E /* Images.xcassets in Resources */,
 				9920C46F1AF4EC67007FD2D9 /* AQ3_Swift.plist in Resources */,
 				9969AED51AF382EC00DFB8EE /* Main.storyboard in Resources */,
 				99DB0B541B81FBDA00C4F189 /* AQ14_Java5.plist in Resources */,
+				99EDB5151BDD48ED00719A5B /* AQ20_Cpp2.plist in Resources */,
 				99D5B33D1AF387BD005CE456 /* stub_basic_langs.html in Resources */,
 				99DB0B521B81F48D00C4F189 /* AQ13_Java4.plist in Resources */,
 				9969AEDA1AF382EC00DFB8EE /* LaunchScreen.xib in Resources */,
+				99EDB51C1BDD49C500719A5B /* AQ23_Cpp5.plist in Resources */,
 				99DB0B5C1B830C7900C4F189 /* AQ18_Java9.plist in Resources */,
 				99DB0B5A1B822E6C00C4F189 /* AQ17_Java8.plist in Resources */,
 				99D5B33A1AF387BD005CE456 /* AQ1_Linux.plist in Resources */,
@@ -335,6 +353,8 @@
 				99DB0B4A1B818B5700C4F189 /* AQ9_Python4.plist in Resources */,
 				99DB0B581B82260600C4F189 /* AQ16_Java7.plist in Resources */,
 				99DB0B5E1B83157000C4F189 /* AQ19_Java10.plist in Resources */,
+				99EDB51B1BDD49C500719A5B /* AQ22_Cpp4.plist in Resources */,
+				99EDB51A1BDD49C500719A5B /* AQ21_Cpp3.plist in Resources */,
 				99D5B33C1AF387BD005CE456 /* Q1.plist in Resources */,
 				9975C4061AF38E7600478404 /* StoryboardiPad.storyboard in Resources */,
 				99040B091AF81F6700DD570D /* AQ5_ObjC.plist in Resources */,
