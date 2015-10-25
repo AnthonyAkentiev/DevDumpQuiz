@@ -21,11 +21,11 @@
 		9975C4061AF38E7600478404 /* StoryboardiPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9975C4041AF38E7600478404 /* StoryboardiPad.storyboard */; };
 		9975CF451AF53FE200A698F0 /* AQ4_Cpp.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9975CF441AF53FE200A698F0 /* AQ4_Cpp.plist */; };
 		997CFCE41B07A405001BE575 /* AQ6_Python.plist in Resources */ = {isa = PBXBuildFile; fileRef = 997CFCE31B07A405001BE575 /* AQ6_Python.plist */; };
-		99C819771B95636900E6413D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99C819761B95636900E6413D /* Images.xcassets */; };
 		99D5B33A1AF387BD005CE456 /* AQ1_Linux.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99D5B3361AF387BD005CE456 /* AQ1_Linux.plist */; };
 		99D5B33B1AF387BD005CE456 /* AQ2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99D5B3371AF387BD005CE456 /* AQ2.plist */; };
 		99D5B33C1AF387BD005CE456 /* Q1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99D5B3381AF387BD005CE456 /* Q1.plist */; };
 		99D5B33D1AF387BD005CE456 /* stub_basic_langs.html in Resources */ = {isa = PBXBuildFile; fileRef = 99D5B3391AF387BD005CE456 /* stub_basic_langs.html */; };
+		99D80CFD1B95B34700EF612E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99D80CFC1B95B34700EF612E /* Images.xcassets */; };
 		99DB0B4A1B818B5700C4F189 /* AQ9_Python4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DB0B491B818B5700C4F189 /* AQ9_Python4.plist */; };
 		99DB0B4C1B8198F600C4F189 /* AQ10_Java1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DB0B4B1B8198F600C4F189 /* AQ10_Java1.plist */; };
 		99DB0B4E1B81E87B00C4F189 /* AQ11_Java2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DB0B4D1B81E87B00C4F189 /* AQ11_Java2.plist */; };
@@ -78,11 +78,11 @@
 		9975C4051AF38E7600478404 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "DevDump Quiz/Base.lproj/StoryboardiPad.storyboard"; sourceTree = "<group>"; };
 		9975CF441AF53FE200A698F0 /* AQ4_Cpp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ4_Cpp.plist; path = resources/AQ4_Cpp.plist; sourceTree = SOURCE_ROOT; };
 		997CFCE31B07A405001BE575 /* AQ6_Python.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ6_Python.plist; path = resources/AQ6_Python.plist; sourceTree = SOURCE_ROOT; };
-		99C819761B95636900E6413D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		99D5B3361AF387BD005CE456 /* AQ1_Linux.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ1_Linux.plist; path = resources/AQ1_Linux.plist; sourceTree = SOURCE_ROOT; };
 		99D5B3371AF387BD005CE456 /* AQ2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ2.plist; path = resources/AQ2.plist; sourceTree = SOURCE_ROOT; };
 		99D5B3381AF387BD005CE456 /* Q1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Q1.plist; path = resources/Q1.plist; sourceTree = SOURCE_ROOT; };
 		99D5B3391AF387BD005CE456 /* stub_basic_langs.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = stub_basic_langs.html; path = resources/stub_basic_langs.html; sourceTree = SOURCE_ROOT; };
+		99D80CFC1B95B34700EF612E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		99DB0B491B818B5700C4F189 /* AQ9_Python4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ9_Python4.plist; path = resources/AQ9_Python4.plist; sourceTree = SOURCE_ROOT; };
 		99DB0B4B1B8198F600C4F189 /* AQ10_Java1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ10_Java1.plist; path = resources/AQ10_Java1.plist; sourceTree = SOURCE_ROOT; };
 		99DB0B4D1B81E87B00C4F189 /* AQ11_Java2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AQ11_Java2.plist; path = resources/AQ11_Java2.plist; sourceTree = SOURCE_ROOT; };
@@ -176,7 +176,6 @@
 				9969AED31AF382EC00DFB8EE /* Main.storyboard */,
 				9975C4041AF38E7600478404 /* StoryboardiPad.storyboard */,
 				9969AED81AF382EC00DFB8EE /* LaunchScreen.xib */,
-				99C819761B95636900E6413D /* Images.xcassets */,
 				9969AECD1AF382EC00DFB8EE /* Supporting Files */,
 			);
 			path = "DevDump Quiz";
@@ -185,6 +184,7 @@
 		9969AECD1AF382EC00DFB8EE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				99D80CFC1B95B34700EF612E /* Images.xcassets */,
 				99C3CF071AF38A82004B475C /* In-App-Purchases */,
 				99D5B3381AF387BD005CE456 /* Q1.plist */,
 				99D5B3391AF387BD005CE456 /* stub_basic_langs.html */,
@@ -280,6 +280,7 @@
 		9969AEC21AF382EC00DFB8EE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Anthony Akentiev";
 				TargetAttributes = {
@@ -318,7 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99DB0B4E1B81E87B00C4F189 /* AQ11_Java2.plist in Resources */,
-				99C819771B95636900E6413D /* Images.xcassets in Resources */,
+				99D80CFD1B95B34700EF612E /* Images.xcassets in Resources */,
 				9920C46F1AF4EC67007FD2D9 /* AQ3_Swift.plist in Resources */,
 				9969AED51AF382EC00DFB8EE /* Main.storyboard in Resources */,
 				99DB0B541B81FBDA00C4F189 /* AQ14_Java5.plist in Resources */,
