@@ -6,233 +6,468 @@
 	<array>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>hello world</string>
 			<key>Id</key>
 			<string>640</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>Hello World</string>
+				<string>Runtime Error</string>
+				<string>Compile-time error</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;String literals have static storage duration, therefore they can be referenced
+anywhere in the translation unit, even though it is defined in a function.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What will produce the code below? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+
+const char* Foo()
+{
+    return &quot;Hello World&quot;;
+}
+
+int main() 
+{ 
+    const char* str = Foo();
+    std::cout &lt;&lt; str &lt;&lt; std::endl;
+
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>sequence point</string>
 			<key>Id</key>
 			<string>641</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>3</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>4</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>&amp;&amp;</string>
+				<string>||</string>
+				<string>?</string>
+				<string>=</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;All of them except the assignment operator indicate a &lt;b&gt;sequence point&lt;/b&gt;.&lt;/p&gt;
+
+
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; Which of the following operators does NOT indicate a sequence point in
+the code? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>array ill-formed</string>
 			<key>Id</key>
 			<string>642</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>4</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>9</string>
+				<string>15</string>
+				<string>21</string>
+				<string>Ill-formed</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;Only the first constant expression in a multiple dimension array can be ommitted. Therefore the declaration of the array in this example is ill-formed.&lt;/p&gt;
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What value gets printed by the program? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+
+int main() 
+{ 
+    int sum = 0;
+
+    int array[3][] = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}};
+
+    for (int i = 0; i &lt; 3 ; ++i)
+    {
+        for (int j = 2; j &lt; 3 ; j++)
+        {
+            sum += array[i][j];
+        }
+    }
+
+    std::cout &lt;&lt; sum &lt;&lt; std::endl;
+
+    return 0;
+} 
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>same signature</string>
 			<key>Id</key>
 			<string>643</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>3</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>4</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>3</string>
+				<string>5</string>
+				<string>6</string>
+				<string>Ill-formed</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;There can only be one function with the same signature. Altering the cv
+qualification of parameters does not change the function signature. Therefore
+the two foo functions have the same signature and the program is ill-formed.&lt;/p&gt;
+
+
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt;What value will be printed by the program?&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+
+int foo(int x, int y)
+{
+    return x+y;
+}
+
+int foo(const int x, const int y)
+{
+    return x+y+1;
+}
+
+int main(int argc, char** argv)
+{
+    const int x = 3;
+    const int y = 2;
+
+    std::cout &lt;&lt; foo(x,y) &lt;&lt; std::endl;
+
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>array dereferencing</string>
 			<key>Id</key>
 			<string>644</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>ava</string>
+				<string>java</string>
+				<string>c++</string>
+				<string>Compile-time error</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;In this program we are moving the pointer from first position to second
+position and printing the remaining value. That is why characters &apos;ava&apos; will
+be printed as the first character is skipped.&lt;/p&gt;
+
+&lt;a
+href=&quot;http://www.sanfoundry.com/c-plus-plus-language-interview-questions-pointers-into-arrays/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What is the output of this program? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+using namespace std;
+int main()
+{
+    int i;
+    char *arr[] = {&quot;C&quot;, &quot;C++&quot;, &quot;Java&quot;, &quot;VBA&quot;};
+    char *(*ptr)[4] = &amp;arr;
+    cout &lt;&lt; ++(*ptr)[2];
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>forward declaration</string>
 			<key>Id</key>
 			<string>655</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>2</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>3</string>
+				<string>4</string>
+				<string>9</string>
+				<string>Ill-formed</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;The trick here is, we change the parameter names from the function declaration
+to function definition. This is legal, and only the parameter names in the
+function definition are used.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What value gets printed by the program? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+
+int foo(int y);
+int foo(int x)
+{
+    return x+1;
+}
+
+int main(int argc, char** argv)
+{
+    int x = 3;
+    int y = 6;
+
+    std::cout &lt;&lt; foo(x) &lt;&lt; std::endl;
+
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>y = x in params</string>
 			<key>Id</key>
 			<string>666</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>4</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>1</string>
+				<string>3</string>
+				<string>5</string>
+				<string>Ill-formed</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;The program is ill-formed. Parameters of a function can not be used in default
+argument expressions.&lt;/p&gt;
+
+&lt;br&gt;
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What value gets printed by the program? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+
+int foo(int x, int y = x) 
+{ 
+      return x+y+1; 
+} 
+
+int main(int argc, char** argv) 
+{ 
+      std::cout &lt;&lt; foo(2) &lt;&lt; std::endl; 
+        return 0; 
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>reaches end of input</string>
 			<key>Id</key>
 			<string>667</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>1</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>2</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>Hello</string>
+				<string>Hi</string>
+				<string>HelloHi</string>
+				<string>Compile-time error</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;Control reaches default-case after comparing the rest of case constants.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.tutorialspoint.com/cplusplus/cpp_online_quiz.htm&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What is the output of the following program? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include&lt;isotream&gt;
+
+using namespace std;
+main()
+{ 
+    int x = 1; 
+
+    switch(x) 
+    {
+        default: cout&lt;&lt;”Hello”;
+        case 1: cout&lt;&lt;”Hi”; break;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>inheritance</string>
 			<key>Id</key>
 			<string>668</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>3</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>2</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>10</string>
+				<string>15</string>
+				<string>20</string>
+				<string>30</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;The method &lt;b&gt;B::foo&lt;/b&gt; is called but with the default argument of 5 from A::foo. &quot;A
+virtual function call uses the default arguments in the declaration of the
+virtual function determined by the static type of the pointer or reference
+denoting the object. An overriding function in a derived class does not
+acquire default arguments from the function it overrides.&quot;&lt;/p&gt;
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What is the output of the program? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+
+struct A 
+{ 
+    virtual int foo(int x = 5) 
+    { 
+        return x * 2; 
+    } 
+}; 
+
+struct B : public A 
+{ 
+    int foo(int x = 10) 
+    { 
+        return x * 3; 
+    } 
+}; 
+
+int main(int argc, char** argv) 
+{ 
+    A* a = new B; 
+
+    std::cout &lt;&lt; a-&gt;foo() &lt;&lt; std::endl; 
+
+    return 0; 
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>class members</string>
 			<key>Id</key>
 			<string>669</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>2</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>72</string>
+				<string>75.14</string>
+				<string>Ill-formed</string>
+				<string>Undefined Behaviour</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;&quot;An aggregate is an array or a class with no user-declared constructors, no
+private or protected non-static data members, no base classes, and no virtual
+functions.&quot; Aggregates can be initialized by &quot;brace-enclosed, comma separated
+list of initializer-clauses for the members of the aggregate, written in
+increasing subscript or member order.&quot; Static data members are skipped during
+this type of initialization so 3.14 initializes d and not sd in this example
+&quot;If there are fewer initializers in the list than there are members in the
+aggregate, then each member not explicitly initialized shall be
+value-initialized&quot;. So in this example i is value-initialized to 0.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What is the output of the program? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+class Foo
+{
+    public:
+
+        char c;
+        static double sd;
+        double d;
+        int i;
+};
+
+int main(int argc, char** argv) 
+{ 
+    Foo f = { 72, 3.14 };
+
+    std::cout &lt;&lt; f.c + f.d + f.i &lt;&lt; std::endl;
+
+    return 0; 
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 	</array>
 </dict>
