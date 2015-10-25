@@ -6,233 +6,453 @@
 	<array>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>local vs global</string>
 			<key>Id</key>
 			<string>610</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>4</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>3</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>0</string>
+				<string>5</string>
+				<string>undefined</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;The local x in main hides the global x before the local x&apos;s initializer is
+considered. Therefore the local x is being initialized with itself (the local
+unitialized variable).&lt;/p&gt;
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What is the value of the local variable x at the end of main?  &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+int x = 5;
+int main(int argc, char** argv)
+{
+        int x = x;
+            return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>class name over variable</string>
 			<key>Id</key>
 			<string>611</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>4</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>Yes</string>
+				<string>No</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;You can have a class and a regular variable with the same name. However the
+class name will been hidden and the elaborated-type-specfier must be used to
+access the class name.&lt;/p&gt;
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; Does the code below legal? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+int x = 5;
+class x
+{
+};
+
+int main(int argc, char** argv)
+{
+        class x y;
+        return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>template name vs var name</string>
 			<key>Id</key>
 			<string>612</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>4</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>3</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>True</string>
+				<string>False</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;A template class name can not be the same as any other name in the same
+declarative region. This is also the case for typedef names.&lt;/p&gt;
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt;The code below is legal? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+int x = 5;
+template &lt;typename T&gt;
+class x
+{
+    T member;
+};
+
+int main(int argc, char** argv)
+{
+    class x&lt;int&gt; y;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>try block</string>
 			<key>Id</key>
 			<string>613</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>4</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>2</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>x and y and e</string>
+				<string>x and e</string>
+				<string>y and e</string>
+				<string>e</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;Function parameters are accessible in the try handler. Function local
+variables are NOT accessible in the try handler.&lt;/p&gt;&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; Which of the following variables can be accessed in foo&apos;s function try
+block handler? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+void foo(int x) try
+{
+    int y = 2;
+    throw 1;
+}
+catch(int e)
+{
+}
+int main(int argc, char** argv)
+{
+    foo(3);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>local var in block</string>
 			<key>Id</key>
 			<string>614</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>1</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>3</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>3, 4</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;The variable declared in the else-if did not exist before its declaration and
+can not be used after the end of the else clause. Variables declared in
+conditions of if,else-if,else structures can be used in all subsequent
+conditions and bodies of the if,else-if,else structure.&lt;/p&gt;
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; Given the code below, the variable y can be accessed in which blocks of
+code? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+int main(int argc, char** argv)
+{
+
+    if ( argc &gt; 10 )
+    {
+// 1
+    }
+    else if (int y = argc - 1 )
+    {
+// 2
+    }
+    else
+    {
+// 3
+    }
+
+    return 0;
+}
+
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>if block</string>
 			<key>Id</key>
 			<string>615</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>1</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>&quot;if&quot; block</string>
+				<string>&quot;else&quot; block</string>
+				<string>everywhere</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;A scope is a region of the program and broadly speaking there are three
+places, where variables can be declared:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Inside a function or a block which is called local variables;&lt;/li&gt;
+  &lt;li&gt;In the definition of function parameters which is called formal parameters;&lt;/li&gt;
+  &lt;li&gt;Outside of all functions which is called global variables&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Variables that are declared inside a function or block are local variables.
+They can be used only by statements that are inside that function or block of
+code. Local variables are not known to functions outside their own. Following
+is the example using local variables:&lt;/p&gt;
+
+&lt;p&gt;Variables declared in blocks of if,else-if,else are local to the block they
+were declared in.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; Where does the variable x is accesible in this program? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+int main(int argc, char** argv)
+{
+    if ( argc &gt; 2 )
+    {
+        int x = 5;
+    }
+    else
+    {
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>tilde</string>
 			<key>Id</key>
 			<string>616</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>3</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>4</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>80 80</string>
+				<string>81 80</string>
+				<string>80 81</string>
+				<string>Compile time error</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;The main issue here is that definition of &apos;y&apos; is incorrect. The &apos;&amp;&apos; should be
+written before the variable name. Also there are several other issues: missing
+the namespace &apos;std&apos; before &apos;cout&apos; and also some compiler will generate an
+error regarding the &apos;iostream.h&apos; included file. it is more prefferable to
+write #include &lt;iostream&gt;&lt;/p&gt;
+&lt;a href=&quot;http://www.indiabix.com/cpp-programming/references/discussion-139&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What is the output of the program given below?  &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include&lt;iostream.h&gt; 
+int main()
+{
+    int x = 80; 
+    int y&amp; = x;
+    x++;
+    cout &lt;&lt; x &lt;&lt; &quot; &quot; &lt;&lt; --y;
+    return 0;
+}
+
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>array size undef beh</string>
 			<key>Id</key>
 			<string>617</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>3</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>5</string>
+				<string>3</string>
+				<string>Undefined Behaviour</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;3.3.6/3 says if reordering member declarations in a class yields an alternate
+valid program the program is ill-formed. In this case the enum SIZE is not in
+scope when array is declared making the array size 5. However if the members
+were reordered to declare array after the definition of the enum the array
+size would be 3. Thus since reordering member declaration changes the program,
+it is undefined.&lt;/p&gt;
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What value does size print out? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+const int SIZE = 5;
+struct tester
+{
+    int array[SIZE];
+    enum 
+    {
+        SIZE = 3
+    };
+    void size()
+    {
+        std::cout &lt;&lt; sizeof(array) / sizeof(int);
+    }
+};
+
+int main(int argc, char** argv)
+{
+    tester t;
+    t.size();
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>SIZE</string>
 			<key>Id</key>
 			<string>618</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>3</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>2</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>8</string>
+				<string>2</string>
+				<string>Undefined Behaviour</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;Names defined at any point in a class are in scope in all member functions of
+the class. Thus the enum SIZE is in scope in the function foo and hides the
+global variable SIZE.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What value does foo print out? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+const int SIZE = 8;
+struct tester
+{
+    void foo()
+    {
+        std::cout &lt;&lt; SIZE &lt;&lt; std::endl;
+    }
+
+    enum 
+    {
+        SIZE = 2
+    };
+};
+
+int main(int argc, char** argv)
+{
+    tester t;
+    t.foo();
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>x inside</string>
 			<key>Id</key>
 			<string>619</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>4</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>3</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>34</string>
+				<string>Undefined Behaviour</string>
+				<string>Compile Time Error</string>
+				<string>35</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;Names used in a namespace must be declared before before their use. The
+variable x used in the function bar() is defined after the function itself.&lt;/p&gt;
+&lt;p&gt;That is why the compiler will generate an error message for this code.&lt;/p&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What is the output of the following program ? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+namespace foo
+{
+    void bar()
+    {
+        x++;
+    }
+    int x = 34;
+}
+
+int main(int argc, char** argv)
+{
+    foo::bar();
+    std::cout &lt;&lt; foo::x &lt;&lt; std::endl;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 	</array>
 </dict>
