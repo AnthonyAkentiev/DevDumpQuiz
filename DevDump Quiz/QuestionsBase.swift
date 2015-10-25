@@ -42,16 +42,14 @@ class QuestionsBase: Tags {
     
     // Read-write plist file 
     // All questions is merged into it
-    func getQPath()->String{
+    func getQPath()->NSURL{
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
         let documentsDirectory = paths.objectAtIndex(0) as! String
         
         let name = "Q1.plist"
         
         let path = NSURL(fileURLWithPath: documentsDirectory).URLByAppendingPathComponent(name)
-        let pathStr = "\(path)"
-        
-        return pathStr
+        return path
     }
     
     func prepareQuestions(){
@@ -60,7 +58,8 @@ class QuestionsBase: Tags {
         
         // check if everything is OK
         let dstPath = getQPath()
-        assert(NSFileManager.defaultManager().fileExistsAtPath(dstPath))
+        var error:NSError?
+        assert(dstPath.checkResourceIsReachableAndReturnError(&error))
         
         // In debug - manually copy Additional Questions (in-app-purchases)
         //let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -108,24 +107,26 @@ class QuestionsBase: Tags {
         ]
         
         for aq in aqs {
-            // TODO: bad path conversion, fix them
             let srcPath: String = NSBundle.mainBundle().pathForResource(aq, ofType: "plist")!
             
             let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
             let documentsDirectory = paths.objectAtIndex(0) as! String
             
             let dstPath = NSURL(fileURLWithPath: documentsDirectory).URLByAppendingPathComponent(aq + ".ext")
-            let dstPathStr = "\(dstPath)"
             
             assert(NSFileManager.defaultManager().fileExistsAtPath(srcPath))
             
-            if(!NSFileManager.defaultManager().fileExistsAtPath(dstPathStr)){
+            var error:NSError?
+            if(!dstPath.checkResourceIsReachableAndReturnError(&error)){
                 // copy
-                NSLog("Copy additional questions: \(srcPath) file to \(dstPathStr)")
+                NSLog("Copy additional questions: \(srcPath) file to \(dstPath)")
                 
                 //var err: NSError?
                 do {
-                    try NSFileManager.defaultManager().copyItemAtPath(srcPath, toPath: dstPathStr)
+                    try NSFileManager.defaultManager().copyItemAtPath(
+                        srcPath,
+                        toPath: dstPath.path!)
+                    
                 }catch _ as NSError{
                     // TODO: write error to log
                 }
@@ -136,7 +137,7 @@ class QuestionsBase: Tags {
     // scan all ids and check for collisions
     func checkIdCollisions()->Bool{
         let path = getQPath()
-        let myDict: NSDictionary? = NSDictionary(contentsOfFile: path)
+        let myDict: NSDictionary? = NSDictionary(contentsOfURL: path)
         
         let questionsArr: NSArray = myDict!.objectForKey("questions") as! NSArray
         var qIdsMap = [String:Bool]()
@@ -164,12 +165,12 @@ class QuestionsBase: Tags {
         let dstPath = getQPath()
         
         // check if already exists and do not copy in this case
-        if(!NSFileManager.defaultManager().fileExistsAtPath(dstPath)){
-            // copy
+        var error:NSError?
+        if(!dstPath.checkResourceIsReachableAndReturnError(&error)){
             NSLog("Copy \(srcPath) file to \(dstPath)")
             
             let myDict: NSDictionary? = NSDictionary(contentsOfFile: srcPath)
-            myDict!.writeToFile(dstPath, atomically: false)
+            myDict!.writeToFile(dstPath.path!, atomically: false)
         }
     }
   
@@ -227,7 +228,7 @@ class QuestionsBase: Tags {
     func isNewQuestionWithId(id:String)->Bool{
         // scan all questions in Documents/Q1.plist
         let path = getQPath()
-        let myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: path)
+        let myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfURL: path)
         
         let questionsArr: NSMutableArray = myDict!.objectForKey("questions") as! NSMutableArray
         //let countBefore = questionsArr.count
@@ -251,20 +252,20 @@ class QuestionsBase: Tags {
         NSLog("New question: \(qId). Adding to list")
         
         let path = getQPath()
-        let myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: path)
+        let myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfURL: path)
         let questionsArr: NSMutableArray = myDict!.objectForKey("questions") as! NSMutableArray
         
         questionsArr.insertObject(q, atIndex: 0)
         myDict!.setObject(questionsArr, forKey: "questions")
         
         // now save
-        myDict!.writeToFile(path, atomically: true)
+        myDict!.writeToFile(path.path!, atomically: true)
     }
     
     // Search in Documents/Q1.plist file
     func getQuestionWithId(id: Int)->NSDictionary{
         let path = getQPath()
-        let myDict: NSDictionary? = NSDictionary(contentsOfFile: path)
+        let myDict: NSDictionary? = NSDictionary(contentsOfURL: path)
         
         let questionsArr: NSArray = myDict!.objectForKey("questions") as! NSArray
         
@@ -285,7 +286,7 @@ class QuestionsBase: Tags {
     // Update Q1.plist file - replace question
     func updateQuestionWithId(id: Int, andValue:NSDictionary){
         let path = getQPath()
-        let myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: path)
+        let myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfURL: path)
         
         let questionsArr: NSMutableArray = myDict!.objectForKey("questions") as! NSMutableArray
         let countBefore = questionsArr.count
@@ -307,7 +308,7 @@ class QuestionsBase: Tags {
         
         // now save
         myDict!.setObject(questionsArr, forKey: "questions")
-        myDict!.writeToFile(path, atomically: true)
+        myDict!.writeToFile(path.path!, atomically: true)
         
         // Assert
         let tstDict: NSDictionary = getQuestionWithId(id)
@@ -387,7 +388,7 @@ class QuestionsBase: Tags {
 
     func getTotalQuestionsCount()->Int{
         let path = getQPath()
-        let myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: path)
+        let myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfURL: path)
         
         let questionsArr: NSMutableArray = myDict!.objectForKey("questions") as! NSMutableArray
         return questionsArr.count
@@ -399,7 +400,7 @@ class QuestionsBase: Tags {
         
         // iterate through all questions and select ones with same 'tag'
         let path = getQPath()
-        let myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: path)
+        let myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfURL: path)
         
         let questionsArr: NSMutableArray = myDict!.objectForKey("questions") as! NSMutableArray
         //let countBefore = questionsArr.count
@@ -435,7 +436,7 @@ class QuestionsBase: Tags {
     // iterate through all questions and select ones with same 'tag'
     func populateTotalTags(){
         let path = getQPath()
-        let myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: path)
+        let myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfURL: path)
         
         let questionsArr: NSMutableArray = myDict!.objectForKey("questions") as! NSMutableArray
         

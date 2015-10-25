@@ -65,15 +65,15 @@ class Model: QuestionsBase {
     func clearHistory(){
         // Single big Q1.plist file
         let dstPath = getQPath()
-        if(NSFileManager.defaultManager().fileExistsAtPath(dstPath)){
+        
+        var error:NSError?
+        if(dstPath.checkResourceIsReachableAndReturnError(&error)){
             do {
-                try NSFileManager.defaultManager().removeItemAtPath(dstPath)
+                try NSFileManager.defaultManager().removeItemAtPath(dstPath.path!)
             } catch _ as NSError {
                 // TODO: write error to log
                 //err = error
             }
-            
-            // TODO: check error
             
             loadEverything()
         }
