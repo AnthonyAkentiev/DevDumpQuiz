@@ -103,7 +103,13 @@ class QuestionsBase: Tags {
             "AQ16_Java7",
             "AQ17_Java8",
             "AQ18_Java9",
-            "AQ19_Java10"
+            "AQ19_Java10",
+            
+            "AQ20_Cpp2",
+            "AQ21_Cpp3",
+            "AQ22_Cpp4",
+            "AQ23_Cpp5",
+            "AQ24_Cpp6"
         ]
         
         for aq in aqs {
