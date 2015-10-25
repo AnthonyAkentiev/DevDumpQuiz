@@ -6,233 +6,428 @@
 	<array>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>divide by minus</string>
 			<key>Id</key>
 			<string>630</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>3</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>3</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>1</string>
+				<string>-1</string>
+				<string>Undefined Behaviour</string>
+				<string>Compile Error</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;The sign in such cases(i.e when one or both operands are negative) is
+implementation-defined. The spec says in §5.6/4 (C++03),&lt;/p&gt;
+
+&lt;p&gt;The binary / operator yields the quotient, and the binary % operator yields
+the remainder from the division of the first expression by the second. If the
+second operand of / or % is zero the behavior is undefined; otherwise (a/b)*b
++ a%b is equal to a. If both operands are nonnegative then the remainder is
+nonnegative; if not, the sign of the remainder is implementation-defined.&lt;/p&gt;
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What is the value of x at the end of main? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+int main(int argc, char** argv)
+{
+    int x = 50 % -7;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>increment in expression</string>
 			<key>Id</key>
 			<string>631</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>4</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>0, 1</string>
+				<string>1, 2</string>
+				<string>3, 1</string>
+				<string>2, 1</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;Understanding the reason for this is fundamental to understanding how the
+unary increment (++) and decrement (--) operators work in C++.&lt;/p&gt;
+
+&lt;p&gt;When these operators precede a variable, the value of the variable is modified
+first and then the modified value is used.&lt;/p&gt; 
+
+&lt;p&gt;However, when these operators follow a variable, the unmodified value of the
+variable is used and then it is incremented or decremented.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.toptal.com/c-plus-plus/interview-questions&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What will x and y equal after the code below is executed? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+int main() 
+{ 
+    int x = 0;
+    int y = x++ ? x++ : x++;
+    std::cout &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; std::endl;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>extend</string>
 			<key>Id</key>
 			<string>632</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>4</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>0x00000000</string>
+				<string>0xFFFFFFFF</string>
+				<string>Implementation defined</string>
+				<string>Undefined Bahaviour</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;The result of a shift operation is undefined if the right operand is negative,
+or greater than or equal to the length in bits of the promoted left operand.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; Given the assumptions in the comments, what values is printed for x? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+int main(int argc, char** argv)
+{
+    // assume result printed is 4
+    std::cout &lt;&lt; sizeof(int) &lt;&lt; std::endl;
+
+    int x = 0x1000;
+
+    x = x &lt;&lt; 32;
+
+    std::cout &lt;&lt; std::hex &lt;&lt; x &lt;&lt; std::endl;
+
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>array address</string>
 			<key>Id</key>
 			<string>633</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>Yes</string>
+				<string>No</string>
+				<string>Implementation defined</string>
+				<string>Undefined Behaviour</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;Pointer comparison with greater and less than relational operators is defined
+within the same array.&lt;/p&gt;
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; Will &quot;Hello World&quot; be printed by the program below? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+int main(int argc, char** argv)
+{
+    int array[33];
+
+    if ( &amp;array[4] &lt; &amp;array[23] )
+    {
+        std::cout &lt;&lt; &quot;Hello World&quot; &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>pointer comparison</string>
 			<key>Id</key>
 			<string>634</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>3</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>Equal</string>
+				<string>Not equal</string>
+				<string>Won&apos;t compile</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;Distinct pointer types can not be compared with equality operators.&lt;/p&gt;
+
+&lt;br&gt;
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What will produce the program below? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+
+struct Foo
+{
+};
+
+struct Bar 
+{
+};
+
+int main(int argc, char** argv)
+{
+    Foo* f = new Foo;
+    Bar* b = new Bar;
+
+    if ( f == b )
+        std::cout &lt;&lt; &quot;EQUAL&quot; &lt;&lt; std::endl;
+    else
+        std::cout &lt;&lt; &quot;NOT EQUAL&quot; &lt;&lt; std::endl;
+
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>increment fucks</string>
 			<key>Id</key>
 			<string>635</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>3</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;If the first operand to the logical AND operator evaluates to false the second
+operand is guaranteed not to evaluate. Note: the logical OR operator is
+guaranteed not to evaluate the second operand if the first operand is true.
+Note: for the logical AND and OR operators, all side effects of the first
+expression, except for destruction of temporaries, happen before the second
+expression is evaluated.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt;What value gets printed by the program? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+
+int main(int argc, char** argv)
+{
+    int x = 0;
+    int y = 0;
+
+    if (x++ &amp;&amp; y++)
+    {
+        y += 2;
+    }
+
+    std::cout &lt;&lt; x + y &lt;&lt; std::endl;
+
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>static polymorphism</string>
 			<key>Id</key>
 			<string>636</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>3</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>Operator overloading</string>
+				<string>Function overloading</string>
+				<string>Templates</string>
+				<string>All of the above</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;There are three mechanisms for static polymorphism: templates, macros and
+function overloading.&lt;/p&gt;
+&lt;br&gt;
+&lt;a
+href=&quot;http://stackoverflow.com/questions/20781527/is-there-real-static-polymorphism-in-c&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; Which of the following is a mechanism of static polymorphism? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>comma</string>
 			<key>Id</key>
 			<string>637</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>6</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;The operands to the comma operator are evaluated from left to right. The value
+of the left hand expression is discarded. The type and value of the result are
+the type type and value of the right hand operand. Note: assignment takes
+precedence over the comma operator, so in this case x=1 is evaluated first;
+than x, 2, 3&lt;/p&gt;
+
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt;What values will be printed by the program?&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+
+int main(int argc, char** argv)
+{
+    int x;
+    x = 1, 2, 3;
+    std::cout &lt;&lt; x &lt;&lt; std::endl;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>default and switch</string>
 			<key>Id</key>
 			<string>638</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>4</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>0</string>
+				<string>1</string>
+				<string>2</string>
+				<string>Nothing, it is ill-formed</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;Jumping into a block and bypassing a declaration with an initialization is
+ill-formed. In this example there are cases which would bypass the declaration
+and initialization of block scope x declaration.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What value gets printed by the program? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+
+int main() 
+{ 
+    int x = 3;
+
+    switch(x)
+    {
+        case 0:
+            int x = 1;
+            std::cout &lt;&lt; x &lt;&lt; std::endl;
+            break;
+        case 3:
+            std::cout &lt;&lt; x &lt;&lt; std::endl;
+            break;
+        default:
+            x = 2;
+            std::cout
+                &lt;&lt; x &lt;&lt;
+                std::endl;
+    }
+
+    return
+        0;
+} 
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>new alloc</string>
 			<key>Id</key>
 			<string>639</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>1</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>2</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>Cache</string>
+				<string>Heap</string>
+				<string>Stack</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;&lt;b&gt;new operator&lt;/b&gt; allocates memory dynamically know as Heap/free memory.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.tutorialspoint.com/cplusplus/cpp_online_quiz.htm&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt;Objects created using new operator are stored in __ memory.&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;</string>
 		</dict>
 	</array>
 </dict>

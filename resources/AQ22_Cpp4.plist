@@ -6,233 +6,440 @@
 	<array>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>out of enum declaration</string>
 			<key>Id</key>
 			<string>620</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>2</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>12</string>
+				<string>13</string>
+				<string>Undefined Behavour</string>
+				<string>Compile Error</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;An Enumeration&apos;s point of declaration is after its definition (which includes the initialization). Therefore in this case the value of the enum &apos;x&apos; is initialized with the global &apos;x&apos; which equals 12.&lt;/p&gt;
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt;What value for y gets printed in the program below?&lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+const int x = 12;
+int main(int argc, char** argv)
+{
+    enum dog
+    {
+        x = x,
+        y
+    };
+    std::cout &lt;&lt; y &lt;&lt; std::endl;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>name lookup</string>
 			<key>Id</key>
 			<string>621</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>3</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>2</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>foo</string>
+				<string>bar</string>
+				<string>foo bar</string>
+				<string>neither</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;In the C++ programming language, argument-dependent lookup (ADL), or
+argument-dependent name lookup,[1] applies to the lookup of an unqualified
+function name depending on the types of the arguments given to the function
+call. This behavior is also known as Koenig lookup, as it is often attributed
+to Andrew Koenig, though he is not its inventor.&lt;/p&gt;
+
+&lt;p&gt;In this case, the namespace &apos;standards&apos; is searched for a function &apos;foo&apos; because its argument &apos;ds&apos; is defined in that namespace. For function &apos;bar&apos;, no additional namespaces are searched and the name is not found.&lt;/p&gt; 
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; Which of the following functions are found when called in main during
+name lookup? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+namespace standards
+{
+    struct datastructure
+    {
+    };
+    void foo(const datastructure&amp; ds)
+    {
+    }
+    void bar()
+    {
+    }
+}
+
+int main(int argc, char** argv)
+{
+    standards::datastructure ds;
+    foo(ds);
+    bar();
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>linkage</string>
 			<key>Id</key>
 			<string>622</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>3</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>w, x, y and z</string>
+				<string>w, y and z</string>
+				<string>w and z</string>
+				<string>y and z</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;In an executing program, an identifier is represented by storage in memory that holds a variable or a compiled function body. Linkage describes this storage as it is seen by the linker. There are two types of linkage: internal linkage and external linkage.&lt;/p&gt;
+
+&lt;p&gt; Internal linkage means that storage is created to represent the identifier
+only for the file being compiled. Other files may use the same identifier name
+with internal linkage, or for a global variable, and no conflicts will be
+found by the linker – separate storage is created for each identifier.
+Internal linkage is specified by the keyword static in C and C++.&lt;/p&gt;
+
+&lt;p&gt;External linkage means that a single piece of storage is created to represent
+the identifier for all files being compiled. The storage is created once, and
+the linker must resolve all other references to that storage. Global variables
+and function names have external linkage. These are accessed from other files
+by declaring them with the keyword extern. Variables defined outside all
+functions (with the exception of const in C++) and function definitions
+default to external linkage. You can specifically force them to have internal
+linkage using the static keyword. You can explicitly state that an identifier
+has external linkage by defining it with the extern keyword. Defining a
+variable or function with extern is not necessary in C, but it is sometimes
+necessary for const in C++.&lt;/p&gt;
+
+&lt;p&gt;Automatic (local) variables exist only temporarily, on the stack, while a
+function is being called. The linker doesn’t know about automatic variables,
+and so these have no linkage.&lt;/p&gt;
+
+&lt;p&gt;So, w has external linkage. x has internal linkage. y has internal linkage. z has external linkage.&lt;/p&gt;
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt;  Of the variable definitions below, which ones have external linkage and
+can be accessed from another translation unit?  &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+int w = 1;
+static int x = 2;
+const int y = 3;
+extern const int z = 4;
+
+int main(int argc, char** argv)
+{
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>static value</string>
 			<key>Id</key>
 			<string>623</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>5</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>1</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>0</string>
+				<string>Max int value</string>
+				<string>Undefined Behaviour</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;Variables with static storage duration are zero initialized. Note that x has
+static storage duration even though the static keyword is not used. According
+to the standard: &quot;All objects which do not have dynamic storage duration, do
+not have thread storage duration, and are not local have static storage
+duration&quot;&lt;/p&gt;
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; What value is printed out for the variable x? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+int x;
+int main()
+{
+    int y;
+    std::cout &lt;&lt; x &lt;&lt; std::endl;
+    std::cout &lt;&lt; y &lt;&lt; std::endl;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>array init</string>
 			<key>Id</key>
 			<string>624</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>3</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>3</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>8,10,12,14</string>
+				<string>8,10</string>
+				<string>12,14</string>
+				<string>None</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;Arrays can be implicity converted to pointers without casting -- 4.2. There is
+no implicit conversion from pointers to arrays.&lt;/p&gt;
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; Which of the following lines should NOT compile? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+1 
+2 int main()
+3 {
+4     int a[54] = {};
+5 
+6     int b[54] = {};
+7 
+8     int* x = a;
+9 
+10    int* const y = a;
+11 
+12    b = x;
+13 
+14    b = y;
+15 
+16    return 0;
+17 } 
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>implicit conversion</string>
 			<key>Id</key>
 			<string>625</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>3</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>7 and 9</string>
+				<string>7</string>
+				<string>9</string>
+				<string>None</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;int* can be implicity converted to int const* -- 4.4. There is no implicit
+conversion from int const* to int*.&lt;/p&gt;
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; Which of the following lines should NOT compile? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+1 int main()
+2 {
+3     int a = 2;
+4 
+5     int* b = &amp;a;
+6 
+7     int const* c = b;
+8 
+9     b = c;
+10 
+11    return 0;
+12 } 
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>int() initializer</string>
 			<key>Id</key>
 			<string>626</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>3</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>4</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>0</string>
+				<string>3</string>
+				<string>Undefined Behaviour</string>
+				<string>Won&apos;t compile</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;int() creates a temporary variable which is an rvalue. The temporary variable
+that is created can not be assigned to since it is an rvalue. Thus this code
+should not compile.&lt;/p&gt;
+
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt;  What value should be printed for x? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+#include &lt;iostream&gt;
+int main()
+{
+    int x = int() = 3;
+    std::cout &lt;&lt; x &lt;&lt; std::endl;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>function overloading definition</string>
 			<key>Id</key>
 			<string>627</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>2</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>4</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>The types of arguments are different.</string>
+				<string>The order of argument is different.</string>
+				<string>The number of argument is same.</string>
+				<string>Both 1 and 2</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;You can have multiple definitions for the same function name in the same
+scope. The definition of the function must differ from each other by the types
+and/or the number of arguments in the argument list. You can not overload
+function declarations that differ only by return type.&lt;/p&gt;
+&lt;a href=&quot;http://www.indiabix.com/cpp-programming/oops-concepts/discussion-37&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; Which of the following is correct about function overloading? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>const_cast</string>
 			<key>Id</key>
 			<string>628</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>4</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>4</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>static_cast</string>
+				<string>dynamic_cast</string>
+				<string>reinterpret_cast</string>
+				<string>None of the above</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;Only &lt;strong&gt;const_cast&lt;/strong&gt; (or c-style casts) can be used to cast away constness&lt;/p&gt;
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;
+</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt;In addition to const_cast, which cast can be used to cast away constness? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 		<dict>
 			<key>Comment</key>
-			<string></string>
+			<string>new/delete</string>
 			<key>Id</key>
 			<string>629</string>
 			<key>Tags</key>
 			<string>C++</string>
 			<key>Level</key>
-			<string></string>
+			<string>3</string>
 			<key>Correct Answers</key>
-			<string></string>
+			<string>4</string>
 			<key>answers</key>
 			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>None</string>
+				<string>13</string>
+				<string>15</string>
+				<string>18</string>
 			</array>
 			<key>a</key>
-			<string></string>
+			<string>&lt;p&gt;Deleting &lt;b&gt;NULL&lt;/b&gt; pointers have no effect. deleting a pointer to a base class
+which points to a derived object is legal assuming the base destructor is
+virtual. deleting an array of objects using a base class pointer is undefined.&lt;/p&gt;
+&lt;a href=&quot;http://www.mycppquiz.com/&quot;&gt;Source&lt;/a&gt;</string>
 			<key>q</key>
-			<string></string>
+			<string>&lt;div&gt;
+&lt;h2&gt; Which lines of code below should cause the program to be undefined? &lt;/h2&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;
+1 struct Foo
+2 {
+3   virtual ~Foo() {}
+4 };
+5
+6 struct Bar : public Foo
+7 {
+8 };
+9
+10 int main(int argc, char** argv)
+11 {
+12   Foo* f = new Bar;
+13   delete f;
+14   f = 0;
+15   delete f;
+16
+17   Foo* fa = new Bar[10];
+18   delete [] fa;
+19   fa = 0;
+20   delete fa;
+21
+22   return 0;
+23 }
+&lt;/code&gt;&lt;/pre&gt;</string>
 		</dict>
 	</array>
 </dict>
