@@ -12,11 +12,11 @@ extension UITableView {
     func getAllCheckedCells()->[NSIndexPath]{
         var out = [NSIndexPath]()
         
-        var cnt = self.numberOfRowsInSection(0)
+        let cnt = self.numberOfRowsInSection(0)
         for i in 0..<cnt {
-            var indexPath: NSIndexPath = NSIndexPath(forItem: i, inSection: 0)
+            let indexPath: NSIndexPath = NSIndexPath(forItem: i, inSection: 0)
             
-            var cell:UITableViewCell? = self.cellForRowAtIndexPath(indexPath)
+            let cell:UITableViewCell? = self.cellForRowAtIndexPath(indexPath)
             if(cell?.accessoryType == UITableViewCellAccessoryType.Checkmark){
                 out.append(indexPath)
             }
@@ -75,8 +75,8 @@ class MainMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         // Let's go!
-        var tags: [String] = appDelegate.model.getSelectedTags()
-        var gameType: Model.GameType = Model.GameType.TwentyQuestions
+        let tags: [String] = appDelegate.model.getSelectedTags()
+        let gameType: Model.GameType = Model.GameType.TwentyQuestions
         
         if(!appDelegate.model.newRoundWithSelectedTags(tags, andGameType:gameType)){
             // TODO: no more questions...
@@ -93,7 +93,7 @@ class MainMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // immediately here
         self.showSpinner()
         
-        var ac = UIAlertDialog(
+        let ac = UIAlertDialog(
             style: UIAlertDialogStyle.Alert,
             title: msgTitle,
             andMessage: msg)
@@ -132,7 +132,7 @@ class MainMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        var tagsCount:Int = appDelegate.model.getTagsCount()
+        let tagsCount:Int = appDelegate.model.getTagsCount()
         
         return tagsCount
     }
@@ -145,26 +145,26 @@ class MainMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let tags:[String:Any] = appDelegate.model.getTags()
-        let tagKeys = tags.keys.array
+        let tagKeys = Array(tags.keys)
         
-        var tagStr = tagKeys[indexPath.row]
-        var cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: nil)
+        let tagStr = tagKeys[indexPath.row]
+        let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: nil)
         
             //= tableView.dequeueReusableCellWithIdentifier("SimpleCell") as! UITableViewCell
         cell.textLabel?.text = tagStr
         
-        var tuple = tags[tagStr] as! NSDictionary
-        var cnt:Int = tuple["Count"] as! Int
-        var asked:Int = tuple["Asked"] as! Int
+        let tuple = tags[tagStr] as! NSDictionary
+        let cnt:Int = tuple["Count"] as! Int
+        let asked:Int = tuple["Asked"] as! Int
         
-        var completeStr = "\(asked)/\(cnt) complete"
+        let completeStr = "\(asked)/\(cnt) complete"
         
         cell.detailTextLabel?.text = completeStr
         cell.detailTextLabel?.numberOfLines = 1
         cell.detailTextLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         
         // if tag is selected by user
-        var checked = appDelegate.model.isTagSelected(tagStr)
+        let checked = appDelegate.model.isTagSelected(tagStr)
         
         if(checked){
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
@@ -176,7 +176,7 @@ class MainMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // toggle checkbox
-        var cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        let cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         
         if(cell.accessoryType == UITableViewCellAccessoryType.None){
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
@@ -185,7 +185,7 @@ class MainMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         
         // update view
-        var checked: [NSIndexPath] = tableView.getAllCheckedCells()
+        let checked: [NSIndexPath] = tableView.getAllCheckedCells()
         var rows = [Int]()
         for s in checked {
             rows.append(s.row)

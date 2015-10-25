@@ -63,9 +63,9 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
     
     func showAndHideControls(){
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        var showTable = appDelegate.getParamBool("IpadShowTableForAnswers")
+        let showTable = appDelegate.getParamBool("IpadShowTableForAnswers")
         
-        var labels = [lblOne, lblTwo, lblThree, lblFour]
+        let labels = [lblOne, lblTwo, lblThree, lblFour]
         for l in labels {
             l?.hidden = showTable
         }
@@ -144,7 +144,7 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
         appDelegate.model.setAnswerEntered(true)
         
         // 3 - move to next view controller
-        var timer = NSTimer.scheduledTimerWithTimeInterval(
+        NSTimer.scheduledTimerWithTimeInterval(
             NSTimeInterval(appDelegate.getParamInteger("WaitBeforeAnswer")),
             target: self,
             selector: Selector("goToCorrectAnswer"),
@@ -155,9 +155,9 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
     func highlightGoodAnswer(){
         for answ in correctAnswers {
             if(answ != 0){
-                var path:NSIndexPath = NSIndexPath(forRow: (answ - 1), inSection: 0)
+                let path:NSIndexPath = NSIndexPath(forRow: (answ - 1), inSection: 0)
             
-                var selectedCell:UITableViewCell? = tableView?.cellForRowAtIndexPath(path)
+                let selectedCell:UITableViewCell? = tableView?.cellForRowAtIndexPath(path)
                 selectedCell?.textLabel!.textColor = UIColor.blueColor()
                 selectedCell?.detailTextLabel!.textColor = UIColor.blueColor()
             }
@@ -172,7 +172,7 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
         
         if let table = tableView {
             if(correctAnswers.count > 1){
-                var checked: [NSIndexPath] = table.getAllCheckedCells()
+                let checked: [NSIndexPath] = table.getAllCheckedCells()
                 
                 for ch in checked {
                     indexes.append(ch.row + 1)
@@ -181,7 +181,7 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
                 appDelegate.model.setAnswerIndexes(indexes)
             }else{
                 // or selected
-                let indexPath = table.indexPathForSelectedRow();
+                let indexPath = table.indexPathForSelectedRow;
                 indexes.append(indexPath!.row + 1)
             }
             
@@ -196,7 +196,7 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
     
     func loadHtml(){
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        var htmlString:String = appDelegate.model.getQuestion() as String
+        let htmlString:String = appDelegate.model.getQuestion() as String
         
         view1.loadHTMLString(htmlString, baseURL: nil)
     }
@@ -213,7 +213,7 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
         lblLevel.text = (appDelegate.model.getQuestionLevel() as String) + "/10"
         lblTopic.text = (appDelegate.model.getQuestionTags() as String)
         
-        var progressVal: Float =
+        let progressVal: Float =
         Float(appDelegate.model.getQuestionIndex() - 1) / Float(appDelegate.model.getTotalQuestionsInRound())
         
         progress!.setProgress(progressVal, animated: false)
@@ -253,7 +253,7 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: nil)
+        let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: nil)
         
         cell.textLabel?.text = String(indexPath.row + 1)
         
@@ -333,7 +333,7 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func onCellClicked(cell:UITableViewCell,withIndexPath indexPath:NSIndexPath){
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        //let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         if(correctAnswers.count > 1){
             // Multi answer mode - set checkbox
@@ -348,7 +348,7 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func initLabels(){
-        var labels = [
+        let labels = [
             lblOne, lblTwo, lblThree, lblFour
         ]
         var selectors = [
@@ -360,7 +360,7 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
         for lbl in labels {
             lbl?.userInteractionEnabled = true
             
-            var recognizer = UITapGestureRecognizer(target: self, action: Selector(selectors[i]))
+            let recognizer = UITapGestureRecognizer(target: self, action: Selector(selectors[i]))
             recognizer.numberOfTapsRequired = 1
             recognizer.cancelsTouchesInView = true
             
@@ -386,8 +386,8 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         // Clear cell highlight
-        var originalFont = UIFont.systemFontOfSize(17.0)
-        var labels = [lblOne, lblTwo, lblThree, lblFour]
+        let originalFont = UIFont.systemFontOfSize(17.0)
+        let labels = [lblOne, lblTwo, lblThree, lblFour]
         
         for l in labels {
             l?.font = originalFont
@@ -397,7 +397,7 @@ class ViewControllerIPad: UIViewController, UITableViewDelegate, UITableViewData
         
         // Highlight:
         if(index != -1){
-            var boldFont = UIFont.boldSystemFontOfSize(17.0)
+            let boldFont = UIFont.boldSystemFontOfSize(17.0)
             
             //boldSystemFontOfSize:[UIFont systemFontSize]];
             //lbl?.shadowColor = UIColor.blueColor()

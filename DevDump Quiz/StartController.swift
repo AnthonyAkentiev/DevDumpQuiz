@@ -35,7 +35,7 @@ class StartController: UIViewController {
         lblLevel.text = "Question level: " + (appDelegate.model.getQuestionLevel() as String) + "/10"
         lblTopic.text = "Question tags: " + (appDelegate.model.getQuestionTags() as String)
         
-        var progressVal: Float =
+        let progressVal: Float =
         Float(appDelegate.model.getQuestionIndex() - 1) / Float(appDelegate.model.getTotalQuestionsInRound())
         
         progress.setProgress(progressVal, animated: false)
@@ -61,7 +61,7 @@ class StartController: UIViewController {
         
         if(currQuestion != totalQuestions + 1){
             // go to question
-            var timer = NSTimer.scheduledTimerWithTimeInterval(
+            NSTimer.scheduledTimerWithTimeInterval(
                 NSTimeInterval(appDelegate.getParamInteger("WaitBeforeGoToQuestion")),
                 target: self,
                 selector: Selector("goToQuestion"),

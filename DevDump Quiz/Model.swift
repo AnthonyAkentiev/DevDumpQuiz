@@ -19,12 +19,12 @@ extension Array {
     }
     
     mutating func truncate(count:Int){
-        var diff:Int = self.count - count
+        let diff:Int = self.count - count
         if(diff<0){
             return
         }
         
-        for i in 0..<diff {
+        for _ in 0..<diff {
             self.removeLast()
         }
     }
@@ -66,11 +66,12 @@ class Model: QuestionsBase {
         // Single big Q1.plist file
         let dstPath = getQPath()
         if(NSFileManager.defaultManager().fileExistsAtPath(dstPath)){
-            var err:NSError?
-            
-            NSFileManager.defaultManager().removeItemAtPath(
-                dstPath,
-                error: &err)
+            do {
+                try NSFileManager.defaultManager().removeItemAtPath(dstPath)
+            } catch _ as NSError {
+                // TODO: write error to log
+                //err = error
+            }
             
             // TODO: check error
             
@@ -132,7 +133,7 @@ class Model: QuestionsBase {
             return ""
         }
         
-        let c = count(self.curAnswersHtml[index])
+        let c = self.curAnswersHtml[index].characters.count
         if(c==0){
             return ""
         }
@@ -154,7 +155,7 @@ class Model: QuestionsBase {
     
     func setAnswerEntered(val:Bool){
         // remember answer and mark question as "already shown"
-        assert(count(curQuestionID) != 0)
+        assert(curQuestionID.characters.count != 0)
         
         let isCorrect = isCorrectAnswer()
         markQuestionAsAnsweredWithId(
@@ -209,7 +210,7 @@ class Model: QuestionsBase {
     }
     
     func getTotalUnaskedQuestions()->Int{
-        var unaskedQuestions:[Int] = getUnaskedQuestionsWithTags(selectedTags)
+        let unaskedQuestions:[Int] = getUnaskedQuestionsWithTags(selectedTags)
         return unaskedQuestions.count
     }
     
@@ -222,7 +223,7 @@ class Model: QuestionsBase {
             return
         }
         
-        var myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: path)
+        let myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: path)
         
         isSwipeHelpShownQuestion = myDict!.objectForKey("isSwipeHelpShownQuestion") as! Bool
     }
@@ -230,7 +231,7 @@ class Model: QuestionsBase {
     func saveVars(){
         let path: String = getPersistPath()
         
-        var myDict: NSMutableDictionary? = NSMutableDictionary()
+        let myDict: NSMutableDictionary? = NSMutableDictionary()
         myDict?.setObject(isSwipeHelpShownQuestion, forKey: "isSwipeHelpShownQuestion")
         
         // now save
@@ -242,9 +243,12 @@ class Model: QuestionsBase {
         let documentsDirectory = paths.objectAtIndex(0) as! String
             
         let name = "Persist.plist"
-        let path = documentsDirectory.stringByAppendingPathComponent(name)
+        //let path = documentsDirectory.stringByAppendingPathComponent(name)
             
-        return path
+        let path = NSURL(fileURLWithPath: documentsDirectory).URLByAppendingPathComponent(name)
+        let pathStr = "\(path)"
+        
+        return pathStr
     }
     
     func newRoundWithSelectedTags(tags:[String], andGameType:GameType)->Bool{
@@ -265,7 +269,7 @@ class Model: QuestionsBase {
     // will scan through ALL app questions and fill curRoundQuestionMap with fresh questions
     // that weren't asked yet
     private func fillQuestionsWithTags(tags:[String])->Bool{
-        var unaskedQuestions:[Int] = getUnaskedQuestionsWithTags(tags)
+        let unaskedQuestions:[Int] = getUnaskedQuestionsWithTags(tags)
         
         if(unaskedQuestions.count == 0){
             // no more questions...
@@ -273,7 +277,7 @@ class Model: QuestionsBase {
             return false
         }
         
-        var randomQuestions:[Int] = randomizeArray(unaskedQuestions)
+        let randomQuestions:[Int] = randomizeArray(unaskedQuestions)
         assert(randomQuestions.count == unaskedQuestions.count)
         
         curRoundQuestionMap = randomQuestions
@@ -327,8 +331,8 @@ class Model: QuestionsBase {
         }
         
         // load from file
-        var realAppQuestionIndex: Int = mapQuestionIndex(questionIndex - 1)
-        var q: NSDictionary = getQuestionWithId(realAppQuestionIndex)
+        let realAppQuestionIndex: Int = mapQuestionIndex(questionIndex - 1)
+        let q: NSDictionary = getQuestionWithId(realAppQuestionIndex)
         readQuestionFromDict(q)
     }
     

@@ -37,7 +37,7 @@ class CorrectAnswerController: UIViewController {
         lblIsCorrect.textColor = UIColor.redColor()
         
         // update correct answer desc
-        var s:String = appDelegate.model.getCorrectAnswerDesc()
+        let s:String = appDelegate.model.getCorrectAnswerDesc()
         loadHtmlFromString(s)
     }
     
@@ -54,7 +54,7 @@ class CorrectAnswerController: UIViewController {
         lblLevel?.text = (appDelegate.model.getQuestionLevel() as String) + "/5"
         lblTopic?.text = (appDelegate.model.getQuestionTags() as String)
         
-        var progressVal: Float =
+        let progressVal: Float =
         Float(appDelegate.model.getQuestionIndex() - 1) / Float(appDelegate.model.getTotalQuestionsInRound())
         
         progress?.setProgress(progressVal, animated: false)

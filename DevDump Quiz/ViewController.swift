@@ -23,7 +23,7 @@ class ViewController: UIViewController {
             //view1!.hidden = true
             
             // hide it after little time
-            var timer = NSTimer.scheduledTimerWithTimeInterval(
+            NSTimer.scheduledTimerWithTimeInterval(
                 NSTimeInterval(appDelegate.getParamInteger("WaitBeforeHideSwipeLabel")),
                 target: self,
                 selector: Selector("hideSwipeLabel"),
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
         //view1.loadRequest(requestObj)
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        var htmlString:String = appDelegate.model.getQuestion() as String
+        let htmlString:String = appDelegate.model.getQuestion() as String
         
         //NSLog(htmlString)
         view1.loadHTMLString(htmlString, baseURL: nil)

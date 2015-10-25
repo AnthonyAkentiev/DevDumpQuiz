@@ -12,9 +12,9 @@ import UIKit
 func prepareHtml(html:String)->String{
     // 1 - load stub
     let path = NSBundle.mainBundle().pathForResource("stub_basic_langs", ofType: "html")
-    var text = String(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)!
+    let text = try! String(contentsOfFile: path!, encoding: NSUTF8StringEncoding)
     
-    var out:String = text.stringByReplacingOccurrencesOfString("INSERT_HERE",withString:html as String)
+    let out:String = text.stringByReplacingOccurrencesOfString("INSERT_HERE",withString:html as String)
     return out
 }
 
@@ -47,9 +47,11 @@ class QuestionsBase: Tags {
         let documentsDirectory = paths.objectAtIndex(0) as! String
         
         let name = "Q1.plist"
-        let path = documentsDirectory.stringByAppendingPathComponent(name)
         
-        return path
+        let path = NSURL(fileURLWithPath: documentsDirectory).URLByAppendingPathComponent(name)
+        let pathStr = "\(path)"
+        
+        return pathStr
     }
     
     func prepareQuestions(){
@@ -76,10 +78,10 @@ class QuestionsBase: Tags {
     
     func copyAdditionalQuestionsToDocuments(){
         // 1 - enumerate each in-app-purchased file with questions
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+        //let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
         
         // TODO: manually update this list for debug
-        var aqs = [
+        let aqs = [
             "AQ1_Linux",
             "AQ2",
             "AQ3_Swift",
@@ -106,21 +108,26 @@ class QuestionsBase: Tags {
         ]
         
         for aq in aqs {
+            // TODO: bad path conversion, fix them
             let srcPath: String = NSBundle.mainBundle().pathForResource(aq, ofType: "plist")!
             
             let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
             let documentsDirectory = paths.objectAtIndex(0) as! String
-            let dstPath = documentsDirectory.stringByAppendingPathComponent(aq + ".ext")
+            
+            let dstPath = NSURL(fileURLWithPath: documentsDirectory).URLByAppendingPathComponent(aq + ".ext")
+            let dstPathStr = "\(dstPath)"
             
             assert(NSFileManager.defaultManager().fileExistsAtPath(srcPath))
             
-            if(!NSFileManager.defaultManager().fileExistsAtPath(dstPath)){
+            if(!NSFileManager.defaultManager().fileExistsAtPath(dstPathStr)){
                 // copy
-                NSLog("Copy additional questions: \(srcPath) file to \(dstPath)")
+                NSLog("Copy additional questions: \(srcPath) file to \(dstPathStr)")
                 
-                var err: NSError?
-                if(NSFileManager.defaultManager().copyItemAtPath(srcPath, toPath: dstPath, error: &err)){
-                
+                //var err: NSError?
+                do {
+                    try NSFileManager.defaultManager().copyItemAtPath(srcPath, toPath: dstPathStr)
+                }catch _ as NSError{
+                    // TODO: write error to log
                 }
             }
         }
@@ -129,18 +136,18 @@ class QuestionsBase: Tags {
     // scan all ids and check for collisions
     func checkIdCollisions()->Bool{
         let path = getQPath()
-        var myDict: NSDictionary? = NSDictionary(contentsOfFile: path)
+        let myDict: NSDictionary? = NSDictionary(contentsOfFile: path)
         
-        var questionsArr: NSArray = myDict!.objectForKey("questions") as! NSArray
+        let questionsArr: NSArray = myDict!.objectForKey("questions") as! NSArray
         var qIdsMap = [String:Bool]()
         
         // scan all questions and find one with (Id == id)
         for i in 0...questionsArr.count - 1 {
-            var q: NSDictionary = questionsArr.objectAtIndex(i) as! NSDictionary
+            let q: NSDictionary = questionsArr.objectAtIndex(i) as! NSDictionary
             
             let qId: String = q.objectForKey("Id") as! String
             
-            if let boolHere = qIdsMap[qId] {
+            if let _ = qIdsMap[qId] {
                 return false
             }else {
                 qIdsMap[qId] = true
@@ -161,7 +168,7 @@ class QuestionsBase: Tags {
             // copy
             NSLog("Copy \(srcPath) file to \(dstPath)")
             
-            var myDict: NSDictionary? = NSDictionary(contentsOfFile: srcPath)
+            let myDict: NSDictionary? = NSDictionary(contentsOfFile: srcPath)
             myDict!.writeToFile(dstPath, atomically: false)
         }
     }
@@ -190,18 +197,20 @@ class QuestionsBase: Tags {
         
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
         let documentsDirectory = paths.objectAtIndex(0) as! String
-        let fullPath = documentsDirectory.stringByAppendingPathComponent(fileName)
+        //let fullPath = documentsDirectory.stringByAppendingPathComponent(fileName)
+        
+        let fullPath = NSURL(fileURLWithPath: documentsDirectory).URLByAppendingPathComponent(fileName)
         
         // read it and enumerate all questions
         // the format of that file 100% same as Q1.plist
-        var myDict: NSDictionary? = NSDictionary(contentsOfFile: fullPath)
+        let myDict: NSDictionary? = NSDictionary(contentsOfURL: fullPath)
         
-        var questionsArr: NSArray = myDict!.objectForKey("questions") as! NSArray
-        var qIdsMap = [String:Bool]()
+        let questionsArr: NSArray = myDict!.objectForKey("questions") as! NSArray
+        //var qIdsMap = [String:Bool]()
         
         // scan all questions and find one with (Id == id)
         for i in 0...questionsArr.count - 1 {
-            var q: NSDictionary = questionsArr.objectAtIndex(i) as! NSDictionary
+            let q: NSDictionary = questionsArr.objectAtIndex(i) as! NSDictionary
             
             let qId: String = q.objectForKey("Id") as! String
             
@@ -218,18 +227,16 @@ class QuestionsBase: Tags {
     func isNewQuestionWithId(id:String)->Bool{
         // scan all questions in Documents/Q1.plist
         let path = getQPath()
-        var myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: path)
+        let myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: path)
         
-        var questionsArr: NSMutableArray = myDict!.objectForKey("questions") as! NSMutableArray
-        let countBefore = questionsArr.count
+        let questionsArr: NSMutableArray = myDict!.objectForKey("questions") as! NSMutableArray
+        //let countBefore = questionsArr.count
         
-        // scan all questions and find one with (Id == id)
-        var index: Int = -1
-        
+        // scan all questions and find one with (Id == id)        
         for i in 0...questionsArr.count - 1 {
-            var q: NSDictionary = questionsArr.objectAtIndex(i) as! NSDictionary
+            let q: NSDictionary = questionsArr.objectAtIndex(i) as! NSDictionary
             
-            var qId: String = q.objectForKey("Id") as! String
+            let qId: String = q.objectForKey("Id") as! String
             if(qId==id){
                 // already in Q1.plist
                 return false
@@ -240,12 +247,12 @@ class QuestionsBase: Tags {
     }
     
     func addNewQuestionFromExtension(q:NSDictionary){
-        var qId: String = q.objectForKey("Id") as! String
+        let qId: String = q.objectForKey("Id") as! String
         NSLog("New question: \(qId). Adding to list")
         
         let path = getQPath()
-        var myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: path)
-        var questionsArr: NSMutableArray = myDict!.objectForKey("questions") as! NSMutableArray
+        let myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: path)
+        let questionsArr: NSMutableArray = myDict!.objectForKey("questions") as! NSMutableArray
         
         questionsArr.insertObject(q, atIndex: 0)
         myDict!.setObject(questionsArr, forKey: "questions")
@@ -257,16 +264,16 @@ class QuestionsBase: Tags {
     // Search in Documents/Q1.plist file
     func getQuestionWithId(id: Int)->NSDictionary{
         let path = getQPath()
-        var myDict: NSDictionary? = NSDictionary(contentsOfFile: path)
+        let myDict: NSDictionary? = NSDictionary(contentsOfFile: path)
         
-        var questionsArr: NSArray = myDict!.objectForKey("questions") as! NSArray
+        let questionsArr: NSArray = myDict!.objectForKey("questions") as! NSArray
         
         // scan all questions and find one with (Id == id)
         for i in 0...questionsArr.count - 1 {
-            var q: NSDictionary = questionsArr.objectAtIndex(i) as! NSDictionary
+            let q: NSDictionary = questionsArr.objectAtIndex(i) as! NSDictionary
             
-            var qId: String = q.objectForKey("Id") as! String
-            if(qId.toInt() == id){
+            let qId: String = q.objectForKey("Id") as! String
+            if(Int(qId) == id){
                 return q
             }
         }
@@ -278,19 +285,19 @@ class QuestionsBase: Tags {
     // Update Q1.plist file - replace question
     func updateQuestionWithId(id: Int, andValue:NSDictionary){
         let path = getQPath()
-        var myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: path)
+        let myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: path)
         
-        var questionsArr: NSMutableArray = myDict!.objectForKey("questions") as! NSMutableArray
+        let questionsArr: NSMutableArray = myDict!.objectForKey("questions") as! NSMutableArray
         let countBefore = questionsArr.count
         
         // scan all questions and find one with (Id == id)
         var index: Int = -1
         
         for i in 0...questionsArr.count - 1 {
-            var q: NSDictionary = questionsArr.objectAtIndex(i) as! NSDictionary
+            let q: NSDictionary = questionsArr.objectAtIndex(i) as! NSDictionary
             
-            var qId: String = q.objectForKey("Id") as! String
-            if(qId.toInt() == id){
+            let qId: String = q.objectForKey("Id") as! String
+            if(Int(qId) == id){
                 index = i
             }
         }
@@ -303,19 +310,19 @@ class QuestionsBase: Tags {
         myDict!.writeToFile(path, atomically: true)
         
         // Assert
-        var tstDict: NSDictionary = getQuestionWithId(id)
-        var isAsked: Bool = tstDict.objectForKey("IsAsked") as! Bool
+        let tstDict: NSDictionary = getQuestionWithId(id)
+        let isAsked: Bool = tstDict.objectForKey("IsAsked") as! Bool
         assert(isAsked == true)
     }
     
     func readQuestionFromDict(dict:NSDictionary){
-        var id: String = dict.objectForKey("Id") as! String
-        var q: String = dict.objectForKey("q") as! String
-        var a: String = dict.objectForKey("a") as! String
-        var tags: String = dict.objectForKey("Tags") as! String
-        var level: String = dict.objectForKey("Level") as! String
+        let id: String = dict.objectForKey("Id") as! String
+        let q: String = dict.objectForKey("q") as! String
+        let a: String = dict.objectForKey("a") as! String
+        let tags: String = dict.objectForKey("Tags") as! String
+        let level: String = dict.objectForKey("Level") as! String
         //var correctAnswer: Int = dict.objectForKey("Correct Answer") as! Int
-        var correctAnswers: String = dict.objectForKey("Correct Answers") as! String
+        let correctAnswers: String = dict.objectForKey("Correct Answers") as! String
         
         // Unique app ID (different questions from different files should not collide)
         curQuestionID = id
@@ -328,7 +335,7 @@ class QuestionsBase: Tags {
         curQuestion = prepareHtml(q)
         curCorrectAnswer = prepareHtml(a)
         
-        var answers: NSArray = dict.objectForKey("answers") as! NSArray
+        let answers: NSArray = dict.objectForKey("answers") as! NSArray
         curAnswers = answers as AnyObject as! [String]
         
         // each answer could have separate html text for help (optional)
@@ -348,7 +355,7 @@ class QuestionsBase: Tags {
             for answerIndex in answersIndexes {
                 let tr = answerIndex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
                 
-                curCorrectAnswerIndexes.append(tr.toInt()!)
+                curCorrectAnswerIndexes.append(Int(tr)!)
             }
         }else{
             // single answer
@@ -356,7 +363,7 @@ class QuestionsBase: Tags {
             
             let tr = correctAnswers.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
             
-            curCorrectAnswerIndexes.append(tr.toInt()!)
+            curCorrectAnswerIndexes.append(Int(tr)!)
         }
     }
     
@@ -365,8 +372,8 @@ class QuestionsBase: Tags {
         NSLog("User answered question \(id) with result: \(andResult)")
         
         // get q object from plist in Documents
-        var q: NSMutableDictionary = getQuestionWithId(id.toInt()!) as! NSMutableDictionary
-        var ID: String = q.objectForKey("Id") as! String
+        let q: NSMutableDictionary = getQuestionWithId(Int(id)!) as! NSMutableDictionary
+        let ID: String = q.objectForKey("Id") as! String
         assert(ID==id)
         
         q.setObject(andValue, forKey: "IsAsked")
@@ -374,7 +381,7 @@ class QuestionsBase: Tags {
         q.setObject(andAnswers, forKey: "Answered")
         
         // save to read/write plist file
-        updateQuestionWithId(id.toInt()!, andValue:q)
+        updateQuestionWithId(Int(id)!, andValue:q)
     }
 
 
@@ -392,21 +399,19 @@ class QuestionsBase: Tags {
         
         // iterate through all questions and select ones with same 'tag'
         let path = getQPath()
-        var myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: path)
+        let myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: path)
         
-        var questionsArr: NSMutableArray = myDict!.objectForKey("questions") as! NSMutableArray
-        let countBefore = questionsArr.count
+        let questionsArr: NSMutableArray = myDict!.objectForKey("questions") as! NSMutableArray
+        //let countBefore = questionsArr.count
         
         // is skip?
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let isSkipAlreadyAsked: Bool = appDelegate.getParamBool("IsSkipAsked")
         
         // scan all questions and find one with (Id == id)
-        var index: Int = -1
-        
         for i in 0...questionsArr.count - 1 {
-            var q: NSDictionary = questionsArr.objectAtIndex(i) as! NSDictionary
-            var qId: String = q.objectForKey("Id") as! String
+            let q: NSDictionary = questionsArr.objectAtIndex(i) as! NSDictionary
+            let qId: String = q.objectForKey("Id") as! String
             
             // Skip it?
             var skipQuestion: Bool = false
@@ -417,9 +422,9 @@ class QuestionsBase: Tags {
             }
             
             if(!skipQuestion){
-                var strTags: String = q.objectForKey("Tags") as! String
+                let strTags: String = q.objectForKey("Tags") as! String
                 if(isHasOneOfTheseTags(tags,questionsTags:strTags) == true){
-                    out.insert(qId.toInt()!, atIndex: 0)
+                    out.insert(Int(qId)!, atIndex: 0)
                 }
             }
         }
@@ -430,21 +435,21 @@ class QuestionsBase: Tags {
     // iterate through all questions and select ones with same 'tag'
     func populateTotalTags(){
         let path = getQPath()
-        var myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: path)
+        let myDict: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: path)
         
-        var questionsArr: NSMutableArray = myDict!.objectForKey("questions") as! NSMutableArray
+        let questionsArr: NSMutableArray = myDict!.objectForKey("questions") as! NSMutableArray
         
         totalTags = [String:Any]()
         
         for i in 0...questionsArr.count - 1 {
-            var q: NSDictionary = questionsArr.objectAtIndex(i) as! NSDictionary
-            var strTags: String = q.objectForKey("Tags") as! String
+            let q: NSDictionary = questionsArr.objectAtIndex(i) as! NSDictionary
+            let strTags: String = q.objectForKey("Tags") as! String
             
             let questionTagsSplit:[String] = strTags.componentsSeparatedByString(",")
             
             // process each tag from each question
             for tag:String in questionTagsSplit {
-                var isAskedCount = isQuestionWasAsked(q)
+                let isAskedCount = isQuestionWasAsked(q)
                 
                 totalTags = updateTotalTags(totalTags,tag:tag,isAskedCount:isAskedCount)
             }
@@ -470,10 +475,10 @@ class QuestionsBase: Tags {
         // copy ((
         var out = totalTags
         
-        if let cnt = out[tagTrimmed] {
-            var tuple = out[tagTrimmed] as! NSDictionary
-            var cnt:Int = tuple["Count"] as! Int
-            var asked:Int = tuple["Asked"] as! Int
+        if let _ = out[tagTrimmed] {
+            let tuple = out[tagTrimmed] as! NSDictionary
+            let cnt:Int = tuple["Count"] as! Int
+            let asked:Int = tuple["Asked"] as! Int
             
             out[tagTrimmed] = ["Count": cnt + 1, "Asked":asked + isAskedCount]
         }else{

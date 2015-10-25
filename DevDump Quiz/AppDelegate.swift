@@ -15,26 +15,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // TODO: rewrite this using template
     func getParamBool(key:String) -> Bool{
-        var path = NSBundle.mainBundle().pathForResource("Info", ofType: "plist")
-        var dict = NSDictionary(contentsOfFile: path!)
+        let path = NSBundle.mainBundle().pathForResource("Info", ofType: "plist")
+        let dict = NSDictionary(contentsOfFile: path!)
         
-        var paramsLevel = dict!.valueForKey("GameParams") as! NSDictionary
+        let paramsLevel = dict!.valueForKey("GameParams") as! NSDictionary
         return paramsLevel.valueForKey(key as String) as! Bool
     }
     
     func getParamStr(key:String) -> String{
-        var path = NSBundle.mainBundle().pathForResource("Info", ofType: "plist")
-        var dict = NSDictionary(contentsOfFile: path!)
+        let path = NSBundle.mainBundle().pathForResource("Info", ofType: "plist")
+        let dict = NSDictionary(contentsOfFile: path!)
         
-        var paramsLevel = dict!.valueForKey("GameParams") as! NSDictionary
+        let paramsLevel = dict!.valueForKey("GameParams") as! NSDictionary
         return paramsLevel.valueForKey(key as String) as! String
     }
     
     func getParamInteger(key:String) -> Int{
-        var path = NSBundle.mainBundle().pathForResource("Info", ofType: "plist")
-        var dict = NSDictionary(contentsOfFile: path!)
+        let path = NSBundle.mainBundle().pathForResource("Info", ofType: "plist")
+        let dict = NSDictionary(contentsOfFile: path!)
         
-        var paramsLevel = dict!.valueForKey("GameParams") as! NSDictionary
+        let paramsLevel = dict!.valueForKey("GameParams") as! NSDictionary
         return paramsLevel.valueForKey(key as String) as! Int
     }
     

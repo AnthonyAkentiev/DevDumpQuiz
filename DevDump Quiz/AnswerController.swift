@@ -31,8 +31,8 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
         // select
         if(appDelegate.model.getAnswerIndexes().count != 0){
             // TODO: select all indexes
-            var row:Int = appDelegate.model.getAnswerIndexes()[0] - 1
-            var path:NSIndexPath = NSIndexPath(forRow: row, inSection: 0)
+            let row:Int = appDelegate.model.getAnswerIndexes()[0] - 1
+            let path:NSIndexPath = NSIndexPath(forRow: row, inSection: 0)
             
             tableView.selectRowAtIndexPath(
                 path,
@@ -87,7 +87,7 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
         btnOk.enabled = false
         
         // add little timer!
-        var timer = NSTimer.scheduledTimerWithTimeInterval(
+        NSTimer.scheduledTimerWithTimeInterval(
             NSTimeInterval(appDelegate.getParamInteger("WaitBeforeAnswer")),
             target: self,
             selector: Selector("moveToCorrectAnswer"),
@@ -98,9 +98,9 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
     func highlightGoodAnswer(){
         for answ in correctAnswers {
             if(answ != 0){
-                var path:NSIndexPath = NSIndexPath(forRow: (answ - 1), inSection: 0)
+                let path:NSIndexPath = NSIndexPath(forRow: (answ - 1), inSection: 0)
             
-                var selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(path)!
+                let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(path)!
                 selectedCell.textLabel!.textColor = UIColor.blueColor()
                 selectedCell.detailTextLabel!.textColor = UIColor.blueColor()
             }
@@ -123,7 +123,7 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: nil)
+        let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: nil)
         
         cell.textLabel?.text = String(indexPath.row + 1)
         
@@ -165,7 +165,7 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         // checkbox or selection
         if(!appDelegate.model.getIsAnswerEntered()){
-            var cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+            let cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
             onCellClicked(cell,withIndexPath:indexPath)
         }
         
@@ -189,7 +189,7 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         // collect all selected items
         var indexes:[Int] = []
-        var checked: [NSIndexPath] = tableView.getAllCheckedCells()
+        let checked: [NSIndexPath] = tableView.getAllCheckedCells()
     
         for ch in checked {
             indexes.append(ch.row + 1)

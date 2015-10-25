@@ -28,7 +28,7 @@ class Tags: NSObject {
     func selectTagsWithIndexes(indexes:[Int]){
         // update selectedTags
         let tags:[String:Any] = getTags()
-        let tagKeys = tags.keys.array
+        let tagKeys = Array(tags.keys)
         
         // convert from index to String
         var result = [String]()
@@ -47,7 +47,7 @@ class Tags: NSObject {
         }
         
         let tags:[String:Any] = getTags()
-        let tagKeys = tags.keys.array
+        let tagKeys = Array(tags.keys)
         
         // convert from index to String
         var result = [String]()
@@ -66,28 +66,33 @@ class Tags: NSObject {
     }
     
     func saveSelectedTagsToFile(){
-        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-        var path = paths.stringByAppendingPathComponent("tags.plist")
-        var fileManager = NSFileManager.defaultManager()
-
-        var data = NSMutableDictionary()
+        let path1 = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        
+        let path = NSURL(fileURLWithPath: path1).URLByAppendingPathComponent("tags.plist")
+        
+        //let path = path1.stringByAppendingPathComponent("tags.plist")
+        
+        let data = NSMutableDictionary()
         data.setObject(selectedTags, forKey: "tags")
-        data.writeToFile(path, atomically: true)
+        data.writeToURL(path, atomically: true)
     }
     
     func loadSelectedTagsFromFile(){
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
         let documentsDirectory = paths.objectAtIndex(0) as! String
-        let fullPath = documentsDirectory.stringByAppendingPathComponent("tags.plist")
+
+        let fullPath = NSURL(fileURLWithPath: documentsDirectory).URLByAppendingPathComponent("tags.plist")
         
-        if(!NSFileManager.defaultManager().fileExistsAtPath(fullPath)){
+        let fullPathStr = "\(fullPath)"
+        
+        if(!NSFileManager.defaultManager().fileExistsAtPath(fullPathStr)){
             return
         }
         
         // read it and enumerate all questions
         // the format of that file 100% same as Q1.plist
-        var myDict: NSDictionary? = NSDictionary(contentsOfFile: fullPath)
-        var tagsArr: NSArray = myDict!.objectForKey("tags") as! NSArray
+        let myDict: NSDictionary? = NSDictionary(contentsOfFile: fullPathStr)
+        let tagsArr: NSArray = myDict!.objectForKey("tags") as! NSArray
         
         selectedTags = tagsArr as! [String]
     }
@@ -98,7 +103,7 @@ class Tags: NSObject {
         
         for tag in tags {
             for qTag in questionTagsSplit {
-                var tagTrimmed = qTag.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                let tagTrimmed = qTag.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
                 
                 if(tagTrimmed == tag){
                     return true
